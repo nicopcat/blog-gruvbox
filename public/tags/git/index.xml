@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/git/</link>
+    <description>Recent content in Git on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 21 Mar 2022 12:29:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git使用笔记</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</link>
+      <pubDate>Mon, 21 Mar 2022 12:29:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</guid>
+      <description>最近发现了一个非常有意思的网站，Github标星24.1k。趣味的交互式体验以及丰富的视觉化效果，让学Git变得非常轻松。
+跟Git打过交道的朋友，大概都受过不少的苦，Git流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就Google一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握Git的决心！
+学习地址：LearnGitBranching
+Github地址：LearnGitBranching
+下面是一些笔记~
+基础篇 循序渐进地介绍 Git 主要命令
+1. Git Commit 与 Git Branch Git 的分支也非常轻量。它们只是简单地指向某个提交纪录 —— 仅此而已。所以许多 Git 爱好者传颂：
+ 早建分支！多用分支！
+  提交分支  git commit &amp;lt;branch&amp;gt;切换到新的分支  git checkout &amp;lt;branch&amp;gt;如果你想创建一个新的分支同时切换到这个新创建的分支  git checkout -b &amp;lt;your-branch-name&amp;gt; Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。
+ 2. Git Merge 假设有需要一个bugFix分支：
+// 新建并切换到bugFix分支git checkout -b bugFix// 保存修改git commit// 回到main branchgit checkout main// 保存修改git commit将bugfix merge到当前分支main</description>
+    </item>
+    
+  </channel>
+</rss>

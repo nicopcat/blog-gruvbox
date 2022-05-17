@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Hugo | 博客部署篇| nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="Cat that codes.">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/logo.png" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/hugo/hugo-githubpages/">Hugo | 博客部署篇</a></h1>
+    <time datetime="2022-01-08 13:55:19 &#43;0800 CST">2022-01-08</time>
+  </header>
+
+  <div class="body">
+    <h1 id="使用-netlify-托管">使用 Netlify 托管</h1>
+<p>最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！</p>
+<p>可以参考我的另一篇文章 <a href="https://www.niqks.tk/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/">如何使用 Netlify 快速部署个人项目
+</a></p>
+<h2 id="流程">流程</h2>
+<ol>
+<li>首先需要把源码发布到你的 Github 仓库，步骤参考下文 <a href="#%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E5%88%B0github-pages">如何部署到github-pages</a> 👇</li>
+<li>进入 <a href="https://www.netlify.com/">Netlify</a>，注册，创建新项目，选择 <code>Add new site</code></li>
+<li>选择从 <code>Import an existing project</code> - 连接 Github - 选择刚刚创建的博客项目仓库</li>
+<li>Basic build settings:
+<ul>
+<li>Build command: <code>hugo</code> // 部署前先运行 hugo 指令 生成新的 Public 文件</li>
+<li>Publish directory: <code>public</code> // 指定 public 文件夹为部署文件</li>
+</ul>
+</li>
+<li>点击 <code>Deploy site</code> 完成部署</li>
+</ol>
+<h1 id="使用-github-pages-托管">使用 Github Pages 托管</h1>
+<h2 id="github-pages-是给啥">Github Pages 是给啥</h2>
+<p><a href="https://www.niqks.tk/posts/hugo/hugo-site/">搭建篇</a> 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</p>
+<p>最简单的方法是交给第三方托管，如 腾讯云，阿里云，Github Pages，Vercel 等。 我选择的是之前练习写项目时用过的 <strong>Github Pages</strong>。</p>
+<p>Github Pages 可以认为是一个为用户免费托管（hosted）并发布网站或个人 projects 的免费的仓库。</p>
+<p>Github Pages 的优点是：</p>
+<ul>
+<li>完全免费。为你省去买云服务器的费用。</li>
+<li>搭建简单。只需按步骤一步步操作即可，不需要了解背后的技术细节。</li>
+<li>功能丰富。你可以绑定自己的域名，使用免费的HTTPS，自定义主题等。</li>
+</ul>
+<h2 id="如何部署到github-pages">如何部署到GitHub Pages</h2>
+<h3 id="注册github">注册Github</h3>
+<ul>
+<li>首先你需要注册一个 GitHub 账号，并在个人主界面里选择创建一个新的 Repository 。</li>
+</ul>
+<h3 id="创建新的repository">创建新的Repository</h3>
+<ul>
+<li>
+<p>在页面的右上角，点击 <code>+</code> ，下拉菜单选择 <code>New Repositoty</code> 来新建一个仓库。</p>
+</li>
+<li>
+<p><code>Repository name</code> 必须为 <code>username.github.io</code>，例如我的仓库<code>nicopcat.github.io</code>。</p>
+</li>
+<li>
+<p>勾选 <code>Public</code>，点 <code>Create Repository</code> 创建仓库。</p>
+</li>
+</ul>
+<h3 id="关联github远程仓">关联Github远程仓</h3>
+<h4 id="将源码推送到仓库">将源码推送到仓库</h4>
+<ul>
+<li>首先需要新建一个放博客源码的仓库，可以命名为<code>Hugo-Sources</code>。</li>
+<li>在根目录<code>/quickstart/</code>下，关联此仓库：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git init
+git add .
+git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>    
+git remote add origin https://github.com/username/Hugo-Sources.git
+git push -u origin main
+</code></pre></div><h4 id="将public文件推送到仓库">将public文件推送到仓库</h4>
+<ul>
+<li>生成<code>public</code>文件，输入：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">hugo
+</code></pre></div><ul>
+<li>推送到<code>username.github.io</code>仓库：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git init 
+git add .   
+git commit -m <span style="color:#e6db74">&#34;first commit&#34;</span>    
+git remote add origin https://github.com/username/username.github.io.git   
+git push -u origin main   
+</code></pre></div><h4 id="利用github-action-偷懒">利用Github Action 偷懒*</h4>
+<p>Github Actions是Github推出的一个CI\CD 服务。简单来说，利用Github Actions，可以把原本需要推送两次的流程（源码和public文件），简化到只需执行一次推送（源码），然后自动更新public文件。</p>
+<p>具体教程请看：<a href="https://www.niqks.tk/posts/hugo/github-action/">用Github Action自动部署Hugo博客Public页面</a></p>
+<h4 id="注">*注</h4>
+<p><!-- raw HTML omitted -->用 Netlify 部署相当于帮你偷懒，省掉配置 Github Action 的步骤，就非常Nice啊！再次推荐!&hellip;<!-- raw HTML omitted --> 😂</p>
+<h3 id="发布你的博客">发布你的博客</h3>
+<p>在<code>username.github.io</code>仓库下，单击 ⚙<code>Settings</code>，拉到下方，找到 <code>GitHub Pages</code>。<br>
+根据下图勾选，单击 <code>Save</code>，此时就会生成网址 <code>username.github.io</code>。</p>
+<p>稍等几分钟等待部署，访问这个地址，就能看到博客成功部署。
+<img src="https://i.loli.net/2021/11/23/wOPEZJjDSWhukTF.png" alt="20211123144734"></p>
+
+  </div>
+
+  
+    <footer>
+      
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+    </footer>
+  
+</article>
+
+
+<div class="pagination">
+  <div class="left">
+  
+    <a href="/posts/hugo/how-to-add-toc-on-a-hugo-post/">
+      <time datetime="2021-12-20 22:59:16 &#43;0800 CST">&laquo; 2021-12-20</time>
+      Hugo Papermod主题 创建(侧边)目录
+    </a>
+  
+  </div>
+  <div class="right">
+  
+    <a href="/posts/hugo/hugo-custom-domain/">
+      <time datetime="2022-01-09 13:55:19 &#43;0800 CST">2022-01-09 &raquo;</time>
+      Hugo | Custom Domain 自定义域名篇
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+  loadDisqusComments();
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+
+</body>
+
+</html>

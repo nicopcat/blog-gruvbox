@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tech posts🗒️ on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/posts/tech/posts/</link>
+    <description>Recent content in tech posts🗒️ on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 30 Apr 2022 17:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何使用 Netlify 快速部署个人项目</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</link>
+      <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</guid>
+      <description>一直耳闻 Netlify 非常好用，其实是相当好用！
+先进入 Netlify 官网，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”
+不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。
+Netlify x Vue-cli 其实我也是照着官网的一篇文章做的，简单记录下步骤：
+ 将 Demo 源码放到 Github 的仓库中 登陆 Netlify，新建一个 site，选择刚刚创建的那个仓库 点击 Site settings⚙️，填写一下配置  Base directory: 可以空着 Build command: npm run build Publish directory: dist   点击 Deploy Site 发布 就这么简单！！  文章中还有 Nuxt, Gridsome, Domains 的相关的部署信息，有需求可以参考一下。
+Other Netlify 服务提供一个免费的 Starter Plan，适合展示个人的、兴趣爱好和实验性的小项目，免费套餐包含：
+ 0 KB / 100 GB bandwidth 0 / 300 build minutes (Apr 29 to May 29)  总之，个人小项目可以放在这上面，访问量大的还是花点钱吧~</description>
+    </item>
+    
+    <item>
+      <title>Tech Daily 001</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/tech-daily-001/</link>
+      <pubDate>Fri, 22 Apr 2022 18:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/tech-daily-001/</guid>
+      <description>跟逛维基百科一样，前端用语一个接一个映入眼帘，了解完A又出现了B, C, D……
+Composition API Vue 3 重大新特性之一，中文“组合式API”，Vue 2.x 使用的是 Option API。简单来说就是把一坨代码放到setup()函数里集中管理，解决业务关注点过多的问题。
+查看大帅老猿花了一夜做的动画
+pinia 大菠萝，全新的Vue状态管理库，相当于 vuex 5 版本。
+特点  体积非常小 简化状态管理：砍掉了vuex中的 mutation，只剩下 state, getter 和 action 支持 TypeScript 非常适合 Vue 3 的 Composition API 适合管理小型单页应用程序   Nuxt.js 混合型开源的vue框架（框架的框架？）
+ NuxtJS 让你构建你的下一个 Vue.js 应用程序变得更有信心。这是一个 开源 的框架，让 web 开发变得简单而强大。
+ 目前有 Nuxt 2，Nuxt Bridge 和 Nuxt 3 这几个版本，似乎还在开发中。
+Pollyfill 由于各个浏览器/版本不统一，造成某些功能无法使用，pollyfill 相当于处理兼容性的工具。
+通常做法是，先检查当前浏览器是否支持某个API，如果不支持就加载相应的 polyfill 脚本。
+Babel  Babel 是一个工具链，主要用于将 ECMAScript 2015+ 版本的代码转换为向后兼容的 JavaScript 语法，以便能够运行在当前和旧版本的浏览器或其他环境中。</description>
+    </item>
+    
+    <item>
+      <title>如何在vscode 启动调试工具</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</link>
+      <pubDate>Mon, 18 Apr 2022 16:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</guid>
+      <description>除了浏览器里的dev tool，非常牛逼的 VS Code 也内置了调试控制台，只需按照步骤配置 launch.json 文件即可。
+步骤  打开代码文件夹 点右侧菜单栏的 运行和调试 或快捷键 Ctrl + Shift + D 点击 创建 launch.json 文件。VSCode 会在工作区的 .vscode 文件夹下生成一个新的 launch.json 文件 可以观察到，左侧有 lauch 菜单（一个类似播放的按钮），可以用此菜单启动服务器了。    参考：https://segmentfault.com/a/1190000022804681</description>
+    </item>
+    
+    <item>
+      <title>Git使用笔记</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</link>
+      <pubDate>Mon, 21 Mar 2022 12:29:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</guid>
+      <description>最近发现了一个非常有意思的网站，Github标星24.1k。趣味的交互式体验以及丰富的视觉化效果，让学Git变得非常轻松。
+跟Git打过交道的朋友，大概都受过不少的苦，Git流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就Google一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握Git的决心！
+学习地址：LearnGitBranching
+Github地址：LearnGitBranching
+下面是一些笔记~
+基础篇 循序渐进地介绍 Git 主要命令
+1. Git Commit 与 Git Branch Git 的分支也非常轻量。它们只是简单地指向某个提交纪录 —— 仅此而已。所以许多 Git 爱好者传颂：
+ 早建分支！多用分支！
+  提交分支  git commit &amp;lt;branch&amp;gt;切换到新的分支  git checkout &amp;lt;branch&amp;gt;如果你想创建一个新的分支同时切换到这个新创建的分支  git checkout -b &amp;lt;your-branch-name&amp;gt; Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。
+ 2. Git Merge 假设有需要一个bugFix分支：
+// 新建并切换到bugFix分支git checkout -b bugFix// 保存修改git commit// 回到main branchgit checkout main// 保存修改git commit将bugfix merge到当前分支main</description>
+    </item>
+    
+    <item>
+      <title>好玩的JavaScrip动画框架——GSAP 【intro试译】</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</link>
+      <pubDate>Sat, 12 Mar 2022 13:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</guid>
+      <description>GSAP 全称是 GreenSock Animation Platform，是一个非常强大的基于 JS 的动画库，初次接触的我深感，短短几行代码就能实现非常酷炫的特效。
+在学习的过程中，顺便把官网的教程翻译成中文参考。
+什么是 GSAP? GSAP 其实是在操控属性 动画最终可以归结为一个每秒多次改变属性值的过程，可以使某物产生移动、褪色、旋转等效果。GSAP 抓取一个起始值和一个终止值，然后每秒在它们之间插值 60 次。
+例如，在 1 秒内将一个物体的 X 坐标从 0 改变到 1000，并使其迅速向右移动。将不透明度从 1 到 0 渐变，使一个元素淡出。作为一个动画师，你的任务是决定改变哪些属性，多快，以及运动的风格（即缓动&amp;ndash;我们后面会讲到）。
+DOM, SVG, &amp;lt;canvas&amp;gt; 以及其他 GSAP 并没有预定义它可以处理哪些属性。它超级灵活，几乎可以适应你扔给它的任何东西。GSAP 可以对以下所有内容进行动画处理：
+ CSS: 2D and 3D transforms, colors, width, opacity, border-radius, margin, and 几乎所有的 CSS 属性 SVG 属性: viewBox, width, height, fill, stroke, cx, r, opacity, etc. 像 MorphSVG 和 DrawSVG 这样的插件可以用于高级效果 任何数值 例如，一个被渲染到&amp;lt;canvas&amp;gt;的对象。对三维场景中的相机位置进行动画处理，或对数值进行过滤。GSAP 经常与 Three.js 和 Pixi.</description>
+    </item>
+    
+  </channel>
+</rss>

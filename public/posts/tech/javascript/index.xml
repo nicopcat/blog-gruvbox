@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vinilla JavaScript📒 on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/posts/tech/javascript/</link>
+    <description>Recent content in Vinilla JavaScript📒 on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 13 May 2022 22:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript 中 this 的绑定</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/this-and-context/</link>
+      <pubDate>Fri, 13 May 2022 22:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/this-and-context/</guid>
+      <description>this会在执行的上下文中绑定一个对象，有时候绑定全局对象，有时绑定的是某个对象，所以在什么情况下进行什么绑定，比较迷惑。
+先说结论：this的绑定取决于函数的直接调用位置。
+1. 调用位置 首先要理解什么是调用位置：调用位置就是函数在代码中调用的位置，而不是函数声明的位置。
+function foo{ console.log(&amp;#39;foo&amp;#39;); bar(); // &amp;lt;-- bar()的调用位置 } function bar{ console.log(&amp;#39;bar&amp;#39;); baz(); // &amp;lt;-- baz()的调用位置 } function baz{ console.log(&amp;#39;baz&amp;#39;); } foo(); // &amp;lt;-- foo()的调用位置 2. 绑定规则 判断this是如何绑定，首先找到函数的调用位置，然后对比下面的规则，看符合哪一条，且这些规则具有不同的优先级。
+2.1 默认绑定 首先，最常用的函数调用类型是：独立函数调用。这条规则可以看作是不符合其他规则时的默认规则。
+场景 1：独立函数的调用 因为this没有绑定到任何对象，所以默认绑定到全局。
+function foo() { console.log(this.a); } const a = 2; foo(); // 2 场景 2：将函数作为参数传入另一个函数时 这样的绑定，本质上仍然是独立函数的调用。
+function foo(fn) { fn(); } function bar() { console.log(this.a); // window } var a = 8; foo(bar); // 8 但，如果使用let和const，或是严格模式下，隐式绑定会丢失。</description>
+    </item>
+    
+    <item>
+      <title>如何优雅地用 JS 创建包含 0 ~ n 的整数数组</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-create-number-array/</link>
+      <pubDate>Sat, 23 Apr 2022 15:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-create-number-array/</guid>
+      <description>Codewar 上有一题非常简单的题：
+ 写一个函数，给任意一个正整数 n，求和。
+ Example:
+2 -&amp;gt; 1 + 2 // output: 35 -&amp;gt; 1 + 2 + 3 + 4 + 5 // output: 15【小学生解法】
+先用小学就学过等差数列的累加计算公式“( 首项 + 末项 ) * 项数 / 2”计算一下:
+2 -&amp;gt; (1+2)* 2/2 = 3 ✔5 -&amp;gt; (1+5)* 5/2 = 15 ✔本小学生做对了！
+【用 for 循环】
+也很容易想到的是用 for 循环解题：
+function sum(n) { let sum = 0; for (i = 0; i &amp;lt;= n; i++) { sum += i; } return sum; }  其实像这种累加的题目，感觉非常适合用 reduce 来做，于是问题变成了如何快速创建一个 0~n 的数组？</description>
+    </item>
+    
+    <item>
+      <title>变量的解构赋值</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/</link>
+      <pubDate>Sun, 28 Nov 2021 15:23:00 +0900</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/</guid>
+      <description>变量的解构 再ES6以前，为变量赋值只能直接指定值，而ES6允许以变量解构的方式赋值 （参考阮大神的文章）
+数组解构 数组解构允许我们按照一一对应的关系从数组中提取然后将值赋值给变量
+let arr = [1,2,3]; let [a,b,c] =arr; console.log(a); console.log(b); console.log(b); //输入结果为 1, 2, 3 情况1：完全匹配的解构 let [a, b, c] = [1, 2, 3];
+情况2：部分匹配的解构 let [x, y] = [1, 2, 3]; x // 1 y // 2  let [a, [b], d] = [1, [2, 3], 4]; a // 1 b // 2 d // 4 例子 codewar上有一道题：求一组正整数中的两个最小值的和。
+题目不难，但我看到其中的一个solution，觉得它非常聪明，它就用了数组的部分解构：
+function sumTwoSmallestNumbers(numbers) { var [ a, b ] = numbers.</description>
+    </item>
+    
+    <item>
+      <title>let &amp; const 对比 var 的新特性</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/let-n-const/</link>
+      <pubDate>Fri, 26 Nov 2021 22:13:01 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/let-n-const/</guid>
+      <description>let   let 关键字用于声明变量 用 let 声明的变量具有块级作用域，var 则没有，这可以阻止循环变量变成全局变量  var a = []; for (var i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 10 //i因为由var声明，所以是全局变量，经过循环后，i= 10，所以结果都为10 var a = []; for (let i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 6 //如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6  不存在变量提升：必须先声明，再使用 不能重复声明  let a = 0; let a; // Uncaught SyntaxError: Identifier &amp;#39;a&amp;#39; has already been declared  用 let 声明的变量具有暂时性死区  ES6 规定，let/const 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。 总之，在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。 这在语法上，称为 “暂时性死区”（Temporal Dead Zone，简称 TDZ）。</description>
+    </item>
+    
+  </channel>
+</rss>

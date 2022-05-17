@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GSAP on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/gsap/</link>
+    <description>Recent content in GSAP on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 12 Mar 2022 13:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/gsap/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>好玩的JavaScrip动画框架——GSAP 【intro试译】</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</link>
+      <pubDate>Sat, 12 Mar 2022 13:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</guid>
+      <description>GSAP 全称是 GreenSock Animation Platform，是一个非常强大的基于 JS 的动画库，初次接触的我深感，短短几行代码就能实现非常酷炫的特效。
+在学习的过程中，顺便把官网的教程翻译成中文参考。
+什么是 GSAP? GSAP 其实是在操控属性 动画最终可以归结为一个每秒多次改变属性值的过程，可以使某物产生移动、褪色、旋转等效果。GSAP 抓取一个起始值和一个终止值，然后每秒在它们之间插值 60 次。
+例如，在 1 秒内将一个物体的 X 坐标从 0 改变到 1000，并使其迅速向右移动。将不透明度从 1 到 0 渐变，使一个元素淡出。作为一个动画师，你的任务是决定改变哪些属性，多快，以及运动的风格（即缓动&amp;ndash;我们后面会讲到）。
+DOM, SVG, &amp;lt;canvas&amp;gt; 以及其他 GSAP 并没有预定义它可以处理哪些属性。它超级灵活，几乎可以适应你扔给它的任何东西。GSAP 可以对以下所有内容进行动画处理：
+ CSS: 2D and 3D transforms, colors, width, opacity, border-radius, margin, and 几乎所有的 CSS 属性 SVG 属性: viewBox, width, height, fill, stroke, cx, r, opacity, etc. 像 MorphSVG 和 DrawSVG 这样的插件可以用于高级效果 任何数值 例如，一个被渲染到&amp;lt;canvas&amp;gt;的对象。对三维场景中的相机位置进行动画处理，或对数值进行过滤。GSAP 经常与 Three.js 和 Pixi.</description>
+    </item>
+    
+  </channel>
+</rss>

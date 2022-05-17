@@ -1,0 +1,43 @@
+baseURL = 'http://blog.nekolas.cafe/'
+languageCode = 'en-us'
+title = 'Nic Tian'
+theme = "gruvbox"
+paginate = 5
+disqusShortname = "nekolas-blog"
+
+[params]
+  author = { name = "Nekolas Tian" }
+  description = "Cat that codes."
+  keywords = ["web dev", "javascript", "reader", "blog", "programmer", "peace & love"]
+  titlePrefix = ""
+  titleSuffix = "| nekolas.cafe"
+  dateFormat = "2006-01-02"
+  menuItemPrefix = "~/"
+  postTruncateLength = 250
+  hideGopher = false
+  disqusAutoLoad = true
+  disqusAutoLoadCount = true
+
+
+[[menu.links]]
+  name = "posts"
+  identifier = "posts"
+  url = "/posts"
+  weight = 9999
+
+[[menu.social]]
+  name = "Twitter"
+  url = "https://twitter.com/niqks07"
+  weight = 1
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/nicopcat"
+  weight = 10
+[[menu.social]]
+  name = "Instagram"
+  url = "https://instagram.com/niqks07"
+  weight = 30
+[[menu.social]]
+  name = "Email"
+  url = "mailto:tianfang07@outlook.com"
+  weight = 100

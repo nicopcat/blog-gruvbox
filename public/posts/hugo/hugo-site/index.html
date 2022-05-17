@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Hugo | 使用Hugo搭建静态博客：Hugo搭建篇| nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="为何选择Hugo如以及如何用Hugo创建个人博客，引入主题，写文章等等……">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/logo.png" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/hugo/hugo-site/">Hugo | 使用Hugo搭建静态博客：Hugo搭建篇</a></h1>
+    <time datetime="2021-11-20 17:23:01 &#43;0800 CST">2021-11-20</time>
+  </header>
+
+  <div class="body">
+    <h1 id="1-why-hugo">1. Why Hugo?</h1>
+<p>之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。</p>
+<p>于是我把目光投向了Hexo, Wordpress, Jekyll, Hugo等平台，无意间发现 <strong>Hugo 的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。</strong></p>
+<blockquote>
+<p>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。</p>
+</blockquote>
+<p>官方文档：👇</p>
+<ul>
+<li>
+<p><a href="https://gohugo.io/">Hugo: The world’s fastest framework for building websites</a></p>
+</li>
+<li>
+<p><a href="https://www.gohugo.org/">Hugo中文文档</a></p>
+</li>
+</ul>
+<p>时代在朝着短视频和更快更短的内容 feed 疯狂前进。时代越快我越慢（慢慢鼓捣文字），大概算是一种 old fashion 式的对抗？</p>
+<h1 id="2-hugo的安装和配置">2. Hugo的安装和配置</h1>
+<p><a href="https://gohugo.io/getting-started/quick-start/">Hugo-Quick Start</a> 有详细的教程，这里简单整理一下：</p>
+<h2 id="21-install-安装">2.1 Install 安装</h2>
+<p>三种安装方法任君挑选~</p>
+<ol>
+<li><strong>二进制安装</strong></li>
+</ol>
+<p>到 <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a> 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）</p>
+<p>注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。<br>
+具体步骤参考：
+<a href="https://www.niqks.tk/posts/hugo/how-to-setup-blog/#%e4%b8%8b%e8%bd%bdhugo">给J小将的写博客指南</a></p>
+<ol start="2">
+<li><strong>Mac</strong></li>
+</ol>
+<p>使用 <a href="https://brew.sh/">Homebrew</a>安装：</p>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>使用 <a href="https://www.macports.org/">MacPorts</a> 安装：</p>
+<pre tabindex="0"><code>port install hugo
+</code></pre><ol start="3">
+<li><strong>Windows</strong></li>
+</ol>
+<p>使用 <a href="https://chocolatey.org/">Chocolatey</a> 安装：</p>
+<pre tabindex="0"><code>choco install hugo -confirm
+</code></pre><p>下载完成后，输入:</p>
+<pre tabindex="0"><code>hugo version
+</code></pre><p>如果提示Hugo版本号，即表示安装成功。此时，目录下会有一个名为 <code>Hugo</code> 的文件夹。</p>
+<p>推荐大家先安装好Git，方便之后向自己的仓库推送。</p>
+<h2 id="22-create-a-new-site-生成站点">2.2 Create a New Site 生成站点</h2>
+<p>你可以通过指令快速生成一个站点：</p>
+<pre tabindex="0"><code>hugo new site quickstart
+</code></pre><p>恭喜你！此时你已成功创建了一个名为 <code>quickstart</code> 的站点，以下 <code>quickstart</code> 作为站点名。</p>
+<h2 id="23-add-a-theme-添加一个主题">2.3 Add a Theme 添加一个主题</h2>
+<p>你可以在 themes.gohugo.io 挑选一个自己喜欢的主题。我选择的主题是 <strong><a href="https://themes.gohugo.io/themes/hugo-papermod/">PaperMod</a></strong>。</p>
+<p>(注：PaperMod 主题使用的是yml/yaml格式的配置文件，而hugo配置文件默认的后缀是.toml，该主题建议你转成.yaml)。转换指令：</p>
+<pre tabindex="0"><code>hugo new site &lt;name of site&gt; -f yml
+</code></pre><hr>
+<p>PaperMod 文档中列出了<a href="https://github.com/adityatelange/hugo-PaperMod/wiki/Installation#method-1">三种安装方式</a>。如果你对其他主题感兴趣，你可以按照文档中的步骤安装。</p>
+<ol>
+<li>使用 git clone:</li>
+</ol>
+<pre tabindex="0"><code>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+</code></pre><ol start="2">
+<li>使用 <a href="https://www.atlassian.com/git/tutorials/git-submodule">git submodule</a></li>
+</ol>
+<pre tabindex="0"><code>git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
+</code></pre><ol start="3">
+<li>
+<p>使用直接下载ZIP包
+进到 PaperMod <a href="https://themes.gohugo.io/themes/hugo-papermod/">主题页面</a> ，点击 <code>Download</code> ，再点击 <code>Code</code>，选择 <code>Download ZIP</code>，得到一个zip文件，解压后放入 <code>hugo/quickstart/themes/</code> 内，并需要将文档名由默认的 <code>/hugo-PaperMod-master</code> 改为 <code>/PaperMod</code>，否则无法正确匹配主题。</p>
+</li>
+<li>
+<p>最后一步
+在 <code>config.yml</code> 中添加：</p>
+<pre tabindex="0"><code>theme: &quot;PaperMod&quot;
+</code></pre></li>
+<li>
+<p>更新主题</p>
+<pre tabindex="0"><code>cd themes/PaperMod
+git pull
+</code></pre><p>或使用 git submodule 更新</p>
+<pre tabindex="0"><code>git submodule update --remote --merge
+</code></pre></li>
+</ol>
+<h2 id="24-add-some-content-发表内容">2.4 Add Some Content 发表内容</h2>
+<p>站点已经建好，该怎么写帖子呢？<br>
+两种方法：</p>
+<h3 id="手动添加">手动添加</h3>
+<p>在 <code>quickstart/content/</code> 文件夹下新建一个<code>.md</code>文件，如 <code>my-first-post.md</code>。在文章的最前面，通常需要写<code>front-matter</code>，中文可以翻译成<code>预定义变量</code>，可以用来指定文章的元属性。
+下面是一个<code>front-matter</code>例子：</p>
+<pre tabindex="0"><code>---
+title: &quot;My First Post&quot;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+</code></pre><p>Hugo文档的说明：https://gohugo.io/content-management/front-matter/</p>
+<h3 id="利用cmd指令新建帖子可以自动生成时间和标题等">利用cmd指令新建帖子（可以自动生成时间和标题等）</h3>
+<p>我们知道，<code>front-matter</code>可以指定<code>title</code>以及<code>date</code>属性，但如果使用下面的指令新建帖子，则会自动生成时间：</p>
+<pre tabindex="0"><code>&lt;!-- 在/posts/ 文件夹下 新建一篇名为 my-first-post 的文章 --&gt;
+hugo new posts/my-first-post.md
+</code></pre><p>此时，打开 <code>/content/</code> 文件夹，你可以看到<code>my-first-post.md</code>文件，用编辑器打开，就可以开始写文章了。</p>
+<h2 id="25-livereload-预览服务器">2.5 LiveReload 预览服务器</h2>
+<pre tabindex="0"><code>hugo serve
+</code></pre><p>这个指令可以查看服务器情况，并得到一个镜像访问地址 http://localhost:1313/。
+有点像 VS Code 里面的 liveReload 插件，方便我们在开发环境实时预览对站点所做的更改，这个功能非常好用。</p>
+<h1 id="3-其他">3. 其他</h1>
+<hr>
+<p>Hugo的可玩性其实非常高，我在基本框架上增加了：</p>
+<ul>
+<li>评论系统</li>
+<li>About页面</li>
+<li>搜索页面</li>
+<li><a href="https://immmmm.com/bb-by-wechat-pro/">哔哔点啥</a>页面</li>
+</ul>
+<h1 id="4-托管与自定义域名">4. 托管与自定义域名</h1>
+<ul>
+<li>有了静态文件，需要一个服务商帮你把博客“挂”到网上，Github Pages是免费的绝佳选择。</li>
+</ul>
+<p>参考：<a href="https://www.niqks.tk/posts/hugo/hugo-githubpages/">Hugo | Github Pages托管篇</a></p>
+<ul>
+<li>自定义域名</li>
+</ul>
+<p>参考：<a href="https://www.niqks.tk/posts/hugo/hugo-custom-domain/">Hugo | Custom Domain 自定义域名篇</a></p>
+
+  </div>
+
+  
+    <footer>
+      
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+    </footer>
+  
+</article>
+
+
+<div class="pagination">
+  <div class="left">
+  
+  </div>
+  <div class="right">
+  
+    <a href="/posts/hugo/how-to-add-toc-on-a-hugo-post/">
+      <time datetime="2021-12-20 22:59:16 &#43;0800 CST">2021-12-20 &raquo;</time>
+      Hugo Papermod主题 创建(侧边)目录
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+  loadDisqusComments();
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+
+</body>
+
+</html>

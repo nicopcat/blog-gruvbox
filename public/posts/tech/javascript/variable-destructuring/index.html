@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>变量的解构赋值| nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="Cat that codes.">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/logo.png" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/variable-destructuring/">变量的解构赋值</a></h1>
+    <time datetime="2021-11-28 15:23:00 &#43;0900 &#43;0900">2021-11-28</time>
+  </header>
+
+  <div class="body">
+    <h1 ignore="true" id="变量的解构">变量的解构</h1>
+<p>再ES6以前，为变量赋值只能直接指定值，而ES6允许以变量解构的方式赋值
+（参考<a href="https://es6.ruanyifeng.com/?search=%E8%A7%A3%E6%9E%84&amp;x=0&amp;y=13#docs/destructuring">阮大神的文章</a>）</p>
+<h2 id="数组解构">数组解构</h2>
+<p>数组解构允许我们按照一一对应的关系从数组中提取然后将值赋值给变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span><span style="color:#a6e22e">arr</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
+
+<span style="color:#75715e">//输入结果为 1, 2, 3
+</span></code></pre></div><h3 id="情况1完全匹配的解构">情况1：完全匹配的解构</h3>
+<p><code>let [a, b, c] = [1, 2, 3];</code></p>
+<h3 id="情况2部分匹配的解构">情况2：部分匹配的解构</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+<span style="color:#a6e22e">x</span> <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">y</span> <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>, [<span style="color:#a6e22e">b</span>], <span style="color:#a6e22e">d</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>, [<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#ae81ff">4</span>];
+<span style="color:#a6e22e">a</span> <span style="color:#75715e">// 1
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">b</span> <span style="color:#75715e">// 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">d</span> <span style="color:#75715e">// 4
+</span></code></pre></div><h4 id="例子">例子</h4>
+<p>codewar上有<a href="https://www.codewars.com/kata/558fc85d8fd1938afb000014/javascript">一道题</a>：求一组正整数中的两个最小值的和。</p>
+<p>题目不难，但我看到其中的一个solution，觉得它非常聪明，它就用了数组的部分解构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumTwoSmallestNumbers</span>(<span style="color:#a6e22e">numbers</span>) {  
+  <span style="color:#66d9ef">var</span> [ <span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> ] <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>)
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>
+}
+</code></pre></div><p>我的答案：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sumTwoSmallestNumbers</span>(<span style="color:#a6e22e">numbers</span>) {  
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">r</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">numbers</span>.<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">a</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">b</span>);
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">+</span> <span style="color:#a6e22e">r</span>[<span style="color:#ae81ff">1</span>];
+}
+</code></pre></div><h3 id="情况3解构失败">情况3：解构失败</h3>
+<ul>
+<li>无法匹配上</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">bar</span>, <span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>];
+<span style="color:#75715e">//如果解构不成功，变量的值就等于undefined。
+</span></code></pre></div><ul>
+<li>如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 报错
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span>;
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">NaN</span>;
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">undefined</span>;
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">foo</span>] <span style="color:#f92672">=</span> {};
+</code></pre></div><h2 id="对象解构">对象解构</h2>
+<p>对象解构允许我们使用变量的名字匹配对象的属性，匹配成功将对象属性的值赋值给变量</p>
+<blockquote>
+<p>对象的解构与数组有一个重要的不同。数组的元素是按次序排列的，变量的取值由它的位置决定；而对象的属性<strong>没有次序</strong>，变量必须与属性<strong>同名</strong>，才能取到正确的值。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">bar</span>, <span style="color:#a6e22e">foo</span> } <span style="color:#f92672">=</span> { <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;aaa&#39;</span>, <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;bbb&#39;</span> };
+<span style="color:#a6e22e">foo</span> <span style="color:#75715e">// &#34;aaa&#34;
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span> <span style="color:#75715e">// &#34;bbb&#34;
+</span></code></pre></div><h2 id="变量解构的用途">变量解构的用途</h2>
+<h3 id="1-交换变量的值">1. 交换变量的值</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
+
+[<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>] <span style="color:#f92672">=</span> [<span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span>];
+</code></pre></div><p>这样写更优雅易读</p>
+<h3 id="2-从函数返回多个值">2. 从函数返回多个值</h3>
+<p>函数只能返回一个值，如果要返回多个值，只能将它们放在数组或对象里返回。有了解构赋值，取出这些值就非常方便。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 返回一个数组
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">example</span>() {
+  <span style="color:#66d9ef">return</span> [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>];
+}
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>, <span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span> <span style="color:#a6e22e">example</span>();
+<span style="color:#75715e">// 返回一个对象
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">example</span>() {
+  <span style="color:#66d9ef">return</span> {
+    <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#a6e22e">bar</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
+  };
+}
+<span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">bar</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">example</span>();
+</code></pre></div><h3 id="3-函数参数的定义">3. 函数参数的定义</h3>
+<p>解构赋值可以方便地将一组参数与变量名对应起来。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 参数是一组有次序的值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">f</span>([<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>]) { ... }
+<span style="color:#a6e22e">f</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>]);
+
+<span style="color:#75715e">// 参数是一组无次序的值
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">f</span>({<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">z</span>}) { ... }
+<span style="color:#a6e22e">f</span>({<span style="color:#a6e22e">z</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">y</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>});
+</code></pre></div><h3 id="4-提取json的数据">4. 提取JSON的数据</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">jsonData</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>,
+  <span style="color:#a6e22e">status</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;OK&#34;</span>,
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> [<span style="color:#ae81ff">867</span>, <span style="color:#ae81ff">5309</span>]
+};
+<span style="color:#66d9ef">let</span> { <span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">number</span> } <span style="color:#f92672">=</span> <span style="color:#a6e22e">jsonData</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">id</span>, <span style="color:#a6e22e">status</span>, <span style="color:#a6e22e">number</span>);
+<span style="color:#75715e">// 42, &#34;OK&#34;, [867, 5309]
+</span></code></pre></div>
+  </div>
+
+  
+    <footer>
+      
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+    </footer>
+  
+</article>
+
+
+<div class="pagination">
+  <div class="left">
+  
+    <a href="/posts/tech/javascript/let-n-const/">
+      <time datetime="2021-11-26 22:13:01 &#43;0800 CST">&laquo; 2021-11-26</time>
+      let &amp; const 对比 var 的新特性
+    </a>
+  
+  </div>
+  <div class="right">
+  
+    <a href="/posts/tech/javascript/js-create-number-array/">
+      <time datetime="2022-04-23 15:00:00 &#43;0800 CST">2022-04-23 &raquo;</time>
+      如何优雅地用 JS 创建包含 0 ~ n 的整数数组
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+  loadDisqusComments();
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+
+</body>
+
+</html>

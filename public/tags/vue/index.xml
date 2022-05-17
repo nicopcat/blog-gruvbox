@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vue on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/vue/</link>
+    <description>Recent content in vue on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Apr 2022 17:31:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>v-cloak: 隐藏未编译的raw template</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</link>
+      <pubDate>Sun, 17 Apr 2022 17:31:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</guid>
+      <description>进入Gallery的时候，总会先显示很难看的 Vue 源代码的 mustache brackets。这是因为网速慢一点的话，先加载js文件，等到挂载结束才render页面。
+于是 v-cloak 指令就排上用场了:
+ Used to hide un-compiled template until it is ready.
+ v-cloak 经常用来隐藏未编译的模板，直到渲染完成。
+ v-cloak will remain on the element until the associated component instance is mounted. Combined with CSS rules such as [v-cloak] { display: none }, it can be used to hide the raw templates until the component is ready.
+ v-cloak 将会作用在某个元素，直到完成挂载。结合CSS，如 [v-cloak] { display: none } 使用，可以用来隐藏还没准备好的模板。
+例子：</description>
+    </item>
+    
+    <item>
+      <title>Vue-cli 重写 to-do list 之所思</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/dodo-v2/</link>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/dodo-v2/</guid>
+      <description>Dodo 1.0 是一款用 jQuery 写的待办记事Web App，当时是在看黑马JS的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂😂。随着Vue知识的增加，遂想用 Vue.js 重写一下这款App，就当练手。
+项目体验：
+Dodo 1.0
+Dodo 2.0
+Dodo虽小，问题可不少，独立地从 0 构建一个 App，思考的还挺多。我自己非常清楚，很多地方可以简化或有更好的办法，我可能现在没法做到简化，但以后一定可以。于是用这篇文字记录解决方案和过程中的所思所想。
+localStorage 重做项目也相当于复习localStorage的知识了。
+localStorage概述  作为 Web Storage API 的接口，Storage 提供了访问特定域名下的会话存储或本地存储的功能，例如，可以添加、修改或删除存储的数据项。
+ localStorage 里面存储的数据不会过期，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。
+（session这个单词让我想起，在一些外国网站，如果要找客服聊，结束按钮写的就是“End This Session”，结束这段会话。）
+在Dodo项目中需要一直储存用户的todos，所以需要的是不会过期的 localStorage。
+localStorage的方法 Storage 对象有几个方法，也可以用在localStorage上：
+   方法 描述     localStorage.getItem() 接受一个键名作为参数，返回键名对应的值。   localStorage.setItem() 该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。   localStorage.removeItem() 该方法接受一个键名作为参数，并把该键名从存储中删除。   localStorage.clear() 清空存储中的所有键名。    在Dodo 中，只是用了两个方法，一个是localStorage.getItem()，用以拿到数据，另一个是localStorage.setItem()，用来储存数据。
+Storage.setItem() 可以试着储存一些内容：</description>
+    </item>
+    
+    <item>
+      <title>Vue课程笔记：Animations and Transitions</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</link>
+      <pubDate>Sat, 05 Mar 2022 01:50:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</guid>
+      <description>一般来说，动画可以由CSS完成，Vue也提供了一系列帮助过渡和动画的工具。
+仅用CSS控制动画 直接定义属性 假设有一个正方形block。 动画效果：.5秒后，向左移动80像素，背景颜色变为royalblue:
+.animate { background-color: royalblue; transform: translateX(-80px); transition: all 0.5s ease-out; } 效果： 使用animation + @keyframes实现复杂的动画效果 用@keyframes可以实现动画在不同帧数时的表现
+.animate { animation: slide-scale 2.8s ease; } @keyframes slide-scale { 0% { transform: translateX(0); } 25% { transform: translateX(-120px); background-color: royalblue; } 50% { transform: translateX(0px); background-color: limegreen; } 75% { transform: translateX(120px); background-color: lightgreen; } 100% { transform: translateX(0px); background-color: orange; } } 效果： Vue.js 过渡&amp;amp; 动画 单元素/组件的过渡 用&amp;lt;transition&amp;gt;&amp;lt;/transition&amp;gt;包裹目标元素或组件，可以添加进入或离开过渡效果</description>
+    </item>
+    
+    <item>
+      <title>用Vue实现多标签页面（tab栏）切换的两种方法</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</link>
+      <pubDate>Sat, 19 Feb 2022 14:25:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</guid>
+      <description>这里有一个用简单的button和子组件做的标签页面。 效果如下： 目标 点击Active Goals按钮，就可以激活Active Goals组件下的内容。同样的，点击Manage Goals按钮，就可以激活Manage Goals组件下的内容。
+结构 HTML结构:
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;button&amp;gt;Active Goals&amp;lt;/button&amp;gt; &amp;lt;button&amp;gt;Manage Goals&amp;lt;/button&amp;gt; &amp;lt;active-goals&amp;gt;&amp;lt;/active-goals&amp;gt; &amp;lt;manage-goals&amp;gt;&amp;lt;/manage-goals&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; active-goals组件：
+&amp;lt;template&amp;gt; &amp;lt;h2&amp;gt;这是 Active Goals 组件的内容&amp;lt;/h2&amp;gt; &amp;lt;/template&amp;gt; manage-goals组件：
+&amp;lt;template&amp;gt; &amp;lt;h2&amp;gt;这是 Manage Goals 组件的内容&amp;lt;/h2&amp;gt; &amp;lt;/template&amp;gt; 都是很简单的两个组件。
+实现 方法1：v-if 结合 methods 传值 定义一个data项selectedBtn:
+data() { return { selectedBtn: &amp;#34;active-goals&amp;#34; }; 给button绑定点击事件：
+&amp;lt;template&amp;gt; &amp;lt;div&amp;gt; &amp;lt;button @click=&amp;#34;setSelectedBtn(&amp;#39;active-goals&amp;#39;)&amp;#34;&amp;gt;Active Goals&amp;lt;/button&amp;gt; &amp;lt;button @click=&amp;#34;setSelectedBtn(&amp;#39;manage-goals&amp;#39;)&amp;#34;&amp;gt;Manage Goals&amp;lt;/button&amp;gt; &amp;lt;active-goals&amp;gt;&amp;lt;/active-goals&amp;gt; &amp;lt;manage-goals&amp;gt;&amp;lt;/manage-goals&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; 当我们点击按钮，参数就会传到接下来定义的方法中
+methods: { setSelectedBtn(btn) { this.selectedBtn = btn; } 每当点击按钮，我们就能让Vue知道我们点击的是哪一个按钮，然后用v-if显示该组件的内容:</description>
+    </item>
+    
+    <item>
+      <title>Hugo | Creat a Gallery Page with Spolight Style </title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-gallery-by-vue/</link>
+      <pubDate>Sun, 06 Feb 2022 03:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-gallery-by-vue/</guid>
+      <description>1.Create a gallery page My goal is to build a galley sub page which can contain my photo works.
+The problem is that I don&amp;rsquo;t know how to use .md file to render these markups mixed with Vue scripts so that I had to put a raw .html file and then imported css stylesheet from my theme.
+Stacks:
+ HTML CSS Vue.js  1.2 HTML They are simple markups:
+&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wrapper&amp;#34;&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Vue 3 | emits 警告</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/</link>
+      <pubDate>Sun, 30 Jan 2022 15:17:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/</guid>
+      <description>用 $emits 写组件通信的时候报错了：
+ [Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the &amp;ldquo;emits&amp;rdquo; option. at &amp;lt;FortuneTransfer cash=&amp;ldquo;珠宝若干&amp;rdquo; real-easte=&amp;ldquo;House in Winona&amp;rdquo; onDel=fn&amp;gt; at  父组件部分
+app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#39;, &amp;#39;realEaste&amp;#39;], template: ` &amp;lt;h1&amp;gt;我要 {{ cash }}&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;我还要 {{ realEaste }}&amp;lt;/h2&amp;gt; &amp;lt;button @click=&amp;#34;$emit(&amp;#39;del&amp;#39;)&amp;#34;&amp;gt;删除&amp;lt;/button&amp;gt; &amp;lt;br&amp;gt; ` }) app.</description>
+    </item>
+    
+    <item>
+      <title>用 Vue 写一个天气 Web App</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/vue-weather-app/</link>
+      <pubDate>Thu, 27 Jan 2022 13:55:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-weather-app/</guid>
+      <description>在油管看到一个用Vue-cli 3写天气App的视频，非常简单易上手，界面也很好看，之前也没用过vue-cli 3写+打包应用，就打算跟着做练练手。
+项目地址： https://www.niqks.tk/weather-app/
+油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
+1. 前提 安装这些东西：
+ npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
+cd weather-app npm install -g @vue/cli 安装完毕提示：
+ Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
+2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
+vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
+    </item>
+    
+  </channel>
+</rss>

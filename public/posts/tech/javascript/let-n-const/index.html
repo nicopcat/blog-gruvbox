@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>let &amp; const 对比 var 的新特性| nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="Cat that codes.">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/logo.png" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/let-n-const/">let &amp; const 对比 var 的新特性</a></h1>
+    <time datetime="2021-11-26 22:13:01 &#43;0800 CST">2021-11-26</time>
+  </header>
+
+  <div class="body">
+    <h2 id="let">let</h2>
+<hr>
+<ul>
+<li>let 关键字用于声明变量</li>
+<li>用 let 声明的变量具有<strong>块级作用域</strong>，var 则没有，这可以阻止循环变量变成全局变量</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
+    };
+}
+<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">6</span>](); <span style="color:#75715e">// 10
+</span><span style="color:#75715e">//i因为由var声明，所以是全局变量，经过循环后，i= 10，所以结果都为10
+</span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [];
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
+    <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
+    };
+}
+<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">6</span>](); <span style="color:#75715e">// 6
+</span><span style="color:#75715e">//如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6
+</span></code></pre></div><ul>
+<li>不存在变量提升：必须先声明，再使用</li>
+<li>不能重复声明</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span>;
+<span style="color:#75715e">// Uncaught SyntaxError: Identifier &#39;a&#39; has already been declared
+</span></code></pre></div><ul>
+<li>用 let 声明的变量具有暂时性死区
+<blockquote>
+<p>ES6 规定，<code>let/const</code> 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。
+总之，在代码块内，使用 <code>let</code> 命令声明变量之前，该变量都是不可用的。
+这在语法上，称为 <strong>“暂时性死区”</strong>（Temporal Dead Zone，简称 <strong>TDZ</strong>）。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="const">const</h2>
+<hr>
+<ul>
+<li>和 let 一样，const 关键字声明的常量具有<strong>块级作用域</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">true</span>) {
+  <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">MAX</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>;
+}
+
+<span style="color:#a6e22e">MAX</span> <span style="color:#75715e">// Uncaught ReferenceError: MAX is not defined
+</span></code></pre></div><ul>
+<li>const 关键字声明的常量必须赋初始值</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">foo</span>;
+<span style="color:#75715e">// SyntaxError: Missing initializer in const declaration
+</span></code></pre></div><ul>
+<li>const 变量赋值的内存地址（值）不可更改，但数组用. 和 <input disabled="" type="checkbox"> 赋值时不受影响</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">PI</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.1415</span>;
+<span style="color:#a6e22e">PI</span> <span style="color:#75715e">// 3.1415
+</span><span style="color:#75715e"></span>
+<span style="color:#a6e22e">PI</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>;
+<span style="color:#75715e">// TypeError: Assignment to constant variable.
+</span></code></pre></div><p><strong>const 保存常量的本质</strong>：</p>
+<blockquote>
+<p>const 实际上保证的，并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动。对于简单类型的数据（数值、字符串、布尔值），值就保存在变量指向的那个内存地址，因此等同于常量。但对于复合类型的数据（主要是对象和数组），变量指向的内存地址，保存的只是一个指向实际数据的指针，const 只能保证这个指针是固定的（即总是指向另一个固定的地址），至于它指向的数据结构是不是可变的，就完全不能控制了。因此，将一个对象声明为常量必须非常小心。</p>
+</blockquote>
+<h2 id="三者区别">三者区别</h2>
+<p><img src="https://i.loli.net/2021/11/26/MEpljmaveXrDcRZ.png" alt="20211126232720"></p>
+
+  </div>
+
+  
+    <footer>
+      
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+    </footer>
+  
+</article>
+
+
+<div class="pagination">
+  <div class="left">
+  
+  </div>
+  <div class="right">
+  
+    <a href="/posts/tech/javascript/variable-destructuring/">
+      <time datetime="2021-11-28 15:23:00 &#43;0900 &#43;0900">2021-11-28 &raquo;</time>
+      变量的解构赋值
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+  loadDisqusComments();
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/hugo/</link>
+    <description>Recent content in Hugo on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Mar 2022 00:33:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用Github Action自动部署Hugo博客Public页面</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/github-action/</link>
+      <pubDate>Sat, 26 Mar 2022 00:33:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/github-action/</guid>
+      <description>在知道Github Action之前，我甚至没有托管我的博客源码，导致有些时候代码改乱了，也没有后悔药可以吃。在折腾J小将的博客的时候，实现了用Github Action部署Hugo博客，即，只需要push一次源码，然后自动生成静态文件到静态分支。
+于是开始折腾自己的博客：开始把源码放到一个仓库（设为私密），公开的静态码放另一个仓库，每次只需要更新源码仓库即可。
+写此帖记录一下处理步骤。
+参考了一下两位的文章，非常有帮助：
+https://zhuanlan.zhihu.com/p/403221054
+https://dwye.dev/post/hugo-github-action/
+简单描述一下步骤 首先需要在本地文件博客根目录创建/.github/workflows/gh-pages.yml，写一些配置。还需要生成一对SSH密钥来进行Github配对，分别是Secrey Key和Public Key，分别放在源码仓库和静态仓库的配置中。
+Hugo 我这里是一个仓库nicopcat/Hugo-Sources存放源码，一个仓库nicopcat/nicopcat.github.io存放静态文件，主分支都是 main，有submodule，非extended版本。
+生成SSH密钥   检查是否已经生成过SSH
+查找路径C:\Users\root\.ssh，里面有两个文件，一个是.pub格式，放的是可以公开的公钥（Public Key），另一个则是没有格式的密钥（Secret Key），不要与人分享。
+  也许你已经生成过密钥并由于种种原因放在了 Github - settings - SSH and GPG keys 里：
+如果有，可能需要删除，不然会与接下来的配置冲突。
+  如果之前没有生成过密钥，则输入以下指令：
+ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码仓库，比如我的仓库nicopcat/Hugo-Sources下：
+ 找到 Settings - Secrets - Action 看到Secret，就知道是要放密钥（Secret Key） 点 New repository secret ，新增密钥，将.ssh/里的密钥全部拷贝进来，内容以-----BEGIN OPENSSH PRIVATE KEY-----开头 名字必须与下面github action workflows文件中的吻合，比如我的是ACTIONS_DEPLOY_KEY     在静态文件仓库，即nicopcat/nicopcat.</description>
+    </item>
+    
+    <item>
+      <title>给J小将的写博客指南</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/how-to-setup-blog/</link>
+      <pubDate>Sat, 26 Mar 2022 00:33:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/how-to-setup-blog/</guid>
+      <description>剧情摘要：前些日子，帮J小将在主机上搭了博客，但是如何让她在另一台电脑也能写文章呢？
+ 前提准备 下载Git  地址：https://git-scm.com/download/win 选择64-bit Git for Windows Setup 打开安装包，按照推荐项一路enter下去就好 在任意一个窗口地址栏输入cmd，按回车，输入git version，回车。若出现版本号则说明下载成功。  下载Hugo 方法一：二进制安装包  地址：https://github.com/gohugoio/hugo/releases 找到 hugo_extended_0.95.0_Windows-64bit.zip 安装包，下载。 创建文件夹  创建一个新的文件夹，G:\Hugo 创建一个新的文件夹，G:\Hugo\bin   确保 hugo.exe 文件在 G:\Hugo\bin 文件夹中 把 hugo.exe 可执行文件添加到你的 PATH路径中  搜索：环境变量 - 编辑系统环境变量 - 高级 - 环境变量 系统变量 - 找到path - 双击打开 - 新建变量 - 输入G:\Hugo\bin - 保存   运行hugo.exe 输入hugo version查看得到版本号就说明安装成功。  方法二：用chocoley安装  地址：https://chocolatey.org/install ,按照提示安装即可 运行 普通版本  choco install hugo -confirmextended版本：</description>
+    </item>
+    
+    <item>
+      <title>Hugo 和 PaperMod主题的小功能</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/tips-for-playing-hugo/</link>
+      <pubDate>Mon, 14 Mar 2022 00:18:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/tips-for-playing-hugo/</guid>
+      <description>1. 将hack字体CDN link 引入 head 最简单的方法是把hack字体的CDN地址引入head.
+&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt; 接下来就是找到正确的地方。
+在看某些教程的时候，我非常困惑，文件地址到底是根目录下，还是theme下面的文件？
+我们最终的目的是把上面的link放到在index.html的&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;部分，所以需要找到post是在哪里render成head的。
+我们发现theme/partials里面有一个head.html，确实可以修改这里，但我们最好不要修改原来的主题，否则很难维护，PaperMod主题在partials里配备了可供用户自定义的文件extend_head.html。
+找到 根目录/themes/PaperMod/layouts/partials/extend_head.html，插入上面的link即可：
+{{- /* Head custom content area start */ -}} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt; {{- /* Insert any custom code (web-analytics, resources, etc.) - it will appear in the&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section of every page. */ -}} {{- /* Can be overwritten by partial with the same name in the global layouts. */ -}} {{- /* Head custom content area end */ -}} 引入成功，接下来需要找到相关的css文件修改。</description>
+    </item>
+    
+    <item>
+      <title>Hugo | Creat a Gallery Page with Spolight Style </title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-gallery-by-vue/</link>
+      <pubDate>Sun, 06 Feb 2022 03:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-gallery-by-vue/</guid>
+      <description>1.Create a gallery page My goal is to build a galley sub page which can contain my photo works.
+The problem is that I don&amp;rsquo;t know how to use .md file to render these markups mixed with Vue scripts so that I had to put a raw .html file and then imported css stylesheet from my theme.
+Stacks:
+ HTML CSS Vue.js  1.2 HTML They are simple markups:
+&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wrapper&amp;#34;&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Hugo | Custom Domain 自定义域名篇</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</link>
+      <pubDate>Sun, 09 Jan 2022 13:55:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</guid>
+      <description>你可以在网上买域名，也可以使用免费域名。
+下面的文章将介绍如何在免费域名网站 freenom 购买并更换为 blog 域名。
+1. 购买免费域名  进到 freenom 官网，注册一下，选择其中一个结账    但这个网站有个小 bug，直接点 get it now 会显示 Not available。此时，你需要复制整个域名，比如 hugo666.tk 到搜索框，再一次 Check Availibility，接着点 Checkout。
+  Period 选 12 months FREE, 完成结账，全程不需要银行卡，非常友好。
+  点击导航栏的 Services - My Domains 在这里你能看到刚刚得到的域名，这个页面不要关，稍后需要继续设置。
+  2. 域名解析 - DNSPod   打开 DNSPod，用微信注册一下账号，需要实名登记。完成以后点击顶上的 DNS，选择 DNS解析
+  此时已经进到 我的域名 版面
+   点击 添加域名 - 确认 这时会提示未正确设置 DNS 服务器   这时，需要复制这两个 正确的DNS服务器 地址。</description>
+    </item>
+    
+    <item>
+      <title>Hugo | 博客部署篇</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</link>
+      <pubDate>Sat, 08 Jan 2022 13:55:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</guid>
+      <description>使用 Netlify 托管 最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！
+可以参考我的另一篇文章 如何使用 Netlify 快速部署个人项目 
+流程  首先需要把源码发布到你的 Github 仓库，步骤参考下文 如何部署到github-pages 👇 进入 Netlify，注册，创建新项目，选择 Add new site 选择从 Import an existing project - 连接 Github - 选择刚刚创建的博客项目仓库 Basic build settings:  Build command: hugo // 部署前先运行 hugo 指令 生成新的 Public 文件 Publish directory: public // 指定 public 文件夹为部署文件   点击 Deploy site 完成部署  使用 Github Pages 托管 Github Pages 是给啥 搭建篇 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</description>
+    </item>
+    
+    <item>
+      <title>Hugo Papermod主题 创建(侧边)目录</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/how-to-add-toc-on-a-hugo-post/</link>
+      <pubDate>Mon, 20 Dec 2021 22:59:16 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/how-to-add-toc-on-a-hugo-post/</guid>
+      <description>我在逛友邻的blog或是技术贴时发现，文章里若是有一个目录，就可以方便读者快速浏览自己看到的内容。在此之前，我尝试过VS Code的一些插件，但效果都不是特别理想，直到阅读了谌中钱 的一篇VSCode 插件 - Markdown Preview Enhanced 详解，才几乎完美地解决了在md文档中生成中文TOC的需求。
+1. MPE 插件是什么  Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。
+  官方文档地址：Markdown Preview Enhanced 安装：ctrl + shift + x 搜索 Markdown Preview Enhanced  2. MPE 有什么用 2.1 实时预览功能 写 markdown 文档或 码字时，可以随时查看实时生成的效果，非常方便~
+使用方法：
+ 打开任意markdown文件，点击右键，选择MPE: 打开侧边预览 或是使用快捷键shift+k v  2.2 生成TOC树 我是打开预览后，发现右上角有三个按钮，其中第一个可以在MPE内部生成一个完美的TOC，于是在网上搜索能否把它生成的TOC“占为己用”，没想到真的可以(感觉挖到宝) 步骤：
+ 可以通过 cmd-shift-p 然后选择 Markdown Preview Enhanced: Create Toc 命令来创建 TOC  可以创建多个TOCs config:  在你的 TOC 中排除一个标题，请在你的标题 后面 添加 {ignore=true} orderedList: 是否使用有序列表。 depthFrom, depthTo [1~6] 包含的。 ignoreLink 如果设置为 true，那么 TOC 将不会被超链接     上面的指令其实就是生成下面这句代码&amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Hugo | 使用Hugo搭建静态博客：Hugo搭建篇</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-site/</link>
+      <pubDate>Sat, 20 Nov 2021 17:23:01 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-site/</guid>
+      <description>1. Why Hugo? 之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。
+于是我把目光投向了Hexo, Wordpress, Jekyll, Hugo等平台，无意间发现 Hugo 的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。
+ Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
+ 官方文档：👇
+  Hugo: The world’s fastest framework for building websites
+  Hugo中文文档
+  时代在朝着短视频和更快更短的内容 feed 疯狂前进。时代越快我越慢（慢慢鼓捣文字），大概算是一种 old fashion 式的对抗？
+2. Hugo的安装和配置 Hugo-Quick Start 有详细的教程，这里简单整理一下：
+2.1 Install 安装 三种安装方法任君挑选~
+ 二进制安装  到 Hugo Releases 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）
+注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
+具体步骤参考： 给J小将的写博客指南
+Mac  使用 Homebrew安装：
+brew install hugo 使用 MacPorts 安装：
+port install hugo Windows  使用 Chocolatey 安装：</description>
+    </item>
+    
+  </channel>
+</rss>

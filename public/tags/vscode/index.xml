@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VSCode on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/vscode/</link>
+    <description>Recent content in VSCode on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 18 Apr 2022 16:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/vscode/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在vscode 启动调试工具</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</link>
+      <pubDate>Mon, 18 Apr 2022 16:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</guid>
+      <description>除了浏览器里的dev tool，非常牛逼的 VS Code 也内置了调试控制台，只需按照步骤配置 launch.json 文件即可。
+步骤  打开代码文件夹 点右侧菜单栏的 运行和调试 或快捷键 Ctrl + Shift + D 点击 创建 launch.json 文件。VSCode 会在工作区的 .vscode 文件夹下生成一个新的 launch.json 文件 可以观察到，左侧有 lauch 菜单（一个类似播放的按钮），可以用此菜单启动服务器了。    参考：https://segmentfault.com/a/1190000022804681</description>
+    </item>
+    
+  </channel>
+</rss>

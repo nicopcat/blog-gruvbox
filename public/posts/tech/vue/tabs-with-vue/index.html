@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>用Vue实现多标签页面（tab栏）切换的两种方法| nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="Cat that codes.">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="/logo.png" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/tabs-with-vue/">用Vue实现多标签页面（tab栏）切换的两种方法</a></h1>
+    <time datetime="2022-02-19 14:25:00 &#43;0800 CST">2022-02-19</time>
+  </header>
+
+  <div class="body">
+    <p>这里有一个用简单的button和子组件做的标签页面。
+效果如下：
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220219144105.png#center" alt="20220219144105"></p>
+<h2 id="目标">目标</h2>
+<p>点击<code>Active Goals</code>按钮，就可以激活<code>Active Goals</code>组件下的内容。同样的，点击<code>Manage Goals</code>按钮，就可以激活<code>Manage Goals</code>组件下的内容。</p>
+<h2 id="结构">结构</h2>
+<p>HTML结构:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span>&gt;Active Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span>&gt;Manage Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">active-goals</span>&gt;&lt;/<span style="color:#f92672">active-goals</span>&gt;
+    &lt;<span style="color:#f92672">manage-goals</span>&gt;&lt;/<span style="color:#f92672">manage-goals</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p><code>active-goals</code>组件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;这是 Active Goals 组件的内容&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p><code>manage-goals</code>组件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">h2</span>&gt;这是 Manage Goals 组件的内容&lt;/<span style="color:#f92672">h2</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>都是很简单的两个组件。</p>
+<h2 id="实现">实现</h2>
+<h3 id="方法1v-if-结合-methods-传值">方法1：v-if 结合 methods 传值</h3>
+<p>定义一个data项<code>selectedBtn</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#a6e22e">selectedBtn</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;active-goals&#34;</span>
+    };
+</code></pre></div><p>给<code>button</code>绑定点击事件：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;setSelectedBtn(&#39;active-goals&#39;)&#34;</span>&gt;Active Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;setSelectedBtn(&#39;manage-goals&#39;)&#34;</span>&gt;Manage Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">active-goals</span>&gt;&lt;/<span style="color:#f92672">active-goals</span>&gt;
+    &lt;<span style="color:#f92672">manage-goals</span>&gt;&lt;/<span style="color:#f92672">manage-goals</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>当我们点击按钮，参数就会传到接下来定义的方法中</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">setSelectedBtn</span>(<span style="color:#a6e22e">btn</span>) {
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">selectedBtn</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">btn</span>;
+    }
+</code></pre></div><p>每当点击按钮，我们就能让Vue知道我们点击的是哪一个按钮，然后用<code>v-if</code>显示该组件的内容:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">active-goals</span> <span style="color:#a6e22e">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectedBtn === &#39;active-goals&#39;&#34;</span>&gt;&lt;/<span style="color:#f92672">active-goals</span>&gt;
+&lt;<span style="color:#f92672">manage-goals</span> <span style="color:#a6e22e">v-if</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectedBtn === &#39;manage-goals&#39;&#34;</span>&gt;&lt;/<span style="color:#f92672">manage-goals</span>&gt;
+</code></pre></div><h3 id="方法2使用动态组件---component-的-is-属性">方法2：使用动态组件 - component 的 is 属性</h3>
+<p>vue提供的动态组件非常适合用来做多标签切换，其中的<code>is</code> 属性允许我们展示特定的组件的内容。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;setSelectedBtn(&#39;active-goals&#39;)&#34;</span>&gt;Active Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;setSelectedBtn(&#39;manage-goals&#39;)&#34;</span>&gt;Manage Goals&lt;/<span style="color:#f92672">button</span>&gt;
+    &lt;<span style="color:#f92672">component</span> <span style="color:#a6e22e">:is</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;selectedBtn&#34;</span>&gt;&lt;/<span style="color:#f92672">component</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+</code></pre></div><p>一旦<code>selectedBtn</code>的值改变，组件就会动态切换。</p>
+
+  </div>
+
+  
+    <footer>
+      
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+    </footer>
+  
+</article>
+
+
+<div class="pagination">
+  <div class="left">
+  
+    <a href="/posts/tech/vue/vue-warn-emits/">
+      <time datetime="2022-01-30 15:17:19 &#43;0800 CST">&laquo; 2022-01-30</time>
+      Vue 3 | emits 警告
+    </a>
+  
+  </div>
+  <div class="right">
+  
+    <a href="/posts/tech/vue/vue-animations-transitions/">
+      <time datetime="2022-03-05 01:50:00 &#43;0800 CST">2022-03-05 &raquo;</time>
+      Vue课程笔记：Animations and Transitions
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+  loadDisqusComments();
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul>
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+
+</body>
+
+</html>
