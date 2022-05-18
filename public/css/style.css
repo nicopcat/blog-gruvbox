@@ -315,11 +315,6 @@ article>.body img {
   -moz-transition: 0.4s !important;
   -o-transition: 0.4s !important;
   -ms-transition: 0.4s !important;
-  /* transform: rotate(360deg) !important;
-    -webkit-transform: rotate(360deg) !important;
-    -moz-transform: rotate(360deg) !important;
-    -o-transform: rotate(360deg) !important;
-    -ms-transform: rotate(360deg) !important; */
 }
 
 .frienddivleft {
