@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Nic Tian| nekolas.cafe</title>
+  <title>📕 博文 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
   <link href="/logo.png" rel="shortcut icon">
@@ -42,6 +44,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -71,6 +79,59 @@
 
   <main>
     
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/vue-warn-emits/">Vue 3 | emits 警告</a></h1>
+    <time datetime="2022-01-30 15:17:19 &#43;0800 CST">2022-01-30</time>
+  </header>
+  <div class="body">
+    <p>用 $emits 写组件通信的时候报错了：</p>
+<blockquote>
+<p>[Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component…</p></blockquote>
+  </div>
+  
+  <footer>
+    <a href="/posts/tech/vue/vue-warn-emits/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/">0 Comments</span>
+
+
+  </footer>
+  
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/vue-weather-app/">用 Vue 写一个天气 Web App</a></h1>
+    <time datetime="2022-01-27 13:55:19 &#43;0800 CST">2022-01-27</time>
+  </header>
+  <div class="body">
+    <p>在油管看到一个用Vue-cli 3写天气App的视频，非常简单易上手，界面也很好看，之前也没用过vue-cli 3写+打包应用，就打算跟着做练练手。</p>
+<p>项目地址：
+<a href="https://www.niqks.tk/weather-app/">https://www.niqks.tk/weather-app/</a></p>
+<p>油管地址：
+<a href="https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;ab_channel=TylerPotts">https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;ab_channel=TylerPotts</a></p>
+<h2 id="1-前提">1. 前提</h2>
+<p>安装这些东西：</p>
+<ul>
+<li>npm/yarn</li>
+<li>node.js</li>
+<li>git</li>
+</ul>
+<h2 id="2-vue项目初始化">2. Vue项目初始化</h2>
+<h3 id="21-安装vue-cli脚手架">2.1 安…</h3>
+  </div>
+  
+  <footer>
+    <a href="/posts/tech/vue/vue-weather-app/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-weather-app/">0 Comments</span>
+
+
+  </footer>
+  
+</article>
 
 <article>
   <header>
@@ -125,14 +186,14 @@
 <ul>
 <li>进到 <a href="https://www.freenom.com/">freenom</a> 官网，注册一下，选择其中一个结账</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- ![20211123152149](https://i.loli.net/2021/11/23/vS8wIAzhW1tyGs5.png) -->
+<img src="https://i.loli.net/2021/11/23/vS8wIAzhW1tyGs5.png" width = "400" alt="freenom" />
 <ul>
 <li>
 <p>但这个网站有个小 bug，直接点 <code>get it now</code> 会显示 <code>Not available</code>。此时，你需要复制整个域名，比如 <code>hugo666.tk</code> 到搜索框，再一次 <code>Check Availibility</code>，接着点 <code>Checkout</code>。</p>
 </li>
 <li>
-<p><code>Period</code> 选 <code>12 months FREE</code>, 完…</p></li></ul></!--></!-->
+<p><code>Period</code> 选 <code>12 months FREE</code>, 完…</p></li></ul></!-->
   </div>
   
   <footer>
@@ -142,48 +203,6 @@
 
 
   </footer>
-  
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/hugo/hugo-githubpages/">Hugo | 博客部署篇</a></h1>
-    <time datetime="2022-01-08 13:55:19 &#43;0800 CST">2022-01-08</time>
-  </header>
-  <div class="body">
-    <h1 id="使用-netlify-托管">使用 Netlify 托管</h1>
-<p>最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！</p>
-<p>可以参考我的另一篇文章 <a href="https://www.niqks.tk/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/">如何使用 Netlify 快速部署个人项目
-</a></p>
-<h2 id="流程">流程</h2>
-<ol>
-<li>首先需要把源码发布到你的 Github 仓库，步骤参考下文 <a href="#%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E5%88%B0github-pages">如何部署到github-pages</a> 👇</li>
-<li>进入 <a href="https://www.netlify.com/">Netlify</a>，注册，创建新项目，选择 <code>Add new site</code></li>
-<li>选择从 <code>Import an existing project</code> - 连接 Github -…</li></ol>
-  </div>
-  
-  <footer>
-    <a href="/posts/hugo/hugo-githubpages/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/">0 Comments</span>
-
-
-  </footer>
-  
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/life/chrismas-2021/">Chrismas 2021</a></h1>
-    <time datetime="2021-12-27 01:15:21 &#43;0800 CST">2021-12-27</time>
-  </header>
-  <div class="body">
-    <h2 id="呕吐大礼包">呕吐大礼包</h2>
-<p>圣诞那天一早，咩咩就给我俩带来一份大礼：一摊呕吐物 🤮</p>
-<p>我当时睡得迷迷糊糊，听见汪汪的呼喊，我才意识到这原来是真的。朦胧的眼睛睁开一开，看到黄色的一大坨呕吐物，正软趴趴地呆在汪汪枕头左边。我们急忙扯了纸巾把它弄走，味道酸臭，把汪汪逼到干呕，她后来回忆说，那玩意儿捧在手上，软乎乎的，还挺热乎 😂</p>
-<h2 id="pizza-hut">Pizza Hut</h2>
-<p>从决定去必胜客到真正到达那里，大概花了3个小时。我们是下午3点才开始吃的午饭。说到pizza就很怀念在美国的第二年，每周五的pizza day，总是点一份大…</p>
-  </div>
   
 </article>
 
@@ -227,6 +246,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

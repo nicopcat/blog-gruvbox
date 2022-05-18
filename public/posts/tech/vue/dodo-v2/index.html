@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Vue-cli 重写 to-do list 之所思| nekolas.cafe</title>
+  <title>Vue-cli 重写 to-do list 之所思 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -41,6 +43,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -184,7 +192,10 @@
 }
 </code></pre><p>打开 <code>vue.config.js</code> ，在 <code>module.exports</code>中添加以上代码。刷新一下就可以看到图标了。</p>
 <hr>
-<!-- raw HTML omitted -->
+<span style="font-size:14px; color:#ccc">
+参考：
+VUE----vue-cli3.0设置页面icon图标
+https://blog.csdn.net/xyy1234567891/article/details/104841750  </span>
 <h2 id="vue中的img路径">vue中的img路径</h2>
 <ol>
 <li><strong>引入assets中的img</strong>
@@ -196,7 +207,9 @@
 将图片文件放入 <code>/public</code> 下，使用相对地址引用：</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./assets/your-pic.png&#34;</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div><span style="font-size:14px; color:#ccc">
+参考：
+https://blog.csdn.net/qq_40323256/article/details/115339101 </span>
 <h2 id="通过用户输入的字符筛选任务">通过用户输入的字符筛选任务</h2>
 <p><strong>需求：用户在搜索栏的input框内输入关键字，就可以检索相应的任务。</strong></p>
 <p>有想过把每一条任务的字符串分解成一个个的单字放在一个数组里，然后匹配。但如果是两个字的搜索呢？事情到这里变得复杂了许多，行不通。</p>
@@ -346,8 +359,6 @@
   }
 
   
-  loadDisqusComments();
-  
 </script>
 
 
@@ -366,6 +377,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

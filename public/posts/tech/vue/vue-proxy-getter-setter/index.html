@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Vue Proxy Getter Setter| nekolas.cafe</title>
+  <title>Vue Proxy Getter Setter | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -41,6 +43,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -81,7 +89,7 @@
 偶然间从 <a href="https://www.bilibili.com/video/BV1Zy4y1K7SH?p=11">Vue中的数据代理</a> 中了解到，Vue 主要是调用了<code>Object.defineProperty()</code>方法实现的。</p>
 <h2 id="objectdefineproperty">Object.defineProperty()</h2>
 <blockquote>
-<p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。 &ndash; <!-- raw HTML omitted -->MDN<!-- raw HTML omitted --></p>
+<p>Object.defineProperty() 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性，并返回此对象。 &ndash; <cite>MDN</cite></p>
 </blockquote>
 <p>直接增修<code>data</code>中的内容，或者使用<code>Object.defineProperty</code>增修，都可以达到类似的目的，但后者多了一些属性，以限制读写。</p>
 <h2 id="objectdefineproperty中的一些属性"><code>Object.defineProperty()</code>中的一些属性</h2>
@@ -186,8 +194,6 @@
   }
 
   
-  loadDisqusComments();
-  
 </script>
 
 
@@ -206,6 +212,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.container {
+    margin-top: 1rem;
+}
+
+.container .wrapper {
+    position: relative;
+    max-width: 78%;
+    margin-bottom: 4rem;
+}
+
+.wrapper img {
+    border: .5em solid white;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.wrapper .caps {
+    text-align: center;
+    min-width: 20%;
+
+}
+
+.wrapper .caps h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.wrapper .caps span {
+    color: #8d8d8d;
+    font-size: .8em;
+}
+
+.wrapper .navbar {
+    border-bottom: 3px solid rgba(30, 30, 30, 0.285);
+    padding-bottom: 2rem;
+}
+
+.navbar {
+    border-bottom: 1px solid rgba(122, 122, 122, 0.258);
+    padding: 0 .2rem;
+    line-height: normal;
+    box-sizing: border-box;
+}
+
+.navbar span a {
+    font-family: 'futyra-pt';
+    color: var(--secondary);
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0 .6rem;
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+
+.navbar .active-link {
+    box-shadow: none;
+    background-color: rgba(199, 199, 199, 0.19);
+    color: var(--primary);
+    border-width: 1px;
+    border-style: solid solid none solid;
+    border-color: rgba(199, 199, 199, 0.074);
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+    border-bottom: 1px solid var(--primary);
+}
+
+.navbar span a:hover {
+    background-color: rgba(199, 199, 199, 0.163);
+    border-top-left-radius: .2rem;
+    border-top-right-radius: .2rem;
+}
+
+/* 遮罩层 */
+
+.mask {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 100;
+}
+
+.mask img {
+    max-width: 90vw;
+    max-height: 90vh;
+    margin: 1.5rem;
+    z-index: 100;
+    border-radius: .3rem;
+    border: none;
+}
+
+.popup-enter-from,
+.popup-leave-to {
+    opacity: 0;
+    transform: scale(0.8);
+    transform: translateY(-50px);
+}
+
+.popup-enter-active,
+.popup-leave-active {
+    transition: all 0.25s ease;
+}
+
+
+.popup-leave-from,
+.popup-enter-to {
+    opacity: 1;
+    transform: translateY(0px);
+    transform: scale(1);
+}
+
+
+/* spinner */
+.spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div:after {
+    content: ' ';
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--primary);
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* spinner 过渡 */
+
+.spinner-enter-from,
+.spinner-leave-to {
+    opacity: 0;
+    /* transform: translateY(-30px); */
+}
+
+.spinner-enter-active {
+    transition: all 0.5s ease-out;
+}
+
+.spinner-leave-active {
+    transition: all 0.5s ease-in;
+}
+
+
+.spinner-leave-from,
+.spinner-enter-to {
+    opacity: 1;
+    /* transform: translateY(0px); */
+}

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Nic Tian| nekolas.cafe</title>
+  <title>📕 博文 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
   <link href="/logo.png" rel="shortcut icon">
@@ -42,6 +44,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -71,6 +79,56 @@
 
   <main>
     
+
+<article>
+  <header>
+    <h1><a href="/about/">关于我</a></h1>
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
+  </header>
+  <div class="body">
+    <figure><img src="https://img3.doubanio.com/icon/ul152454124-10.jpg"/>
+</figure>
+
+<h1 id="nic-tian-">Nic Tian 👇</h1>
+<p>😺<br>
+嗨，我是小田。</p>
+<p>Homepage: <a href="https://nekolas.cafe/">https://nekolas.cafe/</a></p>
+<h2 id="简单介绍">简单介绍</h2>
+<p>属猫。
+咖啡爱好者。<br>
+表面乖巧平和但内心暗自不守规矩。<br>
+喜欢音乐，读书，看电影，打游戏，业余 gourmet。<br>
+感兴趣的方向是 Web 前端，喜欢好看的设计。<br>
+爱 <a href="https://www.janew.tk/">J小将</a>，养有一只猫，叫打咩。</p>
+<p>总觉得很难介绍自己，因为我也只是了解一部分的自己。</p>
+<h2 id="关于语言">关于语言</h2>
+<p>喜欢语言学习，会讲中文、英语和一些日语。…</p>
+  </div>
+  
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/my-miserable-leetcode/">力扣 oh Leetcode</a></h1>
+    <time datetime="2022-05-18 11:00:00 &#43;0800 CST">2022-05-18</time>
+  </header>
+  <div class="body">
+    <p>作为一个准前端开发者，我天真地以为不用看力扣，<del>你只是个切图仔</del>。但感受到各方各界的暗示：你得看，你得看看。</p>
+<p>好吧，其实是快要机考了。</p>
+<p>从网上搜的机考真题来看，貌似是3道算法题，难度也许在力扣简单-中等之间。对于一个月前才知道codwars这个可爱网站的我来说，不啻晴天霹雳，于是我跑到力扣大概看了几道简单的题目。</p>
+<p>第一题很“简单”，只用一个了一个JS的方法就可以计算出来。查看他人的解题，发现大家的思路很不一样，甚至很陌生。这些新奇的思路（不用库）大概就是传说中的<strong>算法</strong>吧。</p>
+<p>啊，算法，犹如哥伦布一脚踏进…</p>
+  </div>
+  
+  <footer>
+    <a href="/posts/tech/javascript/my-miserable-leetcode/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/">0 Comments</span>
+
+
+  </footer>
+  
+</article>
 
 <article>
   <header>
@@ -137,68 +195,8 @@
 <li>不太推荐康复不好的腰突患者做这样过于激烈的运动，除非腰椎力量已经恢复</li>
 <li>发现康复师（?） Jeff 的视频对缓解腰突有帮助</li>
 <li>我的理解是在通过腰部肌肉锻炼（小燕飞 + 不伤害腰部的运动）的基础上，再进行其他相对激烈的运动</li>
-<li><!-- raw HTML omitted -->总之，…</!--></li></ol>
+<li><mark>总之，…</mark></li></ol>
   </div>
-  
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/javascript/js-create-number-array/">如何优雅地用 JS 创建包含 0 ~ n 的整数数组</a></h1>
-    <time datetime="2022-04-23 15:00:00 &#43;0800 CST">2022-04-23</time>
-  </header>
-  <div class="body">
-    <p>Codewar 上有一题非常简单的题：</p>
-<blockquote>
-<p>写一个函数，给任意一个正整数 n，求和。</p>
-</blockquote>
-<p>Example:</p>
-<pre tabindex="0"><code>2 -&gt; 1 + 2  // output: 3
-5 -&gt; 1 + 2 + 3 + 4 + 5 //  output: 15
-</code></pre><p>【<strong>小学生解法</strong>】</p>
-<p>先用小学就学过等差数列的累加计算公式“( 首项 + 末项 ) * 项数 / 2”计算一下:</p>
-<pre tabindex="0"><code>2 -&gt; (1+2)* 2/2 = 3  ✔
-5 -&gt; (1+5)* 5/2 = 15 ✔
-</code></pre><p><del>本小学生做对了！</del></p>
-<p>【<strong>用 for 循环</strong>】…</p>
-  </div>
-  
-  <footer>
-    <a href="/posts/tech/javascript/js-create-number-array/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/js-create-number-array/">0 Comments</span>
-
-
-  </footer>
-  
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/posts/tech-daily-001/">Tech Daily 001</a></h1>
-    <time datetime="2022-04-22 18:00:00 &#43;0800 CST">2022-04-22</time>
-  </header>
-  <div class="body">
-    <p>跟逛维基百科一样，前端用语一个接一个映入眼帘，了解完A又出现了B, C, D……</p>
-<h1 id="composition-api">Composition API</h1>
-<p>Vue 3 重大新特性之一，中文“组合式API”，Vue 2.x 使用的是 Option API。简单来说就是把一坨代码放到<code>setup()</code>函数里集中管理，解决业务关注点过多的问题。</p>
-<p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//posts-coverstech-daily-001-2022-04-22-18-45-34.png" alt="tech-daily-001-2022-04-22-18-45-34"></p>
-<p>查看<a href="https://juejin.cn/post/6890545920883032071">大帅老猿</a>花了一夜做的动画</p>
-<h1 id="pinia">pinia</h1>
-<p>大菠萝，全新的Vue状态管理库，相当于 vuex 5 版本。</p>
-<h2 id="特点">特点</h2>
-<ul>
-<li>体积非常小</li>
-<li>简化状态管理：砍掉了vuex中的 mutation，只剩下 state,…</li></ul>
-  </div>
-  
-  <footer>
-    <a href="/posts/tech/posts/tech-daily-001/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/posts/tech-daily-001/">0 Comments</span>
-
-
-  </footer>
   
 </article>
 
@@ -240,6 +238,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

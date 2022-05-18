@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>用 Vue 写一个天气 Web App| nekolas.cafe</title>
+  <title>用 Vue 写一个天气 Web App | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -41,6 +43,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -115,7 +123,8 @@ $ npm run serve
 <p>API地址： <a href="https://openweathermap.org/">OpenWeather</a></p>
 <h2 id="3-代码">3. 代码</h2>
 <h3 id="31-html结构">3.1 HTML结构</h3>
-<!-- raw HTML omitted -->
+<details>
+<summary>展开</summary>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">template</span>&gt;
   &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span> <span style="color:#a6e22e">:class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;warmCold&#34;</span>&gt;
     &lt;<span style="color:#f92672">main</span>&gt;
@@ -145,9 +154,10 @@ $ npm run serve
     &lt;/<span style="color:#f92672">main</span>&gt;
   &lt;/<span style="color:#f92672">div</span>&gt;
 &lt;/<span style="color:#f92672">template</span>&gt;
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div></details>
 <h3 id="32-css样式">3.2 CSS样式</h3>
-<!-- raw HTML omitted -->
+<details>
+<summary>展开</summary>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">  <span style="color:#f92672">*</span> {
     <span style="color:#66d9ef">margin</span>: <span style="color:#ae81ff">0</span>;
     <span style="color:#66d9ef">padding</span>: <span style="color:#ae81ff">0</span>;
@@ -255,7 +265,7 @@ $ npm run serve
     <span style="color:#66d9ef">text-shadow</span>: <span style="color:#ae81ff">3</span><span style="color:#66d9ef">px</span> <span style="color:#ae81ff">6</span><span style="color:#66d9ef">px</span> rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.25</span>);
     <span style="color:#66d9ef">font-style</span>: <span style="color:#66d9ef">italic</span>;
   }
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div></details>
 <h3 id="33-script">3.3 Script</h3>
 <p>视频中小哥用的是 fetch 获得后台数据，但把他的代码照搬下来也并没有成功，于是打算转用axios。<del>但axios这里搞了很久！</del></p>
 <h4 id="331-axios-下载和引入">3.3.1 axios 下载和引入</h4>
@@ -283,7 +293,8 @@ $ npm run serve
 </span><span style="color:#75715e"></span>      })
       .<span style="color:#66d9ef">catch</span>((<span style="color:#a6e22e">error</span>) =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">error</span>, <span style="color:#e6db74">&#34;error&#34;</span>)); <span style="color:#75715e">// 失败的返回
 </span></code></pre></div><h4 id="332-完整代码">3.3.2 完整代码</h4>
-<!-- raw HTML omitted -->
+<details>
+<summary>展开</summary>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">axios</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;axios&#34;</span>;
 
 <span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
@@ -348,7 +359,7 @@ $ npm run serve
   },
 };
 
-</code></pre></div><!-- raw HTML omitted -->
+</code></pre></div></details>
 <h2 id="4-打包部署到-github-上">4. 打包部署到 Github 上</h2>
 <h3 id="41-打包">4.1 打包</h3>
 <p>官方对 vue-cli-service build （打包）说明：</p>
@@ -448,8 +459,8 @@ git push
 具体报错为 <code>&quot;Please make sure you have the correct access rights and the repository exists.&quot;</code>
 多亏了大大文章解决了问题，最后是通过<code>在Github账号中添加一个新生成的SSH Key</code>搞定的</p>
 <p>参考文章：https://blog.csdn.net/jingtingfengguo/article/details/51892864</p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- Vue-如何使用axios实现同步请求嵌套方法
+https://blog.csdn.net/qq_43528934/article/details/121656858?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-1-121656858.pc_agg_new_rank&utm_term=axios%E5%B5%8C%E5%A5%97%E5%A4%9A%E5%B1%82%E8%AF%B7%E6%B1%82&spm=1000.2123.3001.4430 -->
 
   </div>
 
@@ -500,8 +511,6 @@ git push
   }
 
   
-  loadDisqusComments();
-  
 </script>
 
 
@@ -520,6 +529,12 @@ git push
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

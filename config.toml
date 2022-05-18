@@ -10,12 +10,12 @@ disqusShortname = "nekolas-blog"
   description = "Cat that codes."
   keywords = ["web dev", "javascript", "reader", "blog", "programmer", "peace & love"]
   titlePrefix = ""
-  titleSuffix = "| nekolas.cafe"
+  titleSuffix = " | nekolas.cafe"
   dateFormat = "2006-01-02"
   menuItemPrefix = "~/"
   postTruncateLength = 250
   hideGopher = false
-  disqusAutoLoad = true
+  disqusAutoLoad = false
   disqusAutoLoadCount = true
 
 
@@ -24,6 +24,24 @@ disqusShortname = "nekolas-blog"
   identifier = "posts"
   url = "/posts"
   weight = 9999
+
+[[menu.sections]]
+  name = "bb"
+  identifier = "bb"
+  url = "/bb"
+  weight = 5555
+
+[[menu.sections]]
+  name = "tags"
+  identifier = "tags"
+  url = "/tags"
+  weight = 1999
+
+[[menu.sections]]
+  name = "gallery"
+  identifier = "gallery"
+  url = "/gallery"
+  weight = 999
 
 [[menu.social]]
   name = "Twitter"
@@ -41,3 +59,9 @@ disqusShortname = "nekolas-blog"
   name = "Email"
   url = "mailto:tianfang07@outlook.com"
   weight = 100
+
+[markup]
+  defaultMarkdownHandler = 'goldmark'
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+    unsafe=true

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Nic Tian| nekolas.cafe</title>
+  <title>📕 博文 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
   <link href="/logo.png" rel="shortcut icon">
@@ -42,6 +44,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -71,6 +79,61 @@
 
   <main>
     
+
+<article>
+  <header>
+    <h1><a href="/posts/life/aji-crispy-review/">香酥有味：Aji惊奇脆片测评</a></h1>
+    <time datetime="2021-11-29 23:44:00 &#43;0000 &#43;0000">2021-11-29</time>
+  </header>
+  <div class="body">
+    <br>
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~
+<br>
+<h3 id="包装">包装</h3>
+<p>⭐⭐⭐⭐</p>
+<p>包装最值得称赞的部分就是密封条，开封后就算放一放，也不怕潮。（乐事的薯片们可以学一下吗）
+包装设计方面，蔬菜味上印有蔬菜，芝士味上印有芝士，焦糖芥末味也是乖乖地印有芥末植物（山葵或辣根）和焦糖。
+<br>
+<img src="https://img.alicdn.com/imgextra/i1/2208054978502/O1CN01M6oTZA2CfxzofmkQp_!!2208054978502.jpg?height=100px&amp;width=100px" alt="tb拿的图">
+<br>
+但是，我们神奇的优格洋葱味，除了印有奶白的yogurt液体，它的右侧还有一杯内容不明鸡尾酒杯，里面…</p>
+  </div>
+  
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/variable-destructuring/">变量的解构赋值</a></h1>
+    <time datetime="2021-11-28 15:23:00 &#43;0900 &#43;0900">2021-11-28</time>
+  </header>
+  <div class="body">
+    <h1 ignore="true" id="变量的解构">变量的解构</h1>
+<p>再ES6以前，为变量赋值只能直接指定值，而ES6允许以变量解构的方式赋值
+（参考<a href="https://es6.ruanyifeng.com/?search=%E8%A7%A3%E6%9E%84&amp;x=0&amp;y=13#docs/destructuring">阮大神的文章</a>）</p>
+<h2 id="数组解构">数组解构</h2>
+<p>数组解构允许我们按照一一对应的关系从数组中提取然后将值赋值给变量</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>];
+<span style="color:#66d9ef">let</span> [<span style="color:#a6e22e">a</span>,<span style="color:#a6e22e">b</span>,<span style="color:#a6e22e">c</span>] <span style="color:#f92672">=</span><span style="color:#a6e22e">arr</span>;
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">a</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);
+
+<span style="color:#75715e">//输入结果为 1, 2, 3
+</span></code></pre></div><h3 id="情况1完全匹配的解构">情况1：完全匹配的解构</h3>
+<p><code>let [a, b, c] = [1, 2, 3];</code></p>
+<h3 id="情况2部分匹配的解构">情况2：部分匹配的解构</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> […</code></pre></div>
+  </div>
+  
+  <footer>
+    <a href="/posts/tech/javascript/variable-destructuring/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/">0 Comments</span>
+
+
+  </footer>
+  
+</article>
 
 <article>
   <header>
@@ -131,10 +194,29 @@
   
 </article>
 
+<article>
+  <header>
+    <h1><a href="/jane-works/">Jane&#39;s Works</a></h1>
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
+  </header>
+  <div class="body">
+    <script src="https://unpkg.com/vue@next"></script>
+<link rel="stylesheet" href="/src/index.css">
+<div id="app">
+    <div class="navbar">
+        <span><a href="/gallery/">Main</a></span>
+        <span><a href="/dame/">小猫日常</a></span>
+        <span><a href="/jane-works/" class="active-link">Jane…</a></span></div></div>
+  </div>
+  
+</article>
+
 
 
 <div class="pagination">
   <div class="left">
+  
+    <a href="/page/9/">&laquo; Earlier Posts</a>
   
   </div>
   <div class="right">
@@ -169,6 +251,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Nic Tian| nekolas.cafe</title>
+  <title>📕 博文 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
   <link href="/logo.png" rel="shortcut icon">
@@ -42,6 +44,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -71,6 +79,52 @@
 
   <main>
     
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/vue-animations-transitions/">Vue课程笔记：Animations and Transitions</a></h1>
+    <time datetime="2022-03-05 01:50:00 &#43;0800 CST">2022-03-05</time>
+  </header>
+  <div class="body">
+    <p>一般来说，动画可以由CSS完成，Vue也提供了一系列帮助过渡和动画的工具。</p>
+<h1 id="仅用css控制动画">仅用CSS控制动画</h1>
+<h2 id="直接定义属性">直接定义属性</h2>
+<p>假设有一个正方形block。
+动画效果：.5秒后，向左移动80像素，背景颜色变为royalblue:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">animate</span> {
+  <span style="color:#66d9ef">background-color</span>: <span style="color:#66d9ef">royalblue</span>;
+  <span style="color:#66d9ef">transform</span>: translateX(<span style="color:#ae81ff">-80</span><span style="color:#66d9ef">px</span>);
+  <span style="color:#66d9ef">transition</span>: <span style="color:#66d9ef">all</span> <span style="color:#ae81ff">0.5</span><span style="color:#66d9ef">s</span> <span style="color:#66d9ef">ease-out</span>;
+}
+</code></pre></div><p>效果：
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/squere-animation-1.gif" alt="squere-animation-1"></p>
+<h2 id="使用animation--keyframes实现复杂的动画效果">使用animation + @keyframes实现复杂的动…</h2>
+  </div>
+  
+  <footer>
+    <a href="/posts/tech/vue/vue-animations-transitions/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/">0 Comments</span>
+
+
+  </footer>
+  
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/life/recover-strength/">复健</a></h1>
+    <time datetime="2022-03-03 12:29:00 &#43;0800 CST">2022-03-03</time>
+  </header>
+  <div class="body">
+    <p>爬山的时候很喘，喘到怀疑人生。腰托让我喘不上气，中午的粽子让我胀气，眼镜的偏折让我视线飘忽，感冒让我无力。</p>
+<p>她很担心，问我要休息会儿么？</p>
+<p>我说好，颤颤巍巍的腿作了强烈暗示，似乎也不得不说好……</p>
+<p>回想上次爬这座山，也不记得是几年前了，非常轻快地爬到我们正在休息的这个凉亭，而我印象中，总是那个走在前面等后面的人。那时有多轻松，现在就有多痛苦和无力。理智告诉我，尽管我很想恢复手术前的体力，但是也要一步步地实现，但是身体却不愿意接受和承认。</p>
+<p>我很想继续往上爬，但坐在石凳上，眼泪的闸门再也关不上，就坐在石…</p>
+  </div>
+  
+</article>
 
 <article>
   <header>
@@ -135,59 +189,6 @@
   
 </article>
 
-<article>
-  <header>
-    <h1><a href="/posts/tech/vue/vue-warn-emits/">Vue 3 | emits 警告</a></h1>
-    <time datetime="2022-01-30 15:17:19 &#43;0800 CST">2022-01-30</time>
-  </header>
-  <div class="body">
-    <p>用 $emits 写组件通信的时候报错了：</p>
-<blockquote>
-<p>[Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component…</p></blockquote>
-  </div>
-  
-  <footer>
-    <a href="/posts/tech/vue/vue-warn-emits/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/">0 Comments</span>
-
-
-  </footer>
-  
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/vue/vue-weather-app/">用 Vue 写一个天气 Web App</a></h1>
-    <time datetime="2022-01-27 13:55:19 &#43;0800 CST">2022-01-27</time>
-  </header>
-  <div class="body">
-    <p>在油管看到一个用Vue-cli 3写天气App的视频，非常简单易上手，界面也很好看，之前也没用过vue-cli 3写+打包应用，就打算跟着做练练手。</p>
-<p>项目地址：
-<a href="https://www.niqks.tk/weather-app/">https://www.niqks.tk/weather-app/</a></p>
-<p>油管地址：
-<a href="https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;ab_channel=TylerPotts">https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;ab_channel=TylerPotts</a></p>
-<h2 id="1-前提">1. 前提</h2>
-<p>安装这些东西：</p>
-<ul>
-<li>npm/yarn</li>
-<li>node.js</li>
-<li>git</li>
-</ul>
-<h2 id="2-vue项目初始化">2. Vue项目初始化</h2>
-<h3 id="21-安装vue-cli脚手架">2.1 安…</h3>
-  </div>
-  
-  <footer>
-    <a href="/posts/tech/vue/vue-weather-app/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-weather-app/">0 Comments</span>
-
-
-  </footer>
-  
-</article>
-
 
 
 <div class="pagination">
@@ -228,6 +229,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

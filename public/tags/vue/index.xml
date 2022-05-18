@@ -92,7 +92,8 @@ Stacks:
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/</guid>
       <description>用 $emits 写组件通信的时候报错了：
- [Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the &amp;ldquo;emits&amp;rdquo; option. at &amp;lt;FortuneTransfer cash=&amp;ldquo;珠宝若干&amp;rdquo; real-easte=&amp;ldquo;House in Winona&amp;rdquo; onDel=fn&amp;gt; at  父组件部分
+ [Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment or text root nodes. If the listener is intended to be a component custom event listener only, declare it using the &amp;ldquo;emits&amp;rdquo; option. at &amp;lt;FortuneTransfer cash=&amp;ldquo;珠宝若干&amp;rdquo; real-easte=&amp;ldquo;House in Winona&amp;rdquo; onDel=fn&amp;gt; at 
+ 父组件部分
 app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#39;, &amp;#39;realEaste&amp;#39;], template: ` &amp;lt;h1&amp;gt;我要 {{ cash }}&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;我还要 {{ realEaste }}&amp;lt;/h2&amp;gt; &amp;lt;button @click=&amp;#34;$emit(&amp;#39;del&amp;#39;)&amp;#34;&amp;gt;删除&amp;lt;/button&amp;gt; &amp;lt;br&amp;gt; ` }) app.</description>
     </item>
     

@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Git使用笔记| nekolas.cafe</title>
+  <title>Git使用笔记 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -21,6 +21,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="HandheldFriendly" content="True">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/fira_code.min.css">
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -41,6 +43,12 @@
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     
@@ -152,7 +160,7 @@ git rebase main
 <li>可以一直使用 <code>git checkout HEAD^</code> 向上移动。</li>
 </ul>
 </li>
-<li>使用 ~<!-- raw HTML omitted --> 向上移动多个提交记录，如 ~3</li>
+<li>使用 ~<num> 向上移动多个提交记录，如 ~3</li>
 </ul>
 <h2 id="3-两个父节点">3. 两个父节点</h2>
 <p>操作符 ^ 与 ~ 符一样，后面也可以跟一个数字。</p>
@@ -171,7 +179,7 @@ git rebase main
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323190016.png#center" alt="20220323190016"></p>
 <p>考题：如果使用下面这个链式操作，会回到哪个分支呢？</p>
 <pre tabindex="0"><code>git checkout HEAD~^2~2
-</code></pre><p>答案是（刮开可看）：<!-- raw HTML omitted -->C3<!-- raw HTML omitted --></p>
+</code></pre><p>答案是（刮开可看）：<span style="color:transparent">C3</span></p>
 <h3 id="直接使用--f-让分支指向另一个提交">直接使用 <code>-f</code> 让分支指向另一个提交</h3>
 <p>将 main 分支强制指向 HEAD 的第 3 级父提交:</p>
 <pre tabindex="0"><code>git branch -f main HEAD~3
@@ -237,8 +245,8 @@ git cherry-pick
 <p>当 ref 提交记录上有某个标签时，则只输出标签名称。</p>
 <p>来看一下这个例子。
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323215900.png#center" alt="20220323215900"></p>
-<p><code>git describe main</code> 会输出（刮开可看）：<!-- raw HTML omitted -->v1_2_gC2<!-- raw HTML omitted --><br>
-<code>git describe side</code> 会输出（刮开可看）：<!-- raw HTML omitted -->v2_1_gC4<!-- raw HTML omitted --></p>
+<p><code>git describe main</code> 会输出（刮开可看）：<span style="color:transparent">v1_2_gC2</span><br>
+<code>git describe side</code> 会输出（刮开可看）：<span style="color:transparent">v2_1_gC4</span></p>
 <h1 id="git-初阶使用">git 初阶使用</h1>
 <h2 id="用户名以及邮箱配置">用户名以及邮箱配置</h2>
 <p>在操作之前，最好先设置这两个参数，输入：</p>
@@ -343,8 +351,6 @@ git remote add origin [url]
   }
 
   
-  loadDisqusComments();
-  
 </script>
 
 
@@ -363,6 +369,12 @@ git remote add origin [url]
   
   <ul>
     
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
     
 
     

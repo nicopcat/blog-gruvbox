@@ -6,7 +6,23 @@
     <description>Recent content in Vinilla JavaScript📒 on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 13 May 2022 22:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 May 2022 11:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>力扣 oh Leetcode</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</link>
+      <pubDate>Wed, 18 May 2022 11:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</guid>
+      <description>作为一个准前端开发者，我天真地以为不用看力扣，你只是个切图仔。但感受到各方各界的暗示：你得看，你得看看。
+好吧，其实是快要机考了。
+从网上搜的机考真题来看，貌似是3道算法题，难度也许在力扣简单-中等之间。对于一个月前才知道codwars这个可爱网站的我来说，不啻晴天霹雳，于是我跑到力扣大概看了几道简单的题目。
+第一题很“简单”，只用一个了一个JS的方法就可以计算出来。查看他人的解题，发现大家的思路很不一样，甚至很陌生。这些新奇的思路（不用库）大概就是传说中的算法吧。
+啊，算法，犹如哥伦布一脚踏进美洲，还以为是另一个印度呢。
+ 已了解/未了解：  二分算法 哈希算法 滑动窗口 左右双指针   题目 左右双指针 题目： 判断str是否为回文字符串
+function judge(str) { let left = 0; let right = str.length - 1; if (str.length === 0) return false; while (left &amp;lt;= right) { if (str[left] !== str[right]) { return false } else { left++; right--; } } return true; } 循环：
+function judge(str) { for (let i = 0; i &amp;lt; Math.</description>
+    </item>
+    
     <item>
       <title>JavaScript 中 this 的绑定</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/this-and-context/</link>
