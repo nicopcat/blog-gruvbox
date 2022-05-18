@@ -35,7 +35,7 @@ disqusShortname = "nekolas-blog"
   name = "tags"
   identifier = "tags"
   url = "/tags"
-  weight = 1999
+  weight = 1998
 
 [[menu.sections]]
   name = "gallery"
