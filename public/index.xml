@@ -13,7 +13,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.nekolas.cafe/about/</guid>
-      <description>about</description>
+      <description>Nic Tian 👇 😺
+嗨，我是小田。
+Homepage: https://nekolas.cafe/
+简单介绍 属猫。 咖啡爱好者。
+表面乖巧平和但内心暗自不守规矩。
+喜欢音乐，读书，看电影，打游戏，业余 gourmet。
+感兴趣的方向是 Web 前端，喜欢好看的设计。
+爱 J小将，养有一只猫，叫打咩。
+总觉得很难介绍自己，因为我也只是了解一部分的自己。
+关于语言 喜欢语言学习，会讲中文、英语和一些日语。
+友链 JaneW喜欢画画的Jane Bore&amp;#39;s Notes博观而约取，厚积而薄发。 Sulv’s Blog一个记录技术、阅读、生活的博客 IILeeのBlog所以，看不到光，算是不幸吗？需要光才是真正的不幸吧。 Seviche.ccCode / Tech / Live a Random Life OneDay一个追求天天进步的程序猿 交换 template 你的名字: &amp;#34;Nekolas&amp;#39;s blog&amp;#34;, 一栏地址: &amp;#34;https://blog.</description>
     </item>
     
     <item>
@@ -54,7 +64,7 @@ function foo(fn) { fn(); } function bar() { console.log(this.a); // window } var
       <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</guid>
-      <description>一直耳闻 Netlify 非常好用，其实是相当好用！
+      <description>一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。
 先进入 Netlify 官网，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”
 不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。
 Netlify x Vue-cli 其实我也是照着官网的一篇文章做的，简单记录下步骤：
@@ -69,7 +79,7 @@ Other Netlify 服务提供一个免费的 Starter Plan，适合展示个人的�
       <pubDate>Mon, 25 Apr 2022 17:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/life/hiit-burpee/</guid>
-      <description>波比跳  快速波比跳20秒后，休息10秒 动作重复8组，合计4分钟 中间尽量不要停顿，效果会减半，所以尽量快速完成 动作非常累，刚开始一定无法在4分钟内完成8组 但是每天坚持锻炼，体力会显著改变，越来越顺利  但……如果有腰突 不太推荐康复不好的腰突患者做这样过于激烈的运动，除非腰椎力量已经恢复 发现康复师（?） Jeff 的视频对缓解腰突有帮助 我的理解是在通过腰部肌肉锻炼（小燕飞 + 不伤害腰部的运动）的基础上，再进行其他相对激烈的运动 总之，我还是悠着点   参考   波比跳 https://weibo.com/tv/show/1034:4422215412683017?from=old_pc_videoshow
+      <description> 快速波比跳20秒后，休息10秒 动作重复8组，合计4分钟 中间尽量不要停顿，效果会减半，所以尽量快速完成 动作非常累，刚开始一定无法在4分钟内完成8组 但是每天坚持锻炼，体力会显著改变，越来越顺利  但……如果有腰突 不太推荐康复不好的腰突患者做这样过于激烈的运动，除非腰椎力量已经恢复 发现康复师（?） Jeff 的视频对缓解腰突有帮助 我的理解是在通过腰部肌肉锻炼（小燕飞 + 不伤害腰部的运动）的基础上，再进行其他相对激烈的运动 总之，我还是悠着点   参考   波比跳 https://weibo.com/tv/show/1034:4422215412683017?from=old_pc_videoshow
   Jeff-如何解决腰间盘突出
 https://www.bilibili.com/video/BV1zx41177WR
   </description>

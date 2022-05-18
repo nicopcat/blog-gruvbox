@@ -2,7 +2,6 @@
 title: "关于我"
 # layout: "about"
 url: "/about"
-summary: about
 weight: 1
 # description: "which is precious"
 ---
@@ -13,6 +12,7 @@ weight: 1
 嗨，我是小田。   
 
 Homepage: https://nekolas.cafe/
+
 ## 简单介绍 
 属猫。 
 咖啡爱好者。  

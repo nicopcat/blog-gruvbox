@@ -6,12 +6,14 @@ draft: false
 showToc: false
 tags: ["Deploy","Netlify"]
 ---
-一直耳闻 Netlify 非常好用，其实是相当好用！  
+一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。  
 
 先进入 [Netlify 官网](https://app.netlify.com/)，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”    
 
-不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。   
+不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。
 
+
+ 
 # Netlify x Vue-cli
 其实我也是照着官网的[一篇文章](https://www.netlify.com/blog/2019/11/30/how-to-deploy-a-vue-site/)做的，简单记录下步骤：
 1. 将 Demo 源码放到 Github 的仓库中
