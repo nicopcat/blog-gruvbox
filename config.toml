@@ -65,3 +65,16 @@ disqusShortname = "nekolas-blog"
   [markup.goldmark]
     [markup.goldmark.renderer]
     unsafe=true
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4

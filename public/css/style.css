@@ -4,6 +4,7 @@
 }
 
 a, a:visited, a:active, a:hover {
+  overflow-wrap: break-word;
   color: #458588;
   text-decoration: none;
 }
@@ -123,7 +124,8 @@ nav>ul>li>a.active {
     display: block;
   }
   body>header, main, body>footer, main>article {
-    margin: 3em 1em;
+    /* margin: 3em 1em; */
+    margin: 3em 0;
   }
 }
 
@@ -179,12 +181,13 @@ article>footer {
 }
 
 article>.body pre code {
+  margin: 2em 0;
   font-family: 'Fira Code';
   display: block;
   padding: .5em 1em;
   background: #282828;
   color: #ebdbb2;
-  font-size: .9em;
+  font-size: .8em;
   overflow-x: auto;
 }
 

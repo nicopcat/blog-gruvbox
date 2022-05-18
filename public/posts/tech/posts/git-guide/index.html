@@ -102,21 +102,21 @@ Github地址：<a href="https://github.com/pcottle/learnGitBranching">LearnGitBr
 <ol>
 <li>提交分支</li>
 </ol>
-<pre tabindex="0"><code>git commit &lt;branch&gt;
-</code></pre><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git commit &lt;branch&gt;
+</code></pre></div><ol start="2">
 <li>切换到新的分支</li>
 </ol>
-<pre tabindex="0"><code>git checkout &lt;branch&gt;
-</code></pre><ol start="3">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout &lt;branch&gt;
+</code></pre></div><ol start="3">
 <li>如果你想创建一个新的分支同时切换到这个新创建的分支</li>
 </ol>
-<pre tabindex="0"><code>git checkout -b &lt;your-branch-name&gt;
-</code></pre><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout -b &lt;your-branch-name&gt;
+</code></pre></div><blockquote>
 <p>Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p>
 </blockquote>
 <h2 id="2-git-merge">2. Git Merge</h2>
 <p>假设有需要一个bugFix分支：</p>
-<pre tabindex="0"><code>// 新建并切换到bugFix分支
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">// 新建并切换到bugFix分支
 git checkout -b bugFix
 
 // 保存修改
@@ -127,18 +127,18 @@ git checkout main
 
 // 保存修改
 git commit
-</code></pre><p>将bugfix <code>merge</code>到当前分支main</p>
-<pre tabindex="0"><code>git merge bugfix
-</code></pre><h2 id="3-git-rebase">3. Git Rebase</h2>
+</code></pre></div><p>将bugfix <code>merge</code>到当前分支main</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git merge bugfix
+</code></pre></div><h2 id="3-git-rebase">3. Git Rebase</h2>
 <p>第二种合并分支的方法是 <code>git rebase</code>。Rebase 实际上就是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。</p>
 <p>Rebase 的优势就是可以创造更线性的提交历史，这听上去有些难以理解。如果只允许使用 Rebase 的话，代码库的提交历史将会变得异常清晰。</p>
 <p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323005810.png#center" alt="20220323005810"></p>
 <p>假设有一个bugFix分支，想要 rebase 到 main 分支上：</p>
-<pre tabindex="0"><code>git checkout bugFix
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout bugFix
 git rebase main
-</code></pre><p>或是直接写：</p>
-<pre tabindex="0"><code>git rebase main bugFix
-</code></pre><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323005612.png#center" alt="20220323005612"></p>
+</code></pre></div><p>或是直接写：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git rebase main bugFix
+</code></pre></div><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323005612.png#center" alt="20220323005612"></p>
 <hr>
 <p>Evan You 都在推荐多用rebase哟
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323205925.png#center" alt="20220323205925"></p>
@@ -169,39 +169,39 @@ git rebase main
 <p>但是该操作符后面的数字与 ~ 后面的不同，并不是用来指定向上返回几代，而是指定合并提交记录的某个父提交。</p>
 <p>Git 默认选择合并提交的“第一个”父提交，在操作符 ^ 后跟一个数字可以改变这一默认行为。</p>
 <p>假设有这么这么一个提交流程图，如果只是单纯滴使用</p>
-<pre tabindex="0"><code>git checkout main^
-</code></pre><p>HEAD会回到第一个父提交记录，也就是<code>C1</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout main^
+</code></pre></div><p>HEAD会回到第一个父提交记录，也就是<code>C1</code>
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323185528.png#center" alt="20220323185528"></p>
 <p>但如果在^后增加一个数字，情况就不一样了：它会选择另外一个父提交记录。</p>
-<pre tabindex="0"><code>git checkout main^2
-</code></pre><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323185857.png#center" alt="20220323185857">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout main^2
+</code></pre></div><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323185857.png#center" alt="20220323185857">
 瞧，居然绕远路来到了C2这个父提交。</p>
 <h3 id="链式操作">链式操作</h3>
 <p>Git还允许你使用链式操作，省去一步步操作的麻烦：
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323190016.png#center" alt="20220323190016"></p>
 <p>考题：如果使用下面这个链式操作，会回到哪个分支呢？</p>
-<pre tabindex="0"><code>git checkout HEAD~^2~2
-</code></pre><p>答案是（刮开可看）：<span style="color:transparent">C3</span></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git checkout HEAD~^2~2
+</code></pre></div><p>答案是（刮开可看）：<span style="color:transparent">C3</span></p>
 <h3 id="直接使用--f-让分支指向另一个提交">直接使用 <code>-f</code> 让分支指向另一个提交</h3>
 <p>将 main 分支强制指向 HEAD 的第 3 级父提交:</p>
-<pre tabindex="0"><code>git branch -f main HEAD~3
-</code></pre><h2 id="4-撤销更改">4. 撤销更改</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git branch -f main HEAD~3
+</code></pre></div><h2 id="4-撤销更改">4. 撤销更改</h2>
 <p>在 Git 里撤销变更的方法很多。和提交一样，撤销变更由底层部分（暂存区的独立文件或者片段）和上层部分（变更到底是通过哪种方式被撤销的）组成。我们这个应用主要关注的是后者。</p>
 <p>主要有两种方法用来撤销变更 —— 一是 <code>git reset</code>，还有就是 <code>git revert</code>。</p>
 <p><code>git reset</code>: 对远程分支的更改是无效的<br>
 <code>git revert</code>: 提交一个新的更改，然后同步到远程仓库</p>
-<pre tabindex="0"><code>// 假设正在local分支
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">// 假设正在local分支
 git rest HEAD^  // 回退local本地分支所有内容到上一个版本  
 git checkout pushed
 git revert HEAD // 回退pushed远程分支所有内容到上一个版本 
-</code></pre><h1 id="移动提交记录">移动提交记录</h1>
+</code></pre></div><h1 id="移动提交记录">移动提交记录</h1>
 <h2 id="1-git-cherry-pick">1. Git Cherry-pick</h2>
 <p>如果你想将一些提交复制到当前所在的位置（HEAD）下面的话，可以用 Cherry-pick 命令。</p>
-<pre tabindex="0"><code>git cherry-pick &lt;提交号&gt;...
-</code></pre><p>这里有一个仓库, 我们想将 side 分支上的工作复制到 main 分支，你立刻想到了之前学过的 rebase 了吧，也可以很方便地用cherry-pick 指令实现。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git cherry-pick &lt;提交号&gt;...
+</code></pre></div><p>这里有一个仓库, 我们想将 side 分支上的工作复制到 main 分支，你立刻想到了之前学过的 rebase 了吧，也可以很方便地用cherry-pick 指令实现。</p>
 <p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323134949.png#center" alt="20220323134949"></p>
-<pre tabindex="0"><code>git cherry-pick c2 c4
-</code></pre><p>我们只需要提交记录 C2 和 C4，所以 Git 就将被它们抓过来放到当前分支下了.
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git cherry-pick c2 c4
+</code></pre></div><p>我们只需要提交记录 C2 和 C4，所以 Git 就将被它们抓过来放到当前分支下了.
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323135043.png#center" alt="20220323135043"></p>
 <h2 id="2-交互式-rebase">2. 交互式 rebase</h2>
 <p>但是如果你不清楚你想要的提交记录的哈希值呢? 幸好 Git 帮你想到了这一点, 我们可以利用交互式的 <code>rebase</code> —— 如果你想从一系列的提交记录中找到想要的记录, 这就是最好的方法了。</p>
@@ -214,8 +214,8 @@ git revert HEAD // 回退pushed远程分支所有内容到上一个版本
 <li><strong>合并</strong>提交</li>
 </ol>
 <p>例如：</p>
-<pre tabindex="0"><code>git rebase -i HEAD~4  // 执行更改前四个提交记录：采纳与否和它们的顺序
-</code></pre><p><code>rebase -i</code>： 表示大概rebase interactive 界面，然后开始拖拽。<br>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git rebase -i HEAD~4  // 执行更改前四个提交记录：采纳与否和它们的顺序
+</code></pre></div><p><code>rebase -i</code>： 表示大概rebase interactive 界面，然后开始拖拽。<br>
 <code>HEAD~4</code>： 表示拖拽的对象为该提交往上的四个父提交。</p>
 <h1 id="杂项">杂项</h1>
 <p>Git 技术、技巧与贴士大集合</p>
@@ -225,25 +225,25 @@ git revert HEAD // 回退pushed远程分支所有内容到上一个版本
 <p>这些调试和打印语句都在它们各自的提交记录里。最后我终于找到了造成这个 Bug 的根本原因，解决掉以后觉得沾沾自喜！</p>
 <p>最后就差把 bugFix 分支里的工作合并回 main 分支了。你可以选择通过 fast-forward 快速合并到 main 分支上，但这样的话 main 分支就会包含我这些调试语句了。你肯定不想这样，应该还有更好的方式……</p>
 <p>实际我们只要让 Git 复制解决问题的那一个提交记录就可以了。跟之前我们在“整理提交记录”中学到的一样，我们可以使用</p>
-<pre tabindex="0"><code>git rebase -i
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git rebase -i
 git cherry-pick
-</code></pre><p>来达到目的。</p>
+</code></pre></div><p>来达到目的。</p>
 <h3 id="更改最近一次git-commit">更改最近一次git commit</h3>
-<pre tabindex="0"><code>git commit --amend
-</code></pre><h2 id="2-git-tag">2. Git Tag</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git commit --amend
+</code></pre></div><h2 id="2-git-tag">2. Git Tag</h2>
 <p>Git 的 tag 可以（在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签）永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了。</p>
 <p>它们并不会随着新的提交而移动。你也不能切换到某个标签上面进行修改提交，它就像是提交树上的一个锚点，标识了某个特定的位置。</p>
 <p>先建立一个标签，指向提交记录 C1，表示这是我们 1.0 版本：</p>
-<pre tabindex="0"><code>git tag v1 c1
-</code></pre><h2 id="3-git-describe">3. Git Describe</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git tag v1 c1
+</code></pre></div><h2 id="3-git-describe">3. Git Describe</h2>
 <p>由于标签在代码库中起着“锚点”的作用，Git 还为此专门设计了一个命令用来描述离你最近的锚点（也就是标签），它就是 git describe！</p>
 <p>Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 git bisect（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是当你坐在你那刚刚度假回来的同事的电脑前时， 可能会用到这个命令。</p>
 <p><code>git describe</code> 的​​语法是：</p>
-<pre tabindex="0"><code>git describe &lt;ref&gt;
-</code></pre><p><code>&lt;ref&gt;</code> 可以是任何能被 Git 识别成提交记录的引用，如果你没有指定的话，Git 会以你目前所检出的位置（HEAD）。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git describe &lt;ref&gt;
+</code></pre></div><p><code>&lt;ref&gt;</code> 可以是任何能被 Git 识别成提交记录的引用，如果你没有指定的话，Git 会以你目前所检出的位置（HEAD）。</p>
 <p>它<strong>输出的结果</strong>是这样的：</p>
-<pre tabindex="0"><code>&lt;tag&gt;_&lt;numCommits&gt;_g&lt;hash&gt;
-</code></pre><p><code>tag</code> 表示的是离 <code>ref</code> 最近的标签， <code>numCommits</code> 是表示这个 <code>ref</code> 与 <code>tag</code> 相差有多少个提交记录， <code>hash</code> 表示的是你所给定的 <code>ref</code> 所表示的提交记录哈希值的前几位。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;tag&gt;_&lt;numCommits&gt;_g&lt;hash&gt;
+</code></pre></div><p><code>tag</code> 表示的是离 <code>ref</code> 最近的标签， <code>numCommits</code> 是表示这个 <code>ref</code> 与 <code>tag</code> 相差有多少个提交记录， <code>hash</code> 表示的是你所给定的 <code>ref</code> 所表示的提交记录哈希值的前几位。</p>
 <p>当 ref 提交记录上有某个标签时，则只输出标签名称。</p>
 <p>来看一下这个例子。
 <img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323215900.png#center" alt="20220323215900"></p>
@@ -252,58 +252,58 @@ git cherry-pick
 <h1 id="git-初阶使用">git 初阶使用</h1>
 <h2 id="用户名以及邮箱配置">用户名以及邮箱配置</h2>
 <p>在操作之前，最好先设置这两个参数，输入：</p>
-<pre tabindex="0"><code>git config --global user.name &quot;Your Name Comes Here&quot;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git config --global user.name &#34;Your Name Comes Here&#34;
 git config --global user.email you@yourdomain.example.com
-</code></pre><h2 id="将项目纳入-git-的管理">将项目纳入 git 的管理</h2>
-<pre tabindex="0"><code>tar xzf project.tar.gz
+</code></pre></div><h2 id="将项目纳入-git-的管理">将项目纳入 git 的管理</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">tar xzf project.tar.gz
 cd project
 git init
-</code></pre><p>当看到<code>Initialized empty Git repository in .git/</code>时，说明成功初始化 git。</p>
+</code></pre></div><p>当看到<code>Initialized empty Git repository in .git/</code>时，说明成功初始化 git。</p>
 <p>将文件夹内的内容已快照的形式保存在当前的 directory:</p>
-<pre tabindex="0"><code>git add .
-</code></pre><p>现在，快照保存在暂时的 staging 区，git 管它叫&quot;index&quot;. 若要永久储存 index 的内容，输入：</p>
-<pre tabindex="0"><code>git commit
-</code></pre><h2 id="做一些修改">做一些修改</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git add .
+</code></pre></div><p>现在，快照保存在暂时的 staging 区，git 管它叫&quot;index&quot;. 若要永久储存 index 的内容，输入：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git commit
+</code></pre></div><h2 id="做一些修改">做一些修改</h2>
 <p>假设你修改了一些文件，它们 <code>add</code>到 index:</p>
-<pre tabindex="0"><code>git add file1 file2 file3
-</code></pre><p>使用 diff 指令查看哪些地方将被执行 commit：</p>
-<pre tabindex="0"><code>git diff --cached
-</code></pre><p>(如果不加<code>---cached</code>，<code>git diff</code>将现实所有修改，无论你有没有将它们<code>add</code>到<code>index</code>中。)</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git add file1 file2 file3
+</code></pre></div><p>使用 diff 指令查看哪些地方将被执行 commit：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git diff --cached
+</code></pre></div><p>(如果不加<code>---cached</code>，<code>git diff</code>将现实所有修改，无论你有没有将它们<code>add</code>到<code>index</code>中。)</p>
 <p>或用<code>git staus</code>查看 git 的工作状态。</p>
-<pre tabindex="0"><code>git status
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git status
 On branch master
 Changes to be committed:
-Your branch is up to date with 'origin/master'.
-  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+Your branch is up to date with &#39;origin/master&#39;.
+  (use &#34;git restore --staged &lt;file&gt;...&#34; to unstage)
 
 	modified:   file1
 	modified:   file2
 	modified:   file3
-</code></pre><p>继续修改文件吧。完成修改后，你可以再次用<code>git add </code>然后<code>git commit</code>，你也可以选择执行：</p>
-<pre tabindex="0"><code>git commit -a
-</code></pre><p>这个操作会将任何修改的文件，先<code>add</code>到<code>index</code>，然后一起<code>commit</code>，很方便的捷径。</p>
+</code></pre></div><p>继续修改文件吧。完成修改后，你可以再次用<code>git add </code>然后<code>git commit</code>，你也可以选择执行：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git commit -a
+</code></pre></div><p>这个操作会将任何修改的文件，先<code>add</code>到<code>index</code>，然后一起<code>commit</code>，很方便的捷径。</p>
 <h1 id="其他使用">其他使用</h1>
 <h2 id="git-修改远程仓库地址">git 修改远程仓库地址</h2>
 <ol>
 <li>直接修改</li>
 </ol>
-<pre tabindex="0"><code>git remote set-url origin [url]
-</code></pre><ol start="2">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git remote set-url origin [url]
+</code></pre></div><ol start="2">
 <li>先删后加</li>
 </ol>
-<pre tabindex="0"><code>git remote rm origin
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git remote rm origin
 git remote add origin [url]
-</code></pre><ol start="3">
+</code></pre></div><ol start="3">
 <li>不想要远程仓库的内容了，运行强制 push:</li>
 </ol>
-<pre tabindex="0"><code>git push -u origin main -f
-</code></pre><ol start="4">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git push -u origin main -f
+</code></pre></div><ol start="4">
 <li>如果出现报错：</li>
 </ol>
-<pre tabindex="0"><code>fatal: refusing to merge unrelated histories error.
-</code></pre><p>可以使用以下指令强制合并无关的分支：</p>
-<pre tabindex="0"><code>git pull origin master --allow-unrelated-histories
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">fatal: refusing to merge unrelated histories error.
+</code></pre></div><p>可以使用以下指令强制合并无关的分支：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git pull origin master --allow-unrelated-histories
+</code></pre></div>
   </div>
 
   

@@ -113,7 +113,7 @@ name in the global layouts. */ -}} {{- /* Head custom content area end */ -}}
 <img src="https://i.bmp.ovh/imgs/2022/03/30/a287f5ea63186c1c.png#center" alt="archives"></p>
 <p>如果想要按照分类展示文章，可以添加<strong>sub sections</strong>。</p>
 <p>Hugo目录结构</p>
-<pre tabindex="0"><code>content
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">content
 └── blog        &lt;-- Section, 因为是content的子目录
     ├── funny-cats
     │   ├── mypost.md
@@ -121,7 +121,7 @@ name in the global layouts. */ -}} {{- /* Head custom content area end */ -}}
     │       └── _index.md
     └── tech                &lt;-- Section, 因为包含 _index.md
         └── _index.md
-</code></pre><p>总之，如果想增加sub sections，需要在文件夹里添加一个<code>_index.md</code>文件</p>
+</code></pre></div><p>总之，如果想增加sub sections，需要在文件夹里添加一个<code>_index.md</code>文件</p>
 <p>观察一下目录结构我们可以发现，无论是添加 <code>/funny-cats/</code> 还是 <code>tech</code> 副目录，里面都会包含至少一个<code>_index.md</code>，在Section下依然可以添加sub section，如<code>kittens</code></p>
 <h1 id="3-添加-cover-image">3. 添加 cover image</h1>
 <p>front matter:</p>
