@@ -347,7 +347,7 @@ article>.body img {
   color: var(--primary);
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 600px) {
   .friendinfo {
     display: none;
   }
