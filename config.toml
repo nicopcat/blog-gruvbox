@@ -25,17 +25,17 @@ disqusShortname = "nekolas-blog"
   url = "/posts"
   weight = 9999
 
+[[menu.links]]
+  name = "tags"
+  identifier = "tags"
+  url = "/tags"
+  weight = 4999
+
 [[menu.sections]]
   name = "bb"
   identifier = "bb"
   url = "/bb"
   weight = 5555
-
-[[menu.sections]]
-  name = "tags"
-  identifier = "tags"
-  url = "/tags"
-  weight = 1998
 
 [[menu.sections]]
   name = "gallery"

@@ -1,19 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Bbs on Nic Tian</title>
-    <link>http://blog.nekolas.cafe/bb/</link>
-    <description>Recent content in Bbs on Nic Tian</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://blog.nekolas.cafe/bb/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>大声嚷嚷</title>
-      <link>http://blog.nekolas.cafe/bb/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/bb/</guid>
-      <description> --ispeakBber.init({el: &#39;#speak&#39;, // 容器选择器name: &#39;niqks&#39;, // 显示的昵称envId: &#39;bber-2g38ei06001dbc5f&#39;, // 环境idregion: &#39;ap-shanghai&#39;, // 腾讯云地址，默认为上海limit: 10, // 每次加载的条数，默认为5avatar: &#39;https://img3.doubanio.com/icon/ul152454124-10.jpg&#39;,// fromColor:&#39;rgb(245, 150, 170)&#39;, // 下方标签背景颜色 默认 rgb(245, 150, 170)// loadingImg: &#39;https://7.dusays.com/2021/03/04/d2d5e983e2961.gif&#39;, // 自定义loading的图片，示例值为默认值loadingImg: &#39;https://smashinghub.com/wp-content/uploads/2014/08/cool-loading-animated-gif-1.gif&#39;, // cat// loadingImg: &#39;https://www.icegif.com/wp-content/uploads/loading-icegif.gif&#39;, // chemi// loadingImg: &#39;https://i.pinimg.com/originals/1c/13/f3/1c13f3fe7a6bba370007aea254e195e3.gif&#39;, // blueballloading的图片，示例值为默认值dbName:&#39;talks&#39; // 数据的名称，默认talks，避免有人的命名不是这个，所以加入此配置字段。}).then(function() {// 哔哔加载完成后的回调函数，你可以写你自己的功能console.log(&#39;哔哔 加载完成&#39;)})</description>
-    </item>
-    
-  </channel>
-</rss>
