@@ -24,9 +24,10 @@ draft: false
 - [X] 左右双指针
 
 ---
-## 题目
-### 左右双指针
-题目： 判断str是否为回文字符串
+
+### 题目： 判断str是否为回文字符串
+来自牛客网
+左右双指针：
 ```js
 function judge(str) {
   let left = 0;
@@ -55,3 +56,29 @@ function judge(str) {
 }
 ```
 
+### 题目：求1~n内互质与n互质的数组
+来自 codewars [Coprimes up to N](https://www.codewars.com/kata/59e0dbb72a7acc3610000017/train/javascript)
+example:
+```
+2 -> [1]
+6 -> [1, 5]
+10 -> [1, 3, 7, 9]
+20 -> [1, 3, 7, 9, 11, 13, 17, 19]
+30 -> [1, 7, 11, 13, 17, 19, 23, 29]
+```
+思路：欧几里得算法（辗转相除法）求最大公约数
+```js
+function coprimes(n) {
+  // 1. 创建1~n的数组
+  let arr = [...Array(n).keys()].map(n=>n+1);
+  // 2. 互质 意思是两个共同的被除数只有1
+  // 3. 使用欧几里得算法 可求最大公约数
+  // 4。若最大公约数为1 则互质呗
+  return arr.filter(item=> {
+    function f(a, b) {
+      return b === 0 ? a : f(b, a % b);
+    }
+    return f(n,item) === 1;
+  })
+};
+```
