@@ -4,6 +4,7 @@ title: "关于我"
 url: "/about"
 weight: 1
 # description: "which is precious"
+# hideMeta: true
 ---
 
 {{<figure src="https://img3.doubanio.com/icon/ul152454124-10.jpg">}}

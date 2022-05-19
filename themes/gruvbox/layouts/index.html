@@ -8,12 +8,10 @@
   <div class="body">
     {{ .Content | safeHTML | truncate $.Site.Params.postTruncateLength "…" }}
   </div>
-  {{ if .Truncated }}
   <footer>
     <a href="{{ .RelPermalink }}">Read More&hellip; &raquo;</a>
     {{ partial "disqus/count.html" . }}
   </footer>
-  {{ end }}
 </article>
 {{ end }}
 

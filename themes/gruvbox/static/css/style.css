@@ -214,6 +214,7 @@ article>.body pre code {
   color: #ebdbb2;
   font-size: .8em;
   overflow-x: auto;
+  line-height: 1.8em;
 }
 
 article>.body code {
@@ -260,7 +261,7 @@ article>.body ul {
 
 article>.body {
   /* line-height: 1.4em; */
-  line-height: 2em;
+  line-height: 1.8em;
 }
 
 article>.body p {
@@ -461,9 +462,7 @@ mark {
   background-image: linear-gradient(to top, #d79823dc 0%, #6e4c0e5a 100%) !important;
 }
 
-
-.body .tags span a{
+.body .tags span a {
   padding: .4em .6em;
   font-size: medium;
 }
-
