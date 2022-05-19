@@ -207,7 +207,7 @@ article>footer {
 
 article>.body pre code {
   margin: 2em 0;
-  font-family: 'Fira Code';
+  font-family: 'Hack';
   display: block;
   padding: .5em 1em;
   background: #282828;
@@ -218,7 +218,7 @@ article>.body pre code {
 }
 
 article>.body code {
-  font-family: 'Fira Code' !important;
+  font-family: 'Hack';
   display: inline;
   padding: .05em .25em;
   background: #ebdbb2;
