@@ -95,13 +95,13 @@
 <p>写一个函数，给任意一个正整数 n，求和。</p>
 </blockquote>
 <p>Example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2 -&gt; 1 + 2  // output: 3
+<pre tabindex="0"><code>2 -&gt; 1 + 2  // output: 3
 5 -&gt; 1 + 2 + 3 + 4 + 5 //  output: 15
-</code></pre></div><p>【<strong>小学生解法</strong>】</p>
+</code></pre><p>【<strong>小学生解法</strong>】</p>
 <p>先用小学就学过等差数列的累加计算公式“( 首项 + 末项 ) * 项数 / 2”计算一下:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2 -&gt; (1+2)* 2/2 = 3  ✔
+<pre tabindex="0"><code>2 -&gt; (1+2)* 2/2 = 3  ✔
 5 -&gt; (1+5)* 5/2 = 15 ✔
-</code></pre></div><p><del>本小学生做对了！</del></p>
+</code></pre><p><del>本小学生做对了！</del></p>
 <p>【<strong>用 for 循环</strong>】</p>
 <p>也很容易想到的是用 for 循环解题：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">n</span>) {

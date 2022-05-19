@@ -21,9 +21,9 @@ Github地址：LearnGitBranching
 基础篇 循序渐进地介绍 Git 主要命令
 1. Git Commit 与 Git Branch Git 的分支也非常轻量。它们只是简单地指向某个提交纪录 —— 仅此而已。所以许多 Git 爱好者传颂：
  早建分支！多用分支！
-  提交分支  git commit &amp;lt;branch&amp;gt; 切换到新的分支  git checkout &amp;lt;branch&amp;gt; 如果你想创建一个新的分支同时切换到这个新创建的分支  git checkout -b &amp;lt;your-branch-name&amp;gt;  Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。
+  提交分支  git commit &amp;lt;branch&amp;gt;切换到新的分支  git checkout &amp;lt;branch&amp;gt;如果你想创建一个新的分支同时切换到这个新创建的分支  git checkout -b &amp;lt;your-branch-name&amp;gt; Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。
  2. Git Merge 假设有需要一个bugFix分支：
-// 新建并切换到bugFix分支 git checkout -b bugFix // 保存修改 git commit // 回到main branch git checkout main // 保存修改 git commit 将bugfix merge到当前分支main</description>
+// 新建并切换到bugFix分支git checkout -b bugFix// 保存修改git commit// 回到main branchgit checkout main// 保存修改git commit将bugfix merge到当前分支main</description>
     </item>
     
   </channel>

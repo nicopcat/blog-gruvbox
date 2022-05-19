@@ -48,9 +48,9 @@ function foo(fn) { fn(); } function bar() { console.log(this.a); // window } var
       <description>Codewar 上有一题非常简单的题：
  写一个函数，给任意一个正整数 n，求和。
  Example:
-2 -&amp;gt; 1 + 2 // output: 3 5 -&amp;gt; 1 + 2 + 3 + 4 + 5 // output: 15 【小学生解法】
+2 -&amp;gt; 1 + 2 // output: 35 -&amp;gt; 1 + 2 + 3 + 4 + 5 // output: 15【小学生解法】
 先用小学就学过等差数列的累加计算公式“( 首项 + 末项 ) * 项数 / 2”计算一下:
-2 -&amp;gt; (1+2)* 2/2 = 3 ✔ 5 -&amp;gt; (1+5)* 5/2 = 15 ✔ 本小学生做对了！
+2 -&amp;gt; (1+2)* 2/2 = 3 ✔5 -&amp;gt; (1+5)* 5/2 = 15 ✔本小学生做对了！
 【用 for 循环】
 也很容易想到的是用 for 循环解题：
 function sum(n) { let sum = 0; for (i = 0; i &amp;lt;= n; i++) { sum += i; } return sum; }  其实像这种累加的题目，感觉非常适合用 reduce 来做，于是问题变成了如何快速创建一个 0~n 的数组？</description>

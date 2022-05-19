@@ -133,12 +133,12 @@
 </code></pre></div><h3 id="题目求1n内互质与n互质的数组">题目：求1~n内互质与n互质的数组</h3>
 <p>来自 codewars <a href="https://www.codewars.com/kata/59e0dbb72a7acc3610000017/train/javascript">Coprimes up to N</a>
 example:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2 -&gt; [1]
+<pre tabindex="0"><code>2 -&gt; [1]
 6 -&gt; [1, 5]
 10 -&gt; [1, 3, 7, 9]
 20 -&gt; [1, 3, 7, 9, 11, 13, 17, 19]
 30 -&gt; [1, 7, 11, 13, 17, 19, 23, 29]
-</code></pre></div><p>思路：欧几里得算法（辗转相除法）求最大公约数</p>
+</code></pre><p>思路：欧几里得算法（辗转相除法）求最大公约数</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">coprimes</span>(<span style="color:#a6e22e">n</span>) {
   <span style="color:#75715e">// 1. 创建1~n的数组
 </span><span style="color:#75715e"></span>  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [...Array(<span style="color:#a6e22e">n</span>).<span style="color:#a6e22e">keys</span>()].<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span>=&gt;<span style="color:#a6e22e">n</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>);
