@@ -18,26 +18,25 @@ a:hover {
 }
 
 .gopher::after {
-  content: '';
+  content: "";
   display: inline-block;
   vertical-align: top;
   animation: gopherwave 2s infinite;
 }
 
 .gopher:hover::after {
-  animation: gopherwave .5s infinite;
+  animation: gopherwave 0.5s infinite;
 }
 
 @keyframes gopherwave {
-
   0%,
   100% {
-    content: 'ˏʕ⚆ϖ⚆ʔˎ';
+    content: "ˏʕ⚆ϖ⚆ʔˎ";
     color: #689d6a;
   }
 
   50% {
-    content: '`ʕ◔ϖ◔ʔ´';
+    content: "`ʕ◔ϖ◔ʔ´";
     color: #8ec07c;
   }
 }
@@ -51,24 +50,24 @@ body {
   margin: 0 auto;
 }
 
-body>header::after {
-  content: '';
+body > header::after {
+  content: "";
   display: block;
   clear: both;
 }
 
-body>header,
+body > header,
 main,
-body>footer {
+body > footer {
   margin: 5em 0;
   padding: 0 2em;
 }
 
-body>footer {
+body > footer {
   text-align: center;
 }
 
-body>footer>* {
+body > footer > * {
   margin: 2em 0;
   display: block;
 }
@@ -85,7 +84,7 @@ body>footer>* {
 }
 
 .logo {
-  background: no-repeat top left/64px 64px url('../logo.png');
+  background: no-repeat top left/64px 64px url("../logo.png");
   min-height: 64px;
   padding: 0 0 0 calc(64px + 1em);
   margin-top: -1em;
@@ -94,33 +93,33 @@ body>footer>* {
   justify-content: flex-end;
 }
 
-body>header>.left>h1>a {
+body > header > .left > h1 > a {
   font-weight: normal;
   color: #d79921;
 }
 
-body>header nav {
+body > header nav {
   text-align: right;
 }
 
-nav>ul {
+nav > ul {
   list-style-type: none;
   /* margin: .75em 0; */
-  margin: 1em .5em;
+  margin: 1em 0.5em;
 }
 
-nav>ul>li {
+nav > ul > li {
   display: inline;
 }
 
-nav>ul>li>a:hover {
+nav > ul > li > a:hover {
   text-decoration: underline;
   color: #d79921;
 }
 
-nav>ul>li>a {
+nav > ul > li > a {
   background-color: rgb(31, 29, 29);
-  padding: .2em .5em;
+  padding: 0.2em 0.5em;
   font-size: 1.1em;
   /* box-shadow: 1px 1px 0 white; */
 }
@@ -139,17 +138,21 @@ nav>ul>li>a {
     margin: 2em 0;
   }
 
-  nav>ul {
+  nav > ul {
     text-align: center;
     display: block;
   }
 
-  body>header,
+  body > header,
   main,
-  body>footer,
-  main>article {
+  body > footer,
+  main > article {
     /* margin: 3em 1em; */
     margin: 3em 0;
+  }
+  article,
+  pre code {
+    font-size: 16px;
   }
 }
 
@@ -157,17 +160,17 @@ article {
   background: #fffbe9;
   color: #3c3836;
   padding: 2em;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, .25);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
   margin: 5em 0;
 }
 
-article>header {
+article > header {
   border-bottom: 1px solid #ebdbb2;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
 
-article>footer {
+article > footer {
   border-top: 1px solid #ebdbb2;
   margin-top: 1em;
   padding-top: 1em;
@@ -181,47 +184,47 @@ article>footer {
   display: inline-block;
 }
 
-article>header::after {
-  content: '';
+article > header::after {
+  content: "";
   display: block;
   clear: both;
 }
 
-article>header>h1 {
+article > header > h1 {
   float: left;
 }
 
-article>header>time,
+article > header > time,
 .disqus-comment-count {
   color: #7c6f64;
   float: right;
 }
 
-article>p {
+article > p {
   margin: 1em 0;
 }
 
-article>footer {
+article > footer {
   margin-top: 1em;
 }
 
-article>.body pre code {
+article > .body pre code {
   margin: 2em 0;
-  font-family: 'Hack';
+  font-family: "Hack";
   display: block;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   background: #282828;
   color: #ebdbb2;
-  font-size: .8em;
+  font-size: 0.8em;
   overflow-x: auto;
   line-height: 1.8em;
   border-radius: 3px;
 }
 
-article>.body code {
-  font-family: 'Hack';
+article > .body code {
+  font-family: "Hack";
   display: inline;
-  padding: .5em .25em;
+  padding: 0.5em 0.25em;
   background: #ebdbb2;
   color: #282828;
   border-radius: 3px;
@@ -233,43 +236,43 @@ article>.body code {
   padding: 1em;
 }
 
-article>.body h1,
-article>.body h2,
-article>.body h3,
-article>.body h4,
-article>.body h5,
-article>.body h6 {
+article > .body h1,
+article > .body h2,
+article > .body h3,
+article > .body h4,
+article > .body h5,
+article > .body h6 {
   margin-top: 2em;
 }
 
-article>.body hr {
+article > .body hr {
   margin: 1em 0;
   border: 0;
   border-bottom: 1px solid #ebdbb2;
 }
 
-article>.body blockquote {
+article > .body blockquote {
   margin-left: 2em;
   padding-left: 2em;
   border-left: 2px solid #ebdbb2;
 }
 
-article>.body ol,
-article>.body ul {
+article > .body ol,
+article > .body ul {
   /* margin-left: 3em; */
   margin-left: 1em;
 }
 
-article>.body {
+article > .body {
   /* line-height: 1.4em; */
   line-height: 1.8em;
 }
 
-article>.body p {
+article > .body p {
   margin: 1em 0;
 }
 
-article>.body img {
+article > .body img {
   max-width: 100%;
 }
 
@@ -299,7 +302,6 @@ article>.body img {
   display: block;
   color: #665c54;
 }
-
 
 /* friend */
 .friendurl {
@@ -400,14 +402,13 @@ article>.body img {
 
   .friendname {
     /* font-size: 16px; */
-    font-size: .9em;
+    font-size: 0.9em;
   }
 }
 
 .buttons .button:hover {
   background-color: var(--code-bg);
 }
-
 
 .highlight {
   border-radius: 6px !important;
@@ -421,7 +422,8 @@ mark {
 #ispeak .xk-card {
   color: var(--primary);
   user-select: auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   /* background-color: #2b2929; */
 }
 
@@ -438,16 +440,15 @@ mark {
   white-space: unset;
 }
 
-
 #ispeak .xk-card-content img {
   max-height: 58vh;
   margin: 0 auto;
-  border-radius: .4rem;
+  border-radius: 0.4rem;
   margin-bottom: 1rem;
 }
 
 #ispeak .xk-card-header {
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   color: var(--primary);
 }
 
@@ -460,10 +461,14 @@ mark {
   cursor: pointer;
   user-select: none;
   margin-right: 10px;
-  background-image: linear-gradient(to top, #d79823dc 0%, #6e4c0e5a 100%) !important;
+  background-image: linear-gradient(
+    to top,
+    #d79823dc 0%,
+    #6e4c0e5a 100%
+  ) !important;
 }
 
 .body .tags span a {
-  padding: .4em .6em;
+  padding: 0.4em 0.6em;
   font-size: medium;
 }
