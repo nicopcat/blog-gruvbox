@@ -26,8 +26,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css"
   integrity="sha512-+FLbWf7MMvYQNrm4at87w8vmfsEVGmhDDHF77JGoqAtxDv+dYCAniHG+64Ivp+nRzuBYuZhyiXK8BXAN6k00TQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-hard.min.css">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -129,24 +138,10 @@
 <li>运行
 普通版本</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">choco install hugo -confirm
-</code></pre></td></tr></table>
-</div>
-</div><p>extended版本：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">choco install hugo-extended -confirm
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="下载-visual-studio-code-编辑器">下载 Visual Studio Code 编辑器</h2>
+<pre tabindex="0"><code>choco install hugo -confirm
+</code></pre><p>extended版本：</p>
+<pre tabindex="0"><code>choco install hugo-extended -confirm
+</code></pre><h2 id="下载-visual-studio-code-编辑器">下载 Visual Studio Code 编辑器</h2>
 <ol>
 <li>地址：https://code.visualstudio.com/</li>
 </ol>
@@ -155,38 +150,16 @@
 <ol>
 <li>找一个好记的地方，创建文件夹<code>Hugo</code>（或者随便一个什么名字），在地址栏输入<code>cmd</code>以打开命令行，输入下面指令：</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">$ git config --global user.name &#34;Username&#34;
+<pre tabindex="0"><code>$ git config --global user.name &quot;Username&quot;
 $ git config --global user.email you@example.com 
-</code></pre></td></tr></table>
-</div>
-</div><p>查看设置好的邮箱和用户：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git config --global --list
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="从github仓库clone文件夹">从Github仓库Clone文件夹</h2>
+</code></pre><p>查看设置好的邮箱和用户：</p>
+<pre tabindex="0"><code>git config --global --list
+</code></pre><h2 id="从github仓库clone文件夹">从Github仓库Clone文件夹</h2>
 <ol>
 <li>Clone存放博客源代码的仓库</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git clone https://github.com/janew14/blog-sources.git
-</code></pre></td></tr></table>
-</div>
-</div><p>连接也许不稳定，试试连vpn或切换vpn，总之，坚持到提示完成。
+<pre tabindex="0"><code>git clone https://github.com/janew14/blog-sources.git
+</code></pre><p>连接也许不稳定，试试连vpn或切换vpn，总之，坚持到提示完成。
 （坚持住！）</p>
 <ol start="2">
 <li>Clone完成后，你会发现多了一个<code>blog-sources</code>文件夹，点进去就是刚从仓库复制下来的文件，这会儿可以开始写博客了。</li>
@@ -198,65 +171,31 @@ $ git config --global user.email you@example.com
 <li>找到<code>content/posts/</code>，在需要的分类下创建新的 <code>.md</code>文档，就可以在里面写博客内容了。</li>
 <li>在博客内容前加上一些front matter，设置基本信息，如</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">---
+<pre tabindex="0"><code>---
 author:
-    - name: &#34;Jane&#34;  //作者的名字
+    - name: &quot;Jane&quot;  //作者的名字
 date: 2022-03-19  // 时间格式
-title: &#34;今天&#34;  // 文章标题
+title: &quot;今天&quot;  // 文章标题
 categories:
-    - &#34;日记&#34;  // 添加分类
+    - &quot;日记&quot;  // 添加分类
 tags:
-    - &#34;博客&#34;
-    - &#34;个人&#34;  // 添加标签
+    - &quot;博客&quot;
+    - &quot;个人&quot;  // 添加标签
 ---
-</code></pre></td></tr></table>
-</div>
-</div><ol start="5">
+</code></pre><ol start="5">
 <li>提交之前预览：</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo serve
-</code></pre></td></tr></table>
-</div>
-</div><h1 id="推送提交到仓库">推送提交到仓库</h1>
+<pre tabindex="0"><code>hugo serve
+</code></pre><h1 id="推送提交到仓库">推送提交到仓库</h1>
 <p>写好文章后，需要push到仓库，博客才会显示更新后的内容。</p>
 <ol>
 <li>在<code>blog-sources</code>文件夹打开cmd，输入:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo
+<pre tabindex="0"><code>hugo
 git add .
-git commit -m&#34;任意的附注内容”
+git commit -m&quot;任意的附注内容”
 git push
-</code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+</code></pre><ol start="2">
 <li>因为网络问题，可以开关vpn多试几次。如果push显示403错误，可能出现验证问题，可能需要添加SSH KEY，到时候联系我。</li>
 <li>因为已经配置好Github Action，所以只需要将源码推送，public的代码也会自动更新，而不需要推送两遍。</li>
 </ol>

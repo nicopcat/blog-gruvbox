@@ -26,8 +26,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css"
   integrity="sha512-+FLbWf7MMvYQNrm4at87w8vmfsEVGmhDDHF77JGoqAtxDv+dYCAniHG+64Ivp+nRzuBYuZhyiXK8BXAN6k00TQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-hard.min.css">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
 
   <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/tags/%E7%BF%BB%E8%AF%91/index.xml" title="Nic Tian" />
   <link href="/logo.png" rel="shortcut icon">

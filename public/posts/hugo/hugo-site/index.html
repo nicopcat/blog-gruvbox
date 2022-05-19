@@ -26,8 +26,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css"
   integrity="sha512-+FLbWf7MMvYQNrm4at87w8vmfsEVGmhDDHF77JGoqAtxDv+dYCAniHG+64Ivp+nRzuBYuZhyiXK8BXAN6k00TQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-hard.min.css">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -122,95 +131,38 @@
 <li><strong>Mac</strong></li>
 </ol>
 <p>使用 <a href="https://brew.sh/">Homebrew</a>安装：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">brew install hugo
-</code></pre></td></tr></table>
-</div>
-</div><p>使用 <a href="https://www.macports.org/">MacPorts</a> 安装：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">port install hugo
-</code></pre></td></tr></table>
-</div>
-</div><ol start="3">
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>使用 <a href="https://www.macports.org/">MacPorts</a> 安装：</p>
+<pre tabindex="0"><code>port install hugo
+</code></pre><ol start="3">
 <li><strong>Windows</strong></li>
 </ol>
 <p>使用 <a href="https://chocolatey.org/">Chocolatey</a> 安装：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">choco install hugo -confirm
-</code></pre></td></tr></table>
-</div>
-</div><p>下载完成后，输入:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo version
-</code></pre></td></tr></table>
-</div>
-</div><p>如果提示Hugo版本号，即表示安装成功。此时，目录下会有一个名为 <code>Hugo</code> 的文件夹。</p>
+<pre tabindex="0"><code>choco install hugo -confirm
+</code></pre><p>下载完成后，输入:</p>
+<pre tabindex="0"><code>hugo version
+</code></pre><p>如果提示Hugo版本号，即表示安装成功。此时，目录下会有一个名为 <code>Hugo</code> 的文件夹。</p>
 <p>推荐大家先安装好Git，方便之后向自己的仓库推送。</p>
 <h2 id="22-create-a-new-site-生成站点">2.2 Create a New Site 生成站点</h2>
 <p>你可以通过指令快速生成一个站点：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo new site quickstart
-</code></pre></td></tr></table>
-</div>
-</div><p>恭喜你！此时你已成功创建了一个名为 <code>quickstart</code> 的站点，以下 <code>quickstart</code> 作为站点名。</p>
+<pre tabindex="0"><code>hugo new site quickstart
+</code></pre><p>恭喜你！此时你已成功创建了一个名为 <code>quickstart</code> 的站点，以下 <code>quickstart</code> 作为站点名。</p>
 <h2 id="23-add-a-theme-添加一个主题">2.3 Add a Theme 添加一个主题</h2>
 <p>你可以在 themes.gohugo.io 挑选一个自己喜欢的主题。我选择的主题是 <strong><a href="https://themes.gohugo.io/themes/hugo-papermod/">PaperMod</a></strong>。</p>
 <p>(注：PaperMod 主题使用的是yml/yaml格式的配置文件，而hugo配置文件默认的后缀是.toml，该主题建议你转成.yaml)。转换指令：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo new site &lt;name of site&gt; -f yml
-</code></pre></td></tr></table>
-</div>
-</div><hr>
+<pre tabindex="0"><code>hugo new site &lt;name of site&gt; -f yml
+</code></pre><hr>
 <p>PaperMod 文档中列出了<a href="https://github.com/adityatelange/hugo-PaperMod/wiki/Installation#method-1">三种安装方式</a>。如果你对其他主题感兴趣，你可以按照文档中的步骤安装。</p>
 <ol>
 <li>使用 git clone:</li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
-</code></pre></td></tr></table>
-</div>
-</div><ol start="2">
+<pre tabindex="0"><code>git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+</code></pre><ol start="2">
 <li>使用 <a href="https://www.atlassian.com/git/tutorials/git-submodule">git submodule</a></li>
 </ol>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+<pre tabindex="0"><code>git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
 git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
-</code></pre></td></tr></table>
-</div>
-</div><ol start="3">
+</code></pre><ol start="3">
 <li>
 <p>使用直接下载ZIP包
 进到 PaperMod <a href="https://themes.gohugo.io/themes/hugo-papermod/">主题页面</a> ，点击 <code>Download</code> ，再点击 <code>Code</code>，选择 <code>Download ZIP</code>，得到一个zip文件，解压后放入 <code>hugo/quickstart/themes/</code> 内，并需要将文档名由默认的 <code>/hugo-PaperMod-master</code> 改为 <code>/PaperMod</code>，否则无法正确匹配主题。</p>
@@ -218,37 +170,15 @@ git submodule update --init --recursive # needed when you reclone your repo (sub
 <li>
 <p>最后一步
 在 <code>config.yml</code> 中添加：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">theme: &#34;PaperMod&#34;
-</code></pre></td></tr></table>
-</div>
-</div></li>
+<pre tabindex="0"><code>theme: &quot;PaperMod&quot;
+</code></pre></li>
 <li>
 <p>更新主题</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">cd themes/PaperMod
+<pre tabindex="0"><code>cd themes/PaperMod
 git pull
-</code></pre></td></tr></table>
-</div>
-</div><p>或使用 git submodule 更新</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">git submodule update --remote --merge
-</code></pre></td></tr></table>
-</div>
-</div></li>
+</code></pre><p>或使用 git submodule 更新</p>
+<pre tabindex="0"><code>git submodule update --remote --merge
+</code></pre></li>
 </ol>
 <h2 id="24-add-some-content-发表内容">2.4 Add Some Content 发表内容</h2>
 <p>站点已经建好，该怎么写帖子呢？<br>
@@ -256,46 +186,20 @@ git pull
 <h3 id="手动添加">手动添加</h3>
 <p>在 <code>quickstart/content/</code> 文件夹下新建一个<code>.md</code>文件，如 <code>my-first-post.md</code>。在文章的最前面，通常需要写<code>front-matter</code>，中文可以翻译成<code>预定义变量</code>，可以用来指定文章的元属性。
 下面是一个<code>front-matter</code>例子：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">---
-title: &#34;My First Post&#34;
+<pre tabindex="0"><code>---
+title: &quot;My First Post&quot;
 date: 2019-03-26T08:47:11+01:00
 draft: true
 ---
-</code></pre></td></tr></table>
-</div>
-</div><p>Hugo文档的说明：https://gohugo.io/content-management/front-matter/</p>
+</code></pre><p>Hugo文档的说明：https://gohugo.io/content-management/front-matter/</p>
 <h3 id="利用cmd指令新建帖子可以自动生成时间和标题等">利用cmd指令新建帖子（可以自动生成时间和标题等）</h3>
 <p>我们知道，<code>front-matter</code>可以指定<code>title</code>以及<code>date</code>属性，但如果使用下面的指令新建帖子，则会自动生成时间：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">&lt;!-- 在/posts/ 文件夹下 新建一篇名为 my-first-post 的文章 --&gt;
+<pre tabindex="0"><code>&lt;!-- 在/posts/ 文件夹下 新建一篇名为 my-first-post 的文章 --&gt;
 hugo new posts/my-first-post.md
-</code></pre></td></tr></table>
-</div>
-</div><p>此时，打开 <code>/content/</code> 文件夹，你可以看到<code>my-first-post.md</code>文件，用编辑器打开，就可以开始写文章了。</p>
+</code></pre><p>此时，打开 <code>/content/</code> 文件夹，你可以看到<code>my-first-post.md</code>文件，用编辑器打开，就可以开始写文章了。</p>
 <h2 id="25-livereload-预览服务器">2.5 LiveReload 预览服务器</h2>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">hugo serve
-</code></pre></td></tr></table>
-</div>
-</div><p>这个指令可以查看服务器情况，并得到一个镜像访问地址 http://localhost:1313/。
+<pre tabindex="0"><code>hugo serve
+</code></pre><p>这个指令可以查看服务器情况，并得到一个镜像访问地址 http://localhost:1313/。
 有点像 VS Code 里面的 liveReload 插件，方便我们在开发环境实时预览对站点所做的更改，这个功能非常好用。</p>
 <h1 id="3-其他">3. 其他</h1>
 <hr>

@@ -16,10 +16,11 @@
       <description>this会在执行的上下文中绑定一个对象，有时候绑定全局对象，有时绑定的是某个对象，所以在什么情况下进行什么绑定，比较迷惑。
 先说结论：this的绑定取决于函数的直接调用位置。
 1. 调用位置 首先要理解什么是调用位置：调用位置就是函数在代码中调用的位置，而不是函数声明的位置。
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  function foo{ console.log(&amp;#39;foo&amp;#39;); bar(); // &amp;lt;-- bar()的调用位置 } function bar{ console.log(&amp;#39;bar&amp;#39;); baz(); // &amp;lt;-- baz()的调用位置 } function baz{ console.log(&amp;#39;baz&amp;#39;); } foo(); // &amp;lt;-- foo()的调用位置   2. 绑定规则 判断this是如何绑定，首先找到函数的调用位置，然后对比下面的规则，看符合哪一条，且这些规则具有不同的优先级。
+function foo{ console.log(&amp;#39;foo&amp;#39;); bar(); // &amp;lt;-- bar()的调用位置 } function bar{ console.log(&amp;#39;bar&amp;#39;); baz(); // &amp;lt;-- baz()的调用位置 } function baz{ console.log(&amp;#39;baz&amp;#39;); } foo(); // &amp;lt;-- foo()的调用位置 2. 绑定规则 判断this是如何绑定，首先找到函数的调用位置，然后对比下面的规则，看符合哪一条，且这些规则具有不同的优先级。
 2.1 默认绑定 首先，最常用的函数调用类型是：独立函数调用。这条规则可以看作是不符合其他规则时的默认规则。
 场景 1：独立函数的调用 因为this没有绑定到任何对象，所以默认绑定到全局。
-1 2 3 4 5 6 7  function foo() { console.log(this.a); } const a = 2; foo(); // 2   场景 2：将函数作为参数传入另一个函数时 这样的绑定，本质上仍然是独立函数的调用。</description>
+function foo() { console.log(this.a); } const a = 2; foo(); // 2 场景 2：将函数作为参数传入另一个函数时 这样的绑定，本质上仍然是独立函数的调用。
+function foo(fn) { fn(); } function bar() { console.log(this.a); // window } var a = 8; foo(bar); // 8 但，如果使用let和const，或是严格模式下，隐式绑定会丢失。</description>
     </item>
     
   </channel>

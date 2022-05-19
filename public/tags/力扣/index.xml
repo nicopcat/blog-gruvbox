@@ -19,7 +19,8 @@
 第一题很“简单”，只用一个了一个JS的方法就可以计算出来。查看他人的解题，发现大家的思路很不一样，甚至很陌生。这些新奇的思路（不用库）大概就是传说中的算法吧。
 啊，算法，犹如哥伦布一脚踏进美洲，还以为是另一个印度呢。
  已了解/未了解：  二分算法 哈希算法 滑动窗口 左右双指针   题目： 判断str是否为回文字符串 来自牛客网 左右双指针：
-1 2 3 4 5 6 7 8 9 10 11 12 13 14  function judge(str) { let left = 0; let right = str.length - 1; if (str.length === 0) return false; while (left &amp;lt;= right) { if (str[left] !== str[right]) { return false } else { left++; right--; } } return true; }   循环：</description>
+function judge(str) { let left = 0; let right = str.length - 1; if (str.length === 0) return false; while (left &amp;lt;= right) { if (str[left] !== str[right]) { return false } else { left++; right--; } } return true; } 循环：
+function judge(str) { for (let i = 0; i &amp;lt; Math.</description>
     </item>
     
   </channel>

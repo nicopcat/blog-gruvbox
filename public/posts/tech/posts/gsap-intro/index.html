@@ -26,8 +26,17 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css"
   integrity="sha512-+FLbWf7MMvYQNrm4at87w8vmfsEVGmhDDHF77JGoqAtxDv+dYCAniHG+64Ivp+nRzuBYuZhyiXK8BXAN6k00TQ=="
   crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <script src="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-hard.min.css">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
 
   <link href="/logo.png" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
@@ -112,15 +121,8 @@
 </ul>
 <h1 id="安装-gsap">安装 GSAP</h1>
 <p>可以使用 CDN,下载或使用 NPM/YARN 安装，也可以从 Github 获取。参考<a href="https://greensock.com/install">installation page</a>，最简单的就是用 script 标签引入：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
-</code></pre></td></tr></table>
-</div>
-</div><h1 id="基本的-tweening-知识">基本的 Tweening 知识</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#f92672">&lt;</span><span style="color:#a6e22e">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js&#34;</span><span style="color:#f92672">&gt;&lt;</span><span style="color:#960050;background-color:#1e0010">/script&gt;</span>
+</code></pre></div><h1 id="基本的-tweening-知识">基本的 Tweening 知识</h1>
 <p>开始学习一些基础的 tweens 吧，可以参考官网给出的<a href="https://codepen.io/GreenSock/pen/aYYOdN">codepen</a> demo.</p>
 <h2 id="gsapto">gsap.to()</h2>
 <p>为了创建一个动画，gsap.to()需要两个参数：</p>
@@ -129,29 +131,9 @@
 <li>变量(vars) - 一个带有你要制作动画的属性/值对的对象（比如<code>opacity:0</code>.5, <code>rotation:45</code>，等等），以及其他可选的特殊属性，比如<code>duration</code>和<code>onComplete</code>。</li>
 </ul>
 <p>举个栗子，要在 1 秒内把一个 id 为&quot;logo&quot;的元素，移动到<code>x</code>为 100 的地方（即<code>transform: translateX(100px)</code>），可以这样写：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
-</code></pre></td></tr></table>
-</div>
-</div><p>注意：记住，GSAP 可以操作的并不仅仅是 DOM 元素，所以你甚至可以对原始对象的自定义属性进行动画处理，像这样:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> };
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
+</code></pre></div><p>注意：记住，GSAP 可以操作的并不仅仅是 DOM 元素，所以你甚至可以对原始对象的自定义属性进行动画处理，像这样:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> };
 <span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#a6e22e">obj</span>, {
   <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
   <span style="color:#a6e22e">prop</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">200</span>,
@@ -160,9 +142,7 @@
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">prop</span>); <span style="color:#75715e">//logs the value on each update.
 </span><span style="color:#75715e"></span>  },
 });
-</code></pre></td></tr></table>
-</div>
-</div><p>打开 dev tool 你可以看到，在 1 秒内 GSAP 打印了从 10 到 200 的数值。可以看出，每次 tween 更新，都会触发 onUpdate()从而打印数字。</p>
+</code></pre></div><p>打开 dev tool 你可以看到，在 1 秒内 GSAP 打印了从 10 到 200 的数值。可以看出，每次 tween 更新，都会触发 onUpdate()从而打印数字。</p>
 <p>请注意，在上面的 demo 中，<code>opacity</code>, <code>scale</code>, <code>rotation</code> 和<code>x</code>值都被动画化了，但 DOM 元素实际上并没有这些属性! 换句话说，不存在<code>element.scale</code>或<code>element.opacity</code>这样的东西。那是它怎么做到的呢？这就是 GSAP 的魔力。在我们谈论这背后的细节之前，让我们先看看 GSAP 的插件以及它们是如何工作的，因为这将澄清一些重要的概念。</p>
 <h1 id="plugins">Plugins</h1>
 <p>可以把插件看作是动态地添加到 GSAP 中以增加特殊属性的工具，注入额外的功能。这使核心引擎体积小而有效，同时允许无限扩展。每个插件都与一个特定的属性名称有关。</p>
@@ -261,39 +241,18 @@
 <h2 id="from-方法">from() 方法</h2>
 <p>有时，将你的元素设置在它们应该结束的地方（例如，在一个介绍性的动画结束后），然后从其他的值开始移动，这会非常方便。这正是<code>gsap.from()</code>的作用。</p>
 <p>例如，你现在有一个 <code>&quot;#logo&quot;</code> 元素，初始<code>x</code>位置为 <code>0</code>，然后你创建了下面的 tween：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
-</code></pre></td></tr></table>
-</div>
-</div><p>于是这个<code>#logo</code>会立即跳到<code>x</code>为<code>100</code>的位置，然后开始移动到<code>x</code>为<code>0</code>的位置（或当 tween 开始工作时的随便某个值）。话句话说，这个元素将从<strong>你提供的值</strong>开始动画，而不是初始值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
+</code></pre></div><p>于是这个<code>#logo</code>会立即跳到<code>x</code>为<code>100</code>的位置，然后开始移动到<code>x</code>为<code>0</code>的位置（或当 tween 开始工作时的随便某个值）。话句话说，这个元素将从<strong>你提供的值</strong>开始动画，而不是初始值。</p>
 <p>请看<a href="https://codepen.io/GreenSock/pen/OJLgroR">Codepen</a>例子。</p>
 <p>也有一个<code>fromTo()</code>方法，允许你指定初始值和结束值。</p>
 <h2 id="set-方法">set() 方法</h2>
 <p>如果你想即刻设置一些属性，使用<code>.set()</code>方法。它本质上是一个<code>duration</code>为<code>0</code>的 tween。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">fontSize</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> });
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="特殊属性-special-properties">特殊属性 Special properties</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">set</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">fontSize</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">20</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> });
+</code></pre></div><h2 id="特殊属性-special-properties">特殊属性 Special properties</h2>
 <p>一个特殊属性就像一个保留的关键字，GSAP 对它的处理方式与普通（动画）属性不同。特殊属性被用来定义回调、延迟、缓动、交错等。</p>
 <p>特殊属性的一个基本例子是<code>duration</code>（我们已经在使用它了）。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
-</code></pre></td></tr></table>
-</div>
-</div><p>其他一些常见的特殊属性：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span> });
+</code></pre></div><p>其他一些常见的特殊属性：</p>
 <ul>
 <li>delay - 动画开始前的延迟</li>
 <li>onComplete - 当动画完成时的回调</li>
@@ -321,39 +280,14 @@ DEMO2: <a href="https://codepen.io/GreenSock/pen/qBWjOMK">https://codepen.io/Gre
 <li>onReverseComplete：当动画<strong>反转</strong>时再次到达它的起点时被调用。</li>
 </ul>
 <p>要在动画结束时调用<code>tweenComplete()</code>函数，你应该这样写：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">onComplete</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tweenComplete</span> });
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, { <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>, <span style="color:#a6e22e">onComplete</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tweenComplete</span> });
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tweenComplete</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#34;the tween is complete&#34;</span>);
 }
-</code></pre></td></tr></table>
-</div>
-</div><h2 id="回调参数-callback-parameters">回调参数 Callback Parameters</h2>
+</code></pre></div><h2 id="回调参数-callback-parameters">回调参数 Callback Parameters</h2>
 <p>每个回调函数可以选择性地传递任意数量的参数。由于可以有多个参数，它们必须以数组形式传递（即使只有一个）。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, {
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, {
   <span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
   <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>,
   <span style="color:#a6e22e">onComplete</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">tweenComplete</span>,
@@ -363,43 +297,11 @@ DEMO2: <a href="https://codepen.io/GreenSock/pen/qBWjOMK">https://codepen.io/Gre
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">tweenComplete</span>(<span style="color:#a6e22e">message</span>) {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">message</span>);
 }
-</code></pre></td></tr></table>
-</div>
-</div><p>默认情况下，回调的 scope（在该函数中<code>this</code>的指向）即 tween 本身，但你也可以指定 scope，比如 <code>callbackScope: yourScope</code>。</p>
+</code></pre></div><p>默认情况下，回调的 scope（在该函数中<code>this</code>的指向）即 tween 本身，但你也可以指定 scope，比如 <code>callbackScope: yourScope</code>。</p>
 <p>Callbacks DEMO: <a href="https://codepen.io/GreenSock/pen/MWgoLgq">https://codepen.io/GreenSock/pen/MWgoLgq</a></p>
 <h2 id="controlling-animations">Controlling Animations</h2>
 <p>你需要一个实例来控制动画，<code>to()</code>、<code>from()</code>和<code>fromTo()</code>方法都会返回一个Tween实例，所以你可以把它存为一个变量，然后非常轻松地控制动画:</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//create a reference to the animation
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//create a reference to the animation
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tween</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#logo&#34;</span>, {<span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>});
 
 <span style="color:#75715e">//pause
@@ -425,9 +327,7 @@ DEMO2: <a href="https://codepen.io/GreenSock/pen/qBWjOMK">https://codepen.io/Gre
 
 <span style="color:#75715e">//immediately kill the tween and make it eligible for garbage collection
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">tween</span>.<span style="color:#a6e22e">kill</span>();
-</code></pre></td></tr></table>
-</div>
-</div><p>Demo: <a href="https://codepen.io/GreenSock/pen/OJLgdyg">Basic Control Methods</a></p>
+</code></pre></div><p>Demo: <a href="https://codepen.io/GreenSock/pen/OJLgdyg">Basic Control Methods</a></p>
 <hr>
 <p>* 2020-3-15 更新</p>
 <h1 id="sequencing-with-timelines">Sequencing with Timelines</h1>
@@ -445,25 +345,13 @@ DEMO2: <a href="https://codepen.io/GreenSock/pen/qBWjOMK">https://codepen.io/Gre
 <p>但如果你只是在左右之间做一个动画，那么时间线可能是多余的。</p>
 <p><strong>基本排序</strong>
 timeline有类似<code>to()</code>、<code>from()</code>和<code>fromTo()</code>的方法，为我们提供了一种快速创建Tween并将其添加到时间线上的方法。</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
-<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//create a timeline instance
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">//create a timeline instance
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">tl</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">timeline</span>();
 
 <span style="color:#75715e">//the following two lines do the SAME thing:
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">tl</span>.<span style="color:#a6e22e">add</span>( <span style="color:#a6e22e">gsap</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#id&#34;</span>, {<span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>}) );
 <span style="color:#a6e22e">tl</span>.<span style="color:#a6e22e">to</span>(<span style="color:#e6db74">&#34;#id&#34;</span>, {<span style="color:#a6e22e">duration</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>, <span style="color:#a6e22e">x</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">100</span>}); <span style="color:#75715e">//shorter syntax!
-</span></code></pre></td></tr></table>
-</div>
-</div><p>默认情况下，动画是一个接一个地插入的，可以使用<a href="https://greensock.com/position-parameter">位置参数</a>来精确控制动画的位置。</p>
+</span></code></pre></div><p>默认情况下，动画是一个接一个地插入的，可以使用<a href="https://greensock.com/position-parameter">位置参数</a>来精确控制动画的位置。</p>
 <p>Demo: <a href="https://codepen.io/GreenSock/pen/WNeOPGz">Basic Sequencing</a></p>
 <!-- 
 # Timeline control
