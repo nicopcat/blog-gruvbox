@@ -26,7 +26,7 @@ Hugo 我这里是一个仓库nicopcat/Hugo-Sources存放源码，一个仓库nic
   也许你已经生成过密钥并由于种种原因放在了 Github - settings - SSH and GPG keys 里：
 如果有，可能需要删除，不然会与接下来的配置冲突。
   如果之前没有生成过密钥，则输入以下指令：
-ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码仓库，比如我的仓库nicopcat/Hugo-Sources下：
+1  ssh-keygen -t rsa - -C &amp;#34;$(git config user.email)&amp;#34;     在源码仓库，比如我的仓库nicopcat/Hugo-Sources下：
  找到 Settings - Secrets - Action 看到Secret，就知道是要放密钥（Secret Key） 点 New repository secret ，新增密钥，将.ssh/里的密钥全部拷贝进来，内容以-----BEGIN OPENSSH PRIVATE KEY-----开头 名字必须与下面github action workflows文件中的吻合，比如我的是ACTIONS_DEPLOY_KEY     在静态文件仓库，即nicopcat/nicopcat.</description>
     </item>
     
@@ -37,7 +37,7 @@ ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码�
       
       <guid>http://blog.nekolas.cafe/posts/hugo/how-to-setup-blog/</guid>
       <description>剧情摘要：前些日子，帮J小将在主机上搭了博客，但是如何让她在另一台电脑也能写文章呢？
- 前提准备 下载Git  地址：https://git-scm.com/download/win 选择64-bit Git for Windows Setup 打开安装包，按照推荐项一路enter下去就好 在任意一个窗口地址栏输入cmd，按回车，输入git version，回车。若出现版本号则说明下载成功。  下载Hugo 方法一：二进制安装包  地址：https://github.com/gohugoio/hugo/releases 找到 hugo_extended_0.95.0_Windows-64bit.zip 安装包，下载。 创建文件夹  创建一个新的文件夹，G:\Hugo 创建一个新的文件夹，G:\Hugo\bin   确保 hugo.exe 文件在 G:\Hugo\bin 文件夹中 把 hugo.exe 可执行文件添加到你的 PATH路径中  搜索：环境变量 - 编辑系统环境变量 - 高级 - 环境变量 系统变量 - 找到path - 双击打开 - 新建变量 - 输入G:\Hugo\bin - 保存   运行hugo.exe 输入hugo version查看得到版本号就说明安装成功。  方法二：用chocoley安装  地址：https://chocolatey.org/install ,按照提示安装即可 运行 普通版本  choco install hugo -confirmextended版本：</description>
+ 前提准备 下载Git  地址：https://git-scm.com/download/win 选择64-bit Git for Windows Setup 打开安装包，按照推荐项一路enter下去就好 在任意一个窗口地址栏输入cmd，按回车，输入git version，回车。若出现版本号则说明下载成功。  下载Hugo 方法一：二进制安装包  地址：https://github.com/gohugoio/hugo/releases 找到 hugo_extended_0.95.0_Windows-64bit.zip 安装包，下载。 创建文件夹  创建一个新的文件夹，G:\Hugo 创建一个新的文件夹，G:\Hugo\bin   确保 hugo.exe 文件在 G:\Hugo\bin 文件夹中 把 hugo.exe 可执行文件添加到你的 PATH路径中  搜索：环境变量 - 编辑系统环境变量 - 高级 - 环境变量 系统变量 - 找到path - 双击打开 - 新建变量 - 输入G:\Hugo\bin - 保存   运行hugo.exe 输入hugo version查看得到版本号就说明安装成功。  方法二：用chocoley安装  地址：https://chocolatey.org/install ,按照提示安装即可 运行 普通版本  1  choco install hugo -confirm   extended版本：</description>
     </item>
     
     <item>
@@ -47,12 +47,12 @@ ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码�
       
       <guid>http://blog.nekolas.cafe/posts/hugo/tips-for-playing-hugo/</guid>
       <description>1. 将hack字体CDN link 引入 head 最简单的方法是把hack字体的CDN地址引入head.
-&amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt; 接下来就是找到正确的地方。
+1  &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt;   接下来就是找到正确的地方。
 在看某些教程的时候，我非常困惑，文件地址到底是根目录下，还是theme下面的文件？
 我们最终的目的是把上面的link放到在index.html的&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt;部分，所以需要找到post是在哪里render成head的。
 我们发现theme/partials里面有一个head.html，确实可以修改这里，但我们最好不要修改原来的主题，否则很难维护，PaperMod主题在partials里配备了可供用户自定义的文件extend_head.html。
 找到 根目录/themes/PaperMod/layouts/partials/extend_head.html，插入上面的link即可：
-{{- /* Head custom content area start */ -}} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt; {{- /* Insert any custom code (web-analytics, resources, etc.) - it will appear in the&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section of every page. */ -}} {{- /* Can be overwritten by partial with the same name in the global layouts. */ -}} {{- /* Head custom content area end */ -}} 引入成功，接下来需要找到相关的css文件修改。</description>
+1 2 3 4 5  {{- /* Head custom content area start */ -}} &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; href=&amp;#34;//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css&amp;#34;&amp;gt; {{- /* Insert any custom code (web-analytics, resources, etc.) - it will appear in the&amp;lt;head&amp;gt;&amp;lt;/head&amp;gt; section of every page. */ -}} {{- /* Can be overwritten by partial with the same name in the global layouts.</description>
     </item>
     
     <item>
@@ -65,7 +65,7 @@ ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码�
 The problem is that I don&amp;rsquo;t know how to use .md file to render these markups mixed with Vue scripts so that I had to put a raw .html file and then imported css stylesheet from my theme.
 Stacks:
  HTML CSS Vue.js  1.2 HTML They are simple markups:
-&amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wrapper&amp;#34;&amp;gt; &amp;lt;!</description>
+1 2 3 4 5 6 7 8 9 10 11 12 13  &amp;lt;div class=&amp;#34;container&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;wrapper&amp;#34;&amp;gt; &amp;lt;!</description>
     </item>
     
     <item>
@@ -128,8 +128,8 @@ Stacks:
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+1  brew install hugo   使用 MacPorts 安装：
+1  port install hugo   Windows  使用 Chocolatey 安装：</description>
     </item>
     
   </channel>

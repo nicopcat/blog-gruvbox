@@ -23,7 +23,9 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hack-font@3.3.0/build/web/hack.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css"
+  integrity="sha512-+FLbWf7MMvYQNrm4at87w8vmfsEVGmhDDHF77JGoqAtxDv+dYCAniHG+64Ivp+nRzuBYuZhyiXK8BXAN6k00TQ=="
+  crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
 
@@ -94,62 +96,160 @@
 <p>写一个函数，给任意一个正整数 n，求和。</p>
 </blockquote>
 <p>Example:</p>
-<pre tabindex="0"><code>2 -&gt; 1 + 2  // output: 3
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2 -&gt; 1 + 2  // output: 3
 5 -&gt; 1 + 2 + 3 + 4 + 5 //  output: 15
-</code></pre><p>【<strong>小学生解法</strong>】</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>【<strong>小学生解法</strong>】</p>
 <p>先用小学就学过等差数列的累加计算公式“( 首项 + 末项 ) * 项数 / 2”计算一下:</p>
-<pre tabindex="0"><code>2 -&gt; (1+2)* 2/2 = 3  ✔
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">2 -&gt; (1+2)* 2/2 = 3  ✔
 5 -&gt; (1+5)* 5/2 = 15 ✔
-</code></pre><p><del>本小学生做对了！</del></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><del>本小学生做对了！</del></p>
 <p>【<strong>用 for 循环</strong>】</p>
 <p>也很容易想到的是用 for 循环解题：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">n</span>) {
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sum</span>(<span style="color:#a6e22e">n</span>) {
   <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;
   <span style="color:#66d9ef">for</span> (<span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">n</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
     <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>;
   }
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>;
 }
-</code></pre></div><hr>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
 <p>其实像这种累加的题目，感觉非常适合用 <code>reduce</code> 来做，于是问题变成了<strong>如何快速创建一个 0~n 的数组？</strong></p>
 <p>下面假设我们需要快速创建一个 0 ~ 9 的数组。</p>
 <h1 id="数组字面量法----括号语法">数组字面量法 - [ ]括号语法</h1>
 <p>老老实实写下：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span> ... , <span style="color:#ae81ff">9</span>]
-</code></pre></div><p>很直观，但数组大了写得会很辛苦，也不优雅，如同苦力。</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> [<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span> ... , <span style="color:#ae81ff">9</span>]
+</code></pre></td></tr></table>
+</div>
+</div><p>很直观，但数组大了写得会很辛苦，也不优雅，如同苦力。</p>
 <h1 id="es5-方法">ES5 方法</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, {<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">n</span>}));
-</code></pre></div><h2 id="objectkeys--arrayapply-方法">Object.keys &amp; Array.apply 方法</h2>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, {<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">n</span>}));
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="objectkeys--arrayapply-方法">Object.keys &amp; Array.apply 方法</h2>
 <p><code>Object.keys</code> 方法将<strong>遍历对象的属性名，然后返回包含属性名的字符串数组</strong>，我们可以使用它来返回数组的下标，也就是 0 ~ n。</p>
 <p><code>Array.apply(null,{length:n})</code> 用来<strong>创建 0 ~ n 的数组</strong>（因为这个数组未初始化，所以值都是<code>undefined</code>）：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, { <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> }))
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, { <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> }))
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>);  
 <span style="color:#75715e">// [&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;, &#39;6&#39;, &#39;7&#39;, &#39;8&#39;, &#39;9&#39;]
-</span></code></pre></div><p><code>apply</code> 方法可传入两个参数，第一个是函数调用的 this 值，另一个参数可选，数组或类数组对象，这里我们传入类数组<code>{length: n}</code></p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><code>apply</code> 方法可传入两个参数，第一个是函数调用的 this 值，另一个参数可选，数组或类数组对象，这里我们传入类数组<code>{length: n}</code></p>
 <p><code>{length: n}</code> 是类数组对象，它和数组相似，拥有 length 属性，但没有数组的方法，例如<code>map()</code>, <code>filter()</code>等</p>
 <p>创建好了数组，需要把数组里的字符串转为数组类型：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, {<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>})).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>))
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, {<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span>})).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>))
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>)
 <span style="color:#75715e">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</span></code></pre></div><p>除了使用<code>{length: 10}</code> 来创建一个长度为10的数组，也可以用<code>Array(10)</code>：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, Array(<span style="color:#ae81ff">10</span>))).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>)
+</span></code></pre></td></tr></table>
+</div>
+</div><p>除了使用<code>{length: 10}</code> 来创建一个长度为10的数组，也可以用<code>Array(10)</code>：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">arr</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">keys</span>(Array.<span style="color:#a6e22e">apply</span>(<span style="color:#66d9ef">null</span>, Array(<span style="color:#ae81ff">10</span>))).<span style="color:#a6e22e">map</span>(<span style="color:#a6e22e">n</span> =&gt; <span style="color:#f92672">+</span><span style="color:#a6e22e">n</span>)
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">arr</span>)
 <span style="color:#75715e">// [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-</span></code></pre></div><h1 id="es6-方法">ES6 方法</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">keys</span>())
-</code></pre></div><h2 id="arrayfrom-方法">Array.from 方法</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h1 id="es6-方法">ES6 方法</h1>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>(<span style="color:#66d9ef">new</span> Array(<span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">keys</span>())
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="arrayfrom-方法">Array.from 方法</h2>
 <p>ES6 中的 <code>Array.from</code> 方法可以对类数组或可迭代对象创建一个新的，浅拷贝的数组实例。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;foo&#39;</span>));
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>(<span style="color:#e6db74">&#39;foo&#39;</span>));
 <span style="color:#75715e">// expected output: Array [&#34;f&#34;, &#34;o&#34;, &#34;o&#34;]
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(Array.<span style="color:#a6e22e">from</span>([<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>], <span style="color:#a6e22e">x</span> =&gt; <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">x</span>));
 <span style="color:#75715e">// expected output: Array [2, 4, 6]
-</span></code></pre></div><h3 id="语法">语法：</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">arrayLike</span>[, <span style="color:#a6e22e">mapFn</span>[, <span style="color:#a6e22e">thisArg</span>]])
-</code></pre></div><h3 id="参数">参数：</h3>
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="语法">语法：</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>(<span style="color:#a6e22e">arrayLike</span>[, <span style="color:#a6e22e">mapFn</span>[, <span style="color:#a6e22e">thisArg</span>]])
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="参数">参数：</h3>
 <ol>
 <li>它接受一个<code>类数组</code>或<code>可迭代对象</code>作为必选参数。</li>
 <li><code>map</code> 函数以及该函数的 <code>this</code> 对象作为可选参数。</li>
@@ -157,12 +257,27 @@
 <h3 id="分析">分析</h3>
 <p><code>new Array(10)</code> （可以简化为 <code>Array(10)</code>）：意思是先创建一个长度为 10 且没有初始化的数组，然后使用 <code>Array.from</code> 方法创建数组初始化，数组里有 10 个 <code>undefined</code> 元素。接着使用 <code>Object.key()</code> 方法获取元素的属性名，也就是元素的下标（序列号），即 0 ~ 1 。</p>
 <p>其他写法：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>({ <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> }, (<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">i</span>)
-</code></pre></div><h1 id="es6-方法之扩展运算符-">ES6 方法之扩展运算符 <code>...</code></h1>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Array.<span style="color:#a6e22e">from</span>({ <span style="color:#a6e22e">length</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">10</span> }, (<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">i</span>) =&gt; <span style="color:#a6e22e">i</span>)
+</code></pre></td></tr></table>
+</div>
+</div><h1 id="es6-方法之扩展运算符-">ES6 方法之扩展运算符 <code>...</code></h1>
 <p>ES6 提供的扩展运算符非常强大方便，它可以在函数调用/数组构造时, 将数组或者string展开。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[...Array(<span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">keys</span>()]
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">[...Array(<span style="color:#ae81ff">10</span>).<span style="color:#a6e22e">keys</span>()]
 [...Array.<span style="color:#a6e22e">from</span>({<span style="color:#a6e22e">length</span><span style="color:#f92672">:</span><span style="color:#ae81ff">100</span>}).<span style="color:#a6e22e">keys</span>()]
-</code></pre></div><p>大佬用的应该是<strong>数组字面量</strong>的展开特性。先用 <code>Array(10)</code> / <code>Array.from({length:100})</code> 创建长度为 10 的数组，然后用展开运算符把元素展开到数组中，再取元素的序号。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>大佬用的应该是<strong>数组字面量</strong>的展开特性。先用 <code>Array(10)</code> / <code>Array.from({length:100})</code> 创建长度为 10 的数组，然后用展开运算符把元素展开到数组中，再取元素的序号。</p>
 <p>总之学到很多方法以及一些 ES6 新特性，感恩大佬hhh</p>
 <h1 id="参考">参考</h1>
 <ul>
