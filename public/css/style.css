@@ -44,7 +44,7 @@ a:hover {
 
 body {
   font-family: "Go Mono", "Source Code Pro", "Monaco", monospace;
-  font-size: 14px;
+  font-size: 15px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
@@ -121,7 +121,7 @@ nav>ul>li>a:hover {
 nav>ul>li>a {
   background-color: rgb(31, 29, 29);
   padding: .2em .5em;
-  font-size: 1.1em;
+  font-size: 1em;
   /* box-shadow: 1px 1px 0 white; */
 }
 
@@ -136,7 +136,7 @@ nav>ul>li>a {
   }
 
   nav {
-    margin: 2em 0;
+    margin: 2em .5em;
   }
 
   nav>ul {
@@ -151,6 +151,16 @@ nav>ul>li>a {
     /* margin: 3em 1em; */
     margin: 3em 0;
   }
+
+  body>main {
+    padding: 0 1em;
+  }
+
+  /* body>header,
+  main,
+  body>footer {
+    padding: 0 1em;
+  } */
 }
 
 article {
@@ -207,19 +217,19 @@ article>footer {
 
 article>.body pre code {
   margin: 2em 0;
-  font-family: 'Hack';
+  font-family: 'Hack', monospace;
   display: block;
   padding: .5em 1em;
   background: #282828;
   color: #ebdbb2;
-  font-size: .8em;
+  font-size: .9em;
   overflow-x: auto;
   line-height: 1.8em;
   border-radius: 3px;
 }
 
 article>.body code {
-  font-family: 'Hack';
+  font-family: 'Hack', monospace;
   display: inline;
   padding: .5em .25em;
   background: #ebdbb2;
@@ -380,6 +390,10 @@ article>.body img {
 }
 
 @media screen and (orientation: portrait) and (max-width: 600px) {
+  /* .frienddiv {
+    width: 42%;
+  } */
+
   .friendinfo {
     display: none;
   }
@@ -467,3 +481,25 @@ mark {
   padding: .4em .6em;
   font-size: medium;
 }
+
+/* tags styles statr here*/
+
+main .tags li {
+  margin: 0.2em;
+  list-style: none;
+}
+
+main .tags li a {
+  border: 1px solid rgba(206, 135, 59, 0.727);
+  padding: 0.2em 0.2em;
+  display: inline-block;
+  transition: transform .3s ease;
+}
+
+main .tags li a:hover {
+  transform: translateX(5px);
+  box-shadow: 2px 2px 0px #7a4d20;
+  text-decoration: none;
+}
+
+/* tags styles end here*/

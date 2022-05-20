@@ -30,10 +30,10 @@ Homepage: https://nekolas.cafe/
 
 
 ## 友链
-<br>
+
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
-{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://cdn.jsdelivr.net/gh/iwyang/pic/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
+{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/img/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
 
 {{< friend name="Sulv’s Blog" url="https://www.sulvblog.cn" logo="https://www.sulvblog.cn/img/Q.gif" word="一个记录技术、阅读、生活的博客" >}}
 

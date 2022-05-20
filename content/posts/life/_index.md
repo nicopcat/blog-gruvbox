@@ -5,5 +5,6 @@ hidemeta: true
 # layout: list
 # hidesummary: true
 # description: "hi"
+weight: 2
 ---
 生活篇  🎄🎁🎭🧶
