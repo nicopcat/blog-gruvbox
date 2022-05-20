@@ -2,7 +2,7 @@
 <div class="pagination">
   <div class="right">
   {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.Params.url }}">
+    <a href="{{ .PrevInSection.RelPermalink }}">
       <time datetime="{{ .PrevInSection.Date }}">{{ .PrevInSection.Date.Format $.Site.Params.dateFormat }} &raquo; </time>
       {{ .PrevInSection.LinkTitle }}
     </a>
@@ -10,7 +10,7 @@
   </div>
   <div class="left">
   {{ if .NextInSection }}
-    <a href="{{ .NextInSection.Params.url }}">
+    <a href="{{ .NextInSection.RelPermalink }}">
       <time datetime="{{ .NextInSection.Date }}">&laquo; {{ .NextInSection.Date.Format $.Site.Params.dateFormat }}</time>
       {{ .NextInSection.LinkTitle }}
     </a>

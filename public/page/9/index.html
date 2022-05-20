@@ -151,13 +151,12 @@
 <!-- 不使用markdown渲染 -->
 <!-- <script type="text/javascript" src="/ispeak-bber.min.js" charset="utf-8" ></script> -->
 <!-- 解析微信表情（参考：https://github.com/buddys/qq-wechat-emotion-parser） -->
-<script src="https://cdn.jsdelivr.net/gh/buddys/qq-wechat-emotion-parser@master/dist/qq-wechat-emotion-parser.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/gh/buddys/qq-wechat-emotion-parser@master/dist/qq-wechat-emotion-parser.min.js"></script> -->
 <script>
 ispeakBber
     .init({
       el: '#speak', // 容器选择器
-      name: 'niqks', // 显示的昵称
-      envId:…</script></!--></script></!-->
+      name: 'niqks', //…</script></!--></!--></!-->
   </div>
   <footer>
     <a href="/bb/">Read More&hellip; &raquo;</a>
@@ -250,7 +249,7 @@ ispeakBber
 </svg></a>
   <script>
   window.addEventListener('scroll', function () {
-    if(window.scrollY >= 900){
+    if(window.scrollY >= 1000){
       document.getElementById("totop").style.display = "block"
     }
     else{
