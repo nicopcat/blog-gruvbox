@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html id="top" lang="en-us">
 <head>
   <meta charset="utf-8">
 
@@ -38,14 +37,13 @@
   </script>
 
 
-  <link href="/logo.png" rel="shortcut icon">
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//test005BYxJSly1gua1gfov8rj60u0140tf802.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
   
 </head>
 
 <body>
-
   <header>
     <div class="left logo">
       <h1><a href="/">Nic Tian</a></h1>
@@ -72,7 +70,7 @@
   
 
   
-  <ul>
+  <ul class="social_links">
     
       <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
     
@@ -97,6 +95,33 @@
   <header>
     <h1><a href="/posts/tech/vue/vue-animations-transitions/">Vue课程笔记：Animations and Transitions</a></h1>
     <time datetime="2022-03-05 01:50:00 &#43;0800 CST">2022-03-05</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">Tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/vue">Vue</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/vue/vue-animations-transitions">Vue animations transitions</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
   </header>
 
   <div class="body">
@@ -368,14 +393,14 @@ Vue官网举出的例子：</p>
 </code></pre></div>
   </div>
   
-    <footer>
-      
+  <footer>
+    
 <div id="disqus_thread">
   <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
 </div>
 
 
-    </footer>
+  </footer>
   
 </article>
 
@@ -392,7 +417,7 @@ Vue官网举出的例子：</p>
   <div class="right">
   
     <a href="">
-      <time datetime="2022-02-19 14:25:00 &#43;0800 CST">&laquo; 2022-02-19</time>
+      <time datetime="2022-02-19 14:25:00 &#43;0800 CST">2022-02-19 &raquo; </time>
       用Vue实现多标签页面（tab栏）切换的两种方法
     </a>
   
@@ -400,7 +425,7 @@ Vue官网举出的例子：</p>
   <div class="left">
   
     <a href="">
-      <time datetime="2022-04-05 00:00:00 &#43;0800 CST">2022-04-05 &raquo;</time>
+      <time datetime="2022-04-05 00:00:00 &#43;0800 CST">&laquo; 2022-04-05</time>
       Vue-cli 重写 to-do list 之所思
     </a>
   
@@ -455,7 +480,7 @@ Vue官网举出的例子：</p>
   
 
   
-  <ul>
+  <ul class="social_links">
     
       <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
     
@@ -475,7 +500,25 @@ Vue官网举出的例子：</p>
     <p>&copy; 2022 <a href="">Nic Tian</a></p>
   </footer>
   
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 900){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
 
+  </script>
+  
 </body>
 
 </html>

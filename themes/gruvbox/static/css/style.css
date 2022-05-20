@@ -44,7 +44,7 @@ a:hover {
 
 body {
   font-family: "Go Mono", "Source Code Pro", "Monaco", monospace;
-  font-size: 15px;
+  font-size: 14px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
@@ -61,7 +61,7 @@ body>header,
 main,
 body>footer {
   margin: 5em 0;
-  padding: 0 2em;
+  padding: 0 4em;
 }
 
 body>footer {
@@ -101,16 +101,21 @@ body>header>.left>h1>a {
 
 body>header nav {
   text-align: right;
+
 }
 
 nav>ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   list-style-type: none;
   /* margin: .75em 0; */
   margin: 1em 0.5em;
 }
 
 nav>ul>li {
-  display: inline;
+  margin: .2em .1em;
+  display: inline-block;
 }
 
 nav>ul>li>a:hover {
@@ -125,7 +130,11 @@ nav>ul>li>a {
   /* box-shadow: 1px 1px 0 white; */
 }
 
-@media (max-width: 600px) {
+header>nav>.social_links {
+  display: none;
+}
+
+@media (max-width: 500px) {
   .logo {
     float: none;
     padding: 0;
@@ -158,9 +167,15 @@ nav>ul>li>a {
 
   article,
   pre code {
-    font-size: 16px;
+    font-size: 15px;
   }
 
+  body>header,
+  main,
+  body>footer {
+    margin: 4em 0;
+    padding: 0 2em;
+  }
 }
 
 article {
@@ -168,10 +183,12 @@ article {
   color: #3c3836;
   padding: 2em;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
-  margin: 5em 0;
+  margin: 5em 0 1.5em 0;
 }
 
 article>header {
+  /* mod */
+  text-align: left;
   border-bottom: 1px solid #ebdbb2;
   margin-bottom: 1em;
   padding-bottom: 1em;
@@ -199,6 +216,7 @@ article>header::after {
 
 article>header>h1 {
   float: left;
+  margin-bottom: 1em;
 }
 
 article>header>time,
@@ -222,19 +240,20 @@ article>.body pre code {
   padding: 0.5em 1em;
   background: #282828;
   color: #ebdbb2;
-  font-size: .9em;
   overflow-x: auto;
-  line-height: 1.8em;
+  line-height: 1.6em;
   border-radius: 3px;
+  font-size: .9em;
 }
 
 article>.body code {
   font-family: 'Hack', monospace;
   display: inline;
-  padding: 0.5em 0.25em;
+  padding: .1em 0.2em;
   background: #ebdbb2;
   color: #282828;
   border-radius: 3px;
+  font-size: .9em;
 }
 
 .alert.alert-warning {
@@ -388,7 +407,7 @@ article>.body img {
   color: var(--primary);
 }
 
-@media screen and (orientation: portrait) and (max-width: 600px) {
+@media screen and (orientation: portrait) and (max-width: 500px) {
   /* .frienddiv {
     width: 42%;
   } */
@@ -483,6 +502,11 @@ mark {
 }
 
 /* tags styles statr here*/
+main .tags {
+  display: flex;
+  margin-bottom: 1em;
+  justify-content: flex-start;
+}
 
 main .tags li {
   margin: 0.2em;
@@ -503,3 +527,61 @@ main .tags li a:hover {
 }
 
 /* tags styles end here*/
+
+
+/* breadcrumbs statr here */
+.breadcrumb {
+  margin-top: 1em;
+  clear: both;
+  list-style: none;
+  display: flex;
+  justify-content: flex-start;
+  /* flex-wrap: wrap; */
+  /* align-items: flex-start; */
+}
+
+.breadcrumb li {
+  line-height: 1.2em;
+  display: inline;
+  white-space: nowrap;
+}
+
+.breadcrumb li+li:before {
+  content: ">";
+  padding: 0.3rem;
+}
+
+.breadcrumb li:last-child a {
+  text-decoration: underline sandybrown;
+}
+
+/* top */
+.backtop {
+  display: none;
+  color: #b3b1b1;
+  position: fixed;
+  right: 2.8%;
+  bottom: 20px;
+  width: 32px;
+  height: 32px;
+  z-index: 999998;
+}
+
+/* 设置滚动条的样式 */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+/* 外层轨道 */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow-: inset006pxrgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background: rgba(84, 84, 84, 0.4);
+  -webkit-box-shadow-: inset006pxrgba(0, 0, 0, 0.5);
+}
+
+/* 滚动条滑块本块 */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(160, 103, 28, 0.4);
+  border-radius: 10px;
+}

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode | default "en" }}">
-
+<html id="top" lang="{{ .Site.LanguageCode | default "en" }}">
 <head>
   <meta charset="utf-8">
 
@@ -46,20 +45,19 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  <link href="{{ (.Site.Params.logo | default "logo.png") | relURL }}" rel="shortcut icon">
+  <link href="{{ (.Site.Params.logo | default "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//test005BYxJSly1gua1gfov8rj60u0140tf802.jpg") | relURL }}" rel="shortcut icon">
   <link href="{{ "css/style.css" | relURL }}" rel="stylesheet" type="text/css">
 
   {{ if .Site.Params.logo }}
   <style type="text/css">
     .logo {
-      background-image: url('{{ .Site.Params.logo | relURL }}');
+      background-image: url('https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//test005BYxJSly1gua1gfov8rj60u0140tf802.jpg');
     }
   </style>
   {{ end }}
 </head>
 
 <body>
-
   <header>
     <div class="left logo">
       <h1><a href="/">{{ .Site.Title }}</a></h1>
@@ -89,7 +87,19 @@
     <p>&copy; {{ now.Format "2006" }} <a href="">{{ .Site.Title }}</a></p>
   </footer>
   {{ end }}
+  <a id="totop" href="#top" class="backtop">{{ partial "arrow.html" . }}</a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 900){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
 
+  </script>
+  
 </body>
 
 </html>

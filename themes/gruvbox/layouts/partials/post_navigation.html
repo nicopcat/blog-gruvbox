@@ -3,7 +3,7 @@
   <div class="right">
   {{ if .PrevInSection }}
     <a href="{{ .PrevInSection.Params.url }}">
-      <time datetime="{{ .PrevInSection.Date }}">&laquo; {{ .PrevInSection.Date.Format $.Site.Params.dateFormat }}</time>
+      <time datetime="{{ .PrevInSection.Date }}">{{ .PrevInSection.Date.Format $.Site.Params.dateFormat }} &raquo; </time>
       {{ .PrevInSection.LinkTitle }}
     </a>
   {{ end }}
@@ -11,7 +11,7 @@
   <div class="left">
   {{ if .NextInSection }}
     <a href="{{ .NextInSection.Params.url }}">
-      <time datetime="{{ .NextInSection.Date }}">{{ .NextInSection.Date.Format $.Site.Params.dateFormat }} &raquo;</time>
+      <time datetime="{{ .NextInSection.Date }}">&laquo; {{ .NextInSection.Date.Format $.Site.Params.dateFormat }}</time>
       {{ .NextInSection.LinkTitle }}
     </a>
   {{ end }}

@@ -3,15 +3,16 @@
   <header>
     <h1><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h1>
     <time datetime="{{ .Date }}">{{ .Date.Format (.Site.Params.dateFormat | default "Jan 02, 2006") }}</time>
+    {{ partial "breadcrumbs" . }}
   </header>
 
   <div class="body">
     {{ .Content }}
   </div>
   {{ if $.Site.DisqusShortname }}
-    <footer>
-      {{ partial "disqus/comments.html" . }}
-    </footer>
+  <footer>
+    {{ partial "disqus/comments.html" . }}
+  </footer>
   {{ end }}
 </article>
 {{ partial "tags.html" . }}
