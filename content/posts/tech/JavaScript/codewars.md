@@ -18,14 +18,14 @@ description: ~
 ""             =>  ""
 ```
 ## 学到的
-*新知识*
-1. 正则表达式的 `$1 - $9`
-2. 正则表达式之***先行断言***
-3. `str.replace()`的参数  
+*新知识*  
+1. 正则表达式的 `$1 - $9`  
+2. 正则表达式之***先行断言***  
+3. `str.replace()`的参数    
 
 *复习*
-1. `replace()`
-2. `charCodeAt()`
+1. `replace()`  
+2. `charCodeAt()`  
 
 ## my solution
 思路：用正则拿到大写，再用`split(..)`以大写字母为界切开，然后在头部加上大写字母，然后拼接在一起。  
@@ -138,11 +138,11 @@ function solution(text) {
 **Details**  
 > There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!
 
-**input**
+**input**  
 customers: an array of positive integers representing the queue. Each integer represents a customer, and its value is the amount of time they require to check out.
-n: a positive integer, the number of checkout tills.
-**output**
-The function should return an integer, the total time required.
+n: a positive integer, the number of checkout tills.  
+**output**  
+The function should return an integer, the total time required.  
 
 **Examples**
 ```
@@ -159,14 +159,14 @@ queueTime([2,3,10], 2)
 // should return 12
 ```
 ## 学到的
-*新知识*
-1. 快速求数组最大（最小值）：ES6 Spread syntax `Math.max(...arr)`
-2. 快速给一个新数组填充初始值：`Array(n).fill(0)`
-3. 遍历数组对象也可以用 for..of..  
-
-*复习*  
-1. `arr.findIndex(..)`
-2. `arr.slice(..)`
+*新知识*  
+1. 快速求数组最大（最小值）：ES6 Spread syntax `Math.max(...arr)`  
+2. 快速给一个新数组填充初始值：`Array(n).fill(0)`  
+3. 遍历数组对象也可以用 for..of..    
+  
+*复习*   
+1. `arr.findIndex(..)`  
+2. `arr.slice(..)`  
 
 ## my solution
 ~~又是巨冗长~~
