@@ -553,7 +553,7 @@ main .tags li a:hover {
 }
 
 .breadcrumb li:last-child a {
-  text-decoration: underline sandybrown;
+  text-decoration: underline wavy sandybrown;
 }
 
 /* top */
@@ -561,8 +561,8 @@ main .tags li a:hover {
   display: none;
   color: #b3b1b1;
   position: fixed;
-  right: 2.8%;
-  bottom: 20px;
+  right: 25px;
+  bottom: 22px;
   width: 32px;
   height: 32px;
   z-index: 999998;

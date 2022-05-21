@@ -6,7 +6,25 @@
     <description>Recent content in ES6 on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 23 Apr 2022 15:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 May 2022 14:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/es6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>codewars练习</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/codewars/</link>
+      <pubDate>Sat, 21 May 2022 14:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/codewars/</guid>
+      <description>开个帖子记录一下解题和方法。
+1. Break camelCase Details
+ Complete the solution so that the function will break up camel casing, using a space between words.
+ Example
+&amp;quot;camelCasing&amp;quot; =&amp;gt; &amp;quot;camel Casing&amp;quot;&amp;quot;identifier&amp;quot; =&amp;gt; &amp;quot;identifier&amp;quot;&amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;quot;学到的 新知识
+ 正则表达式的 $1 - $9 正则表达式之先行断言 str.replace()的参数  复习
+ replace() charCodeAt()  my solution 思路：用正则拿到大写，再用split(..)以大写字母为界切开，然后在头部加上大写字母，然后拼接在一起。
+使用的方法: 正则 match(/[A-Z]/g), split, slice, concat, join, push &amp;hellip;
+我真的想得太复杂了
+function breakCamel(words) { if (words === &amp;#34;&amp;#34;) { return &amp;#39;&amp;#39; } else { // 得出这组字符串中大写字母 []  let uppercase = words.</description>
+    </item>
+    
     <item>
       <title>如何优雅地用 JS 创建包含 0 ~ n 的整数数组</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/js-create-number-array/</link>
