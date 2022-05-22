@@ -89,7 +89,7 @@ body>footer>* {
 }
 
 .logo {
-  background: no-repeat top left/64px 64px url("../logo.png");
+  background: no-repeat top left/64px 64px url("https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg");
   min-height: 64px;
   padding: 0 0 0 calc(64px + 1em);
   margin-top: -1em;
@@ -109,16 +109,12 @@ body>header nav {
 }
 
 nav>ul {
-  /* display: flex;
-  justify-content: flex-end;
-  align-items: flex-start; */
   list-style-type: none;
-  /* margin: .75em 0; */
   margin: 1em 0.5em;
 }
 
 nav>ul>li {
-  margin: .2em .2em;
+  margin: .5em .2em;
   display: inline-block;
 }
 
@@ -138,6 +134,7 @@ header>nav>.social_links {
   display: none;
 }
 
+/* @media starts  */
 @media (max-width: 500px) {
   .logo {
     float: none;
@@ -169,11 +166,6 @@ header>nav>.social_links {
     padding: 0 1em;
   }
 
-  article,
-  pre code {
-    font-size: 15px;
-  }
-
   body>header,
   main,
   body>footer {
@@ -182,10 +174,16 @@ header>nav>.social_links {
   }
 
   article>.body blockquote {
-    margin-left: .5em;
-    padding-left: .5em;
+    margin-left: .5em !important;
+    padding-left: .5em !important;
+  }
+
+  article>.body pre code {
+    font-size: 14px !important;
   }
 }
+
+/* @media query ends  */
 
 article {
   background: #fffbe9;
@@ -283,7 +281,7 @@ article>.body h6 {
 
 /* 新增 */
 article>.body h1::before {
-  content: '# ';
+  content: '#';
   color: #ba8622;
 }
 
@@ -298,7 +296,7 @@ article>.body hr {
 }
 
 article>.body blockquote {
-  margin-left: 2em;
+  margin-left: 1em;
   padding-left: 2em;
   border-left: 2px solid #ebdbb2;
 }
