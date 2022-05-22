@@ -433,7 +433,7 @@ article>.body img {
 
   .friendname {
     /* font-size: 16px; */
-    font-size: 0.9em;
+    font-size: 0.8em;
   }
 }
 
@@ -583,6 +583,6 @@ main .tags li a:hover {
 
 /* 滚动条滑块本块 */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(160, 103, 28, 0.4);
+  background-color: rgba(235, 219, 178, 0.15);
   border-radius: 10px;
 }
