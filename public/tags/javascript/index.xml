@@ -89,17 +89,17 @@ DOM, SVG, &amp;lt;canvas&amp;gt; 以及其他 GSAP 并没有预定义它可以�
     </item>
     
     <item>
-      <title>变量的解构赋值</title>
+      <title>ES6数组与对象的解构赋值</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/</link>
       <pubDate>Sun, 28 Nov 2021 15:23:00 +0900</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/</guid>
-      <description>变量的解构 再ES6以前，为变量赋值只能直接指定值，而ES6允许以变量解构的方式赋值 （参考阮大神的文章）
-数组解构 数组解构允许我们按照一一对应的关系从数组中提取然后将值赋值给变量
-let arr = [1,2,3]; let [a,b,c] =arr; console.log(a); console.log(b); console.log(b); //输入结果为 1, 2, 3 情况1：完全匹配的解构 let [a, b, c] = [1, 2, 3];
-情况2：部分匹配的解构 let [x, y] = [1, 2, 3]; x // 1 y // 2  let [a, [b], d] = [1, [2, 3], 4]; a // 1 b // 2 d // 4 例子 codewar上有一道题：求一组正整数中的两个最小值的和。
-题目不难，但我看到其中的一个solution，觉得它非常聪明，它就用了数组的部分解构：
-function sumTwoSmallestNumbers(numbers) { var [ a, b ] = numbers.</description>
+      <description>在ES6以前，为变量赋值只能直接指定值，而ES6允许以变量解构的方式赋值。
+那么，何为解构？
+ 按照一定模式，从数组和对象中提取值，对变量进行赋值。 —— （变量的解构赋值 - 阮一峰ES6入门）
+ 1. 数组解构 数组解构允许我们按照一一对应的关系从数组中提取然后将值赋值给变量：
+let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); console.log(b); //输入结果分别为 1, 2, 3 情况1：完全匹配 let [a, b, c] = [1, 2, 3];
+情况2：部分匹配 let [x, y] = [1, 2, 3]; x // 1 y // 2  let [a, [b], d] = [1, [2, 3], 4]; a // 1 b // 2 d // 4 例子：codewar上有一道题：求一组正整数中的两个最小值的和。</description>
     </item>
     
     <item>
@@ -108,7 +108,7 @@ function sumTwoSmallestNumbers(numbers) { var [ a, b ] = numbers.</description>
       <pubDate>Fri, 26 Nov 2021 22:13:01 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/javascript/let-n-const/</guid>
-      <description>let   let 关键字用于声明变量 用 let 声明的变量具有块级作用域，var 则没有，这可以阻止循环变量变成全局变量  var a = []; for (var i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 10 //i因为由var声明，所以是全局变量，经过循环后，i= 10，所以结果都为10 var a = []; for (let i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 6 //如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6  不存在变量提升：必须先声明，再使用 不能重复声明  let a = 0; let a; // Uncaught SyntaxError: Identifier &amp;#39;a&amp;#39; has already been declared  用 let 声明的变量具有暂时性死区  ES6 规定，let/const 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。 总之，在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。 这在语法上，称为 “暂时性死区”（Temporal Dead Zone，简称 TDZ）。</description>
+      <description>let  let 关键字用于声明变量 用 let 声明的变量具有块级作用域，var 则没有，这可以阻止循环变量变成全局变量  var a = []; for (var i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 10 //i因为由var声明，所以是全局变量，经过循环后，i= 10，所以结果都为10 var a = []; for (let i = 0; i &amp;lt; 10; i++) { a[i] = function () { console.log(i); }; } a[6](); // 6 //如果使用let，声明的变量仅在块级作用域内有效，最后输出的是 6  不存在变量提升：必须先声明，再使用 不能重复声明  let a = 0; let a; // Uncaught SyntaxError: Identifier &amp;#39;a&amp;#39; has already been declared  用 let 声明的变量具有暂时性死区(Temporal Dead Zone):   ES6 规定，let/const 命令会使区块形成封闭的作用域。若在声明之前使用变量，就会报错。</description>
     </item>
     
   </channel>

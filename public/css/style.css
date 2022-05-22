@@ -17,6 +17,10 @@ a:hover {
   text-decoration: underline;
 }
 
+.gopher {
+  height: 20px;
+}
+
 .gopher::after {
   content: "";
   display: inline-block;
@@ -105,16 +109,16 @@ body>header nav {
 }
 
 nav>ul {
-  display: flex;
+  /* display: flex;
   justify-content: flex-end;
-  align-items: flex-start;
+  align-items: flex-start; */
   list-style-type: none;
   /* margin: .75em 0; */
   margin: 1em 0.5em;
 }
 
 nav>ul>li {
-  margin: .2em .1em;
+  margin: .2em .2em;
   display: inline-block;
 }
 
@@ -125,7 +129,7 @@ nav>ul>li>a:hover {
 
 nav>ul>li>a {
   background-color: rgb(31, 29, 29);
-  padding: .2em .5em;
+  padding: .3em .4em;
   font-size: 1em;
   /* box-shadow: 1px 1px 0 white; */
 }
@@ -175,6 +179,11 @@ header>nav>.social_links {
   body>footer {
     margin: 4em 0;
     padding: 0 2em;
+  }
+
+  article>.body blockquote {
+    margin-left: .5em;
+    padding-left: .5em;
   }
 }
 
@@ -243,7 +252,7 @@ article>.body pre code {
   overflow-x: auto;
   line-height: 1.6em;
   border-radius: 3px;
-  font-size: .9em;
+  font-size: 12px;
 }
 
 article>.body code {
@@ -253,7 +262,7 @@ article>.body code {
   background: #ebdbb2;
   color: #282828;
   border-radius: 3px;
-  font-size: .9em;
+  font-size: 12px;
   word-break: break-all;
 }
 
@@ -270,6 +279,16 @@ article>.body h4,
 article>.body h5,
 article>.body h6 {
   margin-top: 2em;
+}
+
+/* 新增 */
+article>.body h1::before {
+  content: '# ';
+  color: #ba8622;
+}
+
+article>.body h2 {
+  font-size: 1.3em;
 }
 
 article>.body hr {
@@ -522,7 +541,7 @@ main .tags li a {
 }
 
 main .tags li a:hover {
-  transform: translateX(5px);
+  transform: translateX(4px);
   box-shadow: 2px 2px 0px #7a4d20;
   text-decoration: none;
 }
