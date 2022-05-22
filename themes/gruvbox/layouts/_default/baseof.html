@@ -40,7 +40,7 @@
       {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
 
-  <link href="{{ (.Site.Params.logo | default "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//test005BYxJSly1gua1gfov8rj60u0140tf802.jpg") | relURL }}" rel="shortcut icon">
+  <link href="{{ (.Site.Params.logo | default "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg") | relURL }}" rel="shortcut icon">
   <link href="{{ "css/style.css" | relURL }}" rel="stylesheet" type="text/css">
 
   {{ if .Site.Params.logo }}
