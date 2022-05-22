@@ -1,6 +1,6 @@
 ---
-title: "Main"
-layout: "baseof"
+# title: "Main"
+# layout: "baseof"
 url: "/gallery/"
 showToc: false
 Hidemeta: true
@@ -15,7 +15,7 @@ ShowBreadCrumbs: false
         <span><a href="/jane-works/">Jane的画儿</a></span>
         <br>
     </div>
-    <Transition name="spinner" mode="out-in">
+    <transition name="spinner" mode="out-in">
         <div class="spinner" v-show="isLoading">
             <div class="lds-roller">
                 <div></div>
@@ -28,9 +28,9 @@ ShowBreadCrumbs: false
                 <div></div>
             </div>
         </div>
-    </Transition>
-    <div class="container" v-cloak>
-        <div class="wrapper" v-for="item in imgSrc">
+    </transition>
+    <div class="container" >
+        <div class="wrapper" v-for="item in imgSrc" v-cloak>
             <img 
                 :src="item.linkAdd" :alt="item.altText" :key="item.id"
                 @click.prevent="currentShow(item.linkAdd)"

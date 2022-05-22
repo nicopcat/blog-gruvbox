@@ -743,11 +743,11 @@ port install hugo Windows  使用 Chocolatey 安装：</description>
     
     <item>
       <title></title>
-      <link>http://blog.nekolas.cafe/posts/book-music-movie/damage-ylt/</link>
+      <link>http://blog.nekolas.cafe/gallery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/book-music-movie/damage-ylt/</guid>
-      <description></description>
+      <guid>http://blog.nekolas.cafe/gallery/</guid>
+      <description>Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}</description>
     </item>
     
     <item>
@@ -756,15 +756,6 @@ port install hugo Windows  使用 Chocolatey 安装：</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.nekolas.cafe/jane-works/</guid>
-      <description>Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}</description>
-    </item>
-    
-    <item>
-      <title>Main</title>
-      <link>http://blog.nekolas.cafe/gallery/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/gallery/</guid>
       <description>Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}</description>
     </item>
     

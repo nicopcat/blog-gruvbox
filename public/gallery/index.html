@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Main | nekolas.cafe</title>
+  <title> | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -88,7 +88,7 @@
     
 <article>
   <header>
-    <h1><a href="/gallery/">Main</a></h1>
+    <h1><a href="/gallery/"></a></h1>
     <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
     <div class="breadcrumb">
     <ol>
@@ -117,7 +117,7 @@
         <span><a href="/jane-works/">Jane的画儿</a></span>
         <br>
     </div>
-    <Transition name="spinner" mode="out-in">
+    <transition name="spinner" mode="out-in">
         <div class="spinner" v-show="isLoading">
             <div class="lds-roller">
                 <div></div>
@@ -130,9 +130,9 @@
                 <div></div>
             </div>
         </div>
-    </Transition>
-    <div class="container" v-cloak>
-        <div class="wrapper" v-for="item in imgSrc">
+    </transition>
+    <div class="container" >
+        <div class="wrapper" v-for="item in imgSrc" v-cloak>
             <img 
                 :src="item.linkAdd" :alt="item.altText" :key="item.id"
                 @click.prevent="currentShow(item.linkAdd)"
@@ -173,18 +173,13 @@
 <div class="pagination">
   <div class="right">
   
-    <a href="/dame/">
+    <a href="/jane-works/">
       <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01 &raquo; </time>
-      咩咩
+      Jane&#39;s Works
     </a>
   
   </div>
   <div class="left">
-  
-    <a href="/jane-works/">
-      <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">&laquo; 0001-01-01</time>
-      Jane&#39;s Works
-    </a>
   
   </div>
 </div>

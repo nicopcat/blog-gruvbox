@@ -10,12 +10,15 @@
 }
 
 .container .wrapper {
-    position: relative;
-    max-width: 78%;
-    margin-bottom: 4rem;
+    padding: 1rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.wrapper img {
+.container .wrapper img {
+    margin: auto;
     border: .5em solid white;
     cursor: pointer;
     box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
@@ -25,10 +28,11 @@
     display: none;
 }
 
-.wrapper .caps {
+/* caps start  */
+.container .wrapper .caps {
     text-align: center;
     min-width: 20%;
-
+    margin-bottom: 4rem;
 }
 
 .wrapper .caps h3 {
@@ -41,16 +45,23 @@
     font-size: .8em;
 }
 
+/* caps ends  */
+
+/* navbar starts  */
 .wrapper .navbar {
     border-bottom: 3px solid rgba(30, 30, 30, 0.285);
     padding-bottom: 2rem;
 }
 
 .navbar {
-    border-bottom: 1px solid rgba(122, 122, 122, 0.258);
-    padding: 0 .2rem;
-    line-height: normal;
+    height: 2rem;
+    margin-top: 2rem;
+    line-height: 1rem;
     box-sizing: border-box;
+}
+
+.navbar>span {
+    border-bottom: 1px solid rgba(122, 122, 122, 0.258);
 }
 
 .navbar span a {
@@ -80,6 +91,9 @@
     border-top-left-radius: .2rem;
     border-top-right-radius: .2rem;
 }
+
+/* navbar ends  */
+
 
 /* 遮罩层 */
 
@@ -261,4 +275,18 @@
 .spinner-enter-to {
     opacity: 1;
     /* transform: translateY(0px); */
+}
+
+
+@media screen and (max-width: 600px) {
+    .container .wrapper {
+        padding: 0;
+    }
+
+    .container .wrapper img {
+        max-width: 100%;
+        border: .5em solid white;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+    }
 }

@@ -181,11 +181,11 @@ cover:
 关于这本奇书，最重要的是买下它然后反复翻看。如果你是一个充满好奇，喜欢冒险，喜欢开玩笑和梗的人，请一定一定不要错过。  
 ![levi](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220108124310.png#center)  
 
-- 《Cats Galore》👍   
+- 《Cats Galore》   
 
 多抓鱼淘的二手原版。当猫，成为各种名画的模特？想想就觉得好玩儿。  
 ![Cats-Galore](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220108124221.png#center)  
-- **《黑睡莲》** ⭐   
+- 《黑睡莲》  
 悬疑叙事，游戏作画。男人的嫉妒心也很可怕。  
 ![hsl](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220108124428.png#center)  
 
@@ -203,7 +203,7 @@ cover:
 - 《有限与无限的游戏》  
 
 ### 看了什么
-#### 电影十佳
+**电影十佳**  
 - [惊恐小镇](https://movie.douban.com/subject/4061047/) (2009)
 - [大空头](https://movie.douban.com/subject/26303622/) (2015)
 - [阿凡达](https://movie.douban.com/subject/1652587/) (2009)
@@ -216,61 +216,73 @@ cover:
 - [雄狮少年](https://movie.douban.com/subject/35144311/) (2021)
 
 
-#### 剧集
+**剧集**  
 - [曼达洛人](https://movie.douban.com/subject/30344167/) S1 
 - [岸边露伴一动不动](https://movie.douban.com/subject/35236736/)
 - [旺达幻视](https://movie.douban.com/subject/30331433/)
 - [漂流少年](https://movie.douban.com/subject/35427522/)
 - [奇巧计程车](https://movie.douban.com/subject/35332568/)
 - [JOJO: 黄金之风](https://movie.douban.com/subject/27666505/)
-- [How to with John Wilson](https://movie.douban.com/subject/35205588/) S1
-![johnwilsonhowto](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220108124030.png)
+- [How to with John Wilson](https://movie.douban.com/subject/35205588/) S1  
+![johnwilsonhowto](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220108124030.png)  
 - [Sex Education](https://movie.douban.com/subject/34966169/) S3 
 - [缘来不晚](https://movie.douban.com/subject/35352687/)
-- [JOJO: 石之海](https://movie.douban.com/subject/34605404/)
+- [JOJO： 石之海](https://movie.douban.com/subject/34605404/)
 </details>
 
 ### 听了什么
+**专辑**  
 
-#### 专辑
 - **Concrete and Glass** —— Nicolas Godin  
-![Concrete-and-Glass](https://media.pitchfork.com/photos/5e27297fbd711c00097d52fe/1:1/w_320/NICOLAS_GODIN_Concrete_And_Glass_COVER_HD.jpg)  
+![Concrete-and-Glass](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/Concrete-and-Glass-cover.png)  
+<br>
+
 - **Colour Yes** —— Matthew Halsall  
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/end-of-2021-2022-01-04.png" width = "320" alt="Colour-Yes" align=center />  
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/end-of-2021-2022-01-04.png" width="320" alt="Colour-Yes" align=center />  
+<br>
 
 - **When the World Was One** —— Matthew Halsall & The Gondwana Orchestra  
-<img src="https://www.gondwanarecords.com/wordpress/wp-content/uploads/2014/05/GONCD010-Matthew-Halsall-The-Gondwana-Orchestra-When-The-World-Was-One-Final-Digital-Cover-2014-1024x1024.jpg" width = "320" alt="When-the-World-Was-One" align=center />  
+<img src="https://www.gondwanarecords.com/wordpress/wp-content/uploads/2014/05/GONCD010-Matthew-Halsall-The-Gondwana-Orchestra-When-The-World-Was-One-Final-Digital-Cover-2014-1024x1024.jpg" width="320" alt="When-the-World-Was-One" align=center />  
+<br>
 
 - **Antiphon** —— Alfa Mist  
 <img src="https://www.sputnikmusic.com/images/albums/248729.jpg" width = "320" alt="Antiphon" align=center />  
+<br>
 
 - **KIWANUKA** —— Michael Kiwanuka  
-<img src="https://media.pitchfork.com/photos/5da611bca8fd3600081edc8a/1:1/w_320/Kiwanuka.jpg" width = "320" alt="KIWANUKA" align=center />  
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/KIWANUKA-Michael-Kiwanuka.png" width="320" alt="KIWANUKA" align=center />  
+<br>
 
 - **Peace Or Love** —— Kings of Convenience  
-<img src="https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img,w_1200/https://spectrumculture.com/wp-content/uploads/2021/06/1200x1200kcbf-60.jpg" width = "320" alt="Peace-Or-Love" align=center />  
+![end-of-2021-2022-05-23-01-53-40](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/end-of-2021-2022-05-23-01-53-40.jpg)
+<br>
 
 - **LIVE AT VIDRO'77** —— Ryo Fukui Trio  
-![end-of-2021-2022-05-23-00-54-32](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//markdownend-of-2021-2022-05-23-00-54-32.png)  
-
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/end-of-2021-2022-05-23-01-42-40.png" width="320" alt="LIVE AT VIDRO'77" align=center /> 
+<br>
 
 - **Music for Saxofone and Bass Guitar More Songs** —— Sam Gendel & Sam Wilkes  
-<img src="https://m.media-amazon.com/images/I/71+nh06g+SS._SS500_.jpg" width = "320" alt="Saxofone-and-Bass-Guitar" align=center />  
+<img src="https://m.media-amazon.com/images/I/71+nh06g+SS._SS500_.jpg" width="320" alt="Saxofone-and-Bass-Guitar" align=center />  
+<br>
 
 - **WILKES** —— Sam Wilkes  
-<img src="http://cdn.shopify.com/s/files/1/0305/1637/9780/products/wil2_grande.jpg?v=1612853481" align=center />  
+<img src="http://cdn.shopify.com/s/files/1/0305/1637/9780/products/wil2_grande.jpg?v=1612853481" width="320" align=center />  
+<br>
 
 - **CALL ME IF YOU GET LOST** —— Tyler, The Creator  
 ![CMIYGL](https://i.ebayimg.com/thumbs/images/g/QJ4AAOSwMNlhVx~B/s-l300.jpg)  
+<br>
 
 - **Fundamentals, Vol. III** —— Brothertiger   
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184025.png" width = "320" alt="Fundamentals-Vol-3" align=center />  
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184025.png" width="320" alt="Fundamentals-Vol-3" align=center />  
+<br>
 
 - **Fundamentals, Vol. II** —— Brothertiger   
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184115.png" width = "320" alt="Fundamentals-Vol-2" align=center />  
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184115.png" width="320" alt="Fundamentals-Vol-2" align=center />  
 
 - **空中 ベスト・オブ** —— Fishmans  
 ![fishmans](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184205.png)  
+<br>
 
 - **36度5分** —— 荘野ジュリ  
 ![36-5](https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220104184228.png) 
