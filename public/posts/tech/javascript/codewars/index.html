@@ -121,7 +121,7 @@
 
   <div class="body">
     <p>开个帖子记录一下解题和方法。</p>
-<h1 id="1-break-camelcase">1. Break camelCase</h1>
+<h1 id="break-camelcase">Break camelCase</h1>
 <p><strong>Details</strong></p>
 <blockquote>
 <p>Complete the solution so that the function will break up camel casing, using a space between words.</p>
@@ -220,15 +220,15 @@
   <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">text</span>.<span style="color:#a6e22e">split</span>(<span style="color:#e6db74">/(?=[A-Z])/</span>).<span style="color:#a6e22e">join</span>(<span style="color:#e6db74">&#39; &#39;</span>);
 }
 </code></pre></div><p>总之，正则表达式在查找特定字符和替换的情景中真的超有用。</p>
-<h1 id="2-the-supermarket-queue">2. The Supermarket Queue</h1>
+<h1 id="the-supermarket-queue">The Supermarket Queue</h1>
 <p><strong>Details</strong></p>
 <blockquote>
 <p>There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!</p>
 </blockquote>
 <p><strong>input</strong><br>
 customers: an array of positive integers representing the queue. Each integer represents a customer, and its value is the amount of time they require to check out.
-n: a positive integer, the number of checkout tills.<br>
-<strong>output</strong><br>
+n: a positive integer, the number of checkout tills.</p>
+<p><strong>output</strong><br>
 The function should return an integer, the total time required.</p>
 <p><strong>Examples</strong></p>
 <pre tabindex="0"><code>queueTime([5,3,4], 1)

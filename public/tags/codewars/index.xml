@@ -14,7 +14,7 @@
       
       <guid>http://blog.nekolas.cafe/posts/tech/javascript/codewars/</guid>
       <description>开个帖子记录一下解题和方法。
-1. Break camelCase Details
+Break camelCase Details
  Complete the solution so that the function will break up camel casing, using a space between words.
  Example
 &amp;quot;camelCasing&amp;quot; =&amp;gt; &amp;quot;camel Casing&amp;quot;&amp;quot;identifier&amp;quot; =&amp;gt; &amp;quot;identifier&amp;quot;&amp;quot;&amp;quot; =&amp;gt; &amp;quot;&amp;quot;学到的 新知识

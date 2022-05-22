@@ -7,8 +7,8 @@ description: ~
 开个帖子记录一下解题和方法。
 
 
-# 1. Break camelCase
-**Details**
+# Break camelCase
+**Details**  
 > Complete the solution so that the function will break up camel casing, using a space between words.
  
 **Example**
@@ -18,14 +18,14 @@ description: ~
 ""             =>  ""
 ```
 ## 学到的
-*新知识*  
-1. 正则表达式的 `$1 - $9`  
-2. 正则表达式之***先行断言***  
-3. `str.replace()`的参数    
+*新知识*   
+1. 正则表达式的 `$1 - $9`   
+2. 正则表达式之***先行断言***   
+3. `str.replace()`的参数   
 
-*复习*  
-1. `replace()`  
-2. `charCodeAt()`  
+*复习*   
+1. `replace()`   
+2. `charCodeAt()`   
 
 ## my solution
 思路：用正则拿到大写，再用`split(..)`以大写字母为界切开，然后在头部加上大写字母，然后拼接在一起。  
@@ -134,15 +134,16 @@ function solution(text) {
 总之，正则表达式在查找特定字符和替换的情景中真的超有用。
 
 
-# 2. The Supermarket Queue
-**Details**  
-> There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!  
+# The Supermarket Queue
+**Details**    
+> There is a queue for the self-checkout tills at the supermarket. Your task is write a function to calculate the total time required for all the customers to check out!   
 
 **input**  
 customers: an array of positive integers representing the queue. Each integer represents a customer, and its value is the amount of time they require to check out.
-n: a positive integer, the number of checkout tills.  
-**output**  
-The function should return an integer, the total time required.  
+n: a positive integer, the number of checkout tills.   
+
+**output**   
+The function should return an integer, the total time required.   
 
 **Examples**
 ```

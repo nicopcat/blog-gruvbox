@@ -163,7 +163,7 @@ header>nav>.social_links {
   }
 
   body>main {
-    padding: 0 1em;
+    padding: 0 1.5em;
   }
 
   body>header,
@@ -281,13 +281,14 @@ article>.body h6 {
 
 /* 新增 */
 article>.body h1::before {
-  content: '#';
+  content: '# ';
   color: #ba8622;
 }
 
+/* 
 article>.body h2 {
   font-size: 1.3em;
-}
+} */
 
 article>.body hr {
   margin: 1em 0;
@@ -317,7 +318,8 @@ article>.body p {
 }
 
 article>.body img {
-  max-width: 100%;
+  /* max-width: 100%; */
+  max-width: 80%;
 }
 
 .pagination .left,
