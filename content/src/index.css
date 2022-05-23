@@ -32,16 +32,16 @@
 .container .wrapper .caps {
     text-align: center;
     min-width: 20%;
-    margin-bottom: 4rem;
+    margin-bottom: 3em;
 }
 
 .wrapper .caps h3 {
-    margin: 0;
+    margin-top: 1em;
     font-size: 1.2em;
 }
 
 .wrapper .caps span {
-    color: #8d8d8d;
+    color: #959595;
     font-size: .8em;
 }
 
@@ -76,7 +76,7 @@
 
 .navbar .active-link {
     box-shadow: none;
-    background-color: rgba(199, 199, 199, 0.19);
+    background-color: rgb(148 148 148 / 18%);
     color: var(--primary);
     border-width: 1px;
     border-style: solid solid none solid;
@@ -282,7 +282,6 @@
     .container .wrapper {
         padding: 0;
     }
-
     .container .wrapper img {
         max-width: 100%;
         border: .5em solid white;
