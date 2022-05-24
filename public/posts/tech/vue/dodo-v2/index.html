@@ -120,22 +120,21 @@
   </header>
 
   <div class="body">
-    <p>Dodo 1.0 是一款用 jQuery 写的待办记事Web App，当时是在看黑马JS的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂😂。随着Vue知识的增加，遂想用 Vue.js 重写一下这款App，就当练手。</p>
+    <p>Dodo 1.0 是一款用 jQuery 写的待办记事 Web App，当时是在看黑马 JS 的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂 😂。随着 Vue 知识的增加，遂想用 Vue.js 重写一下这款 App，就当练手。</p>
 <p>项目体验：</p>
 <p><a href="https://www.niqks.tk/DoDo/">Dodo 1.0</a><br>
 <a href="https://www.niqks.tk/dodo-v2/">Dodo 2.0</a></p>
-<p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com//posts-coversdodo-v2-2022-04-12-02-23-44.png" alt="dodo-v2-2022-04-12-02-23-44"></p>
-<p>Dodo虽小，问题可不少，独立地从 0 构建一个 App，思考的还挺多。我自己非常清楚，很多地方可以简化或有更好的办法，我可能现在没法做到简化，但以后一定可以。于是用这篇文字记录解决方案和过程中的所思所想。</p>
+<p>Dodo 虽小，问题可不少，独立地从 0 构建一个 App，思考的还挺多。我自己非常清楚，很多地方可以简化或有更好的办法，我可能现在没法做到简化，但以后一定可以。于是用这篇文字记录解决方案和过程中的所思所想。</p>
 <h2 id="localstorage">localStorage</h2>
 <p>重做项目也相当于复习<code>localStorage</code>的知识了。</p>
-<h3 id="localstorage概述">localStorage概述</h3>
+<h3 id="localstorage-概述">localStorage 概述</h3>
 <blockquote>
 <p>作为 Web Storage API 的接口，Storage 提供了访问特定域名下的会话存储或本地存储的功能，例如，可以添加、修改或删除存储的数据项。</p>
 </blockquote>
 <p><code>localStorage</code> 里面存储的数据不会过期，而存储在 <code>sessionStorage</code> 里面的数据在页面会话结束时会被清除。<br>
-（session这个单词让我想起，在一些外国网站，如果要找客服聊，结束按钮写的就是“End This Session”，结束这段会话。）</p>
-<p>在Dodo项目中需要一直储存用户的todos，所以需要的是不会过期的 <code>localStorage</code>。</p>
-<h3 id="localstorage的方法">localStorage的方法</h3>
+（session 这个单词让我想起，在一些外国网站，如果要找客服聊，结束按钮写的就是“End This Session”，结束这段会话。）</p>
+<p>在 Dodo 项目中需要一直储存用户的 todos，所以需要的是不会过期的 <code>localStorage</code>。</p>
+<h3 id="localstorage-的方法">localStorage 的方法</h3>
 <p><code>Storage</code> 对象有几个方法，也可以用在<code>localStorage</code>上：</p>
 <table>
 <thead>
@@ -163,20 +162,20 @@
 </tr>
 </tbody>
 </table>
-<p>在Dodo 中，只是用了两个方法，一个是<code>localStorage.getItem()</code>，用以拿到数据，另一个是<code>localStorage.setItem()</code>，用来储存数据。</p>
+<p>在 Dodo 中，只是用了两个方法，一个是<code>localStorage.getItem()</code>，用以拿到数据，另一个是<code>localStorage.setItem()</code>，用来储存数据。</p>
 <h3 id="storagesetitem">Storage.setItem()</h3>
 <p>可以试着储存一些内容：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// keyName: &#39;todoList&#39;, keyValue: &#39;喝1L水&#39;
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mydata</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;todoList&#39;</span>,<span style="color:#e6db74">&#39;喝1L水&#39;</span>)
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mydata</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;todoList&#34;</span>, <span style="color:#e6db74">&#34;喝1L水&#34;</span>);
 </code></pre></div><p>在这里，我们确实可以很轻松地把两个<code>字符串</code>存放到本地储存中，但如果我需要储存的是一个<code>数组</code>，或<code>对象</code>呢？</p>
 <p>于是<code>JSON</code>在这里排上了用场。<br>
-简单来说，<strong>JSON</strong>是一种使用 Javascript语法来描述数据对象数据格式，相当于一座桥梁，让我们的数据不再拘泥于字符串的格式。</p>
+简单来说，<strong>JSON</strong>是一种使用 Javascript 语法来描述数据对象数据格式，相当于一座桥梁，让我们的数据不再拘泥于字符串的格式。</p>
 <ol>
 <li>储存资料时，通过 <code>JSON.stringify()</code> 方法，将对象<strong>stringify</strong>成文本格式。</li>
 <li>去除数据时，通过<code>JSON.parse()</code> 方法将文本格式的数据，<strong>parse</strong>成原来的格式。</li>
 </ol>
 <p>假设我有一个列表，储存了一些列任务的对象，里面包含<code>id</code>，<code>name</code>以及<code>done</code>等属性：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">todoList</span>  <span style="color:#f92672">=</span> [
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">todoList</span> <span style="color:#f92672">=</span> [
   {
     <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">01</span>,
     <span style="color:#a6e22e">taskName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;喝1L水&#34;</span>,
@@ -186,34 +185,34 @@
     <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">02</span>,
     <span style="color:#a6e22e">taskName</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;写完dodo review文章&#34;</span>,
     <span style="color:#a6e22e">done</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">false</span>,
-  }
+  },
 ];
 </code></pre></div><ul>
 <li>将数据存放起来：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#39;todoList&#39;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">todoList</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">setItem</span>(<span style="color:#e6db74">&#34;todoList&#34;</span>, <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">stringify</span>(<span style="color:#a6e22e">todoList</span>));
 </code></pre></div><ul>
 <li>取出数据：</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;todoList&#34;</span>))
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">dataList</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">JSON</span>.<span style="color:#a6e22e">parse</span>(<span style="color:#a6e22e">localStorage</span>.<span style="color:#a6e22e">getItem</span>(<span style="color:#e6db74">&#34;todoList&#34;</span>));
 </code></pre></div><h3 id="异常">异常</h3>
-<p>如果储存已满（localStorage只有5MB）或在iOS 5以后的移动版Safari浏览器的<code>无痕浏览</code>模式下，会抛出异常（Safari 在隐身模式下会将存储配额设置为 0 字节，这与其它浏览器不同，后者允许在隐身模式下使用单独的数据容器进行存储。）</p>
+<p>如果储存已满（localStorage 只有 5MB）或在 iOS 5 以后的移动版 Safari 浏览器的<code>无痕浏览</code>模式下，会抛出异常（Safari 在隐身模式下会将存储配额设置为 0 字节，这与其它浏览器不同，后者允许在隐身模式下使用单独的数据容器进行存储。）</p>
 <p>日后会尝试解决这个问题。</p>
-<h2 id="vue-cli-3中如何设置页面icon图标">Vue-cli 3中如何设置页面icon图标</h2>
+<h2 id="vue-cli-3-中如何设置页面-icon-图标">Vue-cli 3 中如何设置页面 icon 图标</h2>
 <p>官网有提到：</p>
 <blockquote>
 <h4 id="index-文件">Index 文件</h4>
 <p><code>public/index.html</code> 文件是一个会被 html-webpack-plugin 处理的模板。在构建过程中，资源链接会被自动注入。另外，Vue CLI 也会自动注入 resource hint (preload/prefetch、manifest 和图标链接 (当用到 PWA 插件时) 以及构建过程中处理的 JavaScript 和 CSS 文件的资源链接。</p>
 </blockquote>
-<p>从中提取到信息点：Vue CLI 也会自动注入一些静态资源，其中包含我想要添加的图标，且需要使用PWA插件。</p>
+<p>从中提取到信息点：Vue CLI 也会自动注入一些静态资源，其中包含我想要添加的图标，且需要使用 PWA 插件。</p>
 <p>PWA，Progressive web apps</p>
-<p>在Vue-cli官网检索<code>pwa</code>，进入vue.config.js的<a href="https://cli.vuejs.org/zh/config/#pwa">全局配置页面</a>，然后点击进入<a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa">PWA Github 页面</a></p>
+<p>在 Vue-cli 官网检索<code>pwa</code>，进入 vue.config.js 的<a href="https://cli.vuejs.org/zh/config/#pwa">全局配置页面</a>，然后点击进入<a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa">PWA Github 页面</a></p>
 <p>根据网站，<code>pwa plugin for vue-cli</code>，只会在生产环境中注入，而不是开发模式。可以在<code>vue.config.js</code>文件或<code>package.json</code>的<code>&quot;vue&quot;</code>中配置<code>pwa</code>属性。</p>
 <p>找到 <code>pwa.iconPaths</code>：</p>
 <ul>
 <li>pwa.iconPaths
 <ul>
-<li>Defaults配置：</li>
+<li>Defaults 配置：</li>
 </ul>
 </li>
 </ul>
@@ -231,25 +230,25 @@
 参考：
 VUE----vue-cli3.0设置页面icon图标
 https://blog.csdn.net/xyy1234567891/article/details/104841750  </span>
-<h2 id="vue中的img路径">vue中的img路径</h2>
+<h2 id="vue-中的-img-路径">vue 中的 img 路径</h2>
 <ol>
-<li><strong>引入assets中的img</strong>
+<li><strong>引入 assets 中的 img</strong>
 将图片文件放入 <code>/src/assets</code> 下，引用地址：</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@/assets/your-pic.png&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@/assets/your-pic.png&#34;</span> /&gt;
 </code></pre></div><ol start="2">
-<li>引入public中的img
+<li>引入 public 中的 img
 将图片文件放入 <code>/public</code> 下，使用相对地址引用：</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./assets/your-pic.png&#34;</span>&gt;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./assets/your-pic.png&#34;</span> /&gt;
 </code></pre></div><span style="font-size:14px; color:#ccc">
 参考：
 https://blog.csdn.net/qq_40323256/article/details/115339101 </span>
 <h2 id="通过用户输入的字符筛选任务">通过用户输入的字符筛选任务</h2>
-<p><strong>需求：用户在搜索栏的input框内输入关键字，就可以检索相应的任务。</strong></p>
+<p><strong>需求：用户在搜索栏的 input 框内输入关键字，就可以检索相应的任务。</strong></p>
 <p>有想过把每一条任务的字符串分解成一个个的单字放在一个数组里，然后匹配。但如果是两个字的搜索呢？事情到这里变得复杂了许多，行不通。</p>
-<p>再想一想，似乎可以用<code>filter()</code>方法做。先拿到todo列表，再用<code>v-model</code>拿到的用户输入的数据，通过<code>indexOf()</code>方法查看todo里是否含有这些字符，如果返回值不等于<code>-1</code>，则说明含有，从而过滤出列表。</p>
-<p>因为搜索栏和todoList不是父子组件，所以使用了Vuex dispatch到store中储存。</p>
+<p>再想一想，似乎可以用<code>filter()</code>方法做。先拿到 todo 列表，再用<code>v-model</code>拿到的用户输入的数据，通过<code>indexOf()</code>方法查看 todo 里是否含有这些字符，如果返回值不等于<code>-1</code>，则说明含有，从而过滤出列表。</p>
+<p>因为搜索栏和 todoList 不是父子组件，所以使用了 Vuex dispatch 到 store 中储存。</p>
 <p>用户输入的搜索词，双向绑定为<code>enteredVal</code>：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">data</span>() {
     <span style="color:#66d9ef">return</span> {
@@ -263,7 +262,7 @@ https://blog.csdn.net/qq_40323256/article/details/115339101 </span>
         <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">enteredVal</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;&#34;</span>;
     },
 },
-</code></pre></div><p>现在，todoList组件就可以拿到用户输入的筛选词，然后筛选：</p>
+</code></pre></div><p>现在，todoList 组件就可以拿到用户输入的筛选词，然后筛选：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
   <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
     <span style="color:#a6e22e">todoList</span>() {
@@ -287,23 +286,23 @@ https://blog.csdn.net/qq_40323256/article/details/115339101 </span>
 }
 </code></pre></div><h2 id="如何修改任务的内容">如何修改任务的内容</h2>
 <p><strong>需求：点击某一个任务时，可以修改它的内容。</strong></p>
-<p>原本每一条任务都放在<code>li</code>标签里，用<code>v-for</code>渲染。如果要实现修改，我需要把原本裸露在li里的内容放到<code>input</code>中，像这样：</p>
+<p>原本每一条任务都放在<code>li</code>标签里，用<code>v-for</code>渲染。如果要实现修改，我需要把原本裸露在 li 里的内容放到<code>input</code>中，像这样：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">span</span>&gt;
-    &lt;<span style="color:#f92672">input</span>
+  &lt;<span style="color:#f92672">input</span>
     <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;text&#34;</span>
     <span style="color:#a6e22e">v-model</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.taskName&#34;</span>
     <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">keyup</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">enter</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;editTodo(item.taskName, item.id)&#34;</span>
     <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">blur</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;editTodo(item.taskName, item.id)&#34;</span>
 /&gt;&lt;/<span style="color:#f92672">span</span>&gt;
-</code></pre></div><p>用户点击任务，自然可以修改内容，UI上我把<code>input</code>的样式改为透明。</p>
+</code></pre></div><p>用户点击任务，自然可以修改内容，UI 上我把<code>input</code>的样式改为透明。</p>
 <p>用户修改完毕，设置两个事件：</p>
 <ol>
 <li>离开输入框</li>
 <li>hit enter
-两者都会触发<code>@editTodo</code>事件，并传入两个参数：修改后的任务内容和该任务的id。id可以帮助锁定哪一个任务被修改了，进而修改localStorage里的内容，其余部分再拿到最新的数据进行render。</li>
+两者都会触发<code>@editTodo</code>事件，并传入两个参数：修改后的任务内容和该任务的 id。id 可以帮助锁定哪一个任务被修改了，进而修改 localStorage 里的内容，其余部分再拿到最新的数据进行 render。</li>
 </ol>
 <ul>
-<li>editTodo方法：</li>
+<li>editTodo 方法：</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span>{
   <span style="color:#a6e22e">editTodo</span>(<span style="color:#a6e22e">content</span>, <span style="color:#a6e22e">id</span>) {
@@ -333,14 +332,14 @@ https://blog.csdn.net/qq_40323256/article/details/115339101 </span>
   }
 }
 </code></pre></div><ul>
-<li>提交到mutations:</li>
+<li>提交到 mutations:</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">mutations</span><span style="color:#f92672">:</span>{
   <span style="color:#a6e22e">editTodos</span>(<span style="color:#a6e22e">state</span>, <span style="color:#a6e22e">payload</span>) {
       <span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">todos</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">payload</span>;
   }
 }
-</code></pre></div><h2 id="推荐icon生成网站">推荐icon生成网站</h2>
+</code></pre></div><h2 id="推荐-icon-生成网站">推荐 icon 生成网站</h2>
 <ul>
 <li><a href="https://favicon.io/">favicon</a></li>
 </ul>

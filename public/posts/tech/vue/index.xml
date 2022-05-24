@@ -28,19 +28,18 @@
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/dodo-v2/</guid>
-      <description>Dodo 1.0 是一款用 jQuery 写的待办记事Web App，当时是在看黑马JS的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂😂。随着Vue知识的增加，遂想用 Vue.js 重写一下这款App，就当练手。
+      <description>Dodo 1.0 是一款用 jQuery 写的待办记事 Web App，当时是在看黑马 JS 的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂 😂。随着 Vue 知识的增加，遂想用 Vue.js 重写一下这款 App，就当练手。
 项目体验：
 Dodo 1.0
 Dodo 2.0
-Dodo虽小，问题可不少，独立地从 0 构建一个 App，思考的还挺多。我自己非常清楚，很多地方可以简化或有更好的办法，我可能现在没法做到简化，但以后一定可以。于是用这篇文字记录解决方案和过程中的所思所想。
+Dodo 虽小，问题可不少，独立地从 0 构建一个 App，思考的还挺多。我自己非常清楚，很多地方可以简化或有更好的办法，我可能现在没法做到简化，但以后一定可以。于是用这篇文字记录解决方案和过程中的所思所想。
 localStorage 重做项目也相当于复习localStorage的知识了。
-localStorage概述  作为 Web Storage API 的接口，Storage 提供了访问特定域名下的会话存储或本地存储的功能，例如，可以添加、修改或删除存储的数据项。
+localStorage 概述  作为 Web Storage API 的接口，Storage 提供了访问特定域名下的会话存储或本地存储的功能，例如，可以添加、修改或删除存储的数据项。
  localStorage 里面存储的数据不会过期，而存储在 sessionStorage 里面的数据在页面会话结束时会被清除。
-（session这个单词让我想起，在一些外国网站，如果要找客服聊，结束按钮写的就是“End This Session”，结束这段会话。）
-在Dodo项目中需要一直储存用户的todos，所以需要的是不会过期的 localStorage。
-localStorage的方法 Storage 对象有几个方法，也可以用在localStorage上：
-   方法 描述     localStorage.getItem() 接受一个键名作为参数，返回键名对应的值。   localStorage.setItem() 该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。   localStorage.removeItem() 该方法接受一个键名作为参数，并把该键名从存储中删除。   localStorage.clear() 清空存储中的所有键名。    在Dodo 中，只是用了两个方法，一个是localStorage.getItem()，用以拿到数据，另一个是localStorage.setItem()，用来储存数据。
-Storage.setItem() 可以试着储存一些内容：</description>
+（session 这个单词让我想起，在一些外国网站，如果要找客服聊，结束按钮写的就是“End This Session”，结束这段会话。）
+在 Dodo 项目中需要一直储存用户的 todos，所以需要的是不会过期的 localStorage。
+localStorage 的方法 Storage 对象有几个方法，也可以用在localStorage上：
+   方法 描述     localStorage.getItem() 接受一个键名作为参数，返回键名对应的值。   localStorage.setItem() 该方法接受一个键名和值作为参数，将会把键值对添加到存储中，如果键名存在，则更新其对应的值。   localStorage.</description>
     </item>
     
     <item>
