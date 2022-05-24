@@ -2,24 +2,24 @@
 title: "写在J小将生日"
 date: 2022-01-14T23:35:19+08:00
 draft: false
-tags: ['记事']
+tags: ["记事"]
 description: "> Happy Bday To U~ 记录一下普通的一天"
 cover:
-    image: "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220115002134.png"
-    # can also paste direct link from external site
-    # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
-    alt: "jkirby"
-    caption: "j&kirby"
-    relative: false # To use relative path for cover image, used in hugo Page-bundles
+  image: "https://blogpic-1308403500.file.myqcloud.com/markdown/20220115002134.png"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "jkirby"
+  caption: "j&kirby"
+  relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
 
-J小将生日之前，我们决定去以前经常去的一家日料小店“庆祝”
+J 小将生日之前，我们决定去以前经常去的一家日料小店“庆祝”
 ~~大概是真的很喜欢吃东西二人组~~
 
 早上还闹了一点矛盾，引发矛盾的事情（关于洗衣机）说出来一定会让人觉得好笑，对不起。宝贝，请原谅我。😟
 
 下午缓和后，又各自干活。早上吃的米皇饺+生滚靓（皮蛋）粥美味但不太管饱。感恩的是，她妈妈和丽娜贴心地专门跑来给我们送炸鸡腿，瞬间吃上了幸福的下午茶。
-3点半，饮茶乜？？
+3 点半，饮茶乜？？
 
 将近六点打车去日料店。天空飘下厚厚的细雨，在路旁等待滴滴司机过来。她接到陌生电话，似乎是滴滴司机。
 那边问：你现在在哪呢？
@@ -29,7 +29,7 @@ J小将生日之前，我们决定去以前经常去的一家日料小店“庆�
 她答：我们就在这儿啊，为什么要过去
 …………
 
-后来发现，来电的其实是日料店老板，原本预定6点的座位，现在已经 6点半了，老板打来问问是否留座 😂
+后来发现，来电的其实是日料店老板，原本预定 6 点的座位，现在已经 6 点半了，老板打来问问是否留座 😂
 
 我反正在旁边笑死，乌龙的传人。
 
@@ -37,12 +37,11 @@ J小将生日之前，我们决定去以前经常去的一家日料小店“庆�
 
 落座后发现，他们的扫码点单牌竟然是合金制的，不像大多数餐馆贴的塑料扫码牌。好感度 +1
 
-
-自然是点了 J小将喜爱的蒲烧鳗鱼，还是那么肥美呀~ 还点了芥末章鱼，酱辣鲜蛤，富贵卷。追加：加州卷和蒲烧鳗鱼
-Double 蒲烧鳗鱼呢，真8错。
+自然是点了 J 小将喜爱的蒲烧鳗鱼，还是那么肥美呀~ 还点了芥末章鱼，酱辣鲜蛤，富贵卷。追加：加州卷和蒲烧鳗鱼
+Double 蒲烧鳗鱼呢，真 8 错。
 
 吃饱饱后去了附近某瑞买咖啡，然后移步炉石战场，又是扣分不断的一晚哦～
 
 鏖战几回决定早点打道回府，外边小雨戚戚，不如回家放松自在玩猫猫。
 
-希望你今天，和每天都过的愉快哦~ 爱你~  😙
+希望你今天，和每天都过的愉快哦~ 爱你~ 😙

@@ -5,12 +5,12 @@ draft: true
 showToc: true
 tags: [""]
 cover:
-    image: "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220127170032.png"
-    # can also paste direct link from external site
-    # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
-    alt: "HNH CAT"
-    caption: "HappyNotHappy"
-    relative: false # To use relative path for cover image, used in hugo Page-bundles
+  image: "https://blogpic-1308403500.file.myqcloud.com/markdown/20220127170032.png"
+  # can also paste direct link from external site
+  # ex. https://i.ibb.co/K0HVPBd/paper-mod-profilemode.png
+  alt: "HNH CAT"
+  caption: "HappyNotHappy"
+  relative: false # To use relative path for cover image, used in hugo Page-bundles
 ---
 
 刚刚吃饭的时候想，要同时做什么？是玩炉石还是看点东西？

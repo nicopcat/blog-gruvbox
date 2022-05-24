@@ -1,71 +1,65 @@
 const app = Vue.createApp({
   data() {
     return {
-      currentImg: '',
+      currentImg: "",
       maskOn: false,
       isLoading: false,
       imgSrc: [
         {
-          id: 01,
-          pname: "Antelope Canyon",
-          altText: "antelope-canyon",
+          id: new Date().toISOString(),
+          pname: "Soho",
+          altText: "Soho",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/antelope-canyon.JPG",
-          descriptions: "羚羊谷真是太妙了。",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-01.JPG",
+          descriptions: "2019-07-14",
         },
         {
-          id: 02,
-          pname: "Cruise",
-          altText: "cruise",
+          id: new Date().toISOString(),
+          pname: "某间咖啡店",
+          altText: "某间咖啡店",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/cruise.JPG",
-          descriptions: "对面就是著名的自由女神像。",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-02.JPG",
+          descriptions: "2019-07-14",
         },
         {
-          id: 03,
-          pname: "Monterey Bay Aquarium",
-          altText: "monteray-bay-aq",
+          id: new Date().toISOString(),
+          pname: "Harlem区",
+          altText: "Harlem区",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/monteray-bay-aq.JPG",
-          descriptions: "加州的蒙特雷湾水族馆，非常可爱。",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-04.JPG",
+          descriptions: "2019-07-28",
         },
         {
-          id: 04,
-          pname: "Chicago Deep Dish Pizza",
-          altText: "deep-dish-pizza",
+          id: new Date().toISOString(),
+          pname: "放小狗风筝",
+          altText: "放小狗风筝",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/deep-dish-pizza.JPG",
-          descriptions: "芝加哥有名的深盘pizza🍕",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-05-2022-05-24.JPG",
+          descriptions: "2019-07-28",
         },
         {
-          id: 05,
-          pname: "Google, Android",
-          altText: "google-android",
+          id: new Date().toISOString(),
+          pname: "A lady crossing the stree",
+          altText: "A lady crossing the stree",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/google-android.JPG",
-          descriptions: "硅谷，谷歌总部里的安卓玩偶。",
-        }, {
-          id: 06,
-          pname: "Pika",
-          altText: "pika",
-          linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/pika.JPG",
-          descriptions: "Good Girl Pika",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-06-2022-05-24.JPG",
+          descriptions: "2019-07-28",
         },
         {
-          id: 07,
-          pname: "Painting",
-          altText: "painting",
+          id: new Date().toISOString(),
+          pname: "Lincoln Center",
+          altText: "Lincoln Center",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/painting-1.JPG",
-          descriptions: "古根海姆的一幅画。",
-        }, {
-          id: 08,
-          pname: "Old Buildings In NYC",
-          altText: "ny-old-buildings",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-07-2022-05-24.JPG",
+          descriptions: "2019-07-28",
+        },
+        {
+          id: new Date().toISOString(),
+          pname: "Black Pumas Free Show",
+          altText: "Black Pumas Free Show",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/ny-old-buildings.JPG",
-          descriptions: "NYC",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-08-2022-05-24.JPG",
+          descriptions: "2019-07-28",
         },
       ],
       DamePics: [
@@ -74,7 +68,7 @@ const app = Vue.createApp({
           pname: "J小将画咩咩（其一）",
           altText: "咩咩3",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/gallery/miemie/1159970fe272d8e0c376689472d9eb2.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/gallery/miemie/1159970fe272d8e0c376689472d9eb2.jpg",
           descriptions: "with ProCreate",
         },
         {
@@ -82,7 +76,7 @@ const app = Vue.createApp({
           pname: "咩咩1",
           altText: "咩咩1",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown%2F%E5%92%A9%E5%92%A9%E6%97%A5%E5%B8%B81.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown%2F%E5%92%A9%E5%92%A9%E6%97%A5%E5%B8%B81.jpg",
           descriptions: "乖乖趴床上。",
         },
         {
@@ -90,7 +84,7 @@ const app = Vue.createApp({
           pname: "咩咩2",
           altText: "咩咩2",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/3e7b04c40b9f2011c25c4efa8906301.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/3e7b04c40b9f2011c25c4efa8906301.jpg",
           descriptions: "抱住手~",
         },
       ],
@@ -100,7 +94,7 @@ const app = Vue.createApp({
           pname: "work 1",
           altText: "work 1",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/4869fd0703e62163a2f1d552f530517.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/4869fd0703e62163a2f1d552f530517.jpg",
           descriptions: "",
         },
         {
@@ -108,7 +102,7 @@ const app = Vue.createApp({
           pname: "work 2",
           altText: "work 2",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/5b70ce379f324ce48b6c80c065df8f9.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/5b70ce379f324ce48b6c80c065df8f9.jpg",
           descriptions: "",
         },
         {
@@ -116,7 +110,7 @@ const app = Vue.createApp({
           pname: "work 3",
           altText: "work 3",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/1a24e6521f9e6274cf74e276cfbbe3e.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/1a24e6521f9e6274cf74e276cfbbe3e.jpg",
           descriptions: "",
         },
         {
@@ -124,7 +118,7 @@ const app = Vue.createApp({
           pname: "work 4",
           altText: "work 4",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/eab5c40e2a740b58c023236a051a21b.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/eab5c40e2a740b58c023236a051a21b.jpg",
           descriptions: "",
         },
         {
@@ -132,29 +126,27 @@ const app = Vue.createApp({
           pname: "work 5",
           altText: "work 5",
           linkAdd:
-            "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/a8c37a24771f44f6c103d1ec7743344.jpg",
+            "https://blogpic-1308403500.file.myqcloud.com/markdown/a8c37a24771f44f6c103d1ec7743344.jpg",
           descriptions: "",
         },
       ],
-    }
+    };
   },
   methods: {
     currentShow(add) {
       this.maskOn = true;
-
       this.currentImg = add;
     },
     closeImg() {
       this.maskOn = false;
     },
     loaded() {
-      this.isLoading = false
-    }
+      this.isLoading = false;
+    },
   },
   created() {
-    this.isLoading = true
-  }
-})
-
+    this.isLoading = true;
+  },
+});
 
 app.mount("#app");

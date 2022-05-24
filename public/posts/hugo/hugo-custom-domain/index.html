@@ -120,11 +120,11 @@
 下面的文章将介绍如何在免费域名网站 <a href="https://www.freenom.com/">freenom</a> 购买并更换为 blog 域名。</p>
 <h3 id="1-购买免费域名">1. 购买免费域名</h3>
 <ul>
-<li>进到 <a href="https://www.freenom.com/">freenom</a> 官网，注册一下，选择其中一个结账</li>
-</ul>
+<li>
+<p>进到 <a href="https://www.freenom.com/">freenom</a> 官网，注册一下，选择其中一个结账</p>
 <!-- ![20211123152149](https://i.loli.net/2021/11/23/vS8wIAzhW1tyGs5.png) -->
 <img src="https://i.loli.net/2021/11/23/vS8wIAzhW1tyGs5.png" width = "400" alt="freenom" />
-<ul>
+</li>
 <li>
 <p>但这个网站有个小 bug，直接点 <code>get it now</code> 会显示 <code>Not available</code>。此时，你需要复制整个域名，比如 <code>hugo666.tk</code> 到搜索框，再一次 <code>Check Availibility</code>，接着点 <code>Checkout</code>。</p>
 </li>
@@ -155,13 +155,13 @@
 <ul>
 <li>再回到 DNSPod，点重新验证，此时发现域名状态变为<code>正常</code>。</li>
 </ul>
-<h3 id="3-设置custom-domain">3. 设置custom domain</h3>
-<p>打开 <a href="https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Github Pages官方教程</a>
+<h3 id="3-设置-custom-domain">3. 设置 custom domain</h3>
+<p>打开 <a href="https://docs.github.com/cn/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site">Github Pages 官方教程</a>
 <img src="https://i.loli.net/2021/11/23/s3bBjCOqW67vy4k.png" alt="20211123163458"></p>
 <h4 id="31-解析为带-www-的-domain">3.1 解析为带 www 的 domain</h4>
 <ul>
-<li>官方文档说，若要解析带 <code>www</code> 的domain，记录类型为 <code>CNAME</code>（默认A）</li>
-<li>那么回到 DNSpod的<code>我的域名</code>，点击域名，添加记录：
+<li>官方文档说，若要解析带 <code>www</code> 的 domain，记录类型为 <code>CNAME</code>（默认 A）</li>
+<li>那么回到 DNSpod 的<code>我的域名</code>，点击域名，添加记录：
 <ul>
 <li><code>主机记录</code>： <code>www</code></li>
 <li><code>记录类型</code>： <code>CNAME</code></li>
@@ -173,12 +173,12 @@
 <h4 id="32-不带-www-的-domain">3.2 不带 www 的 domain</h4>
 <ul>
 <li>
-<p>同样，回到 DNSpod的<code>我的域名</code>，点击域名，添加记录：</p>
+<p>同样，回到 DNSpod 的<code>我的域名</code>，点击域名，添加记录：</p>
 <ul>
 <li><code>主机记录</code>： <code>@</code></li>
 <li><code>记录类型</code>： <code>A</code></li>
 <li><code>线路类型</code>： 默认</li>
-<li><code>记录值</code>： 为4个ip地址，最好都记录上，然后点 <code>确认</code></li>
+<li><code>记录值</code>： 为 4 个 ip 地址，最好都记录上，然后点 <code>确认</code></li>
 </ul>
 <p><img src="https://i.loli.net/2021/11/23/auzNPdhDHtbw81Q.png" alt="20211123160856"></p>
 <pre tabindex="0"><code>//复制粘贴即可
@@ -191,7 +191,7 @@
 <h3 id="4-回到-github-pages-更新该域名">4. 回到 Github Pages 更新该域名</h3>
 <ul>
 <li>回到 Github Pages 页面，在<code>Custom domain</code> 处填上域名，保存即可，如我的 <a href="http://www.niqks.tk">www.niqks.tk</a>
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/my-first-post-2021-12-30.png" alt="my-first-post-2021-12-30"></li>
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/my-first-post-2021-12-30.png" alt="my-first-post-2021-12-30"></li>
 <li>这时，你会发现仓库里的代码多了一个 <code>CNAME</code> 文件，里面有一条 <code>域名</code> 的记录。</li>
 <li>这时，你已经可以通过自定义域名访问到博客了。</li>
 </ul>

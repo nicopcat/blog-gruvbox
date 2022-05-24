@@ -76,7 +76,8 @@ Stacks:
       <guid>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</guid>
       <description>你可以在网上买域名，也可以使用免费域名。
 下面的文章将介绍如何在免费域名网站 freenom 购买并更换为 blog 域名。
-1. 购买免费域名  进到 freenom 官网，注册一下，选择其中一个结账    但这个网站有个小 bug，直接点 get it now 会显示 Not available。此时，你需要复制整个域名，比如 hugo666.tk 到搜索框，再一次 Check Availibility，接着点 Checkout。
+1. 购买免费域名   进到 freenom 官网，注册一下，选择其中一个结账
+  但这个网站有个小 bug，直接点 get it now 会显示 Not available。此时，你需要复制整个域名，比如 hugo666.tk 到搜索框，再一次 Check Availibility，接着点 Checkout。
   Period 选 12 months FREE, 完成结账，全程不需要银行卡，非常友好。
   点击导航栏的 Services - My Domains 在这里你能看到刚刚得到的域名，这个页面不要关，稍后需要继续设置。
   2. 域名解析 - DNSPod   打开 DNSPod，用微信注册一下账号，需要实名登记。完成以后点击顶上的 DNS，选择 DNS解析
@@ -101,12 +102,11 @@ Stacks:
       <pubDate>Mon, 20 Dec 2021 22:59:16 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/hugo/how-to-add-toc-on-a-hugo-post/</guid>
-      <description>我在逛友邻的blog或是技术贴时发现，文章里若是有一个目录，就可以方便读者快速浏览自己看到的内容。在此之前，我尝试过VS Code的一些插件，但效果都不是特别理想，直到阅读了谌中钱 的一篇VSCode 插件 - Markdown Preview Enhanced 详解，才几乎完美地解决了在md文档中生成中文TOC的需求。
+      <description>我在逛友邻的 blog 或是技术贴时发现，文章里若是有一个目录，就可以方便读者快速浏览自己看到的内容。在此之前，我尝试过 VS Code 的一些插件，但效果都不是特别理想，直到阅读了谌中钱 的一篇VSCode 插件 - Markdown Preview Enhanced 详解，才几乎完美地解决了在 md 文档中生成中文 TOC 的需求。
 1. MPE 插件是什么  Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有飘逸的 Markdown 写作体验。
   官方文档地址：Markdown Preview Enhanced 安装：ctrl + shift + x 搜索 Markdown Preview Enhanced  2. MPE 有什么用 2.1 实时预览功能 写 markdown 文档或 码字时，可以随时查看实时生成的效果，非常方便~
 使用方法：
- 打开任意markdown文件，点击右键，选择MPE: 打开侧边预览 或是使用快捷键shift+k v  2.2 生成TOC树 我是打开预览后，发现右上角有三个按钮，其中第一个可以在MPE内部生成一个完美的TOC，于是在网上搜索能否把它生成的TOC“占为己用”，没想到真的可以(感觉挖到宝) 步骤：
- 可以通过 cmd-shift-p 然后选择 Markdown Preview Enhanced: Create Toc 命令来创建 TOC  可以创建多个TOCs config:  在你的 TOC 中排除一个标题，请在你的标题 后面 添加 {ignore=true} orderedList: 是否使用有序列表。 depthFrom, depthTo [1~6] 包含的。 ignoreLink 如果设置为 true，那么 TOC 将不会被超链接     上面的指令其实就是生成下面这句代码&amp;lt;!</description>
+ 打开任意 markdown 文件，点击右键，选择MPE: 打开侧边预览 或是使用快捷键shift+k v  2.2 生成 TOC 树 我是打开预览后，发现右上角有三个按钮，其中第一个可以在 MPE 内部生成一个完美的 TOC，于是在网上搜索能否把它生成的 TOC“占为己用”，没想到真的可以(感觉挖到宝) 步骤：</description>
     </item>
     
     <item>
@@ -128,8 +128,8 @@ Stacks:
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+brew install hugo使用 MacPorts 安装：
+port install hugoWindows  使用 Chocolatey 安装：</description>
     </item>
     
   </channel>

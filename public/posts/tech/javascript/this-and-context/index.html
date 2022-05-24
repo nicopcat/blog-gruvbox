@@ -186,10 +186,10 @@
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>  <span style="color:#75715e">// foo 指向 foo()，被 obj 包含/拥有
-</span><span style="color:#75715e"></span>}
+  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>, <span style="color:#75715e">// foo 指向 foo()，被 obj 包含/拥有
+</span><span style="color:#75715e"></span>};
 
-<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>();  <span style="color:#75715e">// 2
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// 2
 </span></code></pre></div><h3 id="场景-2多层对象调用函数">场景 2：多层对象调用函数</h3>
 <p>对象属性的引用链中只有最顶层（最后一层）会影响调用位置。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
@@ -198,15 +198,15 @@
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj2</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">42</span>,
-  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>
-}
+  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>,
+};
 
 <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-  <span style="color:#a6e22e">obj2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj2</span>
-}
+  <span style="color:#a6e22e">obj2</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">obj2</span>,
+};
 
-<span style="color:#a6e22e">obj1</span>.<span style="color:#a6e22e">obj2</span>.<span style="color:#a6e22e">foo</span>();  <span style="color:#75715e">// 42
+<span style="color:#a6e22e">obj1</span>.<span style="color:#a6e22e">obj2</span>.<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// 42
 </span></code></pre></div><h3 id="场景-3隐式丢失">场景 3：隐式丢失</h3>
 <p>隐式绑定的<code>this</code>很容易丢失绑定对象。</p>
 <p>下面这个例子，虽然<code>bar</code>是<code>obj.foo</code>的一个引用，但实际上它引用的是<code>foo()</code>函数本身，函数调用位置是<code>bar</code>，它没有绑定任何对象，因此是默认绑定。</p>
@@ -217,55 +217,54 @@
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>
-}
+  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>,
+};
 
 <span style="color:#75715e">// 函数别名
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello&#34;</span>;
 
-<span style="color:#a6e22e">bar</span>();  <span style="color:#75715e">// hello
+<span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// hello
 </span></code></pre></div><p>另外一种丢失的情况，发生在传入回调函数时，这也包括我们常用的定时<code>setTimeout</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
 }
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">fn</span>) {
-   <span style="color:#75715e">// fn引用的是foo
-</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fn</span>();  <span style="color:#75715e">// &lt;-- 调用位置
+  <span style="color:#75715e">// fn引用的是foo
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fn</span>(); <span style="color:#75715e">// &lt;-- 调用位置
 </span><span style="color:#75715e"></span>}
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
-  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>
-}
+  <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>,
+};
 
 <span style="color:#75715e">// 函数别名
 </span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hello??&#39;</span>;
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;hello??&#34;</span>;
 
-<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>);  <span style="color:#75715e">// hello??
+<span style="color:#a6e22e">bar</span>(<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">foo</span>); <span style="color:#75715e">// hello??
 </span></code></pre></div><p>回调函数丢失<code>this</code>绑定非常常见，甚至还有可能修改<code>this</code>的绑定。</p>
 <h2 id="23-显式绑定">2.3 显式绑定</h2>
 <p>隐式绑定的实现，<strong>必须是在一个对象内部包含一个指向函数的属性，然后通过该属性间接地引用函数</strong>。</p>
 <p>如果我们不想这样做呢？可以使用显式绑定。</p>
-<h3 id="方法1call-和-apply">方法1：call(..) 和 apply(..)</h3>
+<h3 id="方法-1call-和-apply">方法 1：call(..) 和 apply(..)</h3>
 <p>第一个参数是对象，它们会把<code>this</code>绑定到这个对象，然后调用函数时指向这个对象。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
 }
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span><span style="color:#f92672">=</span>{
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
-}
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+};
 
-<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>);  <span style="color:#75715e">// 输出：2  恭喜，成功绑上
-</span><span style="color:#75715e"></span>
-</code></pre></div><h3 id="方法2硬绑定">方法2：硬绑定</h3>
+<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// 输出：2  恭喜，成功绑上
+</span></code></pre></div><h3 id="方法-2硬绑定">方法 2：硬绑定</h3>
 <p><strong>如果我们希望一个函数总是显示的绑定到一个对象上，可以怎么做呢？</strong></p>
 <p>可以用<strong>硬绑定</strong>的方法。这种绑定是一种显式的强制绑定，之后无论如何调用函数，它的<code>this</code>指向都不会修改，所以称之为硬绑定。</p>
 <ul>
-<li>方法1：创建一个包裹函数，传入参数并返回这些值</li>
+<li>方法 1：创建一个包裹函数，传入参数并返回这些值</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">arg</span>) {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">arg</span>);
@@ -273,38 +272,38 @@
 }
 
 <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>,
 };
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">arguments</span>)
-}
+  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">arguments</span>);
+};
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bar</span>(<span style="color:#ae81ff">3</span>);  <span style="color:#75715e">// 5, 3
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>);  <span style="color:#75715e">// 8
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bar</span>(<span style="color:#ae81ff">3</span>); <span style="color:#75715e">// 5, 3
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">b</span>); <span style="color:#75715e">// 8
 </span></code></pre></div><ul>
-<li>方法2：利用辅助函数手动硬绑定：</li>
+<li>方法 2：利用辅助函数手动硬绑定：</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;快来绑定我&#34;</span>
-}
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;快来绑定我&#34;</span>,
+};
 
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">bind</span>(<span style="color:#a6e22e">fn</span>, <span style="color:#a6e22e">obj</span>) {
-  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>() {
+  <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>.<span style="color:#a6e22e">apply</span>(<span style="color:#a6e22e">obj</span>, <span style="color:#a6e22e">arguments</span>);
-  }
+  };
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">bind</span>(<span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">obj</span>);
 
 <span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// 快来绑定我
-</span></code></pre></div><p>因为硬绑定非常常见，所以ES5也提供了内置的方法<code>Function.prototype.bind()</code></p>
+</span></code></pre></div><p>因为硬绑定非常常见，所以 ES5 也提供了内置的方法<code>Function.prototype.bind()</code></p>
 <ul>
-<li>方法3：使用<code>Function.prototype.bind</code></li>
+<li>方法 3：使用<code>Function.prototype.bind</code></li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
@@ -318,19 +317,19 @@
 
 <span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// 快来绑定我
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">bar</span>(); <span style="color:#75715e">// 快来绑定我
-</span></code></pre></div><h3 id="api调用的上下文">API调用的“上下文”</h3>
+</span></code></pre></div><h3 id="api-调用的上下文">API 调用的“上下文”</h3>
 <p>第三方库的许多函数，以及 JavaScript 语言和宿主环境中许多新的内置函数，都提供一个可选的参数，通常成为&quot;上下文&quot;(context)，它的作用和<code>bind(..)</code>一样，确保你的回调函数使用指定的<code>this</code>。</p>
 <p>比如<code>forEach(..)</code>函数：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">el</span>) {
   <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">el</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">id</span>);
 }
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;个&#34;</span>
+  <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;个&#34;</span>,
 };
 
 [<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>].<span style="color:#a6e22e">forEach</span>(<span style="color:#a6e22e">foo</span>, <span style="color:#a6e22e">obj</span>);
-<span style="color:#75715e">// 1 &#39;个&#39; 
-</span><span style="color:#75715e">// 2 &#39;个&#39; 
+<span style="color:#75715e">// 1 &#39;个&#39;
+</span><span style="color:#75715e">// 2 &#39;个&#39;
 </span><span style="color:#75715e">// 3 &#39;个&#39;
 </span></code></pre></div><h2 id="24-new-绑定">2.4 new 绑定</h2>
 <p><code>new</code>关键字很容易让人想到“类”，但确切来说，它的作用不是初始化一个类，也不会实例化一个类。实际上，被<code>new</code>调用的函数，只是一个被<code>new</code>操作符调用的普通函数而已。</p>
@@ -338,37 +337,37 @@
 <ol>
 <li>创建（或者说构造）一个全新的对象</li>
 <li>这个新对象会被执行<code>[[ 原型 ]]</code>连接</li>
-<li>这个新对象会绑定到函数调用的<code>this</code>上（this的绑定在这个步骤完成）</li>
+<li>这个新对象会绑定到函数调用的<code>this</code>上（this 的绑定在这个步骤完成）</li>
 <li>如果函数没有返回其他对象，<code>new</code>表达式中的函数调用会返回这个新对象</li>
 </ol>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">name</span>) {
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>);  <span style="color:#75715e">// foo {}
-</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);  <span style="color:#75715e">// Nic
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>); <span style="color:#75715e">// foo {}
+</span><span style="color:#75715e"></span>  <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// Nic
 </span><span style="color:#75715e"></span>}
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">&#39;Nic&#39;</span>);  <span style="color:#75715e">// 绑定完成
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">name</span>);  <span style="color:#75715e">// Nic
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">foo</span>(<span style="color:#e6db74">&#34;Nic&#34;</span>); <span style="color:#75715e">// 绑定完成
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">name</span>); <span style="color:#75715e">// Nic
 </span></code></pre></div><h1 id="3-优先级">3. 优先级</h1>
 <h3 id="优先级总结">优先级总结：</h3>
-<p>new绑定 &gt; 显示绑定（bind）&gt; 隐式绑定 &gt; 默认绑定</p>
+<p>new 绑定 &gt; 显示绑定（bind）&gt; 隐式绑定 &gt; 默认绑定</p>
 <ol>
 <li>默认规则的优先级最低</li>
 <li>显示绑定 &gt; 隐式绑定</li>
 <li>new 绑定优 &gt; 隐式绑定</li>
-<li>new 绑定 &gt; bind绑定</li>
+<li>new 绑定 &gt; bind 绑定</li>
 </ol>
 <p>论证过程参考：<br>
-《你不知道的JavaScript》上卷 p91-95<br>
+《你不知道的 JavaScript》上卷 p91-95<br>
 或<br>
-coderwhy 的文章 <a href="https://mp.weixin.qq.com/s/hYm0JgBI25grNG_2sCRlTA">《前端面试之彻底搞懂this指向》</a></p>
-<p>（题外话，他这篇文章的内容，除了例子，基本上都来自上面那本书hh ）</p>
+coderwhy 的文章 <a href="https://mp.weixin.qq.com/s/hYm0JgBI25grNG_2sCRlTA">《前端面试之彻底搞懂 this 指向》</a></p>
+<p>（题外话，他这篇文章的内容，除了例子，基本上都来自上面那本书 hh ）</p>
 <h1 id="4-绑定的例外">4. 绑定的例外</h1>
 <p>当然，总是会有规则之外的例外。</p>
 <h2 id="忽略显示绑定">忽略显示绑定</h2>
 <p>如果在显示绑定中，我们传入一个<code>null</code>或者<code>undefined</code>，那么这个显示绑定会被忽略，而会使用默认绑定：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
@@ -379,50 +378,50 @@ coderwhy 的文章 <a href="https://mp.weixin.qq.com/s/hYm0JgBI25grNG_2sCRlTA">�
 <h2 id="间接引用">间接引用</h2>
 <p>另外一种情况，当创建一个函数的<code>间接引用</code>时，会应用默认绑定规则。</p>
 <p>间接引用最容易发生在赋值时：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(){
-  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
+  <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>;
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span>};
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>};
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">o</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>, <span style="color:#a6e22e">foo</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">foo</span> };
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">p</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span> };
 
 <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">foo</span>(); <span style="color:#75715e">// 3
 </span><span style="color:#75715e"></span>
 <span style="color:#75715e">// foo函数被直接调用，那么是默认绑定 👇
-</span><span style="color:#75715e"></span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">foo</span>)();  <span style="color:#75715e">// 2 
-</span></code></pre></div><h2 id="es6箭头函数">ES6箭头函数</h2>
-<p>ES6中的箭头函数并不会使用以上这四条绑定规则，它有自己的想法。它会根据当前的词法作用域来决定<code>this</code>。具体地说，箭头函数会继承外层调用的<code>this</code>绑定（无论<code>this</code>绑定到什么）。这和之前常用的<code>self = this</code>机制一致。</p>
+</span><span style="color:#75715e"></span>(<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">foo</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">o</span>.<span style="color:#a6e22e">foo</span>)(); <span style="color:#75715e">// 2
+</span></code></pre></div><h2 id="es6-箭头函数">ES6 箭头函数</h2>
+<p>ES6 中的箭头函数并不会使用以上这四条绑定规则，它有自己的想法。它会根据当前的词法作用域来决定<code>this</code>。具体地说，箭头函数会继承外层调用的<code>this</code>绑定（无论<code>this</code>绑定到什么）。这和之前常用的<code>self = this</code>机制一致。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
   <span style="color:#66d9ef">return</span> () =&gt; {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
-  }
+  };
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>
-}
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+};
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj2</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
-}
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+};
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj1</span>);  <span style="color:#75715e">// 1
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">bar</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj1</span>); <span style="color:#75715e">// 1
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">bar</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj2</span>); <span style="color:#75715e">// output还是 1
 </span></code></pre></div><p><code>foo()</code>内部创建的箭头函数会捕获调用<code>foo()</code>时的<code>this</code>。因为<code>foo()</code>绑定到<code>obj1</code>，相应地，<code>bar</code>（引用箭头函数）的<code>this</code>也会绑定到<code>obj1</code>，且硬绑定无法修改。</p>
 <p>箭头函数也经常用在回调函数中，比如计时器：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>() {
-  <span style="color:#a6e22e">setTimeout</span> (()  =&gt; {
+  <span style="color:#a6e22e">setTimeout</span>(() =&gt; {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span>);
-  },<span style="color:#ae81ff">1000</span>)
+  }, <span style="color:#ae81ff">1000</span>);
 }
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>
-}
+  <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+};
 
-<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>);  <span style="color:#75715e">// 1秒后打印结果： 2
+<span style="color:#a6e22e">foo</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">obj</span>); <span style="color:#75715e">// 1秒后打印结果： 2
 </span></code></pre></div><h1 id="练手题目">练手题目</h1>
 <ol>
 <li>第一题</li>
@@ -432,42 +431,42 @@ coderwhy 的文章 <a href="https://mp.weixin.qq.com/s/hYm0JgBI25grNG_2sCRlTA">�
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;person&#34;</span>,
   <span style="color:#a6e22e">sayName</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
-  }
+  },
 };
 <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">sayName</span>() {
   <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">sss</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>;
-  <span style="color:#a6e22e">sss</span>(); 
-  <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>(); 
-  (<span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>)(); 
-  (<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>)(); 
+  <span style="color:#a6e22e">sss</span>();
+  <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>();
+  <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>();
+  (<span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">person</span>.<span style="color:#a6e22e">sayName</span>)();
 }
 <span style="color:#a6e22e">sayName</span>();
 </code></pre></div><ol start="2">
 <li>第二题</li>
 </ol>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;window&#39;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;window&#34;</span>;
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">person1</span> <span style="color:#f92672">=</span> {
-  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;person1&#39;</span>,
+  <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;person1&#34;</span>,
   <span style="color:#a6e22e">foo1</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
-    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>)
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
   },
   <span style="color:#a6e22e">foo2</span><span style="color:#f92672">:</span> () =&gt; <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>),
   <span style="color:#a6e22e">foo3</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span> () {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>)
-    }
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+    };
   },
   <span style="color:#a6e22e">foo4</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
     <span style="color:#66d9ef">return</span> () =&gt; {
-      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>)
-    }
-  }
-}
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span>);
+    };
+  },
+};
 
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">person2</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;person2&#39;</span> }
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">person2</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;person2&#34;</span> };
 
-<span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo1</span>(); 
-<span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo1</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">person2</span>); 
+<span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo1</span>();
+<span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo1</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">person2</span>);
 
 <span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo2</span>();
 <span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo2</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">person2</span>);
@@ -480,7 +479,7 @@ coderwhy 的文章 <a href="https://mp.weixin.qq.com/s/hYm0JgBI25grNG_2sCRlTA">�
 <span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo4</span>.<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">person2</span>)();
 <span style="color:#a6e22e">person1</span>.<span style="color:#a6e22e">foo4</span>().<span style="color:#a6e22e">call</span>(<span style="color:#a6e22e">person2</span>);
 </code></pre></div><p><del>反正目的就是要把人头搞晕</del></p>
-<p>附赠：<a href="https://github.com/i-want-offer/questions_collection/tree/master/this%E9%A2%98%E7%9B%AE">40道this面试题</a></p>
+<p>附赠：<a href="https://github.com/i-want-offer/questions_collection/tree/master/this%E9%A2%98%E7%9B%AE">40 道 this 面试题</a></p>
 
   </div>
   

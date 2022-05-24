@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Git使用笔记 | nekolas.cafe</title>
+  <title>Git 使用笔记 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -88,7 +88,7 @@
     
 <article>
   <header>
-    <h1><a href="/posts/tech/posts/git-guide/">Git使用笔记</a></h1>
+    <h1><a href="/posts/tech/posts/git-guide/">Git 使用笔记</a></h1>
     <time datetime="2022-03-21 12:29:00 &#43;0800 CST">2022-03-21</time>
     <div class="breadcrumb">
     <ol>
@@ -120,10 +120,10 @@
   </header>
 
   <div class="body">
-    <p>最近发现了一个非常有意思的网站，Github标星24.1k。趣味的交互式体验以及丰富的视觉化效果，让学Git变得非常轻松。</p>
-<p>跟Git打过交道的朋友，大概都受过不少的苦，Git流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就Google一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握Git的决心！</p>
+    <p>最近发现了一个非常有意思的网站，Github 标星 24.1k。趣味的交互式体验以及丰富的视觉化效果，让学 Git 变得非常轻松。</p>
+<p>跟 Git 打过交道的朋友，大概都受过不少的苦，Git 流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就 Google 一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握 Git 的决心！</p>
 <p>学习地址：<a href="https://learngitbranching.js.org">LearnGitBranching</a><br>
-Github地址：<a href="https://github.com/pcottle/learnGitBranching">LearnGitBranching</a></p>
+Github 地址：<a href="https://github.com/pcottle/learnGitBranching">LearnGitBranching</a></p>
 <p>下面是一些笔记~</p>
 <h1 id="基础篇">基础篇</h1>
 <p>循序渐进地介绍 Git 主要命令</p>
@@ -148,7 +148,7 @@ Github地址：<a href="https://github.com/pcottle/learnGitBranching">LearnGitBr
 <p>Git 2.23 版本中，引入了一个名为 git switch 的新命令，最终会取代 git checkout，因为 checkout 作为单个命令有点超载（它承载了很多独立的功能）。</p>
 </blockquote>
 <h2 id="2-git-merge">2. Git Merge</h2>
-<p>假设有需要一个bugFix分支：</p>
+<p>假设有需要一个 bugFix 分支：</p>
 <pre tabindex="0"><code>// 新建并切换到bugFix分支
 git checkout -b bugFix
 
@@ -160,21 +160,21 @@ git checkout main
 
 // 保存修改
 git commit
-</code></pre><p>将bugfix <code>merge</code>到当前分支main</p>
+</code></pre><p>将 bugfix <code>merge</code>到当前分支 main</p>
 <pre tabindex="0"><code>git merge bugfix
 </code></pre><h2 id="3-git-rebase">3. Git Rebase</h2>
 <p>第二种合并分支的方法是 <code>git rebase</code>。Rebase 实际上就是取出一系列的提交记录，“复制”它们，然后在另外一个地方逐个的放下去。</p>
 <p>Rebase 的优势就是可以创造更线性的提交历史，这听上去有些难以理解。如果只允许使用 Rebase 的话，代码库的提交历史将会变得异常清晰。</p>
-<p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323005810.png#center" alt="20220323005810"></p>
-<p>假设有一个bugFix分支，想要 rebase 到 main 分支上：</p>
+<p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323005810.png#center" alt="20220323005810"></p>
+<p>假设有一个 bugFix 分支，想要 rebase 到 main 分支上：</p>
 <pre tabindex="0"><code>git checkout bugFix
 git rebase main
 </code></pre><p>或是直接写：</p>
 <pre tabindex="0"><code>git rebase main bugFix
-</code></pre><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323005612.png#center" alt="20220323005612"></p>
+</code></pre><p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323005612.png#center" alt="20220323005612"></p>
 <hr>
-<p>Evan You 都在推荐多用rebase哟
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323205925.png#center" alt="20220323205925"></p>
+<p>Evan You 都在推荐多用 rebase 哟
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323205925.png#center" alt="20220323205925"></p>
 <h1 id="高级篇">高级篇</h1>
 <p>要开始介绍 Git 的超棒特性了，快来吧！</p>
 <h2 id="1-分离-head">1. 分离 HEAD</h2>
@@ -183,7 +183,7 @@ git rebase main
 <p>HEAD 通常情况下是指向分支名的（如 bugFix）。在你提交时，改变了 bugFix 的状态，这一变化通过 HEAD 变得可见。分离的 HEAD 就是让其指向了某个具体的提交记录而不是分支名。</p>
 <h3 id="git-log">git log</h3>
 <p>通过指定提交记录哈希值的方式在 Git 中移动不太方便。在实际应用时，并没有像本程序中这么漂亮的可视化提交树供你参考，所以你就不得不用 git log 来查查看提交记录的哈希值。</p>
-<p>比较令人欣慰的是，Git 对哈希的处理很智能。你只需要提供能够唯一标识提交记录的前几个字符即可。因此我可以仅输入fed2 而不是上面的一长串字符。</p>
+<p>比较令人欣慰的是，Git 对哈希的处理很智能。你只需要提供能够唯一标识提交记录的前几个字符即可。因此我可以仅输入 fed2 而不是上面的一长串字符。</p>
 <h2 id="2-相对引用">2. 相对引用(^)</h2>
 <p>通过哈希值指定提交记录很不方便，所以 Git 引入了<strong>相对引用</strong>。这个就很厉害了!</p>
 <p>介绍两个简单的用法：</p>
@@ -203,15 +203,15 @@ git rebase main
 <p>Git 默认选择合并提交的“第一个”父提交，在操作符 ^ 后跟一个数字可以改变这一默认行为。</p>
 <p>假设有这么这么一个提交流程图，如果只是单纯滴使用</p>
 <pre tabindex="0"><code>git checkout main^
-</code></pre><p>HEAD会回到第一个父提交记录，也就是<code>C1</code>
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323185528.png#center" alt="20220323185528"></p>
+</code></pre><p>HEAD 会回到第一个父提交记录，也就是<code>C1</code>
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323185528.png#center" alt="20220323185528"></p>
 <p>但如果在^后增加一个数字，情况就不一样了：它会选择另外一个父提交记录。</p>
 <pre tabindex="0"><code>git checkout main^2
-</code></pre><p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323185857.png#center" alt="20220323185857">
-瞧，居然绕远路来到了C2这个父提交。</p>
+</code></pre><p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323185857.png#center" alt="20220323185857">
+瞧，居然绕远路来到了 C2 这个父提交。</p>
 <h3 id="链式操作">链式操作</h3>
-<p>Git还允许你使用链式操作，省去一步步操作的麻烦：
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323190016.png#center" alt="20220323190016"></p>
+<p>Git 还允许你使用链式操作，省去一步步操作的麻烦：
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323190016.png#center" alt="20220323190016"></p>
 <p>考题：如果使用下面这个链式操作，会回到哪个分支呢？</p>
 <pre tabindex="0"><code>git checkout HEAD~^2~2
 </code></pre><p>答案是（刮开可看）：<span style="color:transparent">C3</span></p>
@@ -224,23 +224,23 @@ git rebase main
 <p><code>git reset</code>: 对远程分支的更改是无效的<br>
 <code>git revert</code>: 提交一个新的更改，然后同步到远程仓库</p>
 <pre tabindex="0"><code>// 假设正在local分支
-git rest HEAD^  // 回退local本地分支所有内容到上一个版本  
+git rest HEAD^  // 回退local本地分支所有内容到上一个版本
 git checkout pushed
-git revert HEAD // 回退pushed远程分支所有内容到上一个版本 
+git revert HEAD // 回退pushed远程分支所有内容到上一个版本
 </code></pre><h1 id="移动提交记录">移动提交记录</h1>
 <h2 id="1-git-cherry-pick">1. Git Cherry-pick</h2>
 <p>如果你想将一些提交复制到当前所在的位置（HEAD）下面的话，可以用 Cherry-pick 命令。</p>
 <pre tabindex="0"><code>git cherry-pick &lt;提交号&gt;...
-</code></pre><p>这里有一个仓库, 我们想将 side 分支上的工作复制到 main 分支，你立刻想到了之前学过的 rebase 了吧，也可以很方便地用cherry-pick 指令实现。</p>
-<p><img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323134949.png#center" alt="20220323134949"></p>
+</code></pre><p>这里有一个仓库, 我们想将 side 分支上的工作复制到 main 分支，你立刻想到了之前学过的 rebase 了吧，也可以很方便地用 cherry-pick 指令实现。</p>
+<p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323134949.png#center" alt="20220323134949"></p>
 <pre tabindex="0"><code>git cherry-pick c2 c4
 </code></pre><p>我们只需要提交记录 C2 和 C4，所以 Git 就将被它们抓过来放到当前分支下了.
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323135043.png#center" alt="20220323135043"></p>
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323135043.png#center" alt="20220323135043"></p>
 <h2 id="2-交互式-rebase">2. 交互式 rebase</h2>
 <p>但是如果你不清楚你想要的提交记录的哈希值呢? 幸好 Git 帮你想到了这一点, 我们可以利用交互式的 <code>rebase</code> —— 如果你想从一系列的提交记录中找到想要的记录, 这就是最好的方法了。</p>
 <p>交互式 <code>rebase</code> 指的是使用带参数 <code>--interactive</code> 的 <code>rebase</code> 命令, 简写为 <code>-i</code></p>
 <p>如果你在命令后增加了这个选项, Git 会打开一个 UI 界面并列出将要被复制到目标分支的备选提交记录，它还会显示每个提交记录的哈希值和提交说明，提交说明有助于你理解这个提交进行了哪些更改。</p>
-<p>当 rebase UI界面打开时, 你能做3件事:</p>
+<p>当 rebase UI 界面打开时, 你能做 3 件事:</p>
 <ol>
 <li>调整提交记录的<strong>顺序</strong>（通过鼠标拖放来完成）</li>
 <li><strong>删除</strong>你不想要的提交（通过切换 <code>pick</code> 的状态来完成，关闭就意味着你不想要这个提交记录）</li>
@@ -248,7 +248,7 @@ git revert HEAD // 回退pushed远程分支所有内容到上一个版本
 </ol>
 <p>例如：</p>
 <pre tabindex="0"><code>git rebase -i HEAD~4  // 执行更改前四个提交记录：采纳与否和它们的顺序
-</code></pre><p><code>rebase -i</code>： 表示大概rebase interactive 界面，然后开始拖拽。<br>
+</code></pre><p><code>rebase -i</code>： 表示大概 rebase interactive 界面，然后开始拖拽。<br>
 <code>HEAD~4</code>： 表示拖拽的对象为该提交往上的四个父提交。</p>
 <h1 id="杂项">杂项</h1>
 <p>Git 技术、技巧与贴士大集合</p>
@@ -261,7 +261,7 @@ git revert HEAD // 回退pushed远程分支所有内容到上一个版本
 <pre tabindex="0"><code>git rebase -i
 git cherry-pick
 </code></pre><p>来达到目的。</p>
-<h3 id="更改最近一次git-commit">更改最近一次git commit</h3>
+<h3 id="更改最近一次-git-commit">更改最近一次 git commit</h3>
 <pre tabindex="0"><code>git commit --amend
 </code></pre><h2 id="2-git-tag">2. Git Tag</h2>
 <p>Git 的 tag 可以（在某种程度上 —— 因为标签可以被删除后重新在另外一个位置创建同名的标签）永久地将某个特定的提交命名为里程碑，然后就可以像分支一样引用了。</p>
@@ -271,7 +271,7 @@ git cherry-pick
 </code></pre><h2 id="3-git-describe">3. Git Describe</h2>
 <p>由于标签在代码库中起着“锚点”的作用，Git 还为此专门设计了一个命令用来描述离你最近的锚点（也就是标签），它就是 git describe！</p>
 <p>Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 git bisect（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是当你坐在你那刚刚度假回来的同事的电脑前时， 可能会用到这个命令。</p>
-<p><code>git describe</code> 的​​语法是：</p>
+<p><code>git describe</code> 的 ​​ 语法是：</p>
 <pre tabindex="0"><code>git describe &lt;ref&gt;
 </code></pre><p><code>&lt;ref&gt;</code> 可以是任何能被 Git 识别成提交记录的引用，如果你没有指定的话，Git 会以你目前所检出的位置（HEAD）。</p>
 <p>它<strong>输出的结果</strong>是这样的：</p>
@@ -279,7 +279,7 @@ git cherry-pick
 </code></pre><p><code>tag</code> 表示的是离 <code>ref</code> 最近的标签， <code>numCommits</code> 是表示这个 <code>ref</code> 与 <code>tag</code> 相差有多少个提交记录， <code>hash</code> 表示的是你所给定的 <code>ref</code> 所表示的提交记录哈希值的前几位。</p>
 <p>当 ref 提交记录上有某个标签时，则只输出标签名称。</p>
 <p>来看一下这个例子。
-<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220323215900.png#center" alt="20220323215900"></p>
+<img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20220323215900.png#center" alt="20220323215900"></p>
 <p><code>git describe main</code> 会输出（刮开可看）：<span style="color:transparent">v1_2_gC2</span><br>
 <code>git describe side</code> 会输出（刮开可看）：<span style="color:transparent">v2_1_gC4</span></p>
 <h1 id="git-初阶使用">git 初阶使用</h1>
