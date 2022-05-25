@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>如何用腾讯云的储存对象(COS)结合 CDN 作为图床 | nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="以及如何收费">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
+    
+
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/">如何用腾讯云的储存对象(COS)结合 CDN 作为图床</a></h1>
+    <time datetime="2022-05-26 01:00:00 &#43;0800 CST">2022-05-26</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">Tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/posts">Posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work">How does tencent cloud cos and cdn work</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+  </header>
+
+  <div class="body">
+    <p>众所周知，图床是一个非常方便的玩意：在图床网站上传本地图片，它就给你生成一个地址，访问这个地址你就能获得图片。但是免费的图床非常不稳定，讲不定下一次访问的时候图就挂了。偶然间知道腾讯云有<a href="https://cloud.tencent.com/act/event/cos-novice">对象存储（Cloud Object Storage，COS）</a>，可以放一些静态数据，结合 Picgo 便得到一个非常便捷的图床。</p>
+<p>经过几个月的使用，我依然对 COS 服务的收费不太熟悉。一个月的费用也就几块钱，所以就这么将就着。直到最近我购买了一个 10G 的 COS 资源包，自以为高枕无忧，却依然收到腾讯云给我发的欠费提醒。这让我非常想弄明白 COS 存储服务，包括引用数据时（后来才知道，这个操作消耗的流量叫<em>外网下行流量</em>）是如何收费的。</p>
+<p>随后又阅读了几篇文章，其中有好几个人推荐 COS 对象结合 CDN 来作图床，说是比直接把 COS 当作图床的费用更低。对于 CDN 我也不是很明白，直到看到 jdhao 的<a href="https://jdhao.github.io/2020/03/16/tencent_cos_cdn_setup/">这篇文章</a>才搞明白 <code>COS</code>、<code>CDN</code> 以及<code>回源</code>等概念。</p>
+<h1 id="对象存储cloud-object-storagecos">对象存储（Cloud Object Storage，COS）</h1>
+<blockquote>
+<p>对象存储（Cloud Object Storage，COS）是腾讯云提供的一种存储海量文件的分布式存储服务，用户可通过网络随时存储和查看数据。腾讯云 COS 使所有用户都能使用具备高扩展性、低成本、可靠和安全的数据存储服务。</p>
+</blockquote>
+<p>建立存储桶的基本操作：<br>
+登陆账号，进入控制台，新建一个存放对象（图片、文档和音视频文件）的桶（bucket），然后就可以通过腾讯提供的访问域名（Endpoint）访问或下载对象了。</p>
+<h1 id="cdn的概念">CDN的概念</h1>
+<p>以下引用 jdhao 的文章：</p>
+<blockquote>
+<p><strong>源站</strong>：简单理解，源站可以理解为最初的站点，由于这个站点的资源（图像，html，视频等）访问不方便，所以我们可以借助 CDN 来加速访问，减轻或者杜绝对源站资源的直接访问。相当 CDN 的节点服务器把源站的资料拷贝到自己的硬盘上，当有用户请求某个数据的时候，实际上访问到的是 CDN 的节点拷贝的数据。</p>
+</blockquote>
+<blockquote>
+<p><strong>回源</strong>：当源站的资料有更新，或者访问 CDN 节点缓存中不存在的某个资源，CDN 的节点会向源站请求更新的数据或者新的资料，这个过程就叫回源。CDN 可以设置回源时间，如果源站内容更新频繁，回源频率可以高一些，保证资料和源站一致，否则，回源的频率可以降低，减少对源站的压力和流量消耗。</p>
+</blockquote>
+<blockquote>
+<p><strong>回源鉴权</strong>：当 CDN 节点把源站的资料拷贝到该节点时，源站需要鉴定这些节点是否有从自己这里拷贝资料的适当权限，如果有权限，才可以拷贝资料。</p>
+</blockquote>
+<p>说白了，CDN 就是作为资料中转站的一些边缘节点。</p>
+<h1 id="计费">计费</h1>
+<p>明白了 COS 和 CDN 是啥，那到底如何计费的？</p>
+<h2 id="cos-存储空间计费">COS 存储空间计费</h2>
+<p>如果只是存放而<strong>不需要访问这些资源</strong>的时候，就只需要支付<strong>储存容量</strong>的费用。</p>
+<p>储存容量可以按照两种方式计费：</p>
+<ol>
+<li>按量计费：每日结算</li>
+<li>额外购买存储容量包：比如10G 1年 只需要10元左右，每日重置</li>
+</ol>
+<h2 id="流量和请求计费">流量和请求计费</h2>
+<p>作为图床，当然是需要访问这些对象的。所以，像我单单只是购买存储容量包是不够的，在请求数据的时候，腾讯还要收其他的钱（摊手）。</p>
+<blockquote>
+<p>流量是用户在使用和访问对象存储（Cloud Object Storage，COS）时，产生的数据流量的累计值，流量分为外网上行流量、外网下行流量、内网上行流量、内网下行流量、CDN 回源流量等。COS 会根据用户实际消耗的流量累计值进行收费。</p>
+</blockquote>
+<p>COS 作为 CDN 源站的计费如下：
+<img src="https://qcloudimg.tencent-cloud.cn/raw/5f9a3ca640146003988e7642134239cf.svg" alt="CDN计费"></p>
+<p>外网上行流量、内网上行流量内网下行流量都是免费的，所以，使用COS当图床会消耗<strong>外网下行流量</strong>或 <strong>CDN 回源流量</strong>。</p>
+<h3 id="外网下行流量">外网下行流量</h3>
+<p>即<em>数据通过普通网络（公共互联网）从 COS 下载到用户本地或客户端所产生的流量</em>，用户可以日结也可以买资源包。</p>
+<p>按量计费：外网下行流量（GB）x 每 GB 单价<br>
+资源包：外网下行流量包</p>
+<h3 id="接入-cdn-计费">接入 CDN 计费</h3>
+<p>按量计费：CDN 回源流量（GB）x 每 GB 单价<br>
+资源包：CDN 回源流量包</p>
+<p>最近有新用户购买优惠：CDN 境内流量包  50GB 只需要3元：<br>
+<a href="https://cloud.tencent.com/act/pro/CDN-">https://cloud.tencent.com/act/pro/CDN-</a></p>
+<hr>
+<h1 id="参考">参考</h1>
+<ul>
+<li><a href="https://jdhao.github.io/2020/03/16/tencent_cos_cdn_setup/">腾讯云对象存储博客图床开启 CDN 加速(不需要购买额外域名)</a></li>
+<li><a href="https://cloud.tencent.com/document/product/228/37849#cos-.E8.AE.A1.E8.B4.B9">COS-CDN 计费说明</a></li>
+<li><a href="https://cloud.tencent.com/document/product/436/53863">流量费用</a></li>
+</ul>
+
+  </div>
+  
+  <footer>
+    
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+  </footer>
+  
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/">腾讯云</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/%E5%9B%BE%E5%BA%8A/">图床</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/cdn/">CDN</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/">
+      <time datetime="2022-04-30 17:00:00 &#43;0800 CST">2022-04-30 &raquo; </time>
+      如何使用 Netlify 快速部署个人项目
+    </a>
+  
+  </div>
+  <div class="left">
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
+    
+
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>

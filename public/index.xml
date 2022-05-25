@@ -27,6 +27,26 @@ Homepage: https://nekolas.cafe/
     </item>
     
     <item>
+      <title>如何用腾讯云的储存对象(COS)结合 CDN 作为图床</title>
+      <link>http://blog.nekolas.cafe/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/</link>
+      <pubDate>Thu, 26 May 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/</guid>
+      <description>众所周知，图床是一个非常方便的玩意：在图床网站上传本地图片，它就给你生成一个地址，访问这个地址你就能获得图片。但是免费的图床非常不稳定，讲不定下一次访问的时候图就挂了。偶然间知道腾讯云有对象存储（Cloud Object Storage，COS），可以放一些静态数据，结合 Picgo 便得到一个非常便捷的图床。
+经过几个月的使用，我依然对 COS 服务的收费不太熟悉。一个月的费用也就几块钱，所以就这么将就着。直到最近我购买了一个 10G 的 COS 资源包，自以为高枕无忧，却依然收到腾讯云给我发的欠费提醒。这让我非常想弄明白 COS 存储服务，包括引用数据时（后来才知道，这个操作消耗的流量叫外网下行流量）是如何收费的。
+随后又阅读了几篇文章，其中有好几个人推荐 COS 对象结合 CDN 来作图床，说是比直接把 COS 当作图床的费用更低。对于 CDN 我也不是很明白，直到看到 jdhao 的这篇文章才搞明白 COS、CDN 以及回源等概念。
+对象存储（Cloud Object Storage，COS）  对象存储（Cloud Object Storage，COS）是腾讯云提供的一种存储海量文件的分布式存储服务，用户可通过网络随时存储和查看数据。腾讯云 COS 使所有用户都能使用具备高扩展性、低成本、可靠和安全的数据存储服务。
+ 建立存储桶的基本操作：
+登陆账号，进入控制台，新建一个存放对象（图片、文档和音视频文件）的桶（bucket），然后就可以通过腾讯提供的访问域名（Endpoint）访问或下载对象了。
+CDN的概念 以下引用 jdhao 的文章：
+ 源站：简单理解，源站可以理解为最初的站点，由于这个站点的资源（图像，html，视频等）访问不方便，所以我们可以借助 CDN 来加速访问，减轻或者杜绝对源站资源的直接访问。相当 CDN 的节点服务器把源站的资料拷贝到自己的硬盘上，当有用户请求某个数据的时候，实际上访问到的是 CDN 的节点拷贝的数据。
+  回源：当源站的资料有更新，或者访问 CDN 节点缓存中不存在的某个资源，CDN 的节点会向源站请求更新的数据或者新的资料，这个过程就叫回源。CDN 可以设置回源时间，如果源站内容更新频繁，回源频率可以高一些，保证资料和源站一致，否则，回源的频率可以降低，减少对源站的压力和流量消耗。
+  回源鉴权：当 CDN 节点把源站的资料拷贝到该节点时，源站需要鉴定这些节点是否有从自己这里拷贝资料的适当权限，如果有权限，才可以拷贝资料。
+ 说白了，CDN 就是作为资料中转站的一些边缘节点。
+计费 明白了 COS 和 CDN 是啥，那到底如何计费的？</description>
+    </item>
+    
+    <item>
       <title>codewars练习</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/codewars/</link>
       <pubDate>Sat, 21 May 2022 14:00:00 +0800</pubDate>
@@ -491,10 +511,10 @@ app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#3
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-appnpm install -g @vue/cli安装完毕提示：
- Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
+cd weather-app npm install -g @vue/cli 安装完毕提示：
+ Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
+vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
     </item>
     
     <item>
@@ -634,7 +654,7 @@ Object.defineProperty()中的一些属性    属性 描述 默认值     configu
       
       <guid>http://blog.nekolas.cafe/posts/life/aji-crispy-review/</guid>
       <description>
-前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~包装 ⭐⭐⭐⭐
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~ 包装 ⭐⭐⭐⭐
 包装最值得称赞的部分就是密封条，开封后就算放一放，也不怕潮。（乐事的薯片们可以学一下吗） 包装设计方面，蔬菜味上印有蔬菜，芝士味上印有芝士，焦糖芥末味也是乖乖地印有芥末植物（山葵或辣根）和焦糖。 但是，我们神奇的优格洋葱味，除了印有奶白的yogurt液体，它的右侧还有一杯内容不明鸡尾酒杯，里面似乎是猕猴桃和草莓，这杯水果饮料跟洋葱似乎毫无关系吧…… (图： aji果子町专卖店)
 口味 ⭐⭐⭐⭐
 整体来说，每一包都被我们吃光光，味道还是很不错的，吃完后嘴巴也没有过于浓重的香精味残留。
@@ -690,8 +710,8 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo使用 MacPorts 安装：
-port install hugoWindows  使用 Chocolatey 安装：</description>
+brew install hugo 使用 MacPorts 安装：
+port install hugo Windows  使用 Chocolatey 安装：</description>
     </item>
     
     <item>

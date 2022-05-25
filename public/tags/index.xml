@@ -6,7 +6,34 @@
     <description>Recent content in Tags on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 21 May 2022 14:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CDN</title>
+      <link>http://blog.nekolas.cafe/tags/cdn/</link>
+      <pubDate>Thu, 26 May 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/cdn/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>图床</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%9B%BE%E5%BA%8A/</link>
+      <pubDate>Thu, 26 May 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E5%9B%BE%E5%BA%8A/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>腾讯云</title>
+      <link>http://blog.nekolas.cafe/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</link>
+      <pubDate>Thu, 26 May 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E8%85%BE%E8%AE%AF%E4%BA%91/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>codewars</title>
       <link>http://blog.nekolas.cafe/tags/codewars/</link>

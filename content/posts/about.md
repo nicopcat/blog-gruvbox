@@ -33,7 +33,7 @@ Homepage: https://nekolas.cafe/
 
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
-{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/img/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
+{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/upload/2022/05/avatar.jpg " word="博观而约取，厚积而薄发。" >}}
 
 {{< friend name="Sulv’s Blog" url="https://www.sulvblog.cn" logo="https://www.sulvblog.cn/img/Q.gif" word="一个记录技术、阅读、生活的博客" >}}
 
@@ -48,7 +48,7 @@ Homepage: https://nekolas.cafe/
 ```java
 你的名字: "Nekolas's blog",
 一栏地址: "https://blog.nekolas.cafe/",
-一颗头像: "https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/nic-avatar-tomato.png",
+一颗头像: "https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg",
 简单介绍: "Be curious, be at ease."
 ```
 
