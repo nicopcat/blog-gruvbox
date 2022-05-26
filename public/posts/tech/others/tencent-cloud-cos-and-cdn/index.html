@@ -88,7 +88,7 @@
     
 <article>
   <header>
-    <h1><a href="/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work/">如何用腾讯云的储存对象(COS)结合 CDN 作为图床</a></h1>
+    <h1><a href="/posts/tech/others/tencent-cloud-cos-and-cdn/">如何用腾讯云的储存对象(COS)结合 CDN 作为图床</a></h1>
     <time datetime="2022-05-26 01:00:00 &#43;0800 CST">2022-05-26</time>
     <div class="breadcrumb">
     <ol>
@@ -110,7 +110,7 @@
         
         
         
-        <li><a href="/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work">How does tencent cloud cos and cdn work</a></li>
+        <li><a href="/posts/tech/others/tencent-cloud-cos-and-cdn">Tencent cloud cos and cdn</a></li>
         
         
         
@@ -129,23 +129,25 @@
 <p>作为图床，我们需要关注的三项计费是：<strong>存储容量费用</strong>、<strong>流量费用</strong>以及<strong>请求费用</strong>。</p>
 <h2 id="存储容量费用">存储容量费用</h2>
 <p>新用户会赠送6个月10G的流量包，6个月之后开始按下面两种方式计费：</p>
-<p>储存容量可以按照两种方式计费：</p>
+<p><strong>计费方式</strong>：</p>
 <ul>
-<li>按量计费：每月结算<br>
+<li><strong>按量计费</strong>：每月结算<br>
 拿广州地区的标准存储计算，单价0.118元/GB/月</li>
 <li>购买存储容量包：每日重置 <br>
 比如10G/月需要0.85元</li>
 </ul>
 <p>参考：https://cloud.tencent.com/document/product/436/53482</p>
 <h2 id="流量费用外网下行流量">流量费用（外网下行流量）</h2>
-<p>流量主要是指外网上行流量、外网下行流量、内网上行流量、内网下行流量，前三项都不收费，所以只关注内网下行流量，从 COS 下载到用户本地或客户端所产生的流量就是下行流量。</p>
-<p>内网下行流量和储存容量一样按照两种方式计费：</p>
+<p>流量主要是指外网上行流量、内网上行流量、内网下行流量和外网下行流量，前三项都不收费，所以只关注<strong>外网下行流量</strong>，从 COS 下载到用户本地或客户端所产生的流量就是下行流量。</p>
+<p><strong>计费方式</strong>：</p>
 <ul>
-<li>按量计费：每日对上一日产生的费用进行结算，输出账单</li>
+<li>按量计费：日结计费</li>
 <li>资源包：外网下行流量包</li>
 </ul>
-<p>流量是费用产生的主要来源，价格大概是0.5元/GB。5月我的桶生成了 3.11 GB 的流量，收取费用 1.56元。个人网站流量小，收取的费用微乎其微 ……<br>
-（搞了半天，我发现我这小小站什么包都不买才是最省钱的）</p>
+<p>流量是费用产生的主要来源，价格大概是0.5元/GB。</p>
+<p>5月我的桶生成了 3.11 GB 的流量，收取费用 1.56元。 
+个人网站流量小，收取的费用微乎其微 ……</p>
+<p>（搞了半天，我发现我这小小站什么包都不买才是最省钱的）</p>
 <p>参看：https://cloud.tencent.com/document/product/436/53863</p>
 <h2 id="请求费用">请求费用</h2>
 <p>请求次数包括用户请求次数和用户配置功能后产生的后端请求次数。价格大概是0.01元万次，不足则不收取，基本可以忽略。</p>
@@ -160,9 +162,9 @@
 <blockquote>
 <p><strong>回源鉴权</strong>：当 CDN 节点把源站的资料拷贝到该节点时，源站需要鉴定这些节点是否有从自己这里拷贝资料的适当权限，如果有权限，才可以拷贝资料。</p>
 </blockquote>
-<p>CDN 原来就是类似资料中转站这样的存在。。</p>
+<p>CDN 原来就是类似<strong>资料中转站</strong>这样的存在。</p>
 <h2 id="cos-作为-cdn-源站时产生的流量">COS 作为 CDN 源站时产生的流量</h2>
-<p>COS 作为 CDN 源站时，含两部分计费：<strong>CDN 计费（加速）<strong>和</strong>COS 计费（回源）。</strong></p>
+<p>CDN 流量计费包括：<strong>CDN 计费（加速）<strong>和</strong>COS 计费（回源）。</strong></p>
 <h3 id="cdn-计费加速">CDN 计费（加速）</h3>
 <p>计费阶梯：<br>
 <img src="https://nic-gz-1308403500.file.myqcloud.com/posts/how-does-tencent-cloud-cos-and-cdn-work-20220526140544.png" alt="CDN计费">
@@ -179,7 +181,7 @@
 <li>CDN 回源流量包  12.42元/10GB/1年 -&gt; 1.50 元/月</li>
 <li>中国境内CDN流量包  3元/50GB/1年</li>
 </ol>
-<p>买资源包花了：￥25.19~<br>
+<p>买资源包花了：￥25.19~ <br>
 什么包都不买：￥1.6~</p>
 <hr>
 <h1 id="参考">参考</h1>
