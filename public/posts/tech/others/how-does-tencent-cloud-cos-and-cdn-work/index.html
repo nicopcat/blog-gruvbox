@@ -88,7 +88,7 @@
     
 <article>
   <header>
-    <h1><a href="/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/">如何用腾讯云的储存对象(COS)结合 CDN 作为图床</a></h1>
+    <h1><a href="/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work/">如何用腾讯云的储存对象(COS)结合 CDN 作为图床</a></h1>
     <time datetime="2022-05-26 01:00:00 &#43;0800 CST">2022-05-26</time>
     <div class="breadcrumb">
     <ol>
@@ -106,11 +106,11 @@
         
         
         
-        <li><a href="/posts/tech/posts">Posts</a></li>
+        <li><a href="/posts/tech/others">Others</a></li>
         
         
         
-        <li><a href="/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work">How does tencent cloud cos and cdn work</a></li>
+        <li><a href="/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work">How does tencent cloud cos and cdn work</a></li>
         
         
         
@@ -124,11 +124,31 @@
 <p>经过几个月的使用，我依然对 COS 服务的收费不太熟悉。一个月的费用也就几块钱，所以就这么将就着。直到最近我购买了一个 10G 的 COS 资源包，自以为高枕无忧，却依然收到腾讯云给我发的欠费提醒。这让我非常想弄明白 COS 存储服务，包括引用数据时（后来才知道，这个操作消耗的流量叫<em>外网下行流量</em>）是如何收费的。</p>
 <p>随后又阅读了几篇文章，其中有好几个人推荐 COS 对象结合 CDN 来作图床，说是比直接把 COS 当作图床的费用更低。对于 CDN 我也不是很明白，直到看到 jdhao 的<a href="https://jdhao.github.io/2020/03/16/tencent_cos_cdn_setup/">这篇文章</a>才搞明白 <code>COS</code>、<code>CDN</code> 以及<code>回源</code>等概念。</p>
 <h1 id="对象存储cloud-object-storagecos">对象存储（Cloud Object Storage，COS）</h1>
-<blockquote>
-<p>对象存储（Cloud Object Storage，COS）是腾讯云提供的一种存储海量文件的分布式存储服务，用户可通过网络随时存储和查看数据。腾讯云 COS 使所有用户都能使用具备高扩展性、低成本、可靠和安全的数据存储服务。</p>
-</blockquote>
-<p>建立存储桶的基本操作：<br>
-登陆账号，进入控制台，新建一个存放对象（图片、文档和音视频文件）的桶（bucket），然后就可以通过腾讯提供的访问域名（Endpoint）访问或下载对象了。</p>
+<p><strong>COS</strong>： 是腾讯云提供的文件存储服务，用户可通过网络随时存储和查看数据。</p>
+<p><strong>流量</strong>：是用户在使用和访问对象存储会产生的数据流量，分为外网上行流量、外网下行流量、内网上行流量、内网下行流量、CDN 回源流量等。</p>
+<p>作为图床，我们需要关注的三项计费是：<strong>存储容量费用</strong>、<strong>流量费用</strong>以及<strong>请求费用</strong>。</p>
+<h2 id="存储容量费用">存储容量费用</h2>
+<p>新用户会赠送6个月10G的流量包，6个月之后开始按下面两种方式计费：</p>
+<p>储存容量可以按照两种方式计费：</p>
+<ul>
+<li>按量计费：每月结算<br>
+拿广州地区的标准存储计算，单价0.118元/GB/月</li>
+<li>购买存储容量包：每日重置 <br>
+比如10G/月需要0.85元</li>
+</ul>
+<p>参考：https://cloud.tencent.com/document/product/436/53482</p>
+<h2 id="流量费用外网下行流量">流量费用（外网下行流量）</h2>
+<p>流量主要是指外网上行流量、外网下行流量、内网上行流量、内网下行流量，前三项都不收费，所以只关注内网下行流量，从 COS 下载到用户本地或客户端所产生的流量就是下行流量。</p>
+<p>内网下行流量和储存容量一样按照两种方式计费：</p>
+<ul>
+<li>按量计费：每日对上一日产生的费用进行结算，输出账单</li>
+<li>资源包：外网下行流量包</li>
+</ul>
+<p>流量是费用产生的主要来源，价格大概是0.5元/GB。5月我的桶生成了 3.11 GB 的流量，收取费用 1.56元。个人网站流量小，收取的费用微乎其微 ……<br>
+（搞了半天，我发现我这小小站什么包都不买才是最省钱的）</p>
+<p>参看：https://cloud.tencent.com/document/product/436/53863</p>
+<h2 id="请求费用">请求费用</h2>
+<p>请求次数包括用户请求次数和用户配置功能后产生的后端请求次数。价格大概是0.01元万次，不足则不收取，基本可以忽略。</p>
 <h1 id="cdn的概念">CDN的概念</h1>
 <p>以下引用 jdhao 的文章：</p>
 <blockquote>
@@ -140,39 +160,33 @@
 <blockquote>
 <p><strong>回源鉴权</strong>：当 CDN 节点把源站的资料拷贝到该节点时，源站需要鉴定这些节点是否有从自己这里拷贝资料的适当权限，如果有权限，才可以拷贝资料。</p>
 </blockquote>
-<p>说白了，CDN 就是作为资料中转站的一些边缘节点。</p>
-<h1 id="计费">计费</h1>
-<p>明白了 COS 和 CDN 是啥，那到底如何计费的？</p>
-<h2 id="cos-存储空间计费">COS 存储空间计费</h2>
-<p>如果只是存放而<strong>不需要访问这些资源</strong>的时候，就只需要支付<strong>储存容量</strong>的费用。</p>
-<p>储存容量可以按照两种方式计费：</p>
-<ol>
-<li>按量计费：每日结算</li>
-<li>额外购买存储容量包：比如10G 1年 只需要10元左右，每日重置</li>
-</ol>
-<h2 id="流量和请求计费">流量和请求计费</h2>
-<p>作为图床，当然是需要访问这些对象的。所以，像我单单只是购买存储容量包是不够的，在请求数据的时候，腾讯还要收其他的钱（摊手）。</p>
-<blockquote>
-<p>流量是用户在使用和访问对象存储（Cloud Object Storage，COS）时，产生的数据流量的累计值，流量分为外网上行流量、外网下行流量、内网上行流量、内网下行流量、CDN 回源流量等。COS 会根据用户实际消耗的流量累计值进行收费。</p>
-</blockquote>
+<p>CDN 原来就是类似资料中转站这样的存在。。</p>
+<h2 id="cos-作为-cdn-源站时产生的流量">COS 作为 CDN 源站时产生的流量</h2>
+<p>COS 作为 CDN 源站时，含两部分计费：<strong>CDN 计费（加速）<strong>和</strong>COS 计费（回源）。</strong></p>
+<h3 id="cdn-计费加速">CDN 计费（加速）</h3>
+<p>计费阶梯：<br>
+<img src="https://nic-gz-1308403500.file.myqcloud.com/posts/how-does-tencent-cloud-cos-and-cdn-work-20220526140544.png" alt="CDN计费">
+计费说明：https://cloud.tencent.com/document/product/228/2949</p>
+<h3 id="cos-计费回源">COS 计费（回源）</h3>
+<p>CDN 回源计费：
+<img src="https://nic-gz-1308403500.file.myqcloud.com/posts/how-does-tencent-cloud-cos-and-cdn-work-20220526135621.png" alt="cos-vs-cdn"></p>
 <p>COS 作为 CDN 源站的计费如下：
 <img src="https://qcloudimg.tencent-cloud.cn/raw/5f9a3ca640146003988e7642134239cf.svg" alt="CDN计费"></p>
-<p>外网上行流量、内网上行流量内网下行流量都是免费的，所以，使用COS当图床会消耗<strong>外网下行流量</strong>或 <strong>CDN 回源流量</strong>。</p>
-<h3 id="外网下行流量">外网下行流量</h3>
-<p>即<em>数据通过普通网络（公共互联网）从 COS 下载到用户本地或客户端所产生的流量</em>，用户可以日结也可以买资源包。</p>
-<p>按量计费：外网下行流量（GB）x 每 GB 单价<br>
-资源包：外网下行流量包</p>
-<h3 id="接入-cdn-计费">接入 CDN 计费</h3>
-<p>按量计费：CDN 回源流量（GB）x 每 GB 单价<br>
-资源包：CDN 回源流量包</p>
-<p>最近有新用户购买优惠：CDN 境内流量包  50GB 只需要3元：<br>
-<a href="https://cloud.tencent.com/act/pro/CDN-">https://cloud.tencent.com/act/pro/CDN-</a></p>
+<h2 id="但这么一通算下来">但这么一通算下来……</h2>
+<p>我买的资源包：</p>
+<ol>
+<li>标准存储容量包  9.77元/10GB/1年 -&gt; 1.18 元/月</li>
+<li>CDN 回源流量包  12.42元/10GB/1年 -&gt; 1.50 元/月</li>
+<li>中国境内CDN流量包  3元/50GB/1年</li>
+</ol>
+<p>买资源包花了：￥25.19~<br>
+什么包都不买：￥1.6~</p>
 <hr>
 <h1 id="参考">参考</h1>
 <ul>
 <li><a href="https://jdhao.github.io/2020/03/16/tencent_cos_cdn_setup/">腾讯云对象存储博客图床开启 CDN 加速(不需要购买额外域名)</a></li>
 <li><a href="https://cloud.tencent.com/document/product/228/37849#cos-.E8.AE.A1.E8.B4.B9">COS-CDN 计费说明</a></li>
-<li><a href="https://cloud.tencent.com/document/product/436/53863">流量费用</a></li>
+<li><a href="https://cloud.tencent.com/document/product/436/53863">COS流量费用</a></li>
 </ul>
 
   </div>
@@ -206,7 +220,7 @@
 <div class="pagination">
   <div class="right">
   
-    <a href="/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/">
+    <a href="/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/">
       <time datetime="2022-04-30 17:00:00 &#43;0800 CST">2022-04-30 &raquo; </time>
       如何使用 Netlify 快速部署个人项目
     </a>

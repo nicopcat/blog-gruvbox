@@ -9,10 +9,10 @@
     <lastBuildDate>Mon, 21 Mar 2022 12:29:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Git 使用笔记</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/git-guide/</link>
       <pubDate>Mon, 21 Mar 2022 12:29:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/git-guide/</guid>
       <description>最近发现了一个非常有意思的网站，Github 标星 24.1k。趣味的交互式体验以及丰富的视觉化效果，让学 Git 变得非常轻松。
 跟 Git 打过交道的朋友，大概都受过不少的苦，Git 流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就 Google 一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握 Git 的决心！
 学习地址：LearnGitBranching

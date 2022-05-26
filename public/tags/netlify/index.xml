@@ -9,10 +9,10 @@
     <lastBuildDate>Sat, 30 Apr 2022 17:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/netlify/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何使用 Netlify 快速部署个人项目</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/</link>
       <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/</guid>
       <description>一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。
 先进入 Netlify 官网，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”
 不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。

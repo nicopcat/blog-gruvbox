@@ -2,37 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tech posts🗒️ on Nic Tian</title>
-    <link>http://blog.nekolas.cafe/posts/tech/posts/</link>
+    <link>http://blog.nekolas.cafe/posts/tech/others/</link>
     <description>Recent content in tech posts🗒️ on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 26 May 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 26 May 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/others/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>如何用腾讯云的储存对象(COS)结合 CDN 作为图床</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work/</link>
       <pubDate>Thu, 26 May 2022 01:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work/</guid>
       <description>众所周知，图床是一个非常方便的玩意：在图床网站上传本地图片，它就给你生成一个地址，访问这个地址你就能获得图片。但是免费的图床非常不稳定，讲不定下一次访问的时候图就挂了。偶然间知道腾讯云有对象存储（Cloud Object Storage，COS），可以放一些静态数据，结合 Picgo 便得到一个非常便捷的图床。
 经过几个月的使用，我依然对 COS 服务的收费不太熟悉。一个月的费用也就几块钱，所以就这么将就着。直到最近我购买了一个 10G 的 COS 资源包，自以为高枕无忧，却依然收到腾讯云给我发的欠费提醒。这让我非常想弄明白 COS 存储服务，包括引用数据时（后来才知道，这个操作消耗的流量叫外网下行流量）是如何收费的。
 随后又阅读了几篇文章，其中有好几个人推荐 COS 对象结合 CDN 来作图床，说是比直接把 COS 当作图床的费用更低。对于 CDN 我也不是很明白，直到看到 jdhao 的这篇文章才搞明白 COS、CDN 以及回源等概念。
-对象存储（Cloud Object Storage，COS）  对象存储（Cloud Object Storage，COS）是腾讯云提供的一种存储海量文件的分布式存储服务，用户可通过网络随时存储和查看数据。腾讯云 COS 使所有用户都能使用具备高扩展性、低成本、可靠和安全的数据存储服务。
- 建立存储桶的基本操作：
-登陆账号，进入控制台，新建一个存放对象（图片、文档和音视频文件）的桶（bucket），然后就可以通过腾讯提供的访问域名（Endpoint）访问或下载对象了。
+对象存储（Cloud Object Storage，COS） COS： 是腾讯云提供的文件存储服务，用户可通过网络随时存储和查看数据。
+流量：是用户在使用和访问对象存储会产生的数据流量，分为外网上行流量、外网下行流量、内网上行流量、内网下行流量、CDN 回源流量等。
+作为图床，我们需要关注的三项计费是：存储容量费用、流量费用以及请求费用。
+存储容量费用 新用户会赠送6个月10G的流量包，6个月之后开始按下面两种方式计费：
+储存容量可以按照两种方式计费：
+ 按量计费：每月结算
+拿广州地区的标准存储计算，单价0.118元/GB/月 购买存储容量包：每日重置 比如10G/月需要0.85元  参考：https://cloud.tencent.com/document/product/436/53482
+流量费用（外网下行流量） 流量主要是指外网上行流量、外网下行流量、内网上行流量、内网下行流量，前三项都不收费，所以只关注内网下行流量，从 COS 下载到用户本地或客户端所产生的流量就是下行流量。
+内网下行流量和储存容量一样按照两种方式计费：
+ 按量计费：每日对上一日产生的费用进行结算，输出账单 资源包：外网下行流量包  流量是费用产生的主要来源，价格大概是0.5元/GB。5月我的桶生成了 3.11 GB 的流量，收取费用 1.56元。个人网站流量小，收取的费用微乎其微 ……
+（搞了半天，我发现我这小小站什么包都不买才是最省钱的）
+参看：https://cloud.tencent.com/document/product/436/53863
+请求费用 请求次数包括用户请求次数和用户配置功能后产生的后端请求次数。价格大概是0.01元万次，不足则不收取，基本可以忽略。
 CDN的概念 以下引用 jdhao 的文章：
- 源站：简单理解，源站可以理解为最初的站点，由于这个站点的资源（图像，html，视频等）访问不方便，所以我们可以借助 CDN 来加速访问，减轻或者杜绝对源站资源的直接访问。相当 CDN 的节点服务器把源站的资料拷贝到自己的硬盘上，当有用户请求某个数据的时候，实际上访问到的是 CDN 的节点拷贝的数据。
-  回源：当源站的资料有更新，或者访问 CDN 节点缓存中不存在的某个资源，CDN 的节点会向源站请求更新的数据或者新的资料，这个过程就叫回源。CDN 可以设置回源时间，如果源站内容更新频繁，回源频率可以高一些，保证资料和源站一致，否则，回源的频率可以降低，减少对源站的压力和流量消耗。
-  回源鉴权：当 CDN 节点把源站的资料拷贝到该节点时，源站需要鉴定这些节点是否有从自己这里拷贝资料的适当权限，如果有权限，才可以拷贝资料。
- 说白了，CDN 就是作为资料中转站的一些边缘节点。
-计费 明白了 COS 和 CDN 是啥，那到底如何计费的？</description>
+ 源站：简单理解，源站可以理解为最初的站点，由于这个站点的资源（图像，html，视频等）访问不方便，所以我们可以借助 CDN 来加速访问，减轻或者杜绝对源站资源的直接访问。相当 CDN 的节点服务器把源站的资料拷贝到自己的硬盘上，当有用户请求某个数据的时候，实际上访问到的是 CDN 的节点拷贝的数据。</description>
     </item>
     
     <item>
       <title>如何使用 Netlify 快速部署个人项目</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/</link>
       <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/</guid>
       <description>一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。
 先进入 Netlify 官网，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”
 不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。
@@ -44,10 +50,10 @@ Other Netlify 服务提供一个免费的 Starter Plan，适合展示个人的�
     
     <item>
       <title>Tech Daily 001</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/tech-daily-001/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/tech-daily-001/</link>
       <pubDate>Fri, 22 Apr 2022 18:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/tech-daily-001/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/tech-daily-001/</guid>
       <description>跟逛维基百科一样，前端用语一个接一个映入眼帘，了解完 A 又出现了 B, C, D……
 Composition API Vue 3 重大新特性之一，中文“组合式 API”，Vue 2.x 使用的是 Option API。简单来说就是把一坨代码放到setup()函数里集中管理，解决业务关注点过多的问题。
 查看大帅老猿花了一夜做的动画
@@ -60,20 +66,20 @@ Pollyfill 由于各个浏览器/版本不统一，造成某些功能无法使用
     
     <item>
       <title>如何在vscode 启动调试工具</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/vscode-debugger/</link>
       <pubDate>Mon, 18 Apr 2022 16:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/vscode-debugger/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/vscode-debugger/</guid>
       <description>除了浏览器里的 dev tool，非常牛逼的 VS Code 也内置了调试控制台，只需按照步骤配置 launch.json 文件即可。
 步骤  打开代码文件夹 点右侧菜单栏的 运行和调试 或快捷键 Ctrl + Shift + D 点击 创建 launch.json 文件。VSCode 会在工作区的 .vscode 文件夹下生成一个新的 launch.json 文件 可以观察到，左侧有 lauch 菜单（一个类似播放的按钮），可以用此菜单启动服务器了。    参考：https://segmentfault.com/a/1190000022804681</description>
     </item>
     
     <item>
       <title>Git 使用笔记</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/git-guide/</link>
       <pubDate>Mon, 21 Mar 2022 12:29:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/git-guide/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/git-guide/</guid>
       <description>最近发现了一个非常有意思的网站，Github 标星 24.1k。趣味的交互式体验以及丰富的视觉化效果，让学 Git 变得非常轻松。
 跟 Git 打过交道的朋友，大概都受过不少的苦，Git 流程不仅概念比较抽象，命令也繁多，让人头大。报错时，我通常就 Google 一下，问题貌似暂时解决了，但这背后的原理还是一知半解的，下次说不定还会发生。这个网站又给了我掌握 Git 的决心！
 学习地址：LearnGitBranching
@@ -88,10 +94,10 @@ Github 地址：LearnGitBranching
     
     <item>
       <title>好玩的JavaScrip动画框架——GSAP 【intro试译】</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/gsap-intro/</link>
       <pubDate>Sat, 12 Mar 2022 13:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/gsap-intro/</guid>
       <description>GSAP 全称是 GreenSock Animation Platform，是一个非常强大的基于 JS 的动画库，初次接触的我深感，短短几行代码就能实现非常酷炫的特效。
 在学习的过程中，顺便把官网的教程翻译成中文参考。
 什么是 GSAP? GSAP 其实是在操控属性 动画最终可以归结为一个每秒多次改变属性值的过程，可以使某物产生移动、褪色、旋转等效果。GSAP 抓取一个起始值和一个终止值，然后每秒在它们之间插值 60 次。

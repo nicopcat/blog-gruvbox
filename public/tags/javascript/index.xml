@@ -76,10 +76,10 @@ function sum(n) { let sum = 0; for (i = 0; i &amp;lt;= n; i++) { sum += i; } ret
     
     <item>
       <title>好玩的JavaScrip动画框架——GSAP 【intro试译】</title>
-      <link>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</link>
+      <link>http://blog.nekolas.cafe/posts/tech/others/gsap-intro/</link>
       <pubDate>Sat, 12 Mar 2022 13:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/tech/posts/gsap-intro/</guid>
+      <guid>http://blog.nekolas.cafe/posts/tech/others/gsap-intro/</guid>
       <description>GSAP 全称是 GreenSock Animation Platform，是一个非常强大的基于 JS 的动画库，初次接触的我深感，短短几行代码就能实现非常酷炫的特效。
 在学习的过程中，顺便把官网的教程翻译成中文参考。
 什么是 GSAP? GSAP 其实是在操控属性 动画最终可以归结为一个每秒多次改变属性值的过程，可以使某物产生移动、褪色、旋转等效果。GSAP 抓取一个起始值和一个终止值，然后每秒在它们之间插值 60 次。

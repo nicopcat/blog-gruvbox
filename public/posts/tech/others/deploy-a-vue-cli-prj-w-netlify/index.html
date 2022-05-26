@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>tech posts🗒️ | nekolas.cafe</title>
+  <title>如何使用 Netlify 快速部署个人项目 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -32,7 +32,6 @@
   </script>
 
 
-  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/posts/tech/posts/index.xml" title="Nic Tian" />
   <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
@@ -89,46 +88,135 @@
     
 <article>
   <header>
-    <h1>All posts</h1>
+    <h1><a href="/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/">如何使用 Netlify 快速部署个人项目</a></h1>
+    <time datetime="2022-04-30 17:00:00 &#43;0800 CST">2022-04-30</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">Tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others">Others</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others/deploy-a-vue-cli-prj-w-netlify">Deploy a vue CLI prj w netlify</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
   </header>
-    <div class="body">
-      
-      <ol style="list-style-type:disc">
-        
-        <li>
-          <a href="/posts/tech/posts/how-does-tencent-cloud-cos-and-cdn-work/" title="以及如何收费">如何用腾讯云的储存对象(COS)结合 CDN 作为图床 </a>
-        </li>
-        
-        <li>
-          <a href="/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/" title="">如何使用 Netlify 快速部署个人项目 </a>
-        </li>
-        
-        <li>
-          <a href="/posts/tech/posts/tech-daily-001/" title="">Tech Daily 001 </a>
-        </li>
-        
-        <li>
-          <a href="/posts/tech/posts/vscode-debugger/" title="">如何在vscode 启动调试工具 </a>
-        </li>
-        
-        <li>
-          <a href="/posts/tech/posts/git-guide/" title="">Git 使用笔记 </a>
-        </li>
-        
-        <li>
-          <a href="/posts/tech/posts/gsap-intro/" title="Getting Started with GSAP!">好玩的JavaScrip动画框架——GSAP 【intro试译】 </a>
-        </li>
-        
-      </ol>
-    </div>
+
+  <div class="body">
+    <p>一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。</p>
+<p>先进入 <a href="https://app.netlify.com/">Netlify 官网</a>，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”</p>
+<p>不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。</p>
+<h1 id="netlify-x-vue-cli">Netlify x Vue-cli</h1>
+<p>其实我也是照着官网的<a href="https://www.netlify.com/blog/2019/11/30/how-to-deploy-a-vue-site/">一篇文章</a>做的，简单记录下步骤：</p>
+<ol>
+<li>将 Demo 源码放到 Github 的仓库中</li>
+<li>登陆 Netlify，新建一个 site，选择刚刚创建的那个仓库</li>
+<li>点击 <code>Site settings⚙️</code>，填写一下配置
+<ul>
+<li>Base directory: 可以空着</li>
+<li>Build command: <code>npm run build</code></li>
+<li>Publish directory: <code>dist</code></li>
+</ul>
+</li>
+<li>点击 <code>Deploy Site</code> 发布</li>
+<li>就这么简单！！</li>
+</ol>
+<p>文章中还有 Nuxt, Gridsome, Domains 的相关的部署信息，有需求可以参考一下。</p>
+<h1 id="other">Other</h1>
+<p>Netlify 服务提供一个免费的 Starter Plan，适合展示个人的、兴趣爱好和实验性的小项目，免费套餐包含：</p>
+<ul>
+<li>0 KB / 100 GB bandwidth</li>
+<li>0 / 300 build minutes</li>
+<li>(Apr 29 to May 29)</li>
+</ul>
+<p>总之，个人小项目可以放在这上面，访问量大的还是花点钱吧~</p>
+
+  </div>
+  
+  <footer>
+    
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+  </footer>
+  
 </article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/deploy/">Deploy</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/netlify/">Netlify</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/tech/others/tech-daily-001/">
+      <time datetime="2022-04-22 18:00:00 &#43;0800 CST">2022-04-22 &raquo; </time>
+      Tech Daily 001
+    </a>
+  
+  </div>
+  <div class="left">
+  
+    <a href="/posts/tech/others/how-does-tencent-cloud-cos-and-cdn-work/">
+      <time datetime="2022-05-26 01:00:00 &#43;0800 CST">&laquo; 2022-05-26</time>
+      如何用腾讯云的储存对象(COS)结合 CDN 作为图床
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+</script>
+
+
+
 
   </main>
 
   
   <footer>
-    <a class="rss" href="http://blog.nekolas.cafe/posts/tech/posts/index.xml" title="Subscribe to the RSS feed for Nic Tian">rss</a>
-   
+    
       <span class="gopher" title="Proudly powered by Go!"></span>
     
 
