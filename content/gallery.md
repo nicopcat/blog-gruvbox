@@ -1,5 +1,5 @@
 ---
-# title: "Main"
+title: "Main"
 # layout: "baseof"
 url: "/gallery/"
 showToc: false
@@ -30,8 +30,8 @@ ShowBreadCrumbs: false
             </div>
         </div>
     </transition>
-    <div class="container" >
-        <div class="wrapper" v-for="item in imgSrc" v-cloak>
+    <div class="container" v-cloak>
+        <div class="wrapper" v-for="item in imgSrc">
             <img 
                 :src="item.linkAdd" :alt="item.altText" :key="item.id"
                 @click.prevent="currentShow(item.linkAdd)"
@@ -43,7 +43,7 @@ ShowBreadCrumbs: false
             </div>
         </div>
     </div>
-    <transition name="popup" @click="closeImg">
+    <transition name="popup" @click="closeImg" >
         <div 
             v-if="maskOn" 
             :class="maskOn?'mask':''" 
@@ -51,8 +51,8 @@ ShowBreadCrumbs: false
             <img :src="currentImg" alt="">
     </div>
     </transition>
-
 </div>
+
 <script src="/src/main.js" defer></script>
 <style>
 .spinner {
@@ -78,7 +78,7 @@ ShowBreadCrumbs: false
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #3d008d;
+  background-color: rgb(215, 153, 35);
   margin: -4px 0 0 -4px;
 }
 .lds-roller div:nth-child(1) {
@@ -144,5 +144,22 @@ ShowBreadCrumbs: false
   100% {
     transform: rotate(360deg);
   }
+}
+/* spinner 过渡 */
+.spinner-enter-from,
+.spinner-leave-to {
+    opacity: 0;
+    /* transform: translateY(-30px); */
+}
+.spinner-enter-active {
+    transition: all 0.5s ease-out;
+}
+.spinner-leave-active {
+    transition: all 0.5s ease-in;
+}
+.spinner-leave-from,
+.spinner-enter-to {
+    opacity: 1;
+    /* transform: translateY(0px); */
 }
 </style>
