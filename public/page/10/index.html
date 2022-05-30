@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>波比跳 | nekolas.cafe</title>
+  <title>Posts | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -32,6 +32,7 @@
   </script>
 
 
+  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
   <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
@@ -86,101 +87,45 @@
 
   <main>
     
+
 <article>
   <header>
-    <h1><a href="/posts/life/hiit-burpee/">波比跳</a></h1>
-    <time datetime="2022-04-25 17:00:00 &#43;0800 CST">2022-04-25</time>
-    <div class="breadcrumb">
-    <ol>
-        <li><a href="/">Home</a></li>
-        
-        
-        
-        
-        
-        <li><a href="/posts">Posts</a></li>
-        
-        
-        
-        <li><a href="/posts/life">Life</a></li>
-        
-        
-        
-        <li><a href="/posts/life/hiit-burpee">Hiit burpee</a></li>
-        
-        
-        
-        
-    </ol>
-</div>
+    <h1><a href="/bb/">大声嚷嚷</a></h1>
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
   </header>
-
   <div class="body">
-    <ol>
-<li>快速波比跳 20 秒后，休息 10 秒</li>
-<li>动作重复 8 组，合计 4 分钟</li>
-<li>中间尽量不要停顿，效果会减半，所以尽量快速完成</li>
-<li>动作非常累，刚开始一定无法在 4 分钟内完成 8 组</li>
-<li>但是每天坚持锻炼，体力会显著改变，越来越顺利</li>
-</ol>
-<h1 id="但如果有腰突">但……如果有腰突</h1>
-<ol start="6">
-<li>不太推荐康复不好的腰突患者做这样过于激烈的运动，除非腰椎力量已经恢复</li>
-<li>发现康复师（?） Jeff 的视频对缓解腰突有帮助</li>
-<li>我的理解是在通过腰部肌肉锻炼（小燕飞 + 不伤害腰部的运动）的基础上，再进行其他相对激烈的运动</li>
-<li><mark>总之，我还是悠着点</mark></li>
-</ol>
-<img src="https://nic-gz-1308403500.file.myqcloud.com/posts/mie-01-2022-05-25.jpg" width="320">
-<hr>
-<h3 id="参考">参考</h3>
-<ul>
-<li>
-<p>波比跳
-<a href="https://weibo.com/tv/show/1034:4422215412683017?from=old_pc_videoshow">https://weibo.com/tv/show/1034:4422215412683017?from=old_pc_videoshow</a></p>
-</li>
-<li>
-<p>Jeff-如何解决腰间盘突出<br>
-<a href="https://www.bilibili.com/video/BV1zx41177WR">https://www.bilibili.com/video/BV1zx41177WR</a></p>
-</li>
-</ul>
-
+    <div id='speak'></speak>
+<!-- 使用markdown渲染 -->
+<script type="text/javascript" src="/ispeak-bber-md.min.js" charset="utf-8" ></script>
+<!-- 不使用markdown渲染 -->
+<!-- <script type="text/javascript" src="/ispeak-bber.min.js" charset="utf-8" ></script> -->
+<!-- 解析微信表情（参考：https://github.com/buddys/qq-wechat-emotion-parser） -->
+<!-- <script src="https://cdn.jsdelivr.net/gh/buddys/qq-wechat-emotion-parser@master/dist/qq-wechat-emotion-parser.min.js"></script> -->
+<script>
+ispeakBber
+    .init({
+      el: '#speak', // 容器选择器
+      name: 'niqks', // 显示的昵称
+      envId:…</script></!--></!--></!-->
   </div>
-  
   <footer>
+    <a href="/bb/">Read More&hellip; &raquo;</a>
     
-<div id="disqus_thread">
-  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
-</div>
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/bb/">0 Comments</span>
 
 
   </footer>
-  
 </article>
-
-
-<ul class="tags">
-  
-  <li>
-    <a href="http://blog.nekolas.cafe/tags/%E8%BF%90%E5%8A%A8/">运动</a>
-  </li></ul>
 
 
 
 <div class="pagination">
   <div class="right">
   
-    <a href="/posts/life/pdd-story/">
-      <time datetime="2022-04-08 02:43:00 &#43;0800 CST">2022-04-08 &raquo; </time>
-      拼刀刀的套路有多深？到底，要我砍几刀？
-    </a>
-  
   </div>
   <div class="left">
   
-    <a href="/posts/life/just-one-of-those-down-days/">
-      <time datetime="2022-05-30 15:00:00 &#43;0800 CST">&laquo; 2022-05-30</time>
-      the good, the bad and the nic
-    </a>
+    <a href="/page/9/">&laquo; Later Posts</a>
   
   </div>
 </div>
@@ -188,19 +133,10 @@
 
 
 
-<script type="text/javascript">
-  function loadDisqusComments() {
-    var e = document.createElement("script");
-    e.type = "text/javascript";
-    e.async = true;
-    e.src = "//nekolas-blog.disqus.com/embed.js";
-    (document.getElementsByTagName("head")[0] ||
-      document.getElementsByTagName("body")[0])
-    .appendChild(e);
-  }
+<script id="dsq-count-scr" src="//nekolas-blog.disqus.com/count.js" async></script>
 
-  
-</script>
+
+
 
 
 
@@ -209,7 +145,8 @@
 
   
   <footer>
-    
+    <a class="rss" href="http://blog.nekolas.cafe/index.xml" title="Subscribe to the RSS feed for Nic Tian">rss</a>
+   
       <span class="gopher" title="Proudly powered by Go!"></span>
     
 

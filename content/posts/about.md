@@ -7,33 +7,27 @@ weight: 1
 # hideMeta: true
 ---
 
-{{<figure src="https://img3.doubanio.com/icon/ul152454124-10.jpg">}}
-# Nic Tian 👇
 😺  
-嗨，我是小田。   
+Call me 小田 でいい 
 
 Homepage: https://nekolas.cafe/
 
-## 简单介绍 
-属猫。 
-咖啡爱好者。  
-表面乖巧平和但内心暗自不守规矩。  
-喜欢音乐，读书，看电影，打游戏，业余 gourmet。  
-感兴趣的方向是 Web 前端，喜欢好看的设计。  
-爱 [J小将](https://www.janew.tk/)，养有一只猫，叫打咩。    
-
-总觉得很难介绍自己，因为我也只是了解一部分的自己。  
+## who 
+- coffee lover
+- cat/dog person  
+- music, reading, gaming .. 
+- web dev (准)   
 
 
-## 关于语言
-喜欢语言学习，会讲中文、英语和一些日语。
+## lang
+- mandarin, english muffins and jagur
 
 
 ## 友链
 
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
-{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/upload/2022/05/avatar.jpg " word="博观而约取，厚积而薄发。" >}}
+{{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/upload/2022/05/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
 
 {{< friend name="Sulv’s Blog" url="https://www.sulvblog.cn" logo="https://www.sulvblog.cn/img/Q.gif" word="一个记录技术、阅读、生活的博客" >}}
 

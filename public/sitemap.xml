@@ -22,13 +22,22 @@
     <loc>http://blog.nekolas.cafe/posts/tech/</loc>
     <lastmod>2021-11-26T22:13:01+08:00</lastmod>
   </url><url>
-    <loc>http://blog.nekolas.cafe/tags/cdn/</loc>
-    <lastmod>2022-05-26T01:00:00+08:00</lastmod>
+    <loc>http://blog.nekolas.cafe/tags/life/</loc>
+    <lastmod>2022-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/posts/</loc>
-    <lastmod>2022-05-26T01:00:00+08:00</lastmod>
+    <lastmod>2022-05-30T15:00:00+08:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/tags/</loc>
+    <lastmod>2022-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nekolas.cafe/posts/life/just-one-of-those-down-days/</loc>
+    <lastmod>2022-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nekolas.cafe/tags/%E6%97%A5%E8%AE%B0/</loc>
+    <lastmod>2022-05-30T15:00:00+08:00</lastmod>
+  </url><url>
+    <loc>http://blog.nekolas.cafe/tags/cdn/</loc>
     <lastmod>2022-05-26T01:00:00+08:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/tags/%E5%9B%BE%E5%BA%8A/</loc>
@@ -102,9 +111,6 @@
   </url><url>
     <loc>http://blog.nekolas.cafe/tags/vue/</loc>
     <lastmod>2022-04-17T17:31:00+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.nekolas.cafe/tags/life/</loc>
-    <lastmod>2022-04-08T02:43:00+08:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/posts/life/pdd-story/</loc>
     <lastmod>2022-04-08T02:43:00+08:00</lastmod>
