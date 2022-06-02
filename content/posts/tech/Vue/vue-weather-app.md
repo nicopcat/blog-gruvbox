@@ -4,7 +4,7 @@ date: 2022-01-27T13:55:19+08:00
 draft: false
 showToc: true
 tocOpen: false
-tags: ["Vue"]
+tags: ["Vue","Projects"]
 description: '跟着油管做的天气Web APP'
 ---
 在油管看到一个用Vue-cli 3写天气App的视频，非常简单易上手，界面也很好看，之前也没用过vue-cli 3写+打包应用，就打算跟着做练练手。

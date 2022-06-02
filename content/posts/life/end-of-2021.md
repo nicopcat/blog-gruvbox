@@ -3,7 +3,7 @@ title: "End of 2021"
 date: 2021-12-22T17:14:19+08:00
 draft: false
 tocOpen: false
-tags: ["年终总结", "life"]
+tags: ["年终总结","记事"]
 description: "年末了，总结一波"
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com/markdown/1222.jpg"

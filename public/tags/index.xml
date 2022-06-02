@@ -26,20 +26,11 @@
     </item>
     
     <item>
-      <title>life</title>
-      <link>http://blog.nekolas.cafe/tags/life/</link>
+      <title>记事</title>
+      <link>http://blog.nekolas.cafe/tags/%E8%AE%B0%E4%BA%8B/</link>
       <pubDate>Mon, 30 May 2022 15:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>日记</title>
-      <link>http://blog.nekolas.cafe/tags/%E6%97%A5%E8%AE%B0/</link>
-      <pubDate>Mon, 30 May 2022 15:00:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/%E6%97%A5%E8%AE%B0/</guid>
+      <guid>http://blog.nekolas.cafe/tags/%E8%AE%B0%E4%BA%8B/</guid>
       <description></description>
     </item>
     
@@ -71,7 +62,7 @@
     </item>
     
     <item>
-      <title>codewars</title>
+      <title>Codewars</title>
       <link>http://blog.nekolas.cafe/tags/codewars/</link>
       <pubDate>Sat, 21 May 2022 14:00:00 +0800</pubDate>
       
@@ -107,29 +98,20 @@
     </item>
     
     <item>
-      <title>this绑定</title>
-      <link>http://blog.nekolas.cafe/tags/this%E7%BB%91%E5%AE%9A/</link>
-      <pubDate>Fri, 13 May 2022 22:00:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/this%E7%BB%91%E5%AE%9A/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Deploy</title>
-      <link>http://blog.nekolas.cafe/tags/deploy/</link>
-      <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/deploy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Netlify</title>
       <link>http://blog.nekolas.cafe/tags/netlify/</link>
       <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/netlify/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>部署</title>
+      <link>http://blog.nekolas.cafe/tags/%E9%83%A8%E7%BD%B2/</link>
+      <pubDate>Sat, 30 Apr 2022 17:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E9%83%A8%E7%BD%B2/</guid>
       <description></description>
     </item>
     
@@ -161,16 +143,16 @@
     </item>
     
     <item>
-      <title>Blog</title>
-      <link>http://blog.nekolas.cafe/tags/blog/</link>
-      <pubDate>Sun, 17 Apr 2022 17:31:00 +0800</pubDate>
+      <title>工具</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%B7%A5%E5%85%B7/</link>
+      <pubDate>Mon, 18 Apr 2022 16:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/blog/</guid>
+      <guid>http://blog.nekolas.cafe/tags/%E5%B7%A5%E5%85%B7/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>vue</title>
+      <title>Vue</title>
       <link>http://blog.nekolas.cafe/tags/vue/</link>
       <pubDate>Sun, 17 Apr 2022 17:31:00 +0800</pubDate>
       
@@ -179,20 +161,29 @@
     </item>
     
     <item>
-      <title>记事</title>
-      <link>http://blog.nekolas.cafe/tags/%E8%AE%B0%E4%BA%8B/</link>
-      <pubDate>Fri, 08 Apr 2022 02:43:00 +0800</pubDate>
+      <title>书</title>
+      <link>http://blog.nekolas.cafe/tags/%E4%B9%A6/</link>
+      <pubDate>Wed, 06 Apr 2022 23:59:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/%E8%AE%B0%E4%BA%8B/</guid>
+      <guid>http://blog.nekolas.cafe/tags/%E4%B9%A6/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>book</title>
-      <link>http://blog.nekolas.cafe/tags/book/</link>
-      <pubDate>Wed, 06 Apr 2022 23:59:00 +0800</pubDate>
+      <title>Projects</title>
+      <link>http://blog.nekolas.cafe/tags/projects/</link>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/book/</guid>
+      <guid>http://blog.nekolas.cafe/tags/projects/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Vue-cli</title>
+      <link>http://blog.nekolas.cafe/tags/vue-cli/</link>
+      <pubDate>Tue, 05 Apr 2022 00:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/vue-cli/</guid>
       <description></description>
     </item>
     
@@ -206,11 +197,20 @@
     </item>
     
     <item>
-      <title>movie</title>
-      <link>http://blog.nekolas.cafe/tags/movie/</link>
+      <title>动画</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%8A%A8%E7%94%BB/</link>
       <pubDate>Mon, 21 Mar 2022 14:25:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/movie/</guid>
+      <guid>http://blog.nekolas.cafe/tags/%E5%8A%A8%E7%94%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>电影</title>
+      <link>http://blog.nekolas.cafe/tags/%E7%94%B5%E5%BD%B1/</link>
+      <pubDate>Mon, 21 Mar 2022 14:25:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E7%94%B5%E5%BD%B1/</guid>
       <description></description>
     </item>
     
@@ -220,6 +220,15 @@
       <pubDate>Mon, 21 Mar 2022 12:29:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/git/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>博客</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Mon, 14 Mar 2022 00:18:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E5%8D%9A%E5%AE%A2/</guid>
       <description></description>
     </item>
     
@@ -242,15 +251,6 @@
     </item>
     
     <item>
-      <title>music</title>
-      <link>http://blog.nekolas.cafe/tags/music/</link>
-      <pubDate>Fri, 11 Mar 2022 14:13:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/music/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>随想</title>
       <link>http://blog.nekolas.cafe/tags/%E9%9A%8F%E6%83%B3/</link>
       <pubDate>Wed, 02 Feb 2022 01:00:00 +0800</pubDate>
@@ -269,6 +269,15 @@
     </item>
     
     <item>
+      <title>域名</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%9F%9F%E5%90%8D/</link>
+      <pubDate>Sun, 09 Jan 2022 13:55:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E5%9F%9F%E5%90%8D/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>年终总结</title>
       <link>http://blog.nekolas.cafe/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</link>
       <pubDate>Wed, 22 Dec 2021 17:14:19 +0800</pubDate>
@@ -278,11 +287,20 @@
     </item>
     
     <item>
-      <title>解构</title>
-      <link>http://blog.nekolas.cafe/tags/%E8%A7%A3%E6%9E%84/</link>
-      <pubDate>Sun, 28 Nov 2021 15:23:00 +0900</pubDate>
+      <title>测评</title>
+      <link>http://blog.nekolas.cafe/tags/%E6%B5%8B%E8%AF%84/</link>
+      <pubDate>Mon, 29 Nov 2021 23:44:00 +0000</pubDate>
       
-      <guid>http://blog.nekolas.cafe/tags/%E8%A7%A3%E6%9E%84/</guid>
+      <guid>http://blog.nekolas.cafe/tags/%E6%B5%8B%E8%AF%84/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://blog.nekolas.cafe/tags/blog/</link>
+      <pubDate>Sat, 20 Nov 2021 17:23:01 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/blog/</guid>
       <description></description>
     </item>
     

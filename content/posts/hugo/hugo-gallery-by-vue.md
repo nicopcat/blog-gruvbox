@@ -4,7 +4,7 @@ date: 2022-02-06T03:00:00+08:00
 lastmod: 2022-02-06T16:33:00+08:00
 draft: false
 showToc: false
-tags: ["vue", "Hugo"]
+tags: ["Vue", "Hugo"]
 ---
 
 ## 1.Create a gallery page

@@ -1,11 +1,7 @@
 ---
-title: "好玩的JavaScrip动画框架——GSAP 【intro试译】"
+title: "好玩的JavaScrip动画框架——GSAP 【intro部分试译】"
 date: 2022-03-12T13:00:00+08:00
-lastmod: 2022-03-13T13:00:00+08:00
 draft: false
-showToc: true
-tocOpen: false
-categories: ["tech"]
 tags: ["GSAP","翻译","JavaScript"]
 description: 'Getting Started with GSAP!'
 ---

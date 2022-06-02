@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>域名 on Nic Tian</title>
+    <link>http://blog.nekolas.cafe/tags/%E5%9F%9F%E5%90%8D/</link>
+    <description>Recent content in 域名 on Nic Tian</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 09 Jan 2022 13:55:19 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/%E5%9F%9F%E5%90%8D/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo | Custom Domain 自定义域名篇</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</link>
+      <pubDate>Sun, 09 Jan 2022 13:55:19 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</guid>
+      <description>你可以在网上买域名，也可以使用免费域名。
+下面的文章将介绍如何在免费域名网站 freenom 购买并更换为 blog 域名。
+1. 购买免费域名   进到 freenom 官网，注册一下，选择其中一个结账
+  但这个网站有个小 bug，直接点 get it now 会显示 Not available。此时，你需要复制整个域名，比如 hugo666.tk 到搜索框，再一次 Check Availibility，接着点 Checkout。
+  Period 选 12 months FREE, 完成结账，全程不需要银行卡，非常友好。
+  点击导航栏的 Services - My Domains 在这里你能看到刚刚得到的域名，这个页面不要关，稍后需要继续设置。
+  2. 域名解析 - DNSPod   打开 DNSPod，用微信注册一下账号，需要实名登记。完成以后点击顶上的 DNS，选择 DNS解析
+  此时已经进到 我的域名 版面
+   点击 添加域名 - 确认 这时会提示未正确设置 DNS 服务器   这时，需要复制这两个 正确的DNS服务器 地址。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,7 +3,7 @@ title: "国王排名 & 青春变形记 & 新蝙蝠侠"
 date: 2022-03-21T14:25:00+08:00
 draft: false
 showToc: false
-tags: ["movie"]
+tags: ["电影","动画"]
 cover:
     image: "https://s3.bmp.ovh/imgs/2022/03/4b6a4a3fd647dc16.jpeg"
     # can also paste direct link from external site

@@ -4,7 +4,7 @@ date: 2022-01-08T13:55:19+08:00
 lastmod: 2022-05-05T07:00:00+08:00
 draft: false
 showToc: true
-tags: ["Hugo"]
+tags: ["Hugo","部署"]
 ---
 # 使用 Netlify 托管
 最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！  

@@ -4,7 +4,7 @@ date: 2022-03-11T14:13:00+08:00
 lastmod: 2022-03-11T14:13:00+08:00
 draft: false
 showToc: false
-tags: ["music"]
+tags: ["音乐","歌词"]
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com/markdown/20220311141228.png"
   # can also paste direct link from external site

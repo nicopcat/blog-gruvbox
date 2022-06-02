@@ -1,7 +1,7 @@
 ---
 title: "香酥有味：Aji惊奇脆片测评"
 date: 2021-11-29T23:44:00+00:00
-tags: ['life']
+tags: ['测评']
 draft: false
 ---
 

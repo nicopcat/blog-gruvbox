@@ -2,7 +2,7 @@
 title: "ES6数组与对象的解构赋值"
 date: 2021-11-28T15:23:00+09:00
 lastmod: 2022-05-22T15:23:00+09:00
-tags: ["JavaScript","ES6","解构"]
+tags: ["JavaScript","ES6"]
 draft: false
 ---
 

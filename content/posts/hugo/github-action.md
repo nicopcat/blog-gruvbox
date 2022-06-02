@@ -4,7 +4,7 @@ date: 2022-03-26T0:33:00+08:00
 # lastmod: 2022-01-09T16:39:00+08:00
 draft: false
 showToc: true
-tags: ["Hugo"]
+tags: ["Hugo","部署"]
 ---
 在知道Github Action之前，我甚至没有托管我的博客源码，导致有些时候代码改乱了，也没有后悔药可以吃。在折腾[J小将的博客](https://www.janew.tk/)的时候，实现了用Github Action部署Hugo博客，即，只需要push一次源码，然后自动生成静态文件到静态分支。
 

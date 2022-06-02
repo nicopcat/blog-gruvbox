@@ -3,7 +3,7 @@ title: "拼刀刀的套路有多深？到底，要我砍几刀？"
 description: "砍一刀？砍N刀"
 date: 2022-04-08T02:43:00+08:00
 draft: false
-tags: ["life", "记事"]
+tags: ["记事"]
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com//posts-coverspdd-story-2022-04-08-03-24-53.png"
   # can also paste direct link from external site

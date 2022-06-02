@@ -3,7 +3,7 @@ title: "v-cloak: 隐藏未编译的raw template"
 date: 2022-04-17T17:31:00+08:00
 # lastmod: 2022-03-03T12:29:00+08:00
 draft: false
-tags: ["Vue","Blog"]
+tags: ["Vue"]
 ---
 
 

@@ -1,7 +1,7 @@
 ---
 title: "codewars练习"
 date: 2022-05-21T14:00:00+08:00
-tags: ["JavaScript", "ES6","codewars"]
+tags: ["JavaScript", "ES6","Codewars"]
 description: ~
 ---
 开个帖子记录一下解题和方法。

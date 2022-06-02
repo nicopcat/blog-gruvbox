@@ -4,7 +4,7 @@ date: 2022-04-18T16:00:00+08:00
 draft: false
 showToc: false
 weight: false
-tags: ["VSCode"]
+tags: ["工具","VSCode"]
 ---
 
 除了浏览器里的 dev tool，非常牛逼的 VS Code 也内置了调试控制台，只需按照步骤配置 launch.json 文件即可。

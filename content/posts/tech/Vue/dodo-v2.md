@@ -4,7 +4,7 @@ date: 2022-04-05T00:00:00+08:00
 # lastmod: 2022-03-03T12:29:00+08:00
 draft: false
 showToc: true
-tags: ["Vue"]
+tags: ["Vue","Vue-cli","Projects"]
 ---
 
 Dodo 1.0 是一款用 jQuery 写的待办记事 Web App，当时是在看黑马 JS 的课程，完全是跟着老师写的，现在回头看，有些真的是看不懂 😂。随着 Vue 知识的增加，遂想用 Vue.js 重写一下这款 App，就当练手。

@@ -1,7 +1,7 @@
 ---
 title: "JavaScript 中 this 的绑定"
 date: 2022-05-13T22:00:00+08:00
-tags: ["JavaScript", "this绑定"]
+tags: ["JavaScript"]
 draft: false
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com//posts-coversthis-and-context-2022-05-16-17-58-18.png"

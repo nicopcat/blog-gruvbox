@@ -3,7 +3,7 @@ title: "Hugo | Custom Domain 自定义域名篇"
 date: 2022-01-09T13:55:19+08:00
 draft: false
 showToc: true
-tags: ["Hugo"]
+tags: ["Hugo","域名"]
 ---
 
 你可以在网上买域名，也可以使用免费域名。  

@@ -2,7 +2,7 @@
 title: "Hugo 和 PaperMod主题的小功能"
 date: 2022-03-14T0:18:00+08:00
 lastmod: 2022-03-30T0:18:00+08:00
-tags: [ "Blog", "Hugo"] 
+tags: [ "博客", "Hugo"] 
 description: "分享一些建站小贴士"
 draft: false
 showToc: true

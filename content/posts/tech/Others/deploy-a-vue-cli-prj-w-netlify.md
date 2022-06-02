@@ -1,7 +1,7 @@
 ---
 title: "如何使用 Netlify 快速部署个人项目"
 date: 2022-04-30T17:00:00+08:00
-tags: ["Deploy","Netlify"]
+tags: ["部署","Netlify"]
 draft: false
 showToc: false
 ---

@@ -3,7 +3,7 @@ title: "罗马人的故事"
 date: 2022-04-06T23:59:00+08:00
 draft: false
 showToc: false
-tags: ["book"]
+tags: ["书"]
 description: "罗马不是一天建成的..."
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com//posts-coversroma-jin-story-2022-04-07-00-08-35.png"

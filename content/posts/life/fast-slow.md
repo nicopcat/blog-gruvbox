@@ -3,7 +3,7 @@ title: "很快和很慢"
 date: 2022-02-17T20:42:00+08:00
 draft: true
 showToc: true
-tags: [""]
+tags: ["随想"]
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com/markdown/20220127170032.png"
   # can also paste direct link from external site

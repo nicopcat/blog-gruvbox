@@ -3,7 +3,7 @@ title: "黑客与画家"
 date: 2022-03-22T14:25:00+08:00
 draft: false
 showToc: false
-tags: ["book"]
+tags: ["书"]
 description: "作者既是码农也是艺术家，但我觉得他更重要的身份是是...企业家"
 cover:
   image: "https://blogpic-1308403500.file.myqcloud.com//posts-covershacker-and-painters-2022-04-05-18-07-40.png"

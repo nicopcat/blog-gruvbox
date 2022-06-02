@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>vue on Nic Tian</title>
+    <title>Vue on Nic Tian</title>
     <link>http://blog.nekolas.cafe/tags/vue/</link>
-    <description>Recent content in vue on Nic Tian</description>
+    <description>Recent content in Vue on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Apr 2022 17:31:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/vue/index.xml" rel="self" type="application/rss+xml" />

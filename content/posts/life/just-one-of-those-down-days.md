@@ -3,7 +3,7 @@ title: "the good, the bad and the nic"
 date: 2022-05-30T15:00:00+08:00
 draft: false
 tocOpen: false
-tags: ["日记", "life"]
+tags: ["记事"]
 description: "It happens .."
 ---
 昨日的我 felt like shit。  
