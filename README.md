@@ -19,3 +19,14 @@ https://blog.nekolas.cafe/
 ![哔哔点啥](https://nic-gz-1308403500.file.myqcloud.com/posts/README-2022-05-26-15-06-14.png)  
 
 参考：https://immmmm.com/bb-by-wechat-pro/
+## tag
+```html
+<!-- taxonomy.html -->
+<div class="tags">
+    {{ range .Pages }}
+    <span>
+        <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+    </span>
+    {{ end }}
+</div>
+```

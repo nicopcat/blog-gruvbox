@@ -17,50 +17,54 @@ disqusShortname = "nekolas-blog"
   hideGopher = false
   disqusAutoLoad = false
   disqusAutoLoadCount = true
+  hasCJKLanguage = true
+[menu]
+  [[menu.links]]
+    name = "posts"
+    identifier = "posts"
+    url = "/posts"
+    weight = 9999
 
-[[menu.links]]
-  name = "posts"
-  identifier = "posts"
-  url = "/posts"
-  weight = 9999
+  [[menu.links]]
+    name = "tags"
+    identifier = "tags"
+    url = "/tags"
+    weight = 4999
 
-[[menu.links]]
-  name = "tags"
-  identifier = "tags"
-  url = "/tags"
-  weight = 4999
+  [[menu.sections]]
+    name = "bb"
+    identifier = "bb"
+    url = "/bb"
+    weight = 5555
 
-[[menu.sections]]
-  name = "bb"
-  identifier = "bb"
-  url = "/bb"
-  weight = 5555
+  [[menu.sections]]
+    name = "gallery"
+    identifier = "gallery"
+    url = "/gallery"
+    weight = 999
 
-[[menu.sections]]
-  name = "gallery"
-  identifier = "gallery"
-  url = "/gallery"
-  weight = 999
+  [[menu.social]]
+    name = "Twitter"
+    url = "https://twitter.com/niqks07"
+    weight = 1
+  [[menu.social]]
+    name = "GitHub"
+    url = "https://github.com/nicopcat"
+    weight = 10
+  [[menu.social]]
+    name = "Instagram"
+    url = "https://instagram.com/niqks07"
+    weight = 30
+  [[menu.social]]
+    name = "Email"
+    url = "mailto:tianfang07@outlook.com"
+    weight = 100
 
-[[menu.social]]
-  name = "Twitter"
-  url = "https://twitter.com/niqks07"
-  weight = 1
-[[menu.social]]
-  name = "GitHub"
-  url = "https://github.com/nicopcat"
-  weight = 10
-[[menu.social]]
-  name = "Instagram"
-  url = "https://instagram.com/niqks07"
-  weight = 30
-[[menu.social]]
-  name = "Email"
-  url = "mailto:tianfang07@outlook.com"
-  weight = 100
+  [markup]
+    defaultMarkdownHandler = 'goldmark'
+    [markup.goldmark]
+      [markup.goldmark.renderer]
+      unsafe=true
 
-[markup]
-  defaultMarkdownHandler = 'goldmark'
-  [markup.goldmark]
-    [markup.goldmark.renderer]
-    unsafe=true
+[taxonomies]
+  tag = "tags"

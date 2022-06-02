@@ -33,6 +33,7 @@ a:hover {
 }
 
 @keyframes gopherwave {
+
   0%,
   100% {
     content: "ˏʕ⚆ϖ⚆ʔˎ";
@@ -54,24 +55,24 @@ body {
   margin: 0 auto;
 }
 
-body > header::after {
+body>header::after {
   content: "";
   display: block;
   clear: both;
 }
 
-body > header,
+body>header,
 main,
-body > footer {
+body>footer {
   margin: 5em 0;
   padding: 0 4em;
 }
 
-body > footer {
+body>footer {
   text-align: center;
 }
 
-body > footer > * {
+body>footer>* {
   margin: 2em 0;
   display: block;
 }
@@ -88,8 +89,7 @@ body > footer > * {
 }
 
 .logo {
-  background: no-repeat top left/64px 64px
-    url("https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg");
+  background: no-repeat top left/64px 64px url("https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg");
   min-height: 64px;
   padding: 0 0 0 calc(64px + 1em);
   margin-top: -1em;
@@ -98,38 +98,38 @@ body > footer > * {
   justify-content: flex-end;
 }
 
-body > header > .left > h1 > a {
+body>header>.left>h1>a {
   font-weight: normal;
   color: #d79921;
 }
 
-body > header nav {
+body>header nav {
   text-align: right;
 }
 
-nav > ul {
+nav>ul {
   list-style-type: none;
   margin: 1em 0.5em;
 }
 
-nav > ul > li {
+nav>ul>li {
   margin: 0.5em 0.2em;
   display: inline-block;
 }
 
-nav > ul > li > a:hover {
+nav>ul>li>a:hover {
   text-decoration: underline;
   color: #d79921;
 }
 
-nav > ul > li > a {
+nav>ul>li>a {
   background-color: rgb(31, 29, 29);
   padding: 0.3em 0.4em;
   font-size: 1em;
   /* box-shadow: 1px 1px 0 white; */
 }
 
-header > nav > .social_links {
+header>nav>.social_links {
   display: none;
 }
 
@@ -148,36 +148,36 @@ header > nav > .social_links {
     margin: 2em 0.5em;
   }
 
-  nav > ul {
+  nav>ul {
     text-align: center;
     display: block;
   }
 
-  body > header,
+  body>header,
   main,
-  body > footer,
-  main > article {
+  body>footer,
+  main>article {
     /* margin: 3em 1em; */
     margin: 3em 0;
   }
 
-  body > main {
+  body>main {
     padding: 0 1.5em;
   }
 
-  body > header,
+  body>header,
   main,
-  body > footer {
+  body>footer {
     margin: 4em 0;
     padding: 0 2em;
   }
 
-  article > .body blockquote {
+  article>.body blockquote {
     margin-left: 0.5em !important;
     padding-left: 0.5em !important;
   }
 
-  article > .body pre code {
+  article>.body pre code {
     font-size: 14px !important;
   }
 }
@@ -192,7 +192,7 @@ article {
   margin: 5em 0 1.5em 0;
 }
 
-article > header {
+article>header {
   /* mod */
   text-align: left;
   border-bottom: 1px solid #ebdbb2;
@@ -200,7 +200,7 @@ article > header {
   padding-bottom: 1em;
 }
 
-article > footer {
+article>footer {
   border-top: 1px solid #ebdbb2;
   margin-top: 1em;
   padding-top: 1em;
@@ -214,32 +214,32 @@ article > footer {
   display: inline-block;
 }
 
-article > header::after {
+article>header::after {
   content: "";
   display: block;
   clear: both;
 }
 
-article > header > h1 {
+article>header>h1 {
   float: left;
   margin-bottom: 1em;
 }
 
-article > header > time,
+article>header>time,
 .disqus-comment-count {
   color: #7c6f64;
   float: right;
 }
 
-article > p {
+article>p {
   margin: 1em 0;
 }
 
-article > footer {
+article>footer {
   margin-top: 1em;
 }
 
-article > .body pre code {
+article>.body pre code {
   margin: 2em 0;
   font-family: "Hack", monospace;
   display: block;
@@ -252,7 +252,7 @@ article > .body pre code {
   font-size: 12px;
 }
 
-article > .body code {
+article>.body code {
   font-family: "Hack", monospace;
   display: inline;
   padding: 0.1em 0.2em;
@@ -269,17 +269,17 @@ article > .body code {
   padding: 1em;
 }
 
-article > .body h1,
-article > .body h2,
-article > .body h3,
-article > .body h4,
-article > .body h5,
-article > .body h6 {
+article>.body h1,
+article>.body h2,
+article>.body h3,
+article>.body h4,
+article>.body h5,
+article>.body h6 {
   margin-top: 2em;
 }
 
 /* 新增 */
-article > .body h1::before {
+article>.body h1::before {
   content: "# ";
   color: #ba8622;
 }
@@ -289,34 +289,34 @@ article>.body h2 {
   font-size: 1.3em;
 } */
 
-article > .body hr {
+article>.body hr {
   margin: 1em 0;
   border: 0;
   border-bottom: 1px solid #ebdbb2;
 }
 
-article > .body blockquote {
+article>.body blockquote {
   margin-left: 1em;
   padding-left: 2em;
   border-left: 2px solid #ebdbb2;
 }
 
-article > .body ol,
-article > .body ul {
+article>.body ol,
+article>.body ul {
   /* margin-left: 3em; */
   margin-left: 1em;
 }
 
-article > .body {
+article>.body {
   /* line-height: 1.4em; */
   line-height: 1.8em;
 }
 
-article > .body p {
+article>.body p {
   margin: 1em 0;
 }
 
-article > .body img {
+article>.body img {
   max-width: 100%;
   margin: 1em auto;
   display: block;
@@ -490,7 +490,7 @@ mark {
   white-space: unset;
 }
 
-#ispeak .xk-card-content > p {
+#ispeak .xk-card-content>p {
   margin: 0 auto;
 }
 
@@ -515,38 +515,33 @@ mark {
   cursor: pointer;
   user-select: none;
   margin-right: 10px;
-  background-image: linear-gradient(
-    to top,
-    #d79823dc 0%,
-    #6e4c0e5a 100%
-  ) !important;
+  background-image: linear-gradient(to top,
+      #d79823dc 0%,
+      #6e4c0e5a 100%) !important;
 }
 
-.body .tags span a {
-  padding: 0.4em 0.6em;
-  font-size: medium;
-}
 
 /* tags styles statr here*/
-main .tags {
-  display: flex;
+.body .tags {
+  display: grid;
+  grid-column-gap: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
   margin-bottom: 1em;
-  justify-content: flex-start;
+  /* place-items:stretch stretch; */
+  text-align: center;
 }
 
-main .tags li {
-  margin: 0.2em;
+.body .tags span {
+  margin: 0.5em;
   list-style: none;
-}
-
-main .tags li a {
   border: 1px solid rgba(206, 135, 59, 0.727);
-  padding: 0.2em 0.2em;
+  padding: .5em .3em;
   display: inline-block;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
-main .tags li a:hover {
+
+.body .tags span:hover {
   transform: translateX(4px);
   box-shadow: 2px 2px 0px #7a4d20;
   text-decoration: none;
@@ -571,7 +566,7 @@ main .tags li a:hover {
   white-space: nowrap;
 }
 
-.breadcrumb li + li:before {
+.breadcrumb li+li:before {
   content: ">";
   padding: 0.3rem;
 }
