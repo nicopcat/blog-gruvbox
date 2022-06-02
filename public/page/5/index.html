@@ -90,68 +90,6 @@
 
 <article>
   <header>
-    <h1><a href="/posts/hugo/tips-for-playing-hugo/">Hugo 和 PaperMod主题的小功能</a></h1>
-    <time datetime="2022-03-14 00:18:00 &#43;0800 CST">2022-03-14</time>
-  </header>
-  <div class="body">
-    <h2 id="1-将hack字体cdn-link-引入-head">1. 将hack字体CDN link 引入 head</h2>
-<p>最简单的方法是把hack字体的CDN地址引入<code>head</code>.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">link</span> <span style="color:#a6e22e">rel</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;stylesheet&#34;</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=…</span></code></pre></div>
-  </div>
-  <footer>
-    <a href="/posts/hugo/tips-for-playing-hugo/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/tips-for-playing-hugo/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/others/gsap-intro/">好玩的JavaScrip动画框架——GSAP 【intro试译】</a></h1>
-    <time datetime="2022-03-12 13:00:00 &#43;0800 CST">2022-03-12</time>
-  </header>
-  <div class="body">
-    <p>GSAP 全称是 GreenSock Animation Platform，是一个非常强大的基于 JS 的动画库，初次接触的我深感，短短几行代码就能实现非常酷炫的特效。</p>
-<p>在学习的过程中，顺便把官网的教程翻译成中文参考。</p>
-<h1 id="什么是-gsap">什么是 GSAP?</h1>
-<h2 id="gsap-其实是在操控属性">GSAP 其实是在操控属性</h2>
-<p>动画最终可以…</p>
-  </div>
-  <footer>
-    <a href="/posts/tech/others/gsap-intro/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/others/gsap-intro/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/book-music-movie/everything-i-have-is-yours/">Everything I Am Is Yours</a></h1>
-    <time datetime="2022-03-11 14:13:00 &#43;0800 CST">2022-03-11</time>
-  </header>
-  <div class="body">
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=31356558&auto=1&height=66" atl="Villagers - Everything I Am Is Yours (Official Video)"></iframe>
-<p>又在英剧 <a href="https://movie.douban.com/subject/30267255/">疼痛难免</a> 中听到了这首曲子，喜欢！如果没记错的话，也出现在了 HBO 迷你剧 <a href="https://movie.douban.com/subject/25953429/">大小谎言</a> 中。</p>
-<p>* 确实记错了，是出现在 <a href="https://movie.douban.com/subject/33477335/">Normal People</a> 里面，大小谎言 S2 确实有 Villages 的曲子但不是这首。😅</p>
-<hr>
-<h3 id="lycirs">lycirs</h3>
-<p><em>I am just a man…</em></p>
-  </div>
-  <footer>
-    <a href="/posts/book-music-movie/everything-i-have-is-yours/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/book-music-movie/everything-i-have-is-yours/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
     <h1><a href="/posts/tech/vue/vue-animations-transitions/">Vue课程笔记：Animations and Transitions</a></h1>
     <time datetime="2022-03-05 01:50:00 &#43;0800 CST">2022-03-05</time>
   </header>
@@ -188,6 +126,86 @@
     <a href="/posts/life/recover-strength/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/recover-strength/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/tabs-with-vue/">用Vue实现多标签页面（tab栏）切换的两种方法</a></h1>
+    <time datetime="2022-02-19 14:25:00 &#43;0800 CST">2022-02-19</time>
+  </header>
+  <div class="body">
+    <p>这里有一个用简单的button和子组件做的标签页面。
+效果如下：
+<img src="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/markdown/20220219144105.png#center" alt="20220219144105"></p>
+<h2 id="目标">目标</h2>
+<p>点击<code>Active Goals</code>按钮，就可以激活<code>Active Goals</code>组件下的内容。同样的，点击<code>Manage Goals</code>按钮，就可以激活<code>Manage Goals</code>组件下的内容。</p>
+<h2 id="结构">结构</h2>
+<p>HTML结构:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;…</code></pre></div>
+  </div>
+  <footer>
+    <a href="/posts/tech/vue/tabs-with-vue/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/hugo/hugo-gallery-by-vue/">Hugo | Creat a Gallery Page with Spolight Style </a></h1>
+    <time datetime="2022-02-06 03:00:00 &#43;0800 CST">2022-02-06</time>
+  </header>
+  <div class="body">
+    <h2 id="1create-a-gallery-page">1.Create a gallery page</h2>
+<p>My goal is to build a galley sub page which can contain my photo works.</p>
+<p>The problem is that I don&rsquo;t know how…</p>
+  </div>
+  <footer>
+    <a href="/posts/hugo/hugo-gallery-by-vue/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/hugo-gallery-by-vue/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/life/life-is-so-hard/">2022/2/2 星期三 新年随想</a></h1>
+    <time datetime="2022-02-02 01:00:00 &#43;0800 CST">2022-02-02</time>
+  </header>
+  <div class="body">
+    <p>又是一个中国新年。</p>
+<p>总有人抱怨说没有年味，几乎年年如此了。印象较深的一次，是还在读高中的某一年。那会儿刚在亲戚家吃完饭，回到家也就晚上8点多，立刻换上睡衣，美美地躺在床上吃着零食看下载好的电影，还在微博看别人吐槽春晚，可乐了。妈妈已经出门，爸爸还在上班。零点那刻，我独自一人抱着电…</p>
+  </div>
+  <footer>
+    <a href="/posts/life/life-is-so-hard/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/life-is-so-hard/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/vue/vue-warn-emits/">Vue 3 | emits 警告</a></h1>
+    <time datetime="2022-01-30 15:17:19 &#43;0800 CST">2022-01-30</time>
+  </header>
+  <div class="body">
+    <p>用 $emits 写组件通信的时候报错了：</p>
+<blockquote>
+<p>[Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically…</p></blockquote>
+  </div>
+  <footer>
+    <a href="/posts/tech/vue/vue-warn-emits/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/">0 Comments</span>
 
 
   </footer>

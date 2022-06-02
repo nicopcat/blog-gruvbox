@@ -2,7 +2,7 @@ baseURL = 'http://blog.nekolas.cafe/'
 languageCode = 'en-us'
 title = 'Nic Tian'
 theme = "gruvbox"
-paginate = 5
+paginate = 6
 disqusShortname = "nekolas-blog"
 
 [params]

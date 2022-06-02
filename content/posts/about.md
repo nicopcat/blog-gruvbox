@@ -6,12 +6,9 @@ weight: 1
 # description: "which is precious"
 # hideMeta: true
 ---
-
-😺  
-Call me 小田 でいい 
-
-Homepage: https://nekolas.cafe/
-
+## Just
+Call me 小田 でいい  
+😺Homepage: https://nekolas.cafe/   
 ## who 
 - coffee lover
 - cat/dog person  
@@ -48,7 +45,7 @@ Homepage: https://nekolas.cafe/
 
 ---
 
-## 音乐
+# 音乐
 ### Genre
 Indie Pop / Experimental Rock (~~Post-Rock~~) / Bebop / Blue Folk / Contempory Jazz / Soul / 90s Mandarin-Pop / Psychedelic Pop & Folk ..
 ### Top Artists
@@ -56,13 +53,13 @@ Indie Pop / Experimental Rock (~~Post-Rock~~) / Bebop / Blue Folk / Contempory J
 - Men I Trust / Sam Grendel & Sam Wilkes / Matthew Halsall / KOC / Skalpel / Tortoise / Grizzly Bear  
 - EGO-WRAPPIN' / 山下達郎 / 東京事変 & 椎名林檎 / Coldplay / 焦安溥 / 菅野洋子 / Pinback / 万能青年旅店 ..
 
-## 作家
+# 作家
 松本大洋 / 村上春树 / 夏目漱石 / 夏宇 / 彼得・海斯勒 / 陈嘉映 / 理查德・耶茨 / 伊坂幸太郎 / 毛姆 ..
 
-## 导演
+# 导演
 李沧东 / 朴赞郁 / 洪尚秀 / 吉姆・贾木许 / 是枝裕和 / 今敏 / 伍迪・艾伦 / 侯麦 / 阿基・考里斯马基 / 查理・考夫曼 / 渡边信一郎 / 岩井俊二 / 李安 / 保罗・索伦蒂诺 / 罗伊・安德森 / 贝纳尔多・贝托鲁奇 / 萨姆・门德斯 ..
 
-## 剧
+# 剧
 Better Call Saul  
 Breaking Bad  
 Twin Peaks  
@@ -71,7 +68,7 @@ Six Feet Under
 日常(Nichijou)  
 虫师  
 ..
-## 食物
+# 食物
 
 喝的：  
 冰美式 & 意式(想念Bluebottle) | 乌龙茶 | 豆乳玉麒麟  
