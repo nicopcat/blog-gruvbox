@@ -5,19 +5,12 @@
     </header>
     <div class="body">
         <div class="tags">
-                {{ range .Pages }}
-                <span>
-                    <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
-                </span>
-                {{ end }}
-        </div>
-        <!-- <ol style="list-style-type:disc">
             {{ range .Pages }}
-            <li>
-                <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }} </a>
-            </li>
+            <span>
+                <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+            </span>
             {{ end }}
-        </ol> -->
+        </div>
     </div>
 </article>
 {{ end }}

@@ -521,7 +521,7 @@ mark {
 }
 
 
-/* tags styles statr here*/
+/*菜单 tags styles statr here*/
 .body .tags {
   display: grid;
   grid-column-gap: 10px;
@@ -531,7 +531,8 @@ mark {
   text-align: center;
 }
 
-.body .tags span {
+.body .tags span,
+main .tags li a {
   margin: 0.5em;
   list-style: none;
   border: 1px solid rgba(206, 135, 59, 0.727);
@@ -541,13 +542,19 @@ mark {
 }
 
 
-.body .tags span:hover {
+.body .tags span:hover,
+main .tags li a:hover {
   transform: translateX(4px);
   box-shadow: 2px 2px 0px #7a4d20;
   text-decoration: none;
 }
 
+main .tags li{
+  list-style: none;
+  display: inline-block;
+}
 /* tags styles end here*/
+
 
 /* breadcrumbs statr here */
 .breadcrumb {
