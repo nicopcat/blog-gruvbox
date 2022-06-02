@@ -39,29 +39,29 @@ tags: ["歌词","音乐"]
 >Translated by Ji Geng, the lyric writer and bass of Omnipotent Youth Society, and a college professor in English.
 
 
-Those of extraordinary intellect  
+Those of extraordinary intellect   
 believe they have already   
 acquainted themselves with the disposition of cloud and lighting,   
-and thus shall be puzzled no longer 
+and thus shall be puzzled no longer   
 and thus need not comprehend themselves,    
-the world, or their fellow man. 
-Their daily concerns are reduced to 
-the caresses from breezes and the flirtations with bestial things.  
+the world, or their fellow man.   
+Their daily concerns are reduced to   
+the caresses from breezes and the flirtations with bestial things.   
     
 They require no stair,  
 but only a window,  
-and consign their worlds to dreamscape  
+and consign their worlds to dreamscape      
 and to the resplendent tide.    
 Throughout all the drinkeries of this planet    
 youth and freedom are all but taken for granted;    
 Facing the haphazard future,    
-singing only love songs, they do not see the tanks. 
+singing only love songs, they do not see the tanks.     
     
 On a night when neither science nor drinks is of consolation    
-they are disembodies from the seasons,  
-and commence an uneasy journey. 
-Throughout all the drinkeries of planet 
-the far away call cannot be heard.  
-The ambitious lamplight 
-suddenly swallows the sullen faces. 
+they are disembodies from the seasons,      
+and commence an uneasy journey.     
+Throughout all the drinkeries of planet     
+the far away call cannot be heard.      
+The ambitious lamplight     
+suddenly swallows the sullen faces.     
 
