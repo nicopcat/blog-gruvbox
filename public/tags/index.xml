@@ -6,7 +6,25 @@
     <description>Recent content in Tags on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jun 2022 12:11:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 03 Jun 2022 19:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugo</title>
+      <link>http://blog.nekolas.cafe/tags/hugo/</link>
+      <pubDate>Fri, 03 Jun 2022 19:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>哔哔点啥</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%93%94%E5%93%94%E7%82%B9%E5%95%A5/</link>
+      <pubDate>Fri, 03 Jun 2022 19:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E5%93%94%E5%93%94%E7%82%B9%E5%95%A5/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>歌词</title>
       <link>http://blog.nekolas.cafe/tags/%E6%AD%8C%E8%AF%8D/</link>
@@ -184,15 +202,6 @@
       <pubDate>Tue, 05 Apr 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/vue-cli/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>http://blog.nekolas.cafe/tags/hugo/</link>
-      <pubDate>Sat, 26 Mar 2022 00:33:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/hugo/</guid>
       <description></description>
     </item>
     

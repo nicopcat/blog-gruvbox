@@ -19,6 +19,17 @@ who  coffee lover cat/dog person music, reading, gaming .. web dev (准)  lang  
     </item>
     
     <item>
+      <title>「哔哔点啥」取消显示&#39;一周前&#39;,&#39;一小时前&#39;</title>
+      <link>http://blog.nekolas.cafe/posts/hugo/bber-not-displaying-xx-ago/</link>
+      <pubDate>Fri, 03 Jun 2022 19:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/hugo/bber-not-displaying-xx-ago/</guid>
+      <description>众所周知，本 cafe 使用了由 木*5 老师开发的哔哔点啥页面，本贴记录一下如何取消“一周前”等提示，回归无聊的YYYY-MM-DD天数显示。
+方法 去掉“周前”，”月前“这些时间点：
+ 找到ispeak-bber-md.min.js or ispeak-bber.min.js 复制下面这段代码，查找，然后删掉它们  if(l&amp;gt;=1&amp;amp;&amp;amp;l&amp;lt;=3)n=&amp;#34; &amp;#34;+parseInt(l)+&amp;#34; 月前&amp;#34;;else if(f&amp;gt;=1&amp;amp;&amp;amp;f&amp;lt;=3)n=&amp;#34; &amp;#34;+parseInt(f)+&amp;#34; 周前&amp;#34;;else if(c&amp;gt;=1&amp;amp;&amp;amp;c&amp;lt;=6)n=&amp;#34; &amp;#34;+parseInt(c)+&amp;#34; 天前&amp;#34;;else if(u&amp;gt;=1&amp;amp;&amp;amp;u&amp;lt;=23)n=&amp;#34; &amp;#34;+parseInt(u)+&amp;#34; 小时前&amp;#34;;else if(a&amp;gt;=1&amp;amp;&amp;amp;a&amp;lt;=59)n=&amp;#34; &amp;#34;+parseInt(a)+&amp;#34; 分钟前&amp;#34;;else if(s&amp;gt;=0&amp;amp;&amp;amp;s&amp;lt;=r)n=&amp;#34;刚刚&amp;#34;;else or &amp;hellip; when you miss it, put it back on before {var p=new Date😁</description>
+    </item>
+    
+    <item>
       <title>在这颗行星所有的酒馆</title>
       <link>http://blog.nekolas.cafe/posts/book-music-movie/throughout-the-drinkeries-of-this-plane/</link>
       <pubDate>Thu, 02 Jun 2022 12:11:00 +0800</pubDate>
