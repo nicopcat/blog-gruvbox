@@ -525,7 +525,7 @@ mark {
 .body .tags {
   display: grid;
   grid-column-gap: 10px;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   margin-bottom: 1em;
   /* place-items:stretch stretch; */
   text-align: center;
@@ -549,10 +549,11 @@ main .tags li a:hover {
   text-decoration: none;
 }
 
-main .tags li{
+main .tags li {
   list-style: none;
   display: inline-block;
 }
+
 /* tags styles end here*/
 
 
@@ -589,9 +590,10 @@ main .tags li{
   position: fixed;
   right: 25px;
   bottom: 22px;
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
   z-index: 999998;
+  box-shadow: 0 0 6px rgb(0 0 0 / 12%);
 }
 
 /* 设置滚动条的样式 */
