@@ -7,6 +7,9 @@
   </url><url>
     <loc>http://blog.nekolas.cafe/about/</loc>
   </url><url>
+    <loc>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</loc>
+    <lastmod>2022-05-18T11:00:00+08:00</lastmod>
+  </url><url>
     <loc>http://blog.nekolas.cafe/posts/hugo/</loc>
     <lastmod>2022-01-20T22:13:01+08:00</lastmod>
   </url><url>
@@ -80,9 +83,6 @@
     <lastmod>2022-05-22T15:23:00+09:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/tags/%E5%8A%9B%E6%89%A3/</loc>
-    <lastmod>2022-05-18T11:00:00+08:00</lastmod>
-  </url><url>
-    <loc>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</loc>
     <lastmod>2022-05-18T11:00:00+08:00</lastmod>
   </url><url>
     <loc>http://blog.nekolas.cafe/posts/tech/javascript/this-and-context/</loc>

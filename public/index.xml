@@ -19,6 +19,20 @@ who  coffee lover cat/dog person music, reading, gaming .. web dev (准)  lang  
     </item>
     
     <item>
+      <title>力扣 oh Leetcode</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</link>
+      <pubDate>Wed, 18 May 2022 11:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</guid>
+      <description>作为一个准前端开发者，我天真地以为不用看力扣，你只是个切图仔。但感受到各方各界的暗示：你得看，你得看看。
+好吧，其实是快要机考了。
+从网上搜的机考真题来看，貌似是3道算法题，难度也许在力扣简单-中等之间。对于一个月前才知道 codewars 这个可爱网站的我来说，不啻晴天霹雳，于是我跑到力扣大概看了几道简单的题目。
+第一题很“简单”，只用一个了一个JS的方法就可以计算出来。查看他人的解题，发现大家的思路很不一样，甚至很陌生。这些新奇的思路（不用库）大概就是传说中的算法吧。
+啊，算法，犹如哥伦布一脚踏进美洲，还以为是另一个印度呢。
+ 已了解/未了解：  二分算法 哈希算法 滑动窗口 左右双指针 棧   左右双指针 判断str是否为回文字符串  指针解法  function judge(str) { let left = 0; let right = str.length - 1; if (str.length === 0) return false; while (left &amp;lt;= right) { if (str[left] !== str[right]) { return false } else { left++; right--; } } return true; }  循环解法  function judge(str) { for (let i = 0; i &amp;lt; Math.</description>
+    </item>
+    
+    <item>
       <title>「哔哔点啥」取消显示&#39;一周前&#39;,&#39;一小时前&#39;</title>
       <link>http://blog.nekolas.cafe/posts/hugo/bber-not-displaying-xx-ago/</link>
       <pubDate>Fri, 03 Jun 2022 19:00:00 +0800</pubDate>
@@ -135,22 +149,6 @@ Break camelCase Details
 使用的方法: 正则 match(/[A-Z]/g), split, slice, concat, join, push &amp;hellip;
 我真的想得太复杂了
 function breakCamel(words) { if (words === &amp;#34;&amp;#34;) { return &amp;#39;&amp;#39; } else { // 得出这组字符串中大写字母 []  let uppercase = words.</description>
-    </item>
-    
-    <item>
-      <title>力扣 oh Leetcode</title>
-      <link>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</link>
-      <pubDate>Wed, 18 May 2022 11:00:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/</guid>
-      <description>作为一个准前端开发者，我天真地以为不用看力扣，你只是个切图仔。但感受到各方各界的暗示：你得看，你得看看。
-好吧，其实是快要机考了。
-从网上搜的机考真题来看，貌似是3道算法题，难度也许在力扣简单-中等之间。对于一个月前才知道 codewars 这个可爱网站的我来说，不啻晴天霹雳，于是我跑到力扣大概看了几道简单的题目。
-第一题很“简单”，只用一个了一个JS的方法就可以计算出来。查看他人的解题，发现大家的思路很不一样，甚至很陌生。这些新奇的思路（不用库）大概就是传说中的算法吧。
-啊，算法，犹如哥伦布一脚踏进美洲，还以为是另一个印度呢。
- 已了解/未了解：  二分算法 哈希算法 滑动窗口 左右双指针   题目： 判断str是否为回文字符串 来自牛客网 左右双指针：
-function judge(str) { let left = 0; let right = str.length - 1; if (str.length === 0) return false; while (left &amp;lt;= right) { if (str[left] !== str[right]) { return false } else { left++; right--; } } return true; } 循环：
-function judge(str) { for (let i = 0; i &amp;lt; Math.</description>
     </item>
     
     <item>
@@ -584,10 +582,10 @@ app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#3
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-app npm install -g @vue/cli 安装完毕提示：
- Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
+cd weather-appnpm install -g @vue/cli安装完毕提示：
+ Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
+vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
     </item>
     
     <item>
@@ -727,7 +725,7 @@ Object.defineProperty()中的一些属性    属性 描述 默认值     configu
       
       <guid>http://blog.nekolas.cafe/posts/life/aji-crispy-review/</guid>
       <description>
-前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~ 包装 ⭐⭐⭐⭐
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~包装 ⭐⭐⭐⭐
 包装最值得称赞的部分就是密封条，开封后就算放一放，也不怕潮。（乐事的薯片们可以学一下吗） 包装设计方面，蔬菜味上印有蔬菜，芝士味上印有芝士，焦糖芥末味也是乖乖地印有芥末植物（山葵或辣根）和焦糖。 但是，我们神奇的优格洋葱味，除了印有奶白的yogurt液体，它的右侧还有一杯内容不明鸡尾酒杯，里面似乎是猕猴桃和草莓，这杯水果饮料跟洋葱似乎毫无关系吧…… (图： aji果子町专卖店)
 口味 ⭐⭐⭐⭐
 整体来说，每一包都被我们吃光光，味道还是很不错的，吃完后嘴巴也没有过于浓重的香精味残留。
@@ -783,8 +781,8 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+brew install hugo使用 MacPorts 安装：
+port install hugoWindows  使用 Chocolatey 安装：</description>
     </item>
     
     <item>
