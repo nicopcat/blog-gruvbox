@@ -506,6 +506,10 @@ mark {
   color: var(--primary);
 }
 
+#ispeak .xk-card .xk-card-header .xk-card-name .avatar-img {
+  margin: 0 auto;
+}
+
 #ispeak .xk-card-label {
   padding: 0 5px;
   font-weight: 550;

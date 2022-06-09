@@ -6,11 +6,11 @@
     <description>Recent content in Vue on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 17 Apr 2022 17:31:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 17 Apr 2022 00:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/vue/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>v-cloak: 隐藏未编译的raw template</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</link>
-      <pubDate>Sun, 17 Apr 2022 17:31:00 +0800</pubDate>
+      <pubDate>Sun, 17 Apr 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</guid>
       <description>进入Gallery的时候，总会先显示很难看的 Vue 源代码的 mustache brackets。这是因为网速慢一点的话，先加载js文件，等到挂载结束才render页面。
@@ -45,7 +45,7 @@ localStorage 的方法 Storage 对象有几个方法，也可以用在localStora
     <item>
       <title>Vue课程笔记：Animations and Transitions</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</link>
-      <pubDate>Sat, 05 Mar 2022 01:50:00 +0800</pubDate>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</guid>
       <description>一般来说，动画可以由CSS完成，Vue也提供了一系列帮助过渡和动画的工具。
@@ -57,7 +57,7 @@ localStorage 的方法 Storage 对象有几个方法，也可以用在localStora
     <item>
       <title>用Vue实现多标签页面（tab栏）切换的两种方法</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</link>
-      <pubDate>Sat, 19 Feb 2022 14:25:00 +0800</pubDate>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</guid>
       <description>这里有一个用简单的button和子组件做的标签页面。 效果如下： 目标 点击Active Goals按钮，就可以激活Active Goals组件下的内容。同样的，点击Manage Goals按钮，就可以激活Manage Goals组件下的内容。
@@ -107,10 +107,10 @@ app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#3
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-appnpm install -g @vue/cli安装完毕提示：
- Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
+cd weather-app npm install -g @vue/cli 安装完毕提示：
+ Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
+vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
     </item>
     
   </channel>

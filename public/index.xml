@@ -33,6 +33,25 @@ who  coffee lover cat/dog person music, reading, gaming .. web dev (准)  lang  
     </item>
     
     <item>
+      <title>重新复习 Vue slot：插槽</title>
+      <link>http://blog.nekolas.cafe/posts/tech/vue/vue-slot/</link>
+      <pubDate>Fri, 10 Jun 2022 00:15:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-slot/</guid>
+      <description>可以看作是一个占位符，将某些内容从某个组件传入某个出口，出口写作&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt;。
+非具名插槽 最基本的插槽，作用是占位符。
+有一个&amp;lt;NavLink /&amp;gt;的组件，其中的内容可以通过插槽分发出去：
+&amp;lt;nav-link url=&amp;#34;/profile&amp;#34;&amp;gt; Your Profile &amp;lt;/nav-link&amp;gt; 在&amp;lt;NavLink /&amp;gt;模板中，当组件渲染的时候，&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt; 将会被替换为“Your Profile”:
+&amp;lt;a v-bind:href=&amp;#34;url&amp;#34; class=&amp;#34;nav-link&amp;#34;&amp;gt; &amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt; &amp;lt;/a&amp;gt; 具名插槽 &amp;lt;slot&amp;gt; 元素有一个特殊的 attribute：name，它用来指定某个内容是分发给某个特定标签的，没有name属性的&amp;lt;slot&amp;gt; 元素会被作为default 默认出口分发。
+既然有了出口，那内容的指定呢？可以使用v-slot: XXX 指令，这个指令必须写在组件下的 &amp;lt;template&amp;gt; 标签上，简写为 #XXX
+&amp;lt;base-layout&amp;gt; &amp;lt;!-- 指定header为分发内容的对象 --&amp;gt; &amp;lt;template v-slot:header&amp;gt; &amp;lt;h1&amp;gt;Here might be a page title&amp;lt;/h1&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;/base-layout&amp;gt; 插槽作用域 有一个规则：
+ 父级模板里的所有内容都是在父级作用域中编译的；子模板里的所有内容都是在子作用域中编译的。
+ 像上级组件那样直接使用 {{ .. }} 引用是不行的，如何让模板里的插槽访问到组件里的数据呢？ 例如，设想一个带有如下模板的  组件：
+&amp;lt;span&amp;gt; &amp;lt;slot&amp;gt;{{ user.lastName }}&amp;lt;/slot&amp;gt; &amp;lt;/span&amp;gt; 这样写是无效的，&amp;lt;slot&amp;gt;&amp;lt;/slot&amp;gt; 内部根本访问不到 user。
+我们可以将 user 作为 &amp;lt;slot&amp;gt; 元素的一个 attribute 绑定上去：</description>
+    </item>
+    
+    <item>
       <title>「哔哔点啥」取消显示&#39;一周前&#39;,&#39;一小时前&#39;</title>
       <link>http://blog.nekolas.cafe/posts/hugo/bber-not-displaying-xx-ago/</link>
       <pubDate>Fri, 03 Jun 2022 19:00:00 +0800</pubDate>
@@ -240,7 +259,7 @@ Pollyfill 由于各个浏览器/版本不统一，造成某些功能无法使用
     <item>
       <title>v-cloak: 隐藏未编译的raw template</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</link>
-      <pubDate>Sun, 17 Apr 2022 17:31:00 +0800</pubDate>
+      <pubDate>Sun, 17 Apr 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/v-cloak/</guid>
       <description>进入Gallery的时候，总会先显示很难看的 Vue 源代码的 mustache brackets。这是因为网速慢一点的话，先加载js文件，等到挂载结束才render页面。
@@ -490,7 +509,7 @@ I find it hard to say</description>
     <item>
       <title>Vue课程笔记：Animations and Transitions</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</link>
-      <pubDate>Sat, 05 Mar 2022 01:50:00 +0800</pubDate>
+      <pubDate>Sat, 05 Mar 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/vue-animations-transitions/</guid>
       <description>一般来说，动画可以由CSS完成，Vue也提供了一系列帮助过渡和动画的工具。
@@ -517,7 +536,7 @@ I find it hard to say</description>
     <item>
       <title>用Vue实现多标签页面（tab栏）切换的两种方法</title>
       <link>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</link>
-      <pubDate>Sat, 19 Feb 2022 14:25:00 +0800</pubDate>
+      <pubDate>Sat, 19 Feb 2022 00:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/vue/tabs-with-vue/</guid>
       <description>这里有一个用简单的button和子组件做的标签页面。 效果如下： 目标 点击Active Goals按钮，就可以激活Active Goals组件下的内容。同样的，点击Manage Goals按钮，就可以激活Manage Goals组件下的内容。
@@ -582,10 +601,10 @@ app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#3
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-appnpm install -g @vue/cli安装完毕提示：
- Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
+cd weather-app npm install -g @vue/cli 安装完毕提示：
+ Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
+vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
     </item>
     
     <item>
@@ -725,7 +744,7 @@ Object.defineProperty()中的一些属性    属性 描述 默认值     configu
       
       <guid>http://blog.nekolas.cafe/posts/life/aji-crispy-review/</guid>
       <description>
-前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~包装 ⭐⭐⭐⭐
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~ 包装 ⭐⭐⭐⭐
 包装最值得称赞的部分就是密封条，开封后就算放一放，也不怕潮。（乐事的薯片们可以学一下吗） 包装设计方面，蔬菜味上印有蔬菜，芝士味上印有芝士，焦糖芥末味也是乖乖地印有芥末植物（山葵或辣根）和焦糖。 但是，我们神奇的优格洋葱味，除了印有奶白的yogurt液体，它的右侧还有一杯内容不明鸡尾酒杯，里面似乎是猕猴桃和草莓，这杯水果饮料跟洋葱似乎毫无关系吧…… (图： aji果子町专卖店)
 口味 ⭐⭐⭐⭐
 整体来说，每一包都被我们吃光光，味道还是很不错的，吃完后嘴巴也没有过于浓重的香精味残留。
@@ -781,8 +800,8 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo使用 MacPorts 安装：
-port install hugoWindows  使用 Chocolatey 安装：</description>
+brew install hugo 使用 MacPorts 安装：
+port install hugo Windows  使用 Chocolatey 安装：</description>
     </item>
     
     <item>
