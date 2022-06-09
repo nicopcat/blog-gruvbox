@@ -1,6 +1,6 @@
 ---
 title: "Vue课程笔记：Animations and Transitions"
-date: 2022-03-05T01:50:00+08:00
+date: 2022-03-05T00:00:00+08:00
 draft: false
 showToc: true
 tags: ["Vue"]

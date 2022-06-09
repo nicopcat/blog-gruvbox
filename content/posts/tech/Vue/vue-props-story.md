@@ -1,6 +1,6 @@
 ---
-title: "Vue | Parent组件利用 Props 给 Child组件传值小故事"
-date: 2022-01-29T20:00:00+08:00
+title: "Vue | Parent组件利用 Props 给 Child 组件传值小故事"
+date: 2022-01-29T00:00:00+08:00
 lastmod: 2022-01-29T20:00:00+08:00
 draft: true
 showToc: true
