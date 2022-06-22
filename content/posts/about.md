@@ -6,20 +6,16 @@ weight: 1
 # description: "which is precious"
 # hideMeta: true
 ---
-## Just
+# Just
 Call me 小田 でいい  
 😺Homepage: https://nekolas.cafe/   
-## who 
+# who 
 - coffee lover
 - cat/dog person  
 - music, reading, gaming .. 
 - web dev (准)   
-
-
-## lang
+# lang
 - mandarin, english muffins and jagur
-
-
 ## 友链
 
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}

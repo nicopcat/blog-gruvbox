@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>JavaScript | nekolas.cafe</title>
+  <title>git 拉取远程分支到本地的方法 | nekolas.cafe</title>
 
   <meta name="author" content="" />
 
@@ -33,7 +33,6 @@
   </script>
 
 
-  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/tags/javascript/index.xml" title="Nic Tian" />
   <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
@@ -89,50 +88,112 @@
   <main>
     
 <article>
-    <header>
-        <h1>All tags</h1>
-    </header>
-    <div class="body">
-        <div class="tags">
-            
-            <span>
-                <a href="/posts/tech/javascript/codewars/" title="">codewars练习</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/javascript/my-miserable-leetcode/" title="">力扣 oh Leetcode</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/javascript/this-and-context/" title="">JavaScript 中 this 的绑定</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/javascript/js-create-number-array/" title="你能想到几个方法？">如何优雅地用 JS 创建包含 0 ~ n 的整数数组</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/others/gsap-intro/" title="Getting Started with GSAP!">好玩的JavaScrip动画框架——GSAP 【intro部分试译】</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/javascript/variable-destructuring/" title="">ES6数组与对象的解构赋值</a>
-            </span>
-            
-            <span>
-                <a href="/posts/tech/javascript/let-n-const/" title="">let &amp; const 对比 var 的新特性</a>
-            </span>
-            
-        </div>
-    </div>
+  <header>
+    <h1><a href="/posts/tech/others/git-remote-branch/">git 拉取远程分支到本地的方法</a></h1>
+    <time datetime="2022-06-18 01:00:00 &#43;0800 CST">2022-06-18</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">Posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">Tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others">Others</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others/git-remote-branch">Git remote branch</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+  </header>
+
+  <div class="body">
+    <p>假设这个仓库已经跟远程仓库关联，但只拉取到 main 分支，且目前 checkout 在 main 分支。</p>
+<h1 id="查看远程仓库中的所有分支">查看远程仓库中的所有分支</h1>
+<pre tabindex="0"><code>git branch -r
+</code></pre><img src="https://nic-gz-1308403500.file.myqcloud.com/posts/git-remote-branch-2022-06-18-01-14-03.png" width="450px">
+<h1 id="将远程分支拉取到本地fetch">将远程分支拉取到本地(fetch)</h1>
+<pre tabindex="0"><code>git fetch origin dev（dev为远程仓库的分支名）
+</code></pre><h1 id="在本地创建分支-dev-并切换到该分支">在本地创建分支 dev 并切换到该分支</h1>
+<pre tabindex="0"><code>git checkout -b dev origin/dev
+</code></pre><h1 id="将某个分支拉取并合并到本地pull">将某个分支拉取并合并到本地(pull)</h1>
+<pre tabindex="0"><code>git pull origin dev
+</code></pre><p><img src="https://nic-gz-1308403500.file.myqcloud.com/posts/git-remote-branch-2022-06-18-01-20-21.png" alt="git-pics"></p>
+
+  </div>
+  
+  <footer>
+    
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+  </footer>
+  
 </article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/git/">Git</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/tech/others/tencent-cloud-cos-and-cdn/">
+      <time datetime="2022-05-26 01:00:00 &#43;0800 CST">2022-05-26 &raquo; </time>
+      如何用腾讯云的储存对象(COS)结合 CDN 作为图床
+    </a>
+  
+  </div>
+  <div class="left">
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+</script>
+
+
+
 
   </main>
 
   
   <footer>
-    <a class="rss" href="http://blog.nekolas.cafe/tags/javascript/index.xml" title="Subscribe to the RSS feed for Nic Tian">rss</a>
-   
+    
       <span class="gopher" title="Proudly powered by Go!"></span>
     
 

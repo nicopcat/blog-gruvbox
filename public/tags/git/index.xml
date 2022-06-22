@@ -6,7 +6,17 @@
     <description>Recent content in Git on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 21 Mar 2022 12:29:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Jun 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>git 拉取远程分支到本地的方法</title>
+      <link>http://blog.nekolas.cafe/posts/tech/others/git-remote-branch/</link>
+      <pubDate>Sat, 18 Jun 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/others/git-remote-branch/</guid>
+      <description>假设这个仓库已经跟远程仓库关联，但只拉取到 main 分支，且目前 checkout 在 main 分支。
+查看远程仓库中的所有分支 git branch -r将远程分支拉取到本地(fetch) git fetch origin dev（dev为远程仓库的分支名）在本地创建分支 dev 并切换到该分支 git checkout -b dev origin/dev将某个分支拉取并合并到本地(pull) git pull origin dev</description>
+    </item>
+    
     <item>
       <title>Git 使用笔记</title>
       <link>http://blog.nekolas.cafe/posts/tech/others/git-guide/</link>

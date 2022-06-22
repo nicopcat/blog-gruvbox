@@ -38,10 +38,10 @@ localStorage 的方法 Storage 对象有几个方法，也可以用在localStora
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-app npm install -g @vue/cli 安装完毕提示：
- Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
+cd weather-appnpm install -g @vue/cli安装完毕提示：
+ Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
+vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
     </item>
     
   </channel>

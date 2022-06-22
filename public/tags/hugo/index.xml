@@ -139,8 +139,8 @@ Stacks:
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+brew install hugo使用 MacPorts 安装：
+port install hugoWindows  使用 Chocolatey 安装：</description>
     </item>
     
   </channel>

@@ -3,7 +3,6 @@ title: "力扣 oh Leetcode"
 date: 2022-05-18T11:00:00+08:00
 tags: ["JavaScript","力扣"]
 draft: false
-weight: 2
 ---
 作为一个准前端开发者，我天真地以为不用看力扣，~~你只是个切图仔~~。但感受到各方各界的暗示：你得看，你得看看。  
 
