@@ -10,6 +10,7 @@ ShowBreadCrumbs: false
 <script src="https://unpkg.com/vue@next"></script>
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
+    <span>（作者：<a src="https://janew.tk/" style="cursor:pointer" target="_blank">Jane</a>）</span>
     <div class="navbar">
         <span><a href="/gallery/">Main</a></span>
         <span><a href="/dame/">小猫日常</a></span>

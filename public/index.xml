@@ -8,14 +8,15 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Nov 2021 22:13:01 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>关于我</title>
-      <link>http://blog.nekolas.cafe/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <title>如何浅合并一下 JavaScript 对象（其实希望深拷贝）</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-object-merge/</link>
+      <pubDate>Thu, 23 Jun 2022 15:00:00 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/about/</guid>
-      <description>Just Call me 小田 でいい
-😺Homepage: https://nekolas.cafe/
-who  coffee lover cat/dog person music, reading, gaming .. web dev (准)  lang  mandarin, english muffins and jagur  友链 JaneW喜欢画画的Jane Bore&amp;#39;s Notes博观而约取，厚积而薄发。 Sulv’s Blog一个记录技术、阅读、生活的博客 IILeeのBlog所以，看不到光，算是不幸吗？需要光才是真正的不幸吧。 Seviche.ccCode / Tech / Live a Random Life OneDay一个追求天天进步的程序猿 交换 template 你的名字: &amp;#34;Nekolas&amp;#39;s blog&amp;#34;, 一栏地址: &amp;#34;https://blog.</description>
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-object-merge/</guid>
+      <description>由于业务需求，本人需要将两个对象进行合并。 对象层级较浅的情况，可以使用 ES6 ...语法，解构赋值，或 Object.assign() 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 _.merge() 或 jQuery 的 $.extend() 方法，要么自己封装一个函数。
+... 拷贝对象属性 使用扩展运算符 {...obj} 克隆或者拷贝对象的属性：
+const obj1 = { name: &amp;#34;Nic&amp;#34; } const clonedObj = { ...obj1 } console.log(clonedObj) // { name: &amp;#34;Nic&amp;#34; } ... 合并对象 使用扩展运算符 {...obj} 合并两个对象，可以看到，扩展运算符内部的同名属性会被覆盖掉：
+const obj1 = { a: 1 } const obj2 = { a: 2, b: 3 } const obj3 = { a: 3, b: 4, c: 5 } const obj = { .</description>
     </item>
     
     <item>
@@ -611,10 +612,10 @@ app.component(&amp;#39;fortune-transfer&amp;#39;, { props: [&amp;#39;cash&amp;#3
 油管地址： https://www.youtube.com/watch?v=JLc-hWsPTUY&amp;amp;ab_channel=TylerPotts
 1. 前提 安装这些东西：
  npm/yarn node.js git  2. Vue项目初始化 2.1 安装Vue-cli脚手架 首先在硬盘的某块区域，创建weather-app文件夹，存放Vue项目
-cd weather-appnpm install -g @vue/cli安装完毕提示：
- Your connection to the default npm registry seems to be slow.Use https://registry.npm.taobao.org for faster installation? YesYes, 选择淘宝镜像加速
+cd weather-app npm install -g @vue/cli 安装完毕提示：
+ Your connection to the default npm registry seems to be slow. Use https://registry.npm.taobao.org for faster installation? Yes Yes, 选择淘宝镜像加速
 2.2 创建Vue项目 进到项目文件夹，利用命令创建项目名称，
-vue create weather-app? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features选择 Default (Vue 3)</description>
+vue create weather-app ? Please pick a preset: (Use arrow keys) &amp;gt; no1 ([Vue 3] dart-sass, babel, typescript) Default ([Vue 2] babel, eslint) Default (Vue 3) ([Vue 3] babel, eslint) Manually select features 选择 Default (Vue 3)</description>
     </item>
     
     <item>
@@ -754,7 +755,7 @@ Object.defineProperty()中的一些属性    属性 描述 默认值     configu
       
       <guid>http://blog.nekolas.cafe/posts/life/aji-crispy-review/</guid>
       <description>
-前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~包装 ⭐⭐⭐⭐
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~ 包装 ⭐⭐⭐⭐
 包装最值得称赞的部分就是密封条，开封后就算放一放，也不怕潮。（乐事的薯片们可以学一下吗） 包装设计方面，蔬菜味上印有蔬菜，芝士味上印有芝士，焦糖芥末味也是乖乖地印有芥末植物（山葵或辣根）和焦糖。 但是，我们神奇的优格洋葱味，除了印有奶白的yogurt液体，它的右侧还有一杯内容不明鸡尾酒杯，里面似乎是猕猴桃和草莓，这杯水果饮料跟洋葱似乎毫无关系吧…… (图： aji果子町专卖店)
 口味 ⭐⭐⭐⭐
 整体来说，每一包都被我们吃光光，味道还是很不错的，吃完后嘴巴也没有过于浓重的香精味残留。
@@ -810,8 +811,8 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
 注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
 Mac  使用 Homebrew安装：
-brew install hugo使用 MacPorts 安装：
-port install hugoWindows  使用 Chocolatey 安装：</description>
+brew install hugo 使用 MacPorts 安装：
+port install hugo Windows  使用 Chocolatey 安装：</description>
     </item>
     
     <item>
@@ -829,7 +830,7 @@ port install hugoWindows  使用 Chocolatey 安装：</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://blog.nekolas.cafe/jane-works/</guid>
-      <description>Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}.spinner {display: flex;justify-content: center;align-items: center;width: 100%;}.lds-roller {display: inline-block;position: relative;width: 80px;height: 80px;}.lds-roller div {animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;transform-origin: 40px 40px;}.lds-roller div:after {content: &#39; &#39;;display: block;position: absolute;width: 7px;height: 7px;border-radius: 50%;background-color: rgb(215, 153, 35);margin: -4px 0 0 -4px;}.</description>
+      <description>（作者：Jane）Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}.spinner {display: flex;justify-content: center;align-items: center;width: 100%;}.lds-roller {display: inline-block;position: relative;width: 80px;height: 80px;}.lds-roller div {animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;transform-origin: 40px 40px;}.lds-roller div:after {content: &#39; &#39;;display: block;position: absolute;width: 7px;height: 7px;border-radius: 50%;background-color: rgb(215, 153, 35);margin: -4px 0 0 -4px;}.</description>
     </item>
     
     <item>
@@ -839,6 +840,16 @@ port install hugoWindows  使用 Chocolatey 安装：</description>
       
       <guid>http://blog.nekolas.cafe/gallery/</guid>
       <description>Main小猫日常Jane的画儿{{item.pname}}{{item.descriptions}}.spinner {display: flex;justify-content: center;align-items: center;width: 100%;}.lds-roller {display: inline-block;position: relative;width: 80px;height: 80px;}.lds-roller div {animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;transform-origin: 40px 40px;}.lds-roller div:after {content: &#39; &#39;;display: block;position: absolute;width: 7px;height: 7px;border-radius: 50%;background-color: rgb(215, 153, 35);margin: -4px 0 0 -4px;}.</description>
+    </item>
+    
+    <item>
+      <title>关于我</title>
+      <link>http://blog.nekolas.cafe/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/about/</guid>
+      <description>who  真实世界的魔法麻瓜 嗑肥爱好者 毛绒生物爱好者 🎵, 📖, 🎮 .. 住在网上，不是，web dev (准) 🧑‍💻🎧  😺Homepage: https://nekolas.cafe/
+i18  mandarin, english muffins and jagur 梦想是游走四方，交换猎新奇故事  tomotachi JaneW喜欢画画的Jane Bore&amp;#39;s Notes博观而约取，厚积而薄发。 Sulv’s Blog一个记录技术、阅读、生活的博客 IILeeのBlog所以，看不到光，算是不幸吗？需要光才是真正的不幸吧。 Seviche.ccCode / Tech / Live a Random Life OneDay一个追求天天进步的程序猿 交换 template 你的名字: &amp;#34;Nekolas&amp;#39;s blog&amp;#34;, 一栏地址: &amp;#34;https://blog.</description>
     </item>
     
     <item>

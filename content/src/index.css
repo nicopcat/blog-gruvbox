@@ -262,8 +262,13 @@
 
     .container .wrapper img {
         max-width: 100%;
-        border: .5em solid white;
+        /* border: .5em solid white; */
         cursor: pointer;
-        box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1);
+        transition: all .35s ease;
+    }
+
+    .container .wrapper img:hover {
+        transform: scale(1.05);
+        box-shadow: 1px 1px 4px 1px rgb(0 0 0 / 40%);
     }
 }
