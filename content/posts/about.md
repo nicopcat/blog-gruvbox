@@ -14,7 +14,7 @@ url: "/about"
 - 🎵, 📖, 🎮 .. 
 - 住在网上，不是，web dev (准)  🧑‍💻🎧
 
-😺Homepage: https://nekolas.cafe/   
+
 # i18
 - mandarin, english muffins and jagur
 - 梦想是游走四方，交换~~猎~~新奇故事

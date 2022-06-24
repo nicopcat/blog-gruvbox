@@ -49,7 +49,7 @@ console.log(clonedObj.hobbies.gaming)  // splatoon 2
 ```
 
 ## Object.assign()
-接下来看看 `Object.assign()` 表现如何。
+接下来看看 `Object.assign()` 表现如何。  
 `Object.assign()` 方法将所有可枚举（*Object.propertyIsEnumerable() 返回 true*）和自有（*Object.hasOwnProperty() 返回 true*）属性从一个或多个源对象复制到目标对象，返回修改后的对象。  
 
 语法：*`Object.assign(target, source)`*  
@@ -68,7 +68,7 @@ console.log(returnedTarget);
 // expected output: Object { a: 1, b: 4, c: 5 }
 ```
 
-**遗憾的是，Object.assign() 也是浅拷贝。**
+**遗憾的是，`Object.assign()` 也是浅拷贝。**
 ```js
 const obj1 = {
   name: "Nic",

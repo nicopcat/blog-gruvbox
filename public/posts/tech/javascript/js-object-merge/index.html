@@ -153,7 +153,7 @@
 
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">clonedObj</span>.<span style="color:#a6e22e">hobbies</span>.<span style="color:#a6e22e">gaming</span>)  <span style="color:#75715e">// splatoon 2
 </span></code></pre></div><h2 id="objectassign">Object.assign()</h2>
-<p>接下来看看 <code>Object.assign()</code> 表现如何。
+<p>接下来看看 <code>Object.assign()</code> 表现如何。<br>
 <code>Object.assign()</code> 方法将所有可枚举（<em>Object.propertyIsEnumerable() 返回 true</em>）和自有（<em>Object.hasOwnProperty() 返回 true</em>）属性从一个或多个源对象复制到目标对象，返回修改后的对象。</p>
 <p>语法：<em><code>Object.assign(target, source)</code></em></p>
 <p>MDN Demo：</p>
@@ -167,7 +167,7 @@
 </span><span style="color:#75715e"></span>
 <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">returnedTarget</span>);
 <span style="color:#75715e">// expected output: Object { a: 1, b: 4, c: 5 }
-</span></code></pre></div><p><strong>遗憾的是，Object.assign() 也是浅拷贝。</strong></p>
+</span></code></pre></div><p><strong>遗憾的是，<code>Object.assign()</code> 也是浅拷贝。</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> {
   <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nic&#34;</span>,
   <span style="color:#a6e22e">hobbies</span><span style="color:#f92672">:</span> {
