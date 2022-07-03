@@ -81,6 +81,6 @@ r~~(俄式发音)amen | 各种猪排鸡排牛肉定食 | 寿司 | 三文鱼刺�
 麦当劳 | In-N-Out | Shake Shack | Wendy's    
 
 **意面**    
-海鲜白酱 | 罗勒肉酱 | Mac & Chesse（偶尔）| 含Meatball的任何一款     
+海鲜白酱 | 罗勒肉酱 | Mac & Chesse（偶尔）| 含 Meatball 的任何一款     
 
 和J小将一起吃的话 ♥♥♥♥♥♥♥

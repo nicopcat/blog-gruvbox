@@ -1,72 +1,124 @@
+---
+title: "用简单的方式理解JavaScript Promise"
+date: 2022-07-03T13:00:00+08:00
+tags: ["JavaScript", "ES6","Promise","Asynchronous"]
+draft: false
+showToc: false
+---
+
+众所周知，在JavaScript的世界中，代码是单线程执行的。
+
+这样设计的后果是容易**阻塞随后的脚本运行**。
 
 
-
-Promise
-# JS的执行
-众所周知，在JavaScript的世界中，所有代码都是单线程执行的。下面的例子中，`console.log('Second log')`不得不等待`stopThis()`中的定时器打印完毕，才能接着打印。
+下面的例子中，要等待`doNotDoThis()`打印完0 ~ 100000，才能接着打印`console.log('Second log')`， 
 
 ```js
-function stopThis() {
-  setTimeout(() => {
-    console.log('You need to wait line, haha.')
-  }, 2000)
+function doNotDoThis() {
+    for (let i = 0; i < 100000; i++) {
+        console.log(i);
+    }
 }
 
 // 立即打印
 console.log('First log')
-// 等待2秒 'You need to wait line, haha.'
-stopThis(); 
+
+// Don't do this.
+doNotDoThis();
 
 // 然后立即打印
 console.log('Second log')
 ```
 
-单线程执行的缺点是，很容易阻塞其他内容的加载进程。
 
 
-在网络请求的世界，都是需要异步操作的，因为服务器不可能立即返回数据到客户端，这就产生了问题—：总不能啥也不做，干等着服务器返回数据吧。
+只要我们网络冲浪，访问不同的网址，就需要向各个服务器发送HTTP请求，然后等待返回数据。
+
+但是呢，服务器不可能立即返回数据到客户端。
+
+但如果按照单线程的运行方式，服务器返回数据之前，浏览器会处于一种卡死状态，这会让我们冲浪的体验极差。
+
+![sending-requests](https://nic-gz-1308403500.file.myqcloud.com/posts/js-promise-2022-07-03-14-13-18.png "图源：知乎-张秋怡")
 
 于是就有了一些解决方案。
 
 # 异步请求1.0 ———— 古早的Callback
-难不倒咱，可以用回调函数解决。上文举例的setTimeout()实际上也是一个回调函数：倒数结束以后，执行callback。
+我们可以给处理函数传递一个回调函数来处理回调结果。
+
+我们常见的定时器`setTimeout()`就是回调函数：
 ```js
-function isCallback() {
-  setTimeout(() => {
+const callball =  () => {
     console.log("I'm a callback.")
-  }, 2000)
+  }
+
+function isCallback() {
+  setTimeout(callback, 2000)
 }
 
 isCallback()
 //2秒后打印： I'm a callback.
 ```
 
-但，功能复杂的回调函数耦合度高，且会造成一个人尽皆知的后果：回调地狱
+但要是回调函数非常复杂，嵌套好几个回调函数，就会造成**回调地狱**
+```js
+
+// a函数执行b，b函数执行c，c函数打印最终结果
+a(function (resultA) {
+    b(resultA, function (resultB) {
+        caches(resultB, function (resultC) {
+            console.log(resultC);
+        })
+    })
+})
+```
+
 ![callback-hell](https://nic-gz-1308403500.file.myqcloud.com/posts/js-promise-2022-07-02-21-02-58.png)
 
 
-于是就有了一种更优雅的异步操作手段：Promise
+于是就有了一种更直观简洁的写法：**Promise**
+
+使用Promise简化上个例子的回调写法：
+```js
+a()
+  .then(function (resultA) { b(resultA) })
+  .then(function (resultB) { c(resultB) })
+  .then(function (resultC) { console.log(resultC) })
+```
+
+代码是不是看起来更直观了？
 # 异步请求2.0 ———— Promise
-Promise是一个对象，它接受两个参数：resolve和reject，它们是两个函数，分别表示成功和失败的结果。
+Promise是一个对象，它接受两个参数：`resolve` 和 `reject`，两者都是函数（函数确实可以当作参数传递给另一个函数）
 
-使用Promise写异步请求，意味着在将来的某个时间点，Promise一定会返回一个结果，并保存在resolve和reject中。
 
-Jecelyn Yeen在她的文章中，举了一个非常浅显易懂的例子来接是Promise的概念。
+所以我们可以在回调函数里调用`resolve()`，表示任务成功执行；若是Promise报错或者拒绝履行承诺，则调用`reject()`
 
-她假设，你是一个小孩，你妈妈承诺下周会帮你买一部新手机。其间会有三种状态：
+基本写法:
+```js
+let p = new Promise(function(resolve, reject) {});
+```
 
-1. Pending: 你不知道自己是否会得到
-2. Fullfilled：妈妈很高兴，帮你买了新手机
-3. Reject：妈妈心情差，没有帮你买新手机
+
+使用Promise写异步请求，意味着在将来的某个时间点，Promise一定会返回一个结果，并保存在resolve()和reject()中。
+
+Jecelyn Yeen 在她的[文章](https://www.digitalocean.com/community/tutorials/understanding-javascript-promises)中，举了一个非常浅显易懂的例子来解释Promise的概念。
+
+她假设，你是一个小孩，你妈妈承诺下周会帮你买一部新手机。
+
+其间会有三种状态：
+
+1. Pending（进行中）: 你不知道自己是否会得到
+2. Fullfilled（已成功）：妈妈很高兴，帮你买了新手机
+3. Reject（已失败）：妈妈心情差，没有帮你买新手机
 
 用代码实现一下：
 
 ```js
-const isMomHappy = Math.random() * 2;
+const isMomHappy = true;
+
 const willGetNewPhone = new Promise((resolve, reject) => {
-  if (isMomHappy > 1) {
+  if (isMomHappy) {
     const phone = {
-      brand: 'apple',
+      brand: 'Apple',
       color: 'black'
     }
     resolve(phone);
@@ -76,51 +128,99 @@ const willGetNewPhone = new Promise((resolve, reject) => {
   }
 })
 ```
-我在这里用`Math.random()`模拟妈妈阴晴不定的情绪（不是），结果或是成功（resolve），或是失败（reject）。
+
+结果或是成功（resolve），或是失败（reject）。
+
+接下来，我们就要调用这个Promise，该怎么调用呢？
+
+在Promise被创建(被操作符new)时，Prmomise的回调函数就开始执行了。所以我们要关心的不是Promise怎么被调用，而是**Promise完成任务之后，程序如何处理Promise返回的信息**。
+
+## then()
+`willGetNewPhone`现在是一个Promise object，这个object提供了一个方法：`then()`
+
+将`then()`方法想象为“这可行，然后（then）使用从 promise 返回的数据执行此操作。“如果没有数据，可以跳过 then 方法。
 
 
-接着，让我们使用这个Promise问妈妈要一下手机。
+如果想在`willGetNewPhone`的Promise执行完成后执行后续代码，可以这样写：
+```js
+willGetNewPhone.then()
+```
+
+`then()`方法也有可能返回另一个promise，因此你可以像这样链接另一个`then()`方法：
+```js
+promise
+  .then(value => {
+    return value.anotherPromise()
+  })
+  .then(anotherValue => {
+    // 使用这个值
+  })
+```
+
+
+## resolve()
+我们需要在`then()`里写一个回调函数：
+
+```js
+willGetNewPhone
+  .then(res => console.log(res) })
+// 打印得到我们上面定义的 phone对象
+```
+同时可以看出，`resolve()`可以得到成功时Promise返回的信息。
+
+## reject()
+`reject()`也能返回值，一般返回的是错误信息。
+
+假如妈妈翻脸不给买手机了，任务就会执行`reject()`，这时浏览器会默认报错：
+```plaintext
+Uncaught (in promise) Error: mon is not happy
+```
+不想要浏览器报错，就需要在`then()`的后面加上一个`catch()`来捕捉错误：
+
+```js
+willGetNewPhone
+  .then(() => { console.log('Got new phone.'); })
+  .catch( error => console.log(error))
+// Error: mon is not happy 不会报错
+```
+
+## then() 链式
+接着，让我们使用这个Promise对象问妈妈要手机。
 ```js
 const askMom = () => {
   willGetNewPhone
-    .then(fullfilled => {
-
-      // I got the apple black phone
-      console.log(`I got the ${fullfilled.brand} ${fullfilled.color} phone`)
+    .then(ok => {
+      // ok 这个参数传递的就是promoise返回resolve()的结果
+      console.log(`I got a new ${ok.color} ${ok.brand} phone!`)
     })
     .catch(error => {
-      // mon is not happy
       console.log(error.message)
     })
 }
 
-askMom()
+askMom();
+// I got a new black Apple phone!
+// 或 reject:
+// mon is not happy
 ```
+## 总结
+1. Promise有效解决 callback hell 问题
 
+2. Promise提供resolve()和reject()函数应对超长任务的进度 
 
+3. then()语句会在异步执行任务完成后被执行
 
+4. 使用catch()语句捕捉reject()的报错
 
-## Promise术语
-1. promise：是一个拥有 then 方法的对象或函数，其行为符合本规范
-
-2. thenable：是一个定义了 then 方法的对象或函数。这个主要是用来兼容一些老的
-
-3. Promise实现，只要一个Promise实现是thenable，也就是拥有then方法的，就可以
-跟Promises/A+兼容。
-
-4. value：指reslove出来的值，可以是任何合法的JS值(包括 undefined , thenable 和 promise等)
-
-5. exception：异常，在Promise里面用throw抛出来的值
-
-6. reason：拒绝原因，是reject里面传的参数，表示reject的原因
-Promise状
-
+# Async/Await
+比Promise更直观的一种异步写法，下次写写。✍
 
 ---
 # 参考
-廖雪峰 https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544
+- [廖雪峰 - Promise](https://www.liaoxuefeng.com/wiki/1022910821149312/1023024413276544)
 
-Understanding JavaScript Promises https://www.digitalocean.com/community/tutorials/understanding-javascript-promises
- 
+- [Understanding JavaScript Promises](https://www.digitalocean.com/community/tutorials/understanding-javascript-promises)
 
-手写一个Promise/A+ https://segmentfault.com/a/1190000023157856###
+- [手写一个Promise/A+](https://segmentfault.com/a/1190000023157856###)
+
+- [WenXuanDecode - JavaScript Promise 是什么](https://www.youtube.com/watch?v=CTChl_DYTz0)
