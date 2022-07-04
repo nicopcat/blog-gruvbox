@@ -32,13 +32,13 @@ url: "/about"
 
 {{< friend name="OneDay" url="https://blog.oneday8.com" logo="https://blog.oneday8.com/usr/uploads/Logo300300.png" word="一个追求天天进步的程序猿" >}}
 
+{{< friend name="lz差不多是条咸鱼了" url="https://lz233.ac.cn/" logo="https://avatars.githubusercontent.com/u/32504382" word="好耶！" >}}
 
 ### 交换 template
 ```java
-你的名字: "Nekolas's blog",
-一栏地址: "https://blog.nekolas.cafe/",
-一颗头像: "https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg",
-简单介绍: "Be curious, be at ease."
+name: "Nekolas's blog",
+addr: "https://blog.nekolas.cafe/",
+avatar: "https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg",
 ```
 
 ---
