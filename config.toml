@@ -1,13 +1,13 @@
 baseURL = 'http://blog.nekolas.cafe/'
 languageCode = 'en-us'
-title = 'Nic Tian'
+title = 'Nekolas'
 theme = "gruvbox"
 paginate = 6
 disqusShortname = "nekolas-blog"
 
 [params]
 author = { name = "Nekolas Tian" }
-description = "Cat that codes."
+description = "Cat who codes."
 keywords = [
   "web dev",
   "javascript",
