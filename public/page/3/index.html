@@ -91,6 +91,74 @@
 
 <article>
   <header>
+    <h1><a href="/posts/tech/javascript/this-and-context/">JavaScript 中 this 的绑定</a></h1>
+    <time datetime="2022-05-13 22:00:00 &#43;0800 CST">2022-05-13</time>
+  </header>
+  <div class="body">
+    <p><code>this</code>会在执行的上下文中绑定一个对象，有时候绑定全局对象，有时绑定的是某个对象，所以在什么情况下进行什么绑定，比较迷惑。</p>
+<p>先说结论：<code>this</code>的绑定取决于<strong>函数的直接调用位置</strong>。</p>
+<h1 id="1-调用位置">1. 调用位置</h1>
+<p>首先要理解什么是调用位置：<strong>调用位置就是函数在代码中调用的位置，而不是函数声明的位置</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>{…</code></pre></div>
+  </div>
+  <footer>
+    <a href="/posts/tech/javascript/this-and-context/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/this-and-context/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/">如何使用 Netlify 快速部署个人项目</a></h1>
+    <time datetime="2022-04-30 17:00:00 &#43;0800 CST">2022-04-30</time>
+  </header>
+  <div class="body">
+    <p>一直耳闻 Netlify 非常好用，用过之后，我表示它确实很好用。</p>
+<p>先进入 <a href="https://app.netlify.com/">Netlify 官网</a>，使用 Github 账号授权登陆。登陆完毕就看到一个大大的拖拽框，简直就是说“网页快快往我这放！”</p>
+<p>不过我想托管的 demo 是用 Vue-cli 做的，没办法直接把文件丢进去，所以写这篇记录一下过程。</p>
+<h1 id="netlify-x-vue-cli">Netlify x…</h1>
+  </div>
+  <footer>
+    <a href="/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/others/deploy-a-vue-cli-prj-w-netlify/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/life/hiit-burpee/">波比跳</a></h1>
+    <time datetime="2022-04-25 17:00:00 &#43;0800 CST">2022-04-25</time>
+  </header>
+  <div class="body">
+    <ol>
+<li>快速波比跳 20 秒后，休息 10 秒</li>
+<li>动作重复 8 组，合计 4 分钟</li>
+<li>中间尽量不要停顿，效果会减半，所以尽量快速完成</li>
+<li>动作非常累，刚开始一定无法在 4 分钟内完成 8 组</li>
+<li>但是每天坚持锻炼，体力会显著改变，越来越顺利</li>
+</ol>
+<h1 id="但如果有腰突">但……如果有腰突</h1>
+<ol start="6">
+<li>不太推荐康复不好的腰突患者做这样过于激烈的运动，除非腰椎力量已经恢复</li>
+<li>发现…</li></ol>
+  </div>
+  <footer>
+    <a href="/posts/life/hiit-burpee/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/hiit-burpee/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
     <h1><a href="/posts/tech/javascript/js-create-number-array/">如何优雅地用 JS 创建包含 0 ~ n 的整数数组</a></h1>
     <time datetime="2022-04-23 15:00:00 &#43;0800 CST">2022-04-23</time>
   </header>
@@ -103,7 +171,7 @@
 <pre tabindex="0"><code>2 -&gt; 1 + 2  // output: 3
 5 -&gt; 1 + 2 + 3 + 4 + 5 //  output: 15
 </code></pre><p>【<strong>小学生解法</strong>】</p>
-<p>先用小学就学过等差数列的累加计算公…</p>
+<p>先用小学就学过等差数列的累加计算公式“( 首项 +…</p>
   </div>
   <footer>
     <a href="/posts/tech/javascript/js-create-number-array/">Read More&hellip; &raquo;</a>
@@ -122,7 +190,9 @@
   <div class="body">
     <p>跟逛维基百科一样，前端用语一个接一个映入眼帘，了解完 A 又出现了 B, C, D……</p>
 <h1 id="composition-api">Composition API</h1>
-<p>Vue 3 重大新特性之一，中文“组合式 API”，Vue 2.x 使用的是 Option API。简单来说就是把一坨代码放到<code>setup()</code>函数里集中管理，解决业务关注点过多的问…</p>
+<p>Vue 3 重大新特性之一，中文“组合式 API”，Vue 2.x 使用的是 Option API。简单来说就是把一坨代码放到<code>setup()</code>函数里集中管理，解决业务关注点过多的问题。</p>
+<p><img src="https://blogpic-1308403500.file.myqcloud.com//posts-coverstech-daily-001-2022-04-22-18-45-34.png" alt="tech-daily-001-2022-04-22-18-45-34"></p>
+<p>查看<a href="https://juejin.cn/post/6890545920883032071">大帅老猿</a>花…</p>
   </div>
   <footer>
     <a href="/posts/tech/others/tech-daily-001/">Read More&hellip; &raquo;</a>
@@ -144,71 +214,12 @@
 <ol>
 <li>打开代码文件夹</li>
 <li>点右侧菜单栏的 <strong>运行和调试</strong> 或快捷键 <strong>Ctrl + Shift + D</strong></li>
-<li>点击 创建 <strong>launch.json</strong> 文件。VSCode…</li></ol>
+<li>点击 创建 <strong>launch.json</strong> 文件。VSCode 会在工作区的 .vscode 文…</li></ol>
   </div>
   <footer>
     <a href="/posts/tech/others/vscode-debugger/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/others/vscode-debugger/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/vue/v-cloak/">v-cloak: 隐藏未编译的raw template</a></h1>
-    <time datetime="2022-04-17 00:00:00 &#43;0800 CST">2022-04-17</time>
-  </header>
-  <div class="body">
-    <p>进入Gallery的时候，总会先显示很难看的 Vue 源代码的 mustache brackets。这是因为网速慢一点的话，先加载js文件，等到挂载结束才render页面。</p>
-<p>于是 <code>v-cloak</code> 指令就排上用场了:</p>
-<blockquote>
-<p>Used to hide un-compiled template until…</p></blockquote>
-  </div>
-  <footer>
-    <a href="/posts/tech/vue/v-cloak/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/v-cloak/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/life/pdd-story/">拼刀刀的套路有多深？到底，要我砍几刀？</a></h1>
-    <time datetime="2022-04-08 02:43:00 &#43;0800 CST">2022-04-08</time>
-  </header>
-  <div class="body">
-    <h1 id="初尝甜头">初尝甜头</h1>
-<p>我，原本在家准备公园野餐的东西，突然微信弹出消息，是大学寝室群里的小梅，叫我们帮忙砍一刀。</p>
-<p>帮朋友砍一刀很简单，自己被套进去也玩起来亦很简单。</p>
-<p>不经意间我也开始了“叫别人帮我砍”的旅程，目标提现金额是￥ 100。</p>
-<p>周四，公园人不多，躺在树荫之下，凉爽异常，心旷神怡。和女友并排躺着的我了摸起…</p>
-  </div>
-  <footer>
-    <a href="/posts/life/pdd-story/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/pdd-story/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/book-music-movie/roma-jin-story/">罗马人的故事</a></h1>
-    <time datetime="2022-04-06 23:59:00 &#43;0800 CST">2022-04-06</time>
-  </header>
-  <div class="body">
-    <p>最近开始读盐野七生的这套<a href="https://book.douban.com/subject/25777432/">《罗马人的故事》</a>，是我会推荐的历史通俗读物。要写好历史书其实不容易，历史的走向往往错综复杂，作者很擅长梳理事件脉络，让书保持很高的可读性，也会客观地分析罗马的政治经济，从多方角度阐述，是什么让罗马成为罗马，是什么让它兴起或衰亡。</p>
-<h1 id="其一罗马不是一天建成的">其一：…</h1>
-  </div>
-  <footer>
-    <a href="/posts/book-music-movie/roma-jin-story/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/book-music-movie/roma-jin-story/">0 Comments</span>
 
 
   </footer>

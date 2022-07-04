@@ -6,7 +6,44 @@
     <description>Recent content in Vinilla JavaScript📒 on Nic Tian</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 23 Jun 2022 15:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 04 Jul 2022 17:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/javascript/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JavaScript ES6 Module 模块导入/导出</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-es-module/</link>
+      <pubDate>Mon, 04 Jul 2022 17:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-es-module/</guid>
+      <description>貌似在18年，原生JavaScript终于实现了自带模块的导出导入功能。
+它有什么用呢？
+比如我上一个demo，需要一个将两个对象深层合并的方法。
+我可以选择直接写在组件里，但更直观的方法是把方法封装在 ./src/components/megreObj.js 中，更易于查看。
+组件内如何调用另一个文件里的方法呢？
+Module Export/Import come to rescue!
+应用模块到你的 HTML 首先，你需要把 type=&amp;quot;module&amp;quot;放到 &amp;lt;script&amp;gt;标签中，来声明这个脚本是一个模块，不然HTML是不会渲染的，还会报错：
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Export export有两种方式:
+ export default  每个模块只能有一个默认导出 引入时不需要 { } 包裹   export  可以有多个 引入时需要 { } 包裹    例子：
+// 默认导出 export default class user { constructor(name, age) { this.name = name; this.age = age } } // 普通导出 export function printName(user) { console.log(`username is ${user.</description>
+    </item>
+    
+    <item>
+      <title>用简单的方式理解JavaScript Promise</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-promise/</link>
+      <pubDate>Sun, 03 Jul 2022 13:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-promise/</guid>
+      <description>众所周知，在JavaScript的世界中，代码是单线程执行的。
+这样设计的后果是容易阻塞随后的脚本运行。
+下面的例子中，要等待doNotDoThis()打印完0 ~ 100000，才能接着打印console.log(&#39;Second log&#39;)，
+function doNotDoThis() { for (let i = 0; i &amp;lt; 100000; i++) { console.log(i); } } // 立即打印 console.log(&amp;#39;First log&amp;#39;) // Don&amp;#39;t do this. doNotDoThis(); // 然后立即打印 console.log(&amp;#39;Second log&amp;#39;) 只要我们网络冲浪，访问不同的网址，就需要向各个服务器发送HTTP请求，然后等待返回数据。
+但是呢，服务器不可能立即返回数据到客户端。
+但如果按照单线程的运行方式，服务器返回数据之前，浏览器会处于一种卡死状态，这会让我们冲浪的体验极差。
+于是就有了一些解决方案。
+异步请求1.0 ———— 古早的Callback 我们可以给处理函数传递一个回调函数来处理回调结果。
+我们常见的定时器setTimeout()就是回调函数：
+const callball = () =&amp;gt; { console.log(&amp;#34;I&amp;#39;m a callback.&amp;#34;) } function isCallback() { setTimeout(callback, 2000) } isCallback() //2秒后打印： I&amp;#39;m a callback. 但要是回调函数非常复杂，嵌套好几个回调函数，就会造成回调地狱
+// a函数执行b，b函数执行c，c函数打印最终结果 a(function (resultA) { b(resultA, function (resultB) { caches(resultB, function (resultC) { console.</description>
+    </item>
+    
     <item>
       <title>如何浅合并一下 JavaScript 对象（其实希望深拷贝）</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/js-object-merge/</link>

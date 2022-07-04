@@ -91,13 +91,77 @@
 
 <article>
   <header>
+    <h1><a href="/posts/book-music-movie/russia-ecomonic-brief/">俄罗斯经济的起起落落</a></h1>
+    <time datetime="2022-07-04 18:00:00 &#43;0800 CST">2022-07-04</time>
+  </header>
+  <div class="body">
+    <p>众所周知，苏联是我们曾经的老大哥，现在俄罗斯也是本届最高领导人的拉拢对象。而在我印象中的俄罗斯，一直处于非常模糊的状态。</p>
+<p>一大串关于俄罗斯的名词在我脑中但理不清，包括但不限：普金，战斗民族，斯大林，苏联解体……</p>
+<p>今天恰好看了个相关视频，来简单梳理并记录一下俄罗斯的经济发展历史~</p>
+<h2 id="苏联成立前夕">苏联成立前夕</h2>
+<p><mark>1917年</mark></p>
+<p>沙俄爆发民主革…</p>
+  </div>
+  <footer>
+    <a href="/posts/book-music-movie/russia-ecomonic-brief/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/book-music-movie/russia-ecomonic-brief/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/js-es-module/">JavaScript ES6 Module 模块导入/导出</a></h1>
+    <time datetime="2022-07-04 17:00:00 &#43;0800 CST">2022-07-04</time>
+  </header>
+  <div class="body">
+    <p>貌似在18年，原生JavaScript终于实现了自带模块的导出导入功能。</p>
+<p>它有什么用呢？</p>
+<p>比如我上一个demo，需要一个将两个对象深层合并的方法。</p>
+<p>我可以选择直接写在组件里，但更直观的方法是把方法封装在 <code>./src/components/megreObj.js</code> 中，更易于查看。</p>
+<p>组件内如何调用另一个文件里的方法呢？…</p>
+  </div>
+  <footer>
+    <a href="/posts/tech/javascript/js-es-module/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/js-es-module/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/js-promise/">用简单的方式理解JavaScript Promise</a></h1>
+    <time datetime="2022-07-03 13:00:00 &#43;0800 CST">2022-07-03</time>
+  </header>
+  <div class="body">
+    <p>众所周知，在JavaScript的世界中，代码是单线程执行的。</p>
+<p>这样设计的后果是容易<strong>阻塞随后的脚本运行</strong>。</p>
+<p>下面的例子中，要等待<code>doNotDoThis()</code>打印完0 ~ 100000，才能接着打印<code>console.log('Second log')</code>，</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">doNotDoThis</span>() {
+    <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">let…</span></code></pre></div>
+  </div>
+  <footer>
+    <a href="/posts/tech/javascript/js-promise/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/js-promise/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
     <h1><a href="/posts/tech/javascript/js-object-merge/">如何浅合并一下 JavaScript 对象（其实希望深拷贝）</a></h1>
     <time datetime="2022-06-23 15:00:00 &#43;0800 CST">2022-06-23</time>
   </header>
   <div class="body">
     <p>由于业务需求，本人需要将两个对象进行合并。 
 <img src="https://nic-gz-1308403500.file.myqcloud.com/posts/js-object-merge-2022-06-24-14-02-37.jpg" alt="bussiness"></p>
-<p>对象层级较浅的情况，可以使用 ES6 <code>...</code>语法，解构赋值，或 <code>Object.assign()</code> 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 <code>_.merge()</code> 或 jQuery 的 <code>$.extend()…</code></p>
+<p>对象层级较浅的情况，可以使用 ES6 <code>...</code>语法，解构赋值，或 <code>Object.assign()</code> 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 <code>_.merge()</code> 或 jQuery 的 <code>$.extend()</code> 方法，要么自己封装…</p>
   </div>
   <footer>
     <a href="/posts/tech/javascript/js-object-merge/">Read More&hellip; &raquo;</a>
@@ -120,7 +184,7 @@
 </code></pre><img src="https://nic-gz-1308403500.file.myqcloud.com/posts/git-remote-branch-2022-06-18-01-14-03.png" width="450px">
 <h1 id="将远程分支拉取到本地fetch">将远程分支拉取到本地(fetch)</h1>
 <pre tabindex="0"><code>git fetch origin dev（dev为远程仓库的分支名）
-</code></pre><h1 id="在本地创建分支-dev-并切换到该分支">在本地创建分支 dev …</h1>
+</code></pre><h1 id="在本地创建分支-dev-并切换到该分支">在本地创建分支 dev…</h1>
   </div>
   <footer>
     <a href="/posts/tech/others/git-remote-branch/">Read More&hellip; &raquo;</a>
@@ -141,89 +205,12 @@
 <h1 id="非具名插槽">非具名插槽</h1>
 <p>最基本的插槽，作用是占位符。</p>
 <p>有一个<code>&lt;NavLink /&gt;</code>的组件，其中的内容可以通过插槽分发出去：</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav-link</span> <span style="color:#a6e22e">url</span><span style="color:#f92672">=…</span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav-link</span> <span style="color:#a6e22e">url</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/profile&#34;</span>&gt;…</code></pre></div>
   </div>
   <footer>
     <a href="/posts/tech/vue/vue-slot/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-slot/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/hugo/bber-not-displaying-xx-ago/">「哔哔点啥」取消显示&#39;一周前&#39;,&#39;一小时前&#39;</a></h1>
-    <time datetime="2022-06-03 19:00:00 &#43;0800 CST">2022-06-03</time>
-  </header>
-  <div class="body">
-    <p>众所周知，本 cafe 使用了由 <code>木*5</code> 老师开发的<a href="https://immmmm.com/bb-by-wechat-pro/">哔哔点啥</a>页面，本贴记录一下如何取消<code>“一周前”</code>等提示，回归无聊的<code>YYYY-MM-DD</code>天数显示。</p>
-<h1 id="方法">方法</h1>
-<p>去掉“周前”，”月前“这些时间点：</p>
-<ol>
-<li>找到<code>ispeak-bber-md.min.js</code> or <code>ispeak-bber.min.js</code></li>
-<li>复制下面这段代码，…</li></ol>
-  </div>
-  <footer>
-    <a href="/posts/hugo/bber-not-displaying-xx-ago/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/bber-not-displaying-xx-ago/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/book-music-movie/throughout-the-drinkeries-of-this-plane/">在这颗行星所有的酒馆</a></h1>
-    <time datetime="2022-06-02 12:11:00 &#43;0800 CST">2022-06-02</time>
-  </header>
-  <div class="body">
-    <p>那些智力超常的人啊<br>
-认为已经<br>
-熟悉了云和闪电的脾气<br>
-就不再迷惑<br>
-就不必了解自己，<br>
-世界和他人<br>
-每天只管<br>
-被微风吹拂，与猛虎谈情</p>
-<p>他们从来不需要楼梯<br>
-只有窗口<br>
-把一切交付于梦境 <br>
-和优美的浪潮 <br>
-<mark>在这颗行星所有的酒馆 <br>
-青春、自由似乎理所应得<br>
-面向涣散的未来<br>
-只唱情歌，看不到坦克</mark></p>
-<p>在科学和啤酒都不能<br>
-…</p>
-  </div>
-  <footer>
-    <a href="/posts/book-music-movie/throughout-the-drinkeries-of-this-plane/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/book-music-movie/throughout-the-drinkeries-of-this-plane/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/life/just-one-of-those-down-days/">the good, the bad and the nic</a></h1>
-    <time datetime="2022-05-30 15:00:00 &#43;0800 CST">2022-05-30</time>
-  </header>
-  <div class="body">
-    <p>昨日的我 felt like shit。</p>
-<h1 id="before-outing">before outing</h1>
-<p>原因之一是，我写erp-demo的时候，有点卡壳，给Vue顺毛的战线拉得太长，导致我忘记了前面的内容。</p>
-<p>hmm..  <code>slot-scope</code>? 啊，已废除，换成 <code>v-slot</code>，我记得我以前用过，但是怎么用来着？</p>
-<p>或许是我看文档水平太…</p>
-  </div>
-  <footer>
-    <a href="/posts/life/just-one-of-those-down-days/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/just-one-of-those-down-days/">0 Comments</span>
 
 
   </footer>

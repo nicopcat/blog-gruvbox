@@ -248,7 +248,7 @@ article>.body pre code {
   font-family: "Hack", monospace;
   display: block;
   padding: 0.5em 1em;
-  background: #292828;
+  background-color: #292828;
   color: #ebdbb2;
   overflow-x: auto;
   line-height: 1.6em;
@@ -261,8 +261,11 @@ article>.body code {
   display: inline;
   margin: 0 1px;
   padding: 0.2em 0.2em;
-  background: #ebdbb2;
-  color: #458588;
+  /* background: #ebdbb2;
+  color: #458588; */
+  background-color: #f9f2f4;
+  color: #c7254e;
+  border: 1px solid #d6d6d6;
   border-radius: 2px;
   font-size: 12px;
   /* word-break: break-all; */

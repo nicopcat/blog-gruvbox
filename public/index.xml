@@ -8,6 +8,90 @@
     <language>en-us</language>
     <lastBuildDate>Fri, 26 Nov 2021 22:13:01 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>俄罗斯经济的起起落落</title>
+      <link>http://blog.nekolas.cafe/posts/book-music-movie/russia-ecomonic-brief/</link>
+      <pubDate>Mon, 04 Jul 2022 18:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/book-music-movie/russia-ecomonic-brief/</guid>
+      <description>众所周知，苏联是我们曾经的老大哥，现在俄罗斯也是本届最高领导人的拉拢对象。而在我印象中的俄罗斯，一直处于非常模糊的状态。
+一大串关于俄罗斯的名词在我脑中但理不清，包括但不限：普金，战斗民族，斯大林，苏联解体……
+今天恰好看了个相关视频，来简单梳理并记录一下俄罗斯的经济发展历史~
+苏联成立前夕 1917年
+沙俄爆发民主革命(即十月革命，我的生日)，俄罗斯临时政府被推翻，俄罗斯末代皇帝被处决，列宁带领社会民主工党成立
+苏维埃鼎立 1922年
+俄国内战结束，苏联成立
+1924年
+列宁逝世后，斯大林上台，全面推行计划经济。
+苏联从农业国转型成工业大国，经济开始飞速发展。
+但计划经济往往缺乏市场灵活性，依赖独裁者的指挥，同时导致贪腐日渐严重。
+经济达到停滞期，加上冷战加剧，军费增加，GDP下降。
+1985年
+戈尔巴乔夫上台
+他推行激进的政治改革经济：重组和开放，经济更自由政府更透明。
+但，深深习惯了计划经济的苏联，让改革者戈尔巴乔夫的自由经济路子失败，苏联经济持续下滑。
+1991年，戈尔巴乔夫辞职，苏联解体。俄罗斯联邦成立。
+俄罗斯联邦 1991年
+俄罗斯第一任总统叶利钦上台，推崇新自由主义经济（即华盛顿共识）。 戈尔巴乔夫
+对于计划经济根植于俄罗斯的情况，叶利钦政府决定采取一个激进的经济政策：完全放手让市场操控，后来的人称之为休克疗法。
+但，俄罗斯承受不住，经济崩了，高失业率，高通胀等等。
+其中一项政策“国企私有化”，给俄罗斯来一个严重的后果。私有化将这些财富的大部分转移到少数人手中，使他们变得非常富有。寡头财富的迅速积累，由于国内通胀高，这些巨额资本流入了国外。
+再加上叶利钦为了保住皇位，拉拢寡头，让寡头的财富进一步增加。寡头操控经济的局面逐渐形成，遏止了竞争和创新，增加腐败黑帮，贫富差距剧增。
+大多数企业无法不支付某种形式的黑手党保护措施而无法正常运作，黑手党被非正式地称为&amp;quot;krysha&amp;quot;（俄语为&amp;quot;roof&amp;quot;一词）。
+经历大大小小的战争和金融危机后，俄罗斯经济一落千丈。
+千禧年前一天，叶利钦辞职。
+1999年 普金上台后，俄罗斯经济奇迹般地以5%的增速增长，失业率降低，GDP翻倍。
+这原因，并不是普金有什么魔法，GDP依靠出口能源的俄罗斯，碰上2000年初能源价格飞涨的黄金时代。油价增加，俄罗斯GDP势必跟涨。 但俄罗斯没有把握好油价高峰时期的优势，及时摆脱能源依赖和寡头对经济的控制，政府甚至慢慢开始回收私有化的企业。
+在以各种手段除掉/控制不听话的老寡头的同时，普金又树立了一些听话的新寡头，例如切尔西的前老板阿布。
+阿布拉莫维奇
+普金时期的新寡头
+虽然经济在发展，但俄罗斯经济高度依赖能源，这导致08年金融危机和油价暴跌的一体两面，严重挫败了俄罗斯经济。
+此后油价慢慢爬升，14年又暴跌。
+俄罗斯因为对克里米亚的战争遭到西方国家制裁，经济受到影响。
+几年后油价爬升，2020受到疫情以及之后乌俄战争的影响，再次收到西方制裁。
+总结   俄罗斯经济和能源高度相关，屁股底下有世界储量第一的天然气和大量能量
+  叶利钦时代的寡头，形成裙带资本主义，导致俄罗斯腐败，贫富差距非常大
+  油价波动，地缘政治，战争，遭到制裁
+   参考 小Lin说 - 20分钟详解 - 俄罗斯经济到底是怎么回事儿？</description>
+    </item>
+    
+    <item>
+      <title>JavaScript ES6 Module 模块导入/导出</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-es-module/</link>
+      <pubDate>Mon, 04 Jul 2022 17:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-es-module/</guid>
+      <description>貌似在18年，原生JavaScript终于实现了自带模块的导出导入功能。
+它有什么用呢？
+比如我上一个demo，需要一个将两个对象深层合并的方法。
+我可以选择直接写在组件里，但更直观的方法是把方法封装在 ./src/components/megreObj.js 中，更易于查看。
+组件内如何调用另一个文件里的方法呢？
+Module Export/Import come to rescue!
+应用模块到你的 HTML 首先，你需要把 type=&amp;quot;module&amp;quot;放到 &amp;lt;script&amp;gt;标签中，来声明这个脚本是一个模块，不然HTML是不会渲染的，还会报错：
+&amp;lt;script type=&amp;#34;module&amp;#34; src=&amp;#34;main.js&amp;#34;&amp;gt;&amp;lt;/script&amp;gt; Export export有两种方式:
+ export default  每个模块只能有一个默认导出 引入时不需要 { } 包裹   export  可以有多个 引入时需要 { } 包裹    例子：
+// 默认导出 export default class user { constructor(name, age) { this.name = name; this.age = age } } // 普通导出 export function printName(user) { console.log(`username is ${user.</description>
+    </item>
+    
+    <item>
+      <title>用简单的方式理解JavaScript Promise</title>
+      <link>http://blog.nekolas.cafe/posts/tech/javascript/js-promise/</link>
+      <pubDate>Sun, 03 Jul 2022 13:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-promise/</guid>
+      <description>众所周知，在JavaScript的世界中，代码是单线程执行的。
+这样设计的后果是容易阻塞随后的脚本运行。
+下面的例子中，要等待doNotDoThis()打印完0 ~ 100000，才能接着打印console.log(&#39;Second log&#39;)，
+function doNotDoThis() { for (let i = 0; i &amp;lt; 100000; i++) { console.log(i); } } // 立即打印 console.log(&amp;#39;First log&amp;#39;) // Don&amp;#39;t do this. doNotDoThis(); // 然后立即打印 console.log(&amp;#39;Second log&amp;#39;) 只要我们网络冲浪，访问不同的网址，就需要向各个服务器发送HTTP请求，然后等待返回数据。
+但是呢，服务器不可能立即返回数据到客户端。
+但如果按照单线程的运行方式，服务器返回数据之前，浏览器会处于一种卡死状态，这会让我们冲浪的体验极差。
+于是就有了一些解决方案。
+异步请求1.0 ———— 古早的Callback 我们可以给处理函数传递一个回调函数来处理回调结果。
+我们常见的定时器setTimeout()就是回调函数：
+const callball = () =&amp;gt; { console.log(&amp;#34;I&amp;#39;m a callback.&amp;#34;) } function isCallback() { setTimeout(callback, 2000) } isCallback() //2秒后打印： I&amp;#39;m a callback. 但要是回调函数非常复杂，嵌套好几个回调函数，就会造成回调地狱
+// a函数执行b，b函数执行c，c函数打印最终结果 a(function (resultA) { b(resultA, function (resultB) { caches(resultB, function (resultC) { console.</description>
+    </item>
+    
+    <item>
       <title>如何浅合并一下 JavaScript 对象（其实希望深拷贝）</title>
       <link>http://blog.nekolas.cafe/posts/tech/javascript/js-object-merge/</link>
       <pubDate>Thu, 23 Jun 2022 15:00:00 +0800</pubDate>
@@ -813,6 +897,16 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
 Mac  使用 Homebrew安装：
 brew install hugo 使用 MacPorts 安装：
 port install hugo Windows  使用 Chocolatey 安装：</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://blog.nekolas.cafe/posts/life/what-stops-you/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/life/what-stops-you/</guid>
+      <description>what stops you 是一篇自省的文章，她关于睡眠，关于想法，关于我，关于风火雷电……
+what stops you from Sleeping Earlier? 就最近一年来看，（夜晚）睡觉的时间大概是</description>
     </item>
     
     <item>

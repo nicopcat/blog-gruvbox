@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>JavaScript ES6 Module 模块导入/导出 | nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="Cat that codes.">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link href="//www.jsdelivr.com/package/npm/source-code-pro" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nic Tian</a></h1>
+      <p>Cat that codes.</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
+    
+
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/js-es-module/">JavaScript ES6 Module 模块导入/导出</a></h1>
+    <time datetime="2022-07-04 17:00:00 &#43;0800 CST">2022-07-04</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/javascript">javascript</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/javascript/js-es-module">js-es-module</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+  </header>
+
+  <div class="body">
+    <p>貌似在18年，原生JavaScript终于实现了自带模块的导出导入功能。</p>
+<p>它有什么用呢？</p>
+<p>比如我上一个demo，需要一个将两个对象深层合并的方法。</p>
+<p>我可以选择直接写在组件里，但更直观的方法是把方法封装在 <code>./src/components/megreObj.js</code> 中，更易于查看。</p>
+<p>组件内如何调用另一个文件里的方法呢？</p>
+<p><strong>Module Export/Import come to rescue!</strong></p>
+<h1 id="应用模块到你的-html">应用模块到你的 HTML</h1>
+<p>首先，你需要把 <code>type=&quot;module&quot;</code>放到 <code>&lt;script&gt;</code>标签中，来声明这个脚本是一个模块，不然HTML是不会渲染的，还会报错：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">type</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;module&#34;</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;main.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h1 id="export">Export</h1>
+<p>export有两种方式:</p>
+<ol>
+<li><code>export default</code>
+<ul>
+<li>每个模块只能有<strong>一个</strong>默认导出</li>
+<li>引入时不需要 <code>{ }</code> 包裹</li>
+</ul>
+</li>
+<li><code>export</code>
+<ul>
+<li>可以有多个</li>
+<li>引入时<strong>需要</strong> <code>{ }</code> 包裹</li>
+</ul>
+</li>
+</ol>
+<p>例子：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// 默认导出
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">user</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span>
+    }
+}
+
+<span style="color:#75715e">// 普通导出
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printName</span>(<span style="color:#a6e22e">user</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`username is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printAge</span>(<span style="color:#a6e22e">user</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`user age is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+</code></pre></div><p>或者集合起来export:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">user</span> {
+    <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">name</span>, <span style="color:#a6e22e">age</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">name</span>;
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">age</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">age</span>
+    }
+}
+
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printName</span>(<span style="color:#a6e22e">user</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`username is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">name</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">printAge</span>(<span style="color:#a6e22e">user</span>) {
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">`user age is </span><span style="color:#e6db74">${</span><span style="color:#a6e22e">user</span>.<span style="color:#a6e22e">age</span><span style="color:#e6db74">}</span><span style="color:#e6db74">`</span>);
+}
+<span style="color:#66d9ef">function</span> <span style="color:#a6e22e">addUp</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">b</span>;
+}
+
+<span style="color:#75715e">// 把普通导出集合在一起导出
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">export</span> { <span style="color:#a6e22e">printName</span>, <span style="color:#a6e22e">printAge</span>, <span style="color:#a6e22e">addUp</span> }
+</code></pre></div><h1 id="import">Import</h1>
+<p>根据因为有两种export方式，必然有两种Import的方式：</p>
+<ol>
+<li>对于 <code>export default</code>: 直接import</li>
+<li>对于 <code>export</code>: 包裹在<code>{ }</code>中</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#75715e">// User为默认导出，其余为普通导出
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">User</span>, { <span style="color:#a6e22e">printName</span>, <span style="color:#a6e22e">printAge</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./test.js&#39;</span>
+</code></pre></div><p>或使用</p>
+<p>这样就引入成功了</p>
+<h2 id="重命名">重命名</h2>
+<p>如果我们用相同的名字导入不同的函数到顶级模块文件中，我们会收到冲突和错误。</p>
+<p>所以需要给导入的模块进行重命名。</p>
+<p>导入时，除了引用原来的名字，也可以按需重命名，用到了<code>as</code>语法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">U</span>, { <span style="color:#a6e22e">printName</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">pname</span>, <span style="color:#a6e22e">printAge</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">page</span>, <span style="color:#a6e22e">addUp</span> } <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./test.js&#39;</span>
+</code></pre></div><h2 id="创建模块对象"><strong>创建模块对象</strong></h2>
+<p>上面的方法工作的挺好，但是有一点点混乱、亢长。一个更好的解决方是，导入每一个模块功能到一个模块功能对象上。可以使用以下语法形式：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">import</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">as</span> <span style="color:#a6e22e">Module</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;/modules/test.js&#39;</span>;
+</code></pre></div><p>这里从test.js中导入了所有模块，并把它们当作对象使用，如</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#a6e22e">Module</span>.<span style="color:#a6e22e">function1</span>()
+<span style="color:#a6e22e">Module</span>.<span style="color:#a6e22e">function2</span>()
+<span style="color:#a6e22e">etc</span>.
+</code></pre></div><p>但该方法不适用于export default</p>
+<h1 id="兼容性">兼容性</h1>
+<ol>
+<li>module大概只兼容85%的浏览器，可以用babel转换成ES5版本。</li>
+<li>对不支持ES Module的浏览器，可以在index.html文件中添加一个 <code>nomodule</code>的属性，来告知浏览器不需要尝试加载module相关的功能，并放置一个pollyfill script保持兼容性。</li>
+</ol>
+<hr>
+<h1 id="参考">参考</h1>
+<ol>
+<li>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Modules">MDN - JavaScript 模块</a></p>
+</li>
+<li>
+<p><a href="https://www.youtube.com/watch?v=cRHQNNcYf6s">WDS - JavaScript ES6 Modules</a></p>
+</li>
+</ol>
+
+  </div>
+  
+  <footer>
+    
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+  </footer>
+  
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/javascript/">JavaScript</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/es6/">ES6</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/module/">Module</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/import/">import</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/export/">export</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/tech/javascript/js-promise/">
+      <time datetime="2022-07-03 13:00:00 &#43;0800 CST">2022-07-03 &raquo; </time>
+      用简单的方式理解JavaScript Promise
+    </a>
+  
+  </div>
+  <div class="left">
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">~/gallery</a></li>
+    
+      <li><a href="/bb">~/bb</a></li>
+    
+
+    
+      <li><a href="/tags">~/tags</a></li>
+    
+      <li><a href="/posts">~/posts</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>
