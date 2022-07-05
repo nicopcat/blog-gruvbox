@@ -7,6 +7,8 @@ disqusShortname = "nekolas-blog"
 
 [params]
 author = { name = "Nekolas Tian" }
+buildDrafts = true
+buildFuture = true
 description = "Cat who codes."
 keywords = [
   "web dev",
@@ -20,7 +22,7 @@ titlePrefix = ""
 titleSuffix = " | nekolas.cafe"
 dateFormat = "2006-01-02"
 menuItemPrefix = "~/"
-postTruncateLength = 160
+postTruncateLength = 180
 hideGopher = false
 disqusAutoLoad = false
 disqusAutoLoadCount = true
