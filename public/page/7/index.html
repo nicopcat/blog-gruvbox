@@ -12,7 +12,7 @@
   
 
   
-  <meta name="description" content="Cat that codes.">
+  <meta name="description" content="Cat who codes.">
   
 
   <meta name="generator" content="Hugo 0.89.4" />
@@ -33,7 +33,7 @@
   </script>
 
 
-  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
+  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nekolas" />
   <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
@@ -43,8 +43,8 @@
 <body>
   <header>
     <div class="left logo">
-      <h1><a href="/">Nic Tian</a></h1>
-      <p>Cat that codes.</p>
+      <h1><a href="/">Nekolas</a></h1>
+      <p>Cat who codes.</p>
     </div>
 
     
@@ -91,6 +91,25 @@
 
 <article>
   <header>
+    <h1><a href="/posts/tech/vue/vue-warn-emits/">Vue 3 | emits 警告</a></h1>
+    <time datetime="2022-01-30 15:17:19 &#43;0800 CST">2022-01-30</time>
+  </header>
+  <div class="body">
+    <p>用 $emits 写组件通信的时候报错了：</p>
+<blockquote>
+<p>[Vue warn]: Extraneous non-emits event listeners (del) were passed to component but could not be automatically inherited because component renders fragment…</p></blockquote>
+  </div>
+  <footer>
+    <a href="/posts/tech/vue/vue-warn-emits/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-warn-emits/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
     <h1><a href="/posts/tech/vue/vue-weather-app/">用 Vue 写一个天气 Web App</a></h1>
     <time datetime="2022-01-27 13:55:19 &#43;0800 CST">2022-01-27</time>
   </header>
@@ -118,7 +137,7 @@
     <p>无意中刷到 <a href="https://www.sohu.com/a/516275165_313745">一个印尼小哥在 NFT 平台天价售出自己 900 多张自拍照</a> 的新闻，跟啊汪开玩笑说，把你的画儿放到上面说不定也能卖个好价钱喔。</p>
 <p>开玩笑归开玩笑，我觉得可以去看看那边在卖点什么，顺便也随便挂点东西 <del>，卖个好价钱然后躺平</del>。</p>
 <h2 id="nft-是啥">NFT 是啥？</h2>
-<p>NFT 已经不是什么新鲜事，原文叫 <strong>Non-Fungible…</strong></p>
+<p>NFT 已经不是什么新鲜事，原文叫 <strong>Non-Fungible Token</strong>，中文叫“非同质化代币”，可以称之为一…</p>
   </div>
   <footer>
     <a href="/posts/life/my-first-nft-list/">Read More&hellip; &raquo;</a>
@@ -138,7 +157,8 @@
     <p>J 小将生日之前，我们决定去以前经常去的一家日料小店“庆祝”
 <del>大概是真的很喜欢吃东西二人组</del></p>
 <p>早上还闹了一点矛盾，引发矛盾的事情（关于洗衣机）说出来一定会让人觉得好笑，对不起。宝贝，请原谅我。😟</p>
-<p>下午缓和后，又各自干活。早上吃的米皇饺+生滚靓（皮蛋）粥美味但不太管饱。感恩的是，她妈妈和丽娜贴心地专门跑来给我们送炸鸡腿，瞬…</p>
+<p>下午缓和后，又各自干活。早上吃的米皇饺+生滚靓（皮蛋）粥美味但不太管饱。感恩的是，她妈妈和丽娜贴心地专门跑来给我们送炸鸡腿，瞬间吃上了幸福的下午茶。
+3 点半，饮茶…</p>
   </div>
   <footer>
     <a href="/posts/life/jane-bday-2022/">Read More&hellip; &raquo;</a>
@@ -165,7 +185,7 @@
 <img src="https://i.loli.net/2021/11/23/vS8wIAzhW1tyGs5.png" width = "400" alt="freenom" />
 </li>
 <li>
-<p>但这个网站有个小 bug，直接点 <code>get it now</code> 会显示 <code>Not available</code>。此时，你需…</p></li></ul>
+<p>但这个网站有个小 bug，直接点 <code>get it now</code> 会显示 <code>Not available</code>。此时，你需要复制整个域名，…</p></li></ul>
   </div>
   <footer>
     <a href="/posts/hugo/hugo-custom-domain/">Read More&hellip; &raquo;</a>
@@ -188,32 +208,13 @@
 </a></p>
 <h2 id="流程">流程</h2>
 <ol>
-<li>首先需要把源码发布到你的 Github 仓库，步骤参考下文 <a href="#%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E5%88%B0github-pages">如何部署到github-pages</a> 👇…</li></ol>
+<li>首先需要把源码发布到你的 Github 仓库，步骤参考下文 <a href="#%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E5%88%B0github-pages">如何部署到github-pages</a> 👇</li>
+<li>进入 <a href="https://www.netlify.com/">Netlify</a>，注册，创建新项目，选择 <code>Add…</code></li></ol>
   </div>
   <footer>
     <a href="/posts/hugo/hugo-githubpages/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/life/chrismas-2021/">Chrismas 2021</a></h1>
-    <time datetime="2021-12-27 01:15:21 &#43;0800 CST">2021-12-27</time>
-  </header>
-  <div class="body">
-    <h2 id="呕吐大礼包">呕吐大礼包</h2>
-<p>圣诞那天一早，咩咩就给我俩带来一份大礼：一摊呕吐物 🤮</p>
-<p>我当时睡得迷迷糊糊，听见汪汪的呼喊，我才意识到这原来是真的。朦胧的眼睛睁开一开，看到黄色的一大坨呕吐物，正软趴趴地呆在汪汪枕头左边。我们急忙扯了纸巾把它弄走，味道酸臭，把汪汪逼到干呕，她后来回忆说，那玩意儿捧在手上，软乎乎的，还挺热乎 😂</p>
-<h2 id="pizza-hut">Pizza…</h2>
-  </div>
-  <footer>
-    <a href="/posts/life/chrismas-2021/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/chrismas-2021/">0 Comments</span>
 
 
   </footer>
@@ -249,7 +250,7 @@
 
   
   <footer>
-    <a class="rss" href="http://blog.nekolas.cafe/index.xml" title="Subscribe to the RSS feed for Nic Tian">rss</a>
+    <a class="rss" href="http://blog.nekolas.cafe/index.xml" title="Subscribe to the RSS feed for Nekolas">rss</a>
    
       <span class="gopher" title="Proudly powered by Go!"></span>
     
@@ -291,7 +292,7 @@
 
 
 
-    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+    <p>&copy; 2022 <a href="">Nekolas</a></p>
   </footer>
   
   <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"

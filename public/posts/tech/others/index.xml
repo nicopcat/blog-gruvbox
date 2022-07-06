@@ -1,12 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>tech posts🗒️ on Nic Tian</title>
+    <title>tech posts🗒️ on Nekolas</title>
     <link>http://blog.nekolas.cafe/posts/tech/others/</link>
-    <description>Recent content in tech posts🗒️ on Nic Tian</description>
+    <description>Recent content in tech posts🗒️ on Nekolas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 18 Jun 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/others/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/tech/others/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2分钟：创建一个简易Node.js服务器</title>
+      <link>http://blog.nekolas.cafe/posts/tech/others/build-a-simple-node-js-server/</link>
+      <pubDate>Wed, 06 Jul 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/others/build-a-simple-node-js-server/</guid>
+      <description>首先，下载 Node，输入node -v 查看当前Node版本。
+然后创建一个 server.js 文件。
+下面使用node.js自带http module创建服务器
+// 使用require函数导入http，返回一个http object 储存到变量 const http = require(&amp;#39;http&amp;#39;); // 使用 createServer函数创建服务器 返回server object const server = http.createServer((request, response) =&amp;gt; { // request 可以获得前端发来的请求信息，如POST,请求头等  // response 给前端发送的信息  // 如response.end()给前端发送信息  // response.header()设置头部信息  // 这次只是简单地返回一句话 证明运行成功！  response.end(&amp;#39;wow You are running node.js&amp;#39;) }); // 监听来自前端的请求 使用server object里的listen()函数 // 三个参数：port，ip，callback const port = 3000; // 可自行定义 const ip = &amp;#39;127.0.0.1&amp;#39; // 本机ip  // 定义请求监听器（一个函数） server.</description>
+    </item>
+    
     <item>
       <title>git 拉取远程分支到本地的方法</title>
       <link>http://blog.nekolas.cafe/posts/tech/others/git-remote-branch/</link>
@@ -114,15 +126,6 @@ Github 地址：LearnGitBranching
 例如，在 1 秒内将一个物体的 X 坐标从 0 改变到 1000，并使其迅速向右移动。将不透明度从 1 到 0 渐变，使一个元素淡出。作为一个动画师，你的任务是决定改变哪些属性，多快，以及运动的风格（即缓动&amp;ndash;我们后面会讲到）。
 DOM, SVG, &amp;lt;canvas&amp;gt; 以及其他 GSAP 并没有预定义它可以处理哪些属性。它超级灵活，几乎可以适应你扔给它的任何东西。GSAP 可以对以下所有内容进行动画处理：
  CSS: 2D and 3D transforms, colors, width, opacity, border-radius, margin, and 几乎所有的 CSS 属性 SVG 属性: viewBox, width, height, fill, stroke, cx, r, opacity, etc. 像 MorphSVG 和 DrawSVG 这样的插件可以用于高级效果 任何数值 例如，一个被渲染到&amp;lt;canvas&amp;gt;的对象。对三维场景中的相机位置进行动画处理，或对数值进行过滤。GSAP 经常与 Three.js 和 Pixi.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://blog.nekolas.cafe/posts/tech/others/knowing-sassscss-less/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/posts/tech/others/knowing-sassscss-less/</guid>
-      <description>sass(scss)和less都是css预编译器，</description>
     </item>
     
   </channel>

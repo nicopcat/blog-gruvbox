@@ -1,7 +1,7 @@
 ---
-title: "NodeJS GET请求(Part 1)"
+title: "Node.JS GET 请求"
 date: 2022-07-06T02:00:00+08:00
-# publishDate: 2022-07-07T18:00:00+08:00
+publishDate: 2022-07-07T18:00:00+08:00
 tags: ["Node.js","intro","GET"]
 draft: false
 showToc: false
@@ -141,3 +141,6 @@ if (url === '/' || url === `/index.html`) {
       sendResponse(`404${selector}.html`, 404, response)
     }
 ```
+---
+# 参考
+1. [WenXuanDecode - NodeJS GET请求 入门教学](https://www.youtube.com/watch?v=gOPS_1jgaR4&list=PL50akgsaBZlF9DADkYuQZLQBDLHZHZ-9N&index=3)

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hugo // 建站相关 on Nic Tian</title>
+    <title>Hugo // 建站相关 on Nekolas</title>
     <link>http://blog.nekolas.cafe/posts/hugo/</link>
-    <description>Recent content in Hugo // 建站相关 on Nic Tian</description>
+    <description>Recent content in Hugo // 建站相关 on Nekolas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 20 Jan 2022 22:13:01 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/posts/hugo/index.xml" rel="self" type="application/rss+xml" />

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on Nekolas</title>
+    <link>http://blog.nekolas.cafe/tags/node.js/</link>
+    <description>Recent content in Node.js on Nekolas</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 06 Jul 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2分钟：创建一个简易Node.js服务器</title>
+      <link>http://blog.nekolas.cafe/posts/tech/others/build-a-simple-node-js-server/</link>
+      <pubDate>Wed, 06 Jul 2022 01:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/others/build-a-simple-node-js-server/</guid>
+      <description>首先，下载 Node，输入node -v 查看当前Node版本。
+然后创建一个 server.js 文件。
+下面使用node.js自带http module创建服务器
+// 使用require函数导入http，返回一个http object 储存到变量 const http = require(&amp;#39;http&amp;#39;); // 使用 createServer函数创建服务器 返回server object const server = http.createServer((request, response) =&amp;gt; { // request 可以获得前端发来的请求信息，如POST,请求头等  // response 给前端发送的信息  // 如response.end()给前端发送信息  // response.header()设置头部信息  // 这次只是简单地返回一句话 证明运行成功！  response.end(&amp;#39;wow You are running node.js&amp;#39;) }); // 监听来自前端的请求 使用server object里的listen()函数 // 三个参数：port，ip，callback const port = 3000; // 可自行定义 const ip = &amp;#39;127.0.0.1&amp;#39; // 本机ip  // 定义请求监听器（一个函数） server.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog on Nic Tian</title>
+    <title>Blog on Nekolas</title>
     <link>http://blog.nekolas.cafe/tags/blog/</link>
-    <description>Recent content in Blog on Nic Tian</description>
+    <description>Recent content in Blog on Nekolas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 20 Nov 2021 17:23:01 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/blog/index.xml" rel="self" type="application/rss+xml" />

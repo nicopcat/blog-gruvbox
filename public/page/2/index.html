@@ -12,7 +12,7 @@
   
 
   
-  <meta name="description" content="Cat that codes.">
+  <meta name="description" content="Cat who codes.">
   
 
   <meta name="generator" content="Hugo 0.89.4" />
@@ -33,7 +33,7 @@
   </script>
 
 
-  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nic Tian" />
+  <link rel="alternate" type="application/rss+xml" href="http://blog.nekolas.cafe/index.xml" title="Nekolas" />
   <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
@@ -43,8 +43,8 @@
 <body>
   <header>
     <div class="left logo">
-      <h1><a href="/">Nic Tian</a></h1>
-      <p>Cat that codes.</p>
+      <h1><a href="/">Nekolas</a></h1>
+      <p>Cat who codes.</p>
     </div>
 
     
@@ -91,6 +91,28 @@
 
 <article>
   <header>
+    <h1><a href="/posts/tech/vue/vue-slot/">重新复习 Vue slot：插槽</a></h1>
+    <time datetime="2022-06-10 00:15:00 &#43;0800 CST">2022-06-10</time>
+  </header>
+  <div class="body">
+    <p>可以看作是一个占位符，将某些内容从某个组件传入某个出口，出口写作<code>&lt;slot&gt;&lt;/slot&gt;</code>。</p>
+<h1 id="非具名插槽">非具名插槽</h1>
+<p>最基本的插槽，作用是占位符。</p>
+<p>有一个<code>&lt;NavLink /&gt;</code>的组件，其中的内容可以通过插槽分发出去：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-HTML" data-lang="HTML">&lt;<span style="color:#f92672">nav-link</span> <span style="color:#a6e22e">url</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/profile&#34;</span>&gt;
+  Your Profile…</code></pre></div>
+  </div>
+  <footer>
+    <a href="/posts/tech/vue/vue-slot/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/vue/vue-slot/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
     <h1><a href="/posts/hugo/bber-not-displaying-xx-ago/">「哔哔点啥」取消显示&#39;一周前&#39;,&#39;一小时前&#39;</a></h1>
     <time datetime="2022-06-03 19:00:00 &#43;0800 CST">2022-06-03</time>
   </header>
@@ -100,7 +122,9 @@
 <p>去掉“周前”，”月前“这些时间点：</p>
 <ol>
 <li>找到<code>ispeak-bber-md.min.js</code> or <code>ispeak-bber.min.js</code></li>
-<li>复制下面这段代码，查找，…</li></ol>
+<li>复制下面这段代码，查找，然后删掉它们</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">l</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">1…</span></code></pre></div>
   </div>
   <footer>
     <a href="/posts/hugo/bber-not-displaying-xx-ago/">Read More&hellip; &raquo;</a>
@@ -135,7 +159,9 @@
 只唱情歌，看不到坦克</mark></p>
 <p>在科学和啤酒都不能<br>
 安抚的夜晚<br>
-他们丢失…</p>
+他们丢失了四季<br>
+惶惑之行开始 <br>
+在这颗行星所有的…</p>
   </div>
   <footer>
     <a href="/posts/book-music-movie/throughout-the-drinkeries-of-this-plane/">Read More&hellip; &raquo;</a>
@@ -156,7 +182,7 @@
 <h1 id="before-outing">before outing</h1>
 <p>原因之一是，我写erp-demo的时候，有点卡壳，给Vue顺毛的战线拉得太长，导致我忘记了前面的内容。</p>
 <p>hmm..  <code>slot-scope</code>? 啊，已废除，换成 <code>v-slot</code>，我记得我以前用过，但是怎么用来着？</p>
-<p>或许是我看文档水平太菜，…</p>
+<p>或许是我看文档水平太菜，我越看越觉得 Vue 整个玩意儿啰嗦且复杂。是，文档语调…</p>
   </div>
   <footer>
     <a href="/posts/life/just-one-of-those-down-days/">Read More&hellip; &raquo;</a>
@@ -174,7 +200,7 @@
   </header>
   <div class="body">
     <p>众所周知，图床是一个非常方便的玩意：在图床网站上传本地图片，它就给你生成一个地址，访问这个地址你就能获得图片。但是免费的图床非常不稳定，讲不定下一次访问的时候图就挂了。偶然间知道腾讯云有<a href="https://cloud.tencent.com/act/event/cos-novice">对象存储（Cloud Object Storage，COS）</a>，可以放一些静态数据，结合 Picgo 便得到一个非常便捷的图床。</p>
-<p>经过几…</p>
+<p>经过几个月的使用，我依然对 COS 服务的收费…</p>
   </div>
   <footer>
     <a href="/posts/tech/others/tencent-cloud-cos-and-cdn/">Read More&hellip; &raquo;</a>
@@ -197,32 +223,13 @@
 <blockquote>
 <p>Complete the solution so that the function will break up camel casing, using a space between words.</p>
 </blockquote>
-<p><strong>Example…</strong></p>
+<p><strong>Example</strong></p>
+<pre tabindex="0"><code>&quot;camelCasing&quot;  =&gt;…</code></pre>
   </div>
   <footer>
     <a href="/posts/tech/javascript/codewars/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/codewars/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/posts/tech/javascript/my-miserable-leetcode/">力扣 oh Leetcode</a></h1>
-    <time datetime="2022-05-18 11:00:00 &#43;0800 CST">2022-05-18</time>
-  </header>
-  <div class="body">
-    <p>作为一个准前端开发者，我天真地以为不用看力扣，<del>你只是个切图仔</del>。但感受到各方各界的暗示：你得看，你得看看。</p>
-<p>好吧，其实是快要机考了。</p>
-<p>从网上搜的机考真题来看，貌似是3道算法题，难度也许在力扣简单-中等之间。对于一个月前才知道 codewars 这个可爱网站的我来说，不啻晴天霹雳，于是我跑到力扣大概看了几道简单的题目。</p>
-<p>第…</p>
-  </div>
-  <footer>
-    <a href="/posts/tech/javascript/my-miserable-leetcode/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/my-miserable-leetcode/">0 Comments</span>
 
 
   </footer>
@@ -258,7 +265,7 @@
 
   
   <footer>
-    <a class="rss" href="http://blog.nekolas.cafe/index.xml" title="Subscribe to the RSS feed for Nic Tian">rss</a>
+    <a class="rss" href="http://blog.nekolas.cafe/index.xml" title="Subscribe to the RSS feed for Nekolas">rss</a>
    
       <span class="gopher" title="Proudly powered by Go!"></span>
     
@@ -300,7 +307,7 @@
 
 
 
-    <p>&copy; 2022 <a href="">Nic Tian</a></p>
+    <p>&copy; 2022 <a href="">Nekolas</a></p>
   </footer>
   
   <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"

@@ -39,3 +39,7 @@ server.listen(port, ip, () => {
 ```
 
 和前端不一样的是，node.js 服务器不会热重载，更新完需要重新运行服务器。
+
+--- 
+# 参考
+1. [WenXuanDecode - Create 1st NodeJS Module](https://www.youtube.com/watch?v=7HCrawdnTuw&list=PL50akgsaBZlF9DADkYuQZLQBDLHZHZ-9N&index=7)
