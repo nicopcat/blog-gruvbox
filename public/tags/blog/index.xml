@@ -13,21 +13,25 @@
       <pubDate>Sat, 20 Nov 2021 17:23:01 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/hugo/hugo-site/</guid>
-      <description>1. Why Hugo? 之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。
-于是我把目光投向了Hexo, Wordpress, Jekyll, Hugo等平台，无意间发现 Hugo 的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。
+      <description>Why Hugo? 之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。
+于是我把目光投向了Hexo, Wordpress, Jekyll等平台，无意间发现Hugo的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。
  Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
  官方文档：👇
   Hugo: The world’s fastest framework for building websites
   Hugo中文文档
   时代在朝着短视频和更快更短的内容 feed 疯狂前进。时代越快我越慢（慢慢鼓捣文字），大概算是一种 old fashion 式的对抗？
-2. Hugo的安装和配置 Hugo-Quick Start 有详细的教程，这里简单整理一下：
-2.1 Install 安装 三种安装方法任君挑选~
- 二进制安装  到 Hugo Releases 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）
-注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
+Hugo的安装和配置 Hugo-Quick Start 有详细的教程，这里简单整理一下：
+Install 安装 三种安装方法任君挑选~
+ 第一种：下载二进制安装包  到 Hugo Releases 下载对应的操作系统版本的Hugo二进制安装包。
+注意⚠️：因为hugo.exe并不是点开就好的安装包，下载运行之后还需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
-Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+第二种：命令行  Mac
+使用 Homebrew安装：
+brew install hugo Windows
+使用 Chocolatey 安装：
+choco install hugo -confirm 下载完成后，在终端输入hugo version查看版本号。
+此时，目录下会有一个名为 Hugo 的文件夹。
+Create a New Site 生成站点 你可以通过指令快速生成一个站点：</description>
     </item>
     
   </channel>

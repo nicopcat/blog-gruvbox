@@ -110,7 +110,8 @@ const callball = () =&amp;gt; { console.log(&amp;#34;I&amp;#39;m a callback.&amp
       <pubDate>Thu, 23 Jun 2022 15:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/tech/javascript/js-object-merge/</guid>
-      <description>由于业务需求，本人需要将两个对象进行合并。 对象层级较浅的情况，可以使用 ES6 ...语法，解构赋值，或 Object.assign() 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 _.merge() 或 jQuery 的 $.extend() 方法，要么自己封装一个函数。
+      <description>由于业务需求，本人需要将两个对象进行合并。 浅合并 对象层级较浅的情况，可以使用 ES6 ...语法，解构赋值，或Object.assign()快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 _.merge() 或 jQuery 的 $.extend() 方法，要么自己封装一个函数。
+说聊聊几个做浅拷贝的方法。
 ... 拷贝对象属性 使用扩展运算符 {...obj} 克隆或者拷贝对象的属性：
 const obj1 = { name: &amp;#34;Nic&amp;#34; } const clonedObj = { ...obj1 } console.log(clonedObj) // { name: &amp;#34;Nic&amp;#34; } ... 合并对象 使用扩展运算符 {...obj} 合并两个对象，可以看到，扩展运算符内部的同名属性会被覆盖掉：
 const obj1 = { a: 1 } const obj2 = { a: 2, b: 3 } const obj3 = { a: 3, b: 4, c: 5 } const obj = { .</description>
@@ -757,7 +758,7 @@ Create   点击右上方的 Create 按钮，上传你的作品，添加名字、
       
       <guid>http://blog.nekolas.cafe/posts/hugo/hugo-custom-domain/</guid>
       <description>你可以在网上买域名，也可以使用免费域名。
-下面的文章将介绍如何在免费域名网站 freenom 购买并更换为 blog 域名。
+下面的文章将介绍如何白嫖一个免费域名网站 freenom并更换为 blog 域名。
 1. 购买免费域名   进到 freenom 官网，注册一下，选择其中一个结账
   但这个网站有个小 bug，直接点 get it now 会显示 Not available。此时，你需要复制整个域名，比如 hugo666.tk 到搜索框，再一次 Check Availibility，接着点 Checkout。
   Period 选 12 months FREE, 完成结账，全程不需要银行卡，非常友好。
@@ -769,13 +770,14 @@ Create   点击右上方的 Create 按钮，上传你的作品，添加名字、
     
     <item>
       <title>Hugo | 博客部署篇</title>
-      <link>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</link>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-deploy-your-blog/</link>
       <pubDate>Sat, 08 Jan 2022 13:55:19 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</guid>
-      <description>使用 Netlify 托管 最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-deploy-your-blog/</guid>
+      <description>首推 Vercel 部署 (2022年3月) 流程和 Netlify差不多，但访问速度更快~
+次推 Netlify 部署 (2021年末) 最近发现用 Netlify 部署静态网页对新手友好得多，推荐用它部署你的博客或各种小项目！
 可以参考我的另一篇文章 如何使用 Netlify 快速部署个人项目 
-流程  首先需要把源码发布到你的 Github 仓库，步骤参考下文 如何部署到github-pages 👇 进入 Netlify，注册，创建新项目，选择 Add new site 选择从 Import an existing project - 连接 Github - 选择刚刚创建的博客项目仓库 Basic build settings:  Build command: hugo // 部署前先运行 hugo 指令 生成新的 Public 文件 Publish directory: public // 指定 public 文件夹为部署文件   点击 Deploy site 完成部署  使用 Github Pages 托管 Github Pages 是给啥 搭建篇 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</description>
+Netlify 部署流程  首先需要把源码发布到你的 Github 仓库，步骤参考下文 如何部署到github-pages 👇 进入 Netlify，注册，创建新项目，选择 Add new site 选择从 Import an existing project - 连接 Github - 选择刚刚创建的博客项目仓库 Basic build settings:  Build command: hugo // 部署前先运行 hugo 指令 生成新的 Public 文件 Publish directory: public // 指定 public 文件夹为部署文件   点击 Deploy site 完成部署  次次推 Github Pages 部署 搭建篇 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</description>
     </item>
     
     <item>
@@ -895,21 +897,25 @@ let arr = [1, 2, 3]; let [a, b, c] = arr; console.log(a); console.log(b); consol
       <pubDate>Sat, 20 Nov 2021 17:23:01 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/posts/hugo/hugo-site/</guid>
-      <description>1. Why Hugo? 之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。
-于是我把目光投向了Hexo, Wordpress, Jekyll, Hugo等平台，无意间发现 Hugo 的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。
+      <description>Why Hugo? 之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。
+于是我把目光投向了Hexo, Wordpress, Jekyll等平台，无意间发现Hugo的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。
  Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。
  官方文档：👇
   Hugo: The world’s fastest framework for building websites
   Hugo中文文档
   时代在朝着短视频和更快更短的内容 feed 疯狂前进。时代越快我越慢（慢慢鼓捣文字），大概算是一种 old fashion 式的对抗？
-2. Hugo的安装和配置 Hugo-Quick Start 有详细的教程，这里简单整理一下：
-2.1 Install 安装 三种安装方法任君挑选~
- 二进制安装  到 Hugo Releases 下载对应的操作系统版本的Hugo二进制文件（hugo或者hugo.exe）
-注意：因为hugo.exe并不是安装包，所以下载运行之后需要把Hugo添加到环境变量中。
+Hugo的安装和配置 Hugo-Quick Start 有详细的教程，这里简单整理一下：
+Install 安装 三种安装方法任君挑选~
+ 第一种：下载二进制安装包  到 Hugo Releases 下载对应的操作系统版本的Hugo二进制安装包。
+注意⚠️：因为hugo.exe并不是点开就好的安装包，下载运行之后还需要把Hugo添加到环境变量中。
 具体步骤参考： 给J小将的写博客指南
-Mac  使用 Homebrew安装：
-brew install hugo 使用 MacPorts 安装：
-port install hugo Windows  使用 Chocolatey 安装：</description>
+第二种：命令行  Mac
+使用 Homebrew安装：
+brew install hugo Windows
+使用 Chocolatey 安装：
+choco install hugo -confirm 下载完成后，在终端输入hugo version查看版本号。
+此时，目录下会有一个名为 Hugo 的文件夹。
+Create a New Site 生成站点 你可以通过指令快速生成一个站点：</description>
     </item>
     
     <item>

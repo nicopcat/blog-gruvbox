@@ -8,9 +8,11 @@ showToc: false
 由于业务需求，本人需要将两个对象进行合并。 
 ![bussiness](https://nic-gz-1308403500.file.myqcloud.com/posts/js-object-merge-2022-06-24-14-02-37.jpg)
 
-对象层级较浅的情况，可以使用 ES6 `...`语法，解构赋值，或 `Object.assign()` 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 `_.merge()` 或 jQuery 的 `$.extend()` 方法，要么自己封装一个函数。
+# 浅合并
 
+对象层级较浅的情况，可以使用 ES6 `...`语法，解构赋值，或`Object.assign()`快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 `_.merge()` 或 jQuery 的 `$.extend()` 方法，要么自己封装一个函数。
 
+说聊聊几个做浅拷贝的方法。
 ## `...` 拷贝对象属性
 使用扩展运算符 `{...obj}` 克隆或者拷贝对象的属性：
 ```js

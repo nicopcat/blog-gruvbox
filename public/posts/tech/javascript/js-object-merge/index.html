@@ -128,7 +128,9 @@
   <div class="body">
     <p>由于业务需求，本人需要将两个对象进行合并。 
 <img src="https://nic-gz-1308403500.file.myqcloud.com/posts/js-object-merge-2022-06-24-14-02-37.jpg" alt="bussiness"></p>
-<p>对象层级较浅的情况，可以使用 ES6 <code>...</code>语法，解构赋值，或 <code>Object.assign()</code> 快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 <code>_.merge()</code> 或 jQuery 的 <code>$.extend()</code> 方法，要么自己封装一个函数。</p>
+<h1 id="浅合并">浅合并</h1>
+<p>对象层级较浅的情况，可以使用 ES6 <code>...</code>语法，解构赋值，或<code>Object.assign()</code>快速合并；但对象里有子对象嵌套时，前两招就不好使了。要么使用第三方库，如 loadash 的 <code>_.merge()</code> 或 jQuery 的 <code>$.extend()</code> 方法，要么自己封装一个函数。</p>
+<p>说聊聊几个做浅拷贝的方法。</p>
 <h2 id="-拷贝对象属性"><code>...</code> 拷贝对象属性</h2>
 <p>使用扩展运算符 <code>{...obj}</code> 克隆或者拷贝对象的属性：</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">obj1</span> <span style="color:#f92672">=</span> { <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Nic&#34;</span> }

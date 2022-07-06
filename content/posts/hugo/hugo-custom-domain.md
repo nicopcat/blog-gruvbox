@@ -7,7 +7,7 @@ tags: ["Hugo","域名"]
 ---
 
 你可以在网上买域名，也可以使用免费域名。  
-下面的文章将介绍如何在免费域名网站 [freenom](https://www.freenom.com/) 购买并更换为 blog 域名。
+下面的文章将介绍如何白嫖一个免费域名网站 [freenom](https://www.freenom.com/)并更换为 blog 域名。
 
 ### 1. 购买免费域名
 

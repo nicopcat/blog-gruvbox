@@ -47,13 +47,14 @@ ssh-keygen -t rsa - -C &amp;quot;$(git config user.email)&amp;quot;  在源码�
     
     <item>
       <title>Hugo | 博客部署篇</title>
-      <link>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</link>
+      <link>http://blog.nekolas.cafe/posts/hugo/hugo-deploy-your-blog/</link>
       <pubDate>Sat, 08 Jan 2022 13:55:19 +0800</pubDate>
       
-      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-githubpages/</guid>
-      <description>使用 Netlify 托管 最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！
+      <guid>http://blog.nekolas.cafe/posts/hugo/hugo-deploy-your-blog/</guid>
+      <description>首推 Vercel 部署 (2022年3月) 流程和 Netlify差不多，但访问速度更快~
+次推 Netlify 部署 (2021年末) 最近发现用 Netlify 部署静态网页对新手友好得多，推荐用它部署你的博客或各种小项目！
 可以参考我的另一篇文章 如何使用 Netlify 快速部署个人项目 
-流程  首先需要把源码发布到你的 Github 仓库，步骤参考下文 如何部署到github-pages 👇 进入 Netlify，注册，创建新项目，选择 Add new site 选择从 Import an existing project - 连接 Github - 选择刚刚创建的博客项目仓库 Basic build settings:  Build command: hugo // 部署前先运行 hugo 指令 生成新的 Public 文件 Publish directory: public // 指定 public 文件夹为部署文件   点击 Deploy site 完成部署  使用 Github Pages 托管 Github Pages 是给啥 搭建篇 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</description>
+Netlify 部署流程  首先需要把源码发布到你的 Github 仓库，步骤参考下文 如何部署到github-pages 👇 进入 Netlify，注册，创建新项目，选择 Add new site 选择从 Import an existing project - 连接 Github - 选择刚刚创建的博客项目仓库 Basic build settings:  Build command: hugo // 部署前先运行 hugo 指令 生成新的 Public 文件 Publish directory: public // 指定 public 文件夹为部署文件   点击 Deploy site 完成部署  次次推 Github Pages 部署 搭建篇 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。</description>
     </item>
     
   </channel>

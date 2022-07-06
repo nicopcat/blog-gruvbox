@@ -6,13 +6,15 @@ draft: false
 showToc: true
 tags: ["Hugo","部署"]
 ---
-# 使用 Netlify 托管
-最近发现用 Netlify 部署静态网页对新手友好得多，真滴推荐用它部署你的博客或各种小项目！  
+# 首推 Vercel 部署 (2022年3月)
+流程和 Netlify差不多，但访问速度更快~
+
+# 次推 Netlify 部署 (2021年末)
+最近发现用 Netlify 部署静态网页对新手友好得多，推荐用它部署你的博客或各种小项目！  
 
 可以参考我的另一篇文章 [如何使用 Netlify 快速部署个人项目
 ](https://www.niqks.tk/posts/tech/posts/deploy-a-vue-cli-prj-w-netlify/)
-
-## 流程
+## Netlify 部署流程
 1. 首先需要把源码发布到你的 Github 仓库，步骤参考下文 [如何部署到github-pages](#如何部署到github-pages) 👇
 2. 进入 [Netlify](https://www.netlify.com/)，注册，创建新项目，选择 `Add new site`
 3. 选择从 `Import an existing project` - 连接 Github - 选择刚刚创建的博客项目仓库
@@ -21,8 +23,7 @@ tags: ["Hugo","部署"]
     - Publish directory: `public` // 指定 public 文件夹为部署文件
 5. 点击 `Deploy site` 完成部署
 
-# 使用 Github Pages 托管
-## Github Pages 是给啥
+# 次次推 Github Pages 部署
 [搭建篇](https://www.niqks.tk/posts/hugo/hugo-site/) 讲了如何通过安装和指令快速地建站、安装主题和写文章。这一篇将介绍如何托管自己的博客，让其他人可以访问。  
 
 最简单的方法是交给第三方托管，如 腾讯云，阿里云，Github Pages，Vercel 等。 我选择的是之前练习写项目时用过的 **Github Pages**。  
@@ -34,10 +35,10 @@ Github Pages 的优点是：
 - 搭建简单。只需按步骤一步步操作即可，不需要了解背后的技术细节。
 - 功能丰富。你可以绑定自己的域名，使用免费的HTTPS，自定义主题等。
 
-## 如何部署到GitHub Pages
-### 注册Github
+## 如何部署到 GitHub Pages
+### 注册 Github
 - 首先你需要注册一个 GitHub 账号，并在个人主界面里选择创建一个新的 Repository 。
-### 创建新的Repository
+### 创建新的 Repository
 - 在页面的右上角，点击 `+` ，下拉菜单选择 `New Repositoty` 来新建一个仓库。
 - `Repository name` 必须为 `username.github.io`，例如我的仓库`nicopcat.github.io`。
 
@@ -76,7 +77,7 @@ Github Actions是Github推出的一个CI\CD 服务。简单来说，利用Github
 具体教程请看：[用Github Action自动部署Hugo博客Public页面](https://www.niqks.tk/posts/hugo/github-action/)
 
 #### *注
-<mark>用 Netlify 部署相当于帮你偷懒，省掉配置 Github Action 的步骤，就非常Nice啊！再次推荐!...<mark> 😂
+<mark>用 Vercel & Netlify 部署相当于帮你偷懒，省掉配置 Github Action 的步骤，就非常Nice啊！再次推荐!...</mark>
 
 ### 发布你的博客
 在`username.github.io`仓库下，单击 ⚙`Settings`，拉到下方，找到 `GitHub Pages`。   
