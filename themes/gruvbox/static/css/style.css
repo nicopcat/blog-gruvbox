@@ -47,8 +47,8 @@ a:hover {
 }
 
 body {
-  font-family: "Go Mono", "Source Code Pro", "Monaco", "Helvetica Neue";
-  font-size: 16px;
+  font-family: "Go", "Source Code Pro", "Monaco", "Helvetica Neue";
+  font-size: 15px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
