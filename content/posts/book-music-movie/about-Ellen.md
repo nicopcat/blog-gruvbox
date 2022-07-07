@@ -1,6 +1,6 @@
 ---
 title: "关于卢凯彤的后知后觉"
-date: 2022-07-10T11:00:00+08:00
+date: 2022-07-06T11:00:00+08:00
 tags: ["卢凯彤", "音乐","LGBTQ"]
 draft: false
 showToc: false
