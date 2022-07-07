@@ -1,4 +1,4 @@
-baseURL = 'http://blog.nekolas.cafe/'
+baseURL = 'http://blog.nekolas.cafe'
 languageCode = 'en-us'
 title = 'Nekolas'
 theme = "gruvbox"
@@ -9,7 +9,7 @@ disqusShortname = "nekolas-blog"
 author = { name = "Nekolas Tian" }
 buildDrafts = true
 buildFuture = true
-description = "Cat who codes."
+description = "You do know that cats code, right?"
 keywords = [
   "web dev",
   "javascript",
@@ -21,8 +21,8 @@ keywords = [
 titlePrefix = ""
 titleSuffix = " | nekolas.cafe"
 dateFormat = "2006-01-02"
-menuItemPrefix = "~/"
-postTruncateLength = 180
+menuItemPrefix = ""
+postTruncateLength = 90
 hideGopher = false
 disqusAutoLoad = false
 disqusAutoLoadCount = true
@@ -30,25 +30,25 @@ hasCJKLanguage = true
 [menu]
 [[menu.links]]
 name = "posts"
-identifier = "posts"
+identifier = "Think"
 url = "/posts"
 weight = 9999
 
 [[menu.links]]
-name = "tags"
-identifier = "tags"
-url = "/tags"
-weight = 4999
+name = "bb"
+identifier = "Say"
+url = "/bb"
+weight = 499
 
 [[menu.sections]]
-name = "bb"
-identifier = "bb"
-url = "/bb"
-weight = 5555
+name = "tags"
+identifier = "Make"
+url = "/tags"
+weight = 5000
 
 [[menu.sections]]
 name = "gallery"
-identifier = "gallery"
+identifier = "Do"
 url = "/gallery"
 weight = 999
 

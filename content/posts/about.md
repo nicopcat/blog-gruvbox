@@ -1,25 +1,46 @@
 ---
-title: "关于我"
+title: "关于我 💙🥸"
 # layout: "about"
 url: "/about"
 # description: "which is precious"
 # hideMeta: true
+weight: 1
+postTruncateLength: 150
 ---
 
 
-# who 
-- 真实世界的魔法麻瓜
-- 嗑肥爱好者
-- 毛绒生物爱好者  
-- 🎵, 📖, 🎮 .. 
-- 住在网上，不是，web dev (准)  🧑‍💻🎧
+一个很多nickname的人。
+
+一个健忘的人。  
+（所以需要这个Blog!!）
 
 
-# i18
-- mandarin, english muffins and jagur
-- 梦想是游走四方，交换~~猎~~新奇故事
+欣赏的品质：激情、自由和爱
+# 正发生
+- [ ] 学习任何的乐器    
+- [ ] 音乐制作    
+- [ ] 游泳  
+- [ ] 看安溥的演出   
+- [ ] 看 Radiohead 的演出   
+- [ ] 去国外定居 
+- [ ] 转职成功
+- [ ] 亲手完成一次露营
+- [ ] 和J小将布置小家
+- [x] 看 Yo La Tengo 演出   
+- [x] 看 天空大爆炸 演出   
+- [x] 看 Beach House 演出   
+- [x] 滑雪    
+- [x] 玩滑板
+- [ ] 去看buning man
+- [ ] Fuji Rock Festival
+- [x] 学编程
+
+
+# i18n
+- 中文，英语，日语  
+- 梦想是游走四方，交换~~猎~~新奇故事  
+
 # tomotachi
-
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
 {{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/img/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
@@ -35,7 +56,7 @@ url: "/about"
 {{< friend name="lz差不多是条咸鱼了" url="https://lz233.ac.cn/" logo="https://avatars.githubusercontent.com/u/32504382" word="好耶！" >}}
 
 ### 交换 template
-```java
+```js
 name: "Nekolas's blog",
 addr: "https://blog.nekolas.cafe/",
 avatar: "https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg",
@@ -72,7 +93,7 @@ Six Feet Under
 冰美式 & 意式 | 乌龙茶 | 豆乳玉麒麟   
 
 **中华料理**   
-早茶 | 螺蛳馄饨 | 隆江猪脚饭 | 北方面食 | 川味家常菜    
+早茶 | 螺蛳馄饨 | 隆江猪脚饭 | 北方面食 | 川味家常菜 | 烤冷面    
 
 **日本料理**  
 r~~(俄式发音)amen | 各种猪排鸡排牛肉定食 | 寿司 | 三文鱼刺身 | 芥末八爪鱼 | 关东煮   
