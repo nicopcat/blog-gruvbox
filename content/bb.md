@@ -15,7 +15,7 @@ url: "/bb"
 ispeakBber
     .init({
       el: '#speak', // 容器选择器
-      name: 'niqks', // 显示的昵称
+      name: 'Nic', // 显示的昵称
       envId: 'bber-2g38ei06001dbc5f', // 环境id
       region: 'ap-shanghai', // 腾讯云地址，默认为上海
       limit: 10, // 每次加载的条数，默认为5
