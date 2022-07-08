@@ -6,7 +6,20 @@
     <description>Recent content in Node.js on Nekolas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Jul 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 02:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Node.JS GET 请求</title>
+      <link>http://blog.nekolas.cafe/posts/tech/others/node-js-get/</link>
+      <pubDate>Wed, 06 Jul 2022 02:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/posts/tech/others/node-js-get/</guid>
+      <description>resquest中的几个属性和方法： request.url: 返回请求页面的url
+request.method: 识别请求方法
+服务器想要知道请求页面的url以及方法，然后返回匹配的内容：
+// 判断方法 if (method === &amp;#39;GET&amp;#39;) { if (url === &amp;#39;/&amp;#39;) { sendResponse(&amp;#39;index.html&amp;#39;, 200, response) } else if (url === &amp;#39;/about.html&amp;#39;) { sendResponse(&amp;#39;about.html&amp;#39;, 200, response) } else { sendResponse(&amp;#39;404.html&amp;#39;, 404, response) } } else { } }); 配置sendResponse函数 使用sendResponse()函数，根据请求html读取相应文件 通过end()发给用户
+ sendResponse()函数有三个参数：filename, statusCode, response 导入fs(file system)模块  const fs = require(&amp;#39;fs&amp;#39;);  使用fs.readFile()函数，读取文件。它有两个参数：filename(路径)，callback 这个callback也有两个参数：error, data。error是错误信息，data是返回的内容  const sendResponse = (filename, statusCode, response) =&amp;gt; { fs.</description>
+    </item>
+    
     <item>
       <title>2分钟：创建一个简易Node.js服务器</title>
       <link>http://blog.nekolas.cafe/posts/tech/others/build-a-simple-node-js-server/</link>

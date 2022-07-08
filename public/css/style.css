@@ -48,7 +48,7 @@ a:hover {
 
 body {
   font-family: "Go","Noto Serif SC", "Source Code Pro", "Helvetica Neue";
-  font-size: 15px;
+  font-size: 14px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
@@ -84,7 +84,7 @@ body>footer>* {
   color: #f26522;
 }
 
-.left {
+.pagination>.left {
   float: left;
 }
 
@@ -115,6 +115,7 @@ nav>ul {
 nav>ul>li {
   margin: 0.5em 0.2em;
   display: inline-block;
+  
 }
 
 nav>ul>li>a:hover {
@@ -137,12 +138,12 @@ header>nav>.social_links {
 @media (max-width: 500px) {
   .logo {
     float: none;
-    padding: 0;
+    /* padding: 0; */
   }
 
-  header {
+  /* header {
     text-align: center;
-  }
+  } */
 
   nav {
     margin: 2em 0.5em;
@@ -247,7 +248,7 @@ article>.body pre code {
   margin: 2em 0;
   font-family: "Hack", monospace;
   display: block;
-  padding: 0.5em 1em;
+  padding: 1em 1em;
   background-color: #292828;
   color: #ebdbb2;
   overflow-x: auto;
@@ -283,7 +284,7 @@ article>.body h3,
 article>.body h4,
 article>.body h5,
 article>.body h6 {
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 
 /* 新增 */
@@ -314,6 +315,7 @@ article>.body ul {
   /* margin-left: 3em; */
   margin-left: 1em;
 }
+
 
 article>.body {
   /* line-height: 1.4em; */
@@ -435,7 +437,7 @@ article>.body img {
   color: var(--primary);
 }
 
-@media screen and (orientation: portrait) and (max-width: 500px) {
+@media screen and (max-width: 500px) {
   /* .frienddiv {
     width: 42%;
   } */
@@ -455,7 +457,8 @@ article>.body img {
     margin: auto;
     display: flex;
     align-items: center;
-    justify-content: center;
+    font-size: 16px
+    /* justify-content: center; */
   }
 
   .friendname {
@@ -499,6 +502,7 @@ mark {
 }
 
 #ispeak .xk-card-content>p {
+  font-weight: 450;
   margin: 0 auto;
 }
 
@@ -535,10 +539,10 @@ mark {
 
 /*菜单 tags styles statr here*/
 .body .tags {
-  display: grid;
+  /* display: grid;
   grid-column-gap: 10px;
   grid-template-columns: 1fr;
-  margin-bottom: 1em;
+  margin-bottom: 1em; */
   /* place-items:stretch stretch; */
   text-align: center;
 }
@@ -548,7 +552,7 @@ main .tags li a {
   margin: 0.25em;
   list-style: none;
   border: 1px solid rgba(206, 135, 59, 0.727);
-  padding: .5em .3em;
+  padding: .2em .3em;
   display: inline-block;
   transition: transform 0.6s ease;
 }

@@ -12,7 +12,7 @@
   
 
   
-  <meta name="description" content="Cat who codes.">
+  <meta name="description" content="You do know that cats code, right?">
   
 
   <meta name="generator" content="Hugo 0.89.4" />
@@ -49,7 +49,7 @@
   <header>
     <div class="left logo">
       <h1><a href="/">Nekolas</a></h1>
-      <p>Cat who codes.</p>
+      <p>You do know that cats code, right?</p>
     </div>
 
     
@@ -58,15 +58,15 @@
   <ul>
     
     
-      <li><a href="/gallery">~/gallery</a></li>
+      <li><a href="/gallery">Do</a></li>
     
-      <li><a href="/bb">~/bb</a></li>
+      <li><a href="/tags">Make</a></li>
     
 
     
-      <li><a href="/tags">~/tags</a></li>
+      <li><a href="/bb">Say</a></li>
     
-      <li><a href="/posts">~/posts</a></li>
+      <li><a href="/posts">Think</a></li>
     
   </ul>
   
@@ -96,6 +96,63 @@
 
 <article>
   <header>
+    <h1><a href="/posts/hugo/how-to-add-toc-on-a-hugo-post/">Hugo Papermod主题 创建(侧边)目录</a></h1>
+    <time datetime="2021-12-20 22:59:16 &#43;0800 CST">2021-12-20</time>
+  </header>
+  <div class="body">
+    <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
+<p>我在逛友邻的 blog 或是技术贴时发现，文章里若是有一个目录，就可以方便读者快速浏览自己看到的内容。在此之前，我尝试过 VS Code 的一些插件，但效果都不是特别理想，直到…</p></!-->
+  </div>
+  <footer>
+    <a href="/posts/hugo/how-to-add-toc-on-a-hugo-post/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/hugo/how-to-add-toc-on-a-hugo-post/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/life/aji-crispy-review/">香酥有味：Aji惊奇脆片测评</a></h1>
+    <time datetime="2021-11-29 23:44:00 &#43;0000 &#43;0000">2021-11-29</time>
+  </header>
+  <div class="body">
+    <br>
+前阵子（终于）购入几包 Aji惊奇脆片，我读书的时候就已经加入收藏夹的零食，由于种种原因，现在才下手购买，发现真的不错吃！然后这几天购入了剩下的口味，接下来我就要测评这6种口味~…
+  </div>
+  <footer>
+    <a href="/posts/life/aji-crispy-review/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/life/aji-crispy-review/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
+    <h1><a href="/posts/tech/javascript/variable-destructuring/">ES6数组与对象的解构赋值</a></h1>
+    <time datetime="2021-11-28 15:23:00 &#43;0900 &#43;0900">2021-11-28</time>
+  </header>
+  <div class="body">
+    <p>在ES6以前，为变量赋值只能直接指定值，而<strong>ES6允许以变量解构的方式赋值</strong>。</p>
+<p>那么，何为解构？</p>
+<blockquote>
+<p>按照一定模式，从数组和对象中提取值，对变量进行赋值。 ——
+（<a href="https://es6.ruanyifeng.com/?search=%E8%A7%A3%E6%9E%84&amp;x=0&amp;y=13#docs/destructuring">变量的解构赋值 - 阮…</a></p></blockquote>
+  </div>
+  <footer>
+    <a href="/posts/tech/javascript/variable-destructuring/">Read More&hellip; &raquo;</a>
+    
+<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/posts/tech/javascript/variable-destructuring/">0 Comments</span>
+
+
+  </footer>
+</article>
+
+<article>
+  <header>
     <h1><a href="/posts/tech/javascript/let-n-const/">let &amp; const 对比 var 的新特性</a></h1>
     <time datetime="2021-11-26 22:13:01 &#43;0800 CST">2021-11-26</time>
   </header>
@@ -106,13 +163,7 @@
 <li>用 <code>let</code> 声明的变量具有<strong>块级作用域</strong>，<code>var</code> 则没有，这可以阻止循环变量变成全局变量</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> [];
-<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>) {
-    <span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">i</span>] <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> () {
-        <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#a6e22e">i</span>);
-    };
-}
-
-<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">6</span>](); <span style="color:#75715e">//…</span></code></pre></div>
+<span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>;…</code></pre></div>
   </div>
   <footer>
     <a href="/posts/tech/javascript/let-n-const/">Read More&hellip; &raquo;</a>
@@ -130,8 +181,7 @@
   </header>
   <div class="body">
     <h1 id="why-hugo">Why Hugo?</h1>
-<p>之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。</p>
-<p>于是我把目光投向了Hexo, Wordpress, Jekyll等平台，无意间发现<strong>Hugo的生成速度和自由度更高，构架的组织更完备，文档内容和相关…</strong></p>
+<p>之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所…</p>
   </div>
   <footer>
     <a href="/posts/hugo/hugo-site/">Read More&hellip; &raquo;</a>
@@ -161,82 +211,6 @@
     <a href="/jane-works/">Read More&hellip; &raquo;</a>
     
 <span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/jane-works/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/gallery/">Main</a></h1>
-    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
-  </header>
-  <div class="body">
-    <script src="https://unpkg.com/vue@next"></script>
-<link rel="stylesheet" href="/src/index.css">
-<div id="app">
-    <div class="navbar">
-        <span><a href="/gallery/" class="active-link">Main</a></span>
-        <span><a href="/dame/">小猫日常</a></span>
-        <span><a href="/jane-works/">Jane…</a></span></div></div>
-  </div>
-  <footer>
-    <a href="/gallery/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/gallery/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/about/">关于我</a></h1>
-    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
-  </header>
-  <div class="body">
-    <h1 id="who">who</h1>
-<ul>
-<li>真实世界的魔法麻瓜</li>
-<li>嗑肥爱好者</li>
-<li>毛绒生物爱好者</li>
-<li>🎵, 📖, 🎮 ..</li>
-<li>住在网上，不是，web dev (准)  🧑‍💻🎧</li>
-</ul>
-<h1 id="i18">i18</h1>
-<ul>
-<li>mandarin, english muffins and jagur</li>
-<li>梦想是游走四方，交换<del>猎</del>新奇故事</li>
-</ul>
-<h1 id="tomotachi">tomotachi…</h1>
-  </div>
-  <footer>
-    <a href="/about/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/about/">0 Comments</span>
-
-
-  </footer>
-</article>
-
-<article>
-  <header>
-    <h1><a href="/dame/">咩咩</a></h1>
-    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
-  </header>
-  <div class="body">
-    <script src="https://unpkg.com/vue@next"></script>
-<link rel="stylesheet" href="/src/index.css">
-<div id="app">
-    <div class="navbar">
-        <span><a href="/gallery/">Main</a></span>
-        <span><a href="/dame/"  class="active-link">小猫日常</a></span>
-        <span><a href="/jane-works/">Jane…</a></span></div></div>
-  </div>
-  <footer>
-    <a href="/dame/">Read More&hellip; &raquo;</a>
-    
-<span class="disqus-comment-count" data-disqus-url="http://blog.nekolas.cafe/dame/">0 Comments</span>
 
 
   </footer>
@@ -283,15 +257,15 @@
   <ul>
     
     
-      <li><a href="/gallery">~/gallery</a></li>
+      <li><a href="/gallery">Do</a></li>
     
-      <li><a href="/bb">~/bb</a></li>
+      <li><a href="/tags">Make</a></li>
     
 
     
-      <li><a href="/tags">~/tags</a></li>
+      <li><a href="/bb">Say</a></li>
     
-      <li><a href="/posts">~/posts</a></li>
+      <li><a href="/posts">Think</a></li>
     
   </ul>
   

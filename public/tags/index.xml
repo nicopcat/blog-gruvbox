@@ -6,11 +6,47 @@
     <description>Recent content in Tags on Nekolas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 06 Jul 2022 01:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 06 Jul 2022 11:00:00 +0800</lastBuildDate><atom:link href="http://blog.nekolas.cafe/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>LGBTQ</title>
+      <link>http://blog.nekolas.cafe/tags/lgbtq/</link>
+      <pubDate>Wed, 06 Jul 2022 11:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/lgbtq/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>卢凯彤</title>
+      <link>http://blog.nekolas.cafe/tags/%E5%8D%A2%E5%87%AF%E5%BD%A4/</link>
+      <pubDate>Wed, 06 Jul 2022 11:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E5%8D%A2%E5%87%AF%E5%BD%A4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>音乐</title>
+      <link>http://blog.nekolas.cafe/tags/%E9%9F%B3%E4%B9%90/</link>
+      <pubDate>Wed, 06 Jul 2022 11:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/%E9%9F%B3%E4%B9%90/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GET</title>
+      <link>http://blog.nekolas.cafe/tags/get/</link>
+      <pubDate>Wed, 06 Jul 2022 02:00:00 +0800</pubDate>
+      
+      <guid>http://blog.nekolas.cafe/tags/get/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>intro</title>
       <link>http://blog.nekolas.cafe/tags/intro/</link>
-      <pubDate>Wed, 06 Jul 2022 01:00:00 +0800</pubDate>
+      <pubDate>Wed, 06 Jul 2022 02:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/intro/</guid>
       <description></description>
@@ -19,7 +55,7 @@
     <item>
       <title>Node.js</title>
       <link>http://blog.nekolas.cafe/tags/node.js/</link>
-      <pubDate>Wed, 06 Jul 2022 01:00:00 +0800</pubDate>
+      <pubDate>Wed, 06 Jul 2022 02:00:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/node.js/</guid>
       <description></description>
@@ -175,15 +211,6 @@
       <pubDate>Thu, 02 Jun 2022 12:11:00 +0800</pubDate>
       
       <guid>http://blog.nekolas.cafe/tags/%E6%AD%8C%E8%AF%8D/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>音乐</title>
-      <link>http://blog.nekolas.cafe/tags/%E9%9F%B3%E4%B9%90/</link>
-      <pubDate>Thu, 02 Jun 2022 12:11:00 +0800</pubDate>
-      
-      <guid>http://blog.nekolas.cafe/tags/%E9%9F%B3%E4%B9%90/</guid>
       <description></description>
     </item>
     
