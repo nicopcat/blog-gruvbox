@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>NodeJS POST 请求 | nekolas.cafe</title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="You do know that cats code, right?">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/go-fonts.css@1.0.2/index.min.css">
+  
+  <link rel="preconnect" href="https://fonts.loli.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nekolas</a></h1>
+      <p>You do know that cats code, right?</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">Do</a></li>
+    
+      <li><a href="/tags">Make</a></li>
+    
+
+    
+      <li><a href="/bb">Say</a></li>
+    
+      <li><a href="/posts">Think</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/tech/others/node-js-post/">NodeJS POST 请求</a></h1>
+    <time datetime="2022-07-08 02:00:00 &#43;0800 CST">2022-07-08</time>
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">posts</a></li>
+        
+        
+        
+        <li><a href="/posts/tech">tech</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others">others</a></li>
+        
+        
+        
+        <li><a href="/posts/tech/others/node-js-post">node-js-post</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+  </header>
+
+  <div class="body">
+    <p>好，继续学习Node.js的POST请求~</p>
+<p>接下来的任务是创建一个用户登录表单，用户输入的用户名和密码数据会传到后端，服务器校验。校验通过之后，页面跳转。</p>
+<p>文档结构：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">|-- node_POST
+    |-- server.js
+    |-- html
+        |-- 404-zh.html
+        |-- 404.html
+        |-- about-zh.html
+        |-- about.html
+        |-- index-zh.html
+        |-- index.html
+        |-- login-fail.html
+        |-- login-success.html
+        |-- login.html
+
+</code></pre></div><h1 id="表单">表单</h1>
+<p>新建表单，绑定action和method：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">form</span> <span style="color:#a6e22e">action</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/process-login&#34;</span> <span style="color:#a6e22e">method</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;POST&#34;</span>&gt;
+</code></pre></div><p>当用户提交的时候，会触发action，地址跳转到<code>&quot;/process-login&quot;</code>。 后端可以通过监听这个url，然后对传过来的数据继续处理。</p>
+<p>首先判断是否POST请求，然后判断url是否为上述地址：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/process-login&#39;</span>)
+</code></pre></div><h2 id="前端如何给后端传递数据的">前端如何给后端传递数据的</h2>
+<p>前端通过互联网将数据传给后端，这个数据被形象地成为stream（数据流）。</p>
+<p>前端提交的data会转换成二进制数据，流向Node.js后端。在这个过程中，数据会被切割成好几部分，分批发送。</p>
+<p><img src="https://nic-gz-1308403500.file.myqcloud.com/posts/node-js-POST-2022-07-06-08-48-19.png" alt="data-stream" title="Stream"></p>
+<p>当数据分批抵达Node.js服务器后，数据会先被储存在一个缓冲区(Buffer)，之后Node.js会根据情况将数据从缓冲区传到程序中。</p>
+<p>缓冲区可以控制数据流的速度，当数据流接收速度过快，数据就保存在缓冲区内；当速度较小，数据将暂时积攒在缓存中，攒够了程序才读取。典型的例子就是视频缓冲。</p>
+<h1 id="处理前端post过来的数据">处理前端POST过来的数据</h1>
+<p>判断好确实是表单那边传过来的数据后，定义一个数组变量<code>body</code>：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/process-login&#39;</span>) {
+	<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> [];
+}
+</code></pre></div><p>程序会分批读取缓冲区里传过来的数据，所有需要对数据进行监听，每传过来一次，就将数据push到body变量里：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/process-login&#39;</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#75715e">// 然后插入request监听器 监听data
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">chunk</span>) =&gt; {
+    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">chunk</span>)
+  })
+}
+</code></pre></div><p>创建第二个监听器<code>request.on('end', callback)</code>，查看数据是否完全读取：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">url</span> <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;/process-login&#39;</span>) {
+  <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> [];
+
+  <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;data&#39;</span>, (<span style="color:#a6e22e">chunk</span>) =&gt; {
+    <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">chunk</span>)
+  })
+
+  <span style="color:#75715e">// 分段数据从Buffer转换成程序能识别和调用的步骤 
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">request</span>.<span style="color:#a6e22e">on</span>(<span style="color:#e6db74">&#39;end&#39;</span>, () =&gt; {
+    <span style="color:#75715e">// concat方法用于合并数据 
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Buffer</span>.<span style="color:#a6e22e">concat</span>(<span style="color:#a6e22e">body</span>).<span style="color:#a6e22e">toString</span>();
+    <span style="color:#a6e22e">body</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">body</span>);
+}
+</code></pre></div><p>由于querystring方法已废弃，所以改用<code>URLSearchParams</code>解析数据。</p>
+<p>参考 <a href="http://nodejs.cn/api/url.html#class-urlsearchparams">http://nodejs.cn/api/url.html#class-urlsearchparams</a></p>
+<p>相关语法：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">
+<span style="color:#75715e">// 创建新的URL对象并储存
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">params</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">URLSearchParams</span>(<span style="color:#a6e22e">obj</span>)
+
+<span style="color:#75715e">// 通过key读取val
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">params</span>.<span style="color:#a6e22e">urlSearchParams</span>.<span style="color:#a6e22e">get</span>(<span style="color:#a6e22e">name</span>)
+</code></pre></div><h2 id="根据data信息写一个用户验证">根据data信息，写一个用户验证</h2>
+<p>此时，用户输入的username和password已保存在body变量中，所以写if条件句进行简单判断：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx"><span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;username&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;admin&#39;</span> <span style="color:#f92672">&amp;&amp;</span> <span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">get</span>(<span style="color:#e6db74">&#39;password&#39;</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;123456&#39;</span>) {
+  <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#39;Location&#39;</span>, <span style="color:#e6db74">&#39;/login-success.html&#39;</span>)
+  <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">301</span>
+
+} <span style="color:#66d9ef">else</span> {
+  <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">setHeader</span>(<span style="color:#e6db74">&#39;Location&#39;</span>, <span style="color:#e6db74">&#39;/login-fail.html&#39;</span>)
+  <span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">statusCode</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">301</span>
+}
+
+<span style="color:#a6e22e">response</span>.<span style="color:#a6e22e">end</span>();
+</code></pre></div><p>这里用到的API是<code>urlSearchParams.get(name)</code>。如果username为<code>'admin'</code>且password为<code>'123456'</code>则登录成功，状态码设置成<code>301</code>，跳转使用<code>res.setHeader('Location',’/addr’)</code></p>
+<p>最后，用<code>response.end()</code>把后端数据发往前端</p>
+<hr>
+<h1 id="参考">参考</h1>
+<ol>
+<li>
+<p><a href="https://www.youtube.com/watch?v=MQD8lSf439g&amp;list=PL50akgsaBZlF9DADkYuQZLQBDLHZHZ-9N&amp;index=5">WenXuanDecode - NodeJS: 实操登录表单提交和后端处理</a></p>
+</li>
+<li>
+<p><a href="https://nodejs.org/api/url.html#new-urlsearchparamsobj">Node.js API - new URLSearchParams(obj)</a></p>
+</li>
+</ol>
+
+  </div>
+  
+  <footer>
+    
+<div id="disqus_thread">
+  <span class="button" onclick="loadDisqusComments()">Load Disqus Comments&hellip;</span>
+</div>
+
+
+  </footer>
+  
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/node.js/">Node.js</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/intro/">intro</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.cafe/tags/post/">POST</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/tech/others/node-js-get/">
+      <time datetime="2022-07-06 02:00:00 &#43;0800 CST">2022-07-06 &raquo; </time>
+      Node.JS GET 请求
+    </a>
+  
+  </div>
+  <div class="left">
+  
+    <a href="/posts/tech/others/webpack-basics/">
+      <time datetime="2022-07-09 22:00:00 &#43;0800 CST">&laquo; 2022-07-09</time>
+      打包利器Webpack和它基本配置
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+<script type="text/javascript">
+  function loadDisqusComments() {
+    var e = document.createElement("script");
+    e.type = "text/javascript";
+    e.async = true;
+    e.src = "//nekolas-blog.disqus.com/embed.js";
+    (document.getElementsByTagName("head")[0] ||
+      document.getElementsByTagName("body")[0])
+    .appendChild(e);
+  }
+
+  
+</script>
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">Do</a></li>
+    
+      <li><a href="/tags">Make</a></li>
+    
+
+    
+      <li><a href="/bb">Say</a></li>
+    
+      <li><a href="/posts">Think</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2022 <a href="">Nekolas</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>
