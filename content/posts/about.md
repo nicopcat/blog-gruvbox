@@ -1,29 +1,22 @@
 ---
-title: "关于我 💙🥸"
+title: "关于博主 💙🥸"
 # layout: "about"
 url: "/about"
 # description: "which is precious"
 # hideMeta: true
 weight: 1
-postTruncateLength: 150
 ---
+兴趣是人类观察，目标是不judge anybody。  
 
-
-一个很多nickname的人。
-
-一个健忘的人。  
-（所以需要这个Blog!!）
-
-
-欣赏的品质：激情、自由和爱
-# 正发生
+<div style='display: none'>
+ # 正发生
 - [ ] 学习任何的乐器    
 - [ ] 音乐制作    
 - [ ] 游泳  
 - [ ] 看安溥的演出   
 - [ ] 看 Radiohead 的演出   
 - [ ] 去国外定居 
-- [ ] 转职成功
+- [x] 转职成功
 - [ ] 亲手完成一次露营
 - [ ] 和J小将布置小家
 - [x] 看 Yo La Tengo 演出   
@@ -33,12 +26,9 @@ postTruncateLength: 150
 - [x] 玩滑板
 - [ ] 去看buning man
 - [ ] Fuji Rock Festival
-- [x] 学编程
+- [x] 学编程 
+</div>
 
-
-# i18n
-- 中文，英语，日语  
-- 梦想是游走四方，交换~~猎~~新奇故事  
 
 # tomotachi
 {{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
@@ -48,8 +38,6 @@ postTruncateLength: 150
 {{< friend name="Sulv’s Blog" url="https://www.sulvblog.cn" logo="https://www.sulvblog.cn/img/Q.gif" word="一个记录技术、阅读、生活的博客" >}}
 
 {{< friend name="IILeeのBlog" url="https://www.iilee.cn/" logo="https://www.iilee.cn/avatar" word="所以，看不到光，算是不幸吗？需要光才是真正的不幸吧。" >}}
-
-{{< friend name="Seviche.cc" url="https://seviche.cc" logo="https://seviche.cc/assets/avatar.avif" word="Code / Tech /  Live a Random Life" >}}
 
 {{< friend name="OneDay" url="https://blog.oneday8.com" logo="https://blog.oneday8.com/usr/uploads/Logo300300.png" word="一个追求天天进步的程序猿" >}}
 
@@ -93,7 +81,7 @@ Six Feet Under
 冰美式 & 意式 | 乌龙茶 | 豆乳玉麒麟   
 
 **中华料理**   
-早茶 | 螺蛳馄饨 | 隆江猪脚饭 | 北方面食 | 川味家常菜 | 烤冷面    
+早茶 | 螺蛳馄饨 | 隆江猪脚饭 | 北方面食 | 川味家常菜 | 烤冷面 | 汤包 | 水晶蒸饺   
 
 **日本料理**  
 r~~(俄式发音)amen | 各种猪排鸡排牛肉定食 | 寿司 | 三文鱼刺身 | 芥末八爪鱼 | 关东煮   
