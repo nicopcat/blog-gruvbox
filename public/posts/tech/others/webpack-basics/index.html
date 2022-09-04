@@ -136,7 +136,7 @@
 cd webpack-demo
 npm init -y
 npm install webpack webpack-cli --save-dev
-</code></pre></div><h1 id="基本">基本</h1>
+</code></pre></div><h1 id="基本使用">基本使用</h1>
 <p>webpack的核心概念：</p>
 <ul>
 <li>Entry：打包入口，从入口开始构建依赖图。</li>
@@ -194,10 +194,20 @@ npm install webpack webpack-cli --save-dev
   },
   <span style="color:#a6e22e">plugins</span><span style="color:#f92672">:</span> [<span style="color:#66d9ef">new</span> <span style="color:#a6e22e">HtmlWebpackPlugin</span>({ <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;./src/index.html&#39;</span> })],
 };
-</code></pre></div><h2 id="mode">Mode</h2>
+</code></pre></div><h3 id="常用插件">常用插件</h3>
+<ul>
+<li>html-webpack-plugin: 创建html并插入script标签</li>
+<li>autoprefixer: 给css加前缀</li>
+<li>mini-css-extract-plugin: 抽离css样式link到html</li>
+<li>webpack-dev-server: 启动webpack服务</li>
+<li>webpack-dev-middleware:webpack服务集成到本地的服务</li>
+<li>uglifyjs-webpack-plugin:压缩js</li>
+<li>optimize-css-assets-webpack-plugin:压缩css</li>
+<li>clean-webpack-plugin:清空目录</li>
+</ul>
+<h2 id="mode">Mode</h2>
 <p>通过选择 <code>development</code>, <code>production</code>或 <code>none</code>之中的一个，来设置 <code>mode</code>参数，你可以启用webpack 内置在相应环境下的优化。其默认为 <code>production</code>。</p>
 <h1 id="实战">实战</h1>
-<h2 id="尝试打包">尝试打包</h2>
 <p>新建文件：</p>
 <pre tabindex="0"><code class="language-plain-text" data-lang="plain-text">webpack-demo
   | - package.json
@@ -231,9 +241,9 @@ npm install webpack webpack-cli --save-dev
 </code></pre></div><p>报错1：</p>
 <pre tabindex="0"><code>Module not found: Error: Can't resolve './main.js' in 'D:\Dropbox\Coding\playground\Webpack-demo’
 </code></pre><p>原因：main.js 路径错误</p>
-<p>改为<code>entry: './src/main.js'</code>后，发现打包成功，根目录里多了一个dist文件夹，符合<code>output</code>给我们输出的文件名。</p>
+<p>路径改为<code>'./src/main.js'</code>后，打包成功，根目录里多了一个dist文件夹，符合<code>output</code>给我们输出的文件名。</p>
 <p><img src="https://nic-gz-1308403500.file.myqcloud.com/posts/webpack-basics-2022-07-09-23-03-06.png" alt="dist"></p>
-<h2 id="npm-scripts"><strong><strong>npm scripts</strong></strong></h2>
+<h2 id="npm-scripts"><strong>npm scripts</strong></h2>
 <p>我们可以设置一个快捷方式，启动本地server运行 webpack 副本，添加一个 npm script:</p>
 <p><strong>package.json</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-jsx" data-lang="jsx">{

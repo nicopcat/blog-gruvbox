@@ -23,7 +23,7 @@ npm init -y
 npm install webpack webpack-cli --save-dev
 ```
 
-# 基本
+# 基本使用
 
 webpack的核心概念：
 
@@ -94,7 +94,6 @@ loader 用于转换某些类型的模块，而插件则可以用于执行范围�
 使用插件的方式：`require()`
 
 **webpack.config.js**
-
 ```jsx
 const HtmlWebpackPlugin = require('html-webpack-plugin'); // 指定html模板插件
 const webpack = require('webpack'); // 用于访问内置插件
@@ -107,15 +106,23 @@ module.exports = {
 };
 ```
 
+### 常用插件
+
+- html-webpack-plugin: 创建html并插入script标签
+- autoprefixer: 给css加前缀
+- mini-css-extract-plugin: 抽离css样式link到html
+- webpack-dev-server: 启动webpack服务
+- webpack-dev-middleware:webpack服务集成到本地的服务
+- uglifyjs-webpack-plugin:压缩js
+- optimize-css-assets-webpack-plugin:压缩css
+- clean-webpack-plugin:清空目录
+
 ## Mode
 
 通过选择 `development`, `production`或 `none`之中的一个，来设置 `mode`参数，你可以启用webpack 内置在相应环境下的优化。其默认为 `production`。
 
 
 # 实战
-
-## 尝试打包
-
 新建文件：
 ```plain-text
 webpack-demo
@@ -146,7 +153,6 @@ divEL.addEventListener('click', () => {
 ```
 
 **webpack.config.js**
-
 ```jsx
 const path = require('path')
 
@@ -168,12 +174,12 @@ Module not found: Error: Can't resolve './main.js' in 'D:\Dropbox\Coding\playgro
 
 原因：main.js 路径错误
 
-改为`entry: './src/main.js'`后，发现打包成功，根目录里多了一个dist文件夹，符合`output`给我们输出的文件名。
+路径改为`'./src/main.js'`后，打包成功，根目录里多了一个dist文件夹，符合`output`给我们输出的文件名。
 
 ![dist](https://nic-gz-1308403500.file.myqcloud.com/posts/webpack-basics-2022-07-09-23-03-06.png)
 
 
-## ****npm scripts****
+## **npm scripts**
 
 我们可以设置一个快捷方式，启动本地server运行 webpack 副本，添加一个 npm script:
 

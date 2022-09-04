@@ -19,7 +19,7 @@ ispeakBber
       envId: 'bber-2g38ei06001dbc5f', // 环境id
       region: 'ap-shanghai', // 腾讯云地址，默认为上海
       limit: 10, // 每次加载的条数，默认为5
-      avatar: 'https://img3.doubanio.com/icon/ul152454124-10.jpg',
+      avatar: 'https://nic-gz-1308403500.file.myqcloud.com/other/TheHeader-2022-07-17-00-51-14.PNG',
       // fromColor:'rgb(245, 150, 170)', // 下方标签背景颜色 默认 rgb(245, 150, 170)
       loadingImg:'https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/gif/kurby.gif', //kirby
       // 'https://smashinghub.com/wp-content/uploads/2014/08/cool-loading-animated-gif-1.gif', // cat
