@@ -6,10 +6,10 @@ paginate = 6
 disqusShortname = "nekolas-blog"
 
 [params]
-author = { name = "Nekolas Tian" }
+author = { name = "Nic" }
 buildDrafts = true
 buildFuture = true
-description = "You do know that cats code, right?"
+description = "喜欢睡觉"
 keywords = [
   "web dev",
   "javascript",
@@ -30,25 +30,25 @@ hasCJKLanguage = true
 [menu]
 [[menu.links]]
 name = "posts"
-identifier = "Think"
+identifier = "写点什么"
 url = "/posts"
 weight = 9999
 
 [[menu.links]]
 name = "bb"
-identifier = "Say"
+identifier = "说点什么"
 url = "/bb"
 weight = 499
 
 [[menu.sections]]
 name = "tags"
-identifier = "Make"
+identifier = "贴些标签"
 url = "/tags"
 weight = 5000
 
 [[menu.sections]]
 name = "gallery"
-identifier = "Do"
+identifier = "走走停停"
 url = "/gallery"
 weight = 999
 
