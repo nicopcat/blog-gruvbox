@@ -40,7 +40,7 @@ showToc: false
 
 计发月数可以查看下表：
 
-![计发月数](https://inews.gtimg.com/newsapp_bt/0/13493131715/1000)
+![计发月数](https://nic-gz-1308403500.file.myqcloud.com/other/chinese-old-age-insurance-2022-09-19-00-57-59.png)
 
 为什么要设置计发月数？
 >计发月数设立的目的，实际上是想当人们到达预期寿命时，能够恰好把养老保险个人账户的余额领取完毕。
