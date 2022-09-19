@@ -629,3 +629,24 @@ main .tags li {
   background-color: rgba(235, 219, 178, 0.15);
   border-radius: 10px;
 }
+
+table{
+  border-collapse:collapse;
+  margin: 1rem auto;
+}
+
+table thead,
+table tr{
+  margin: .5rem;
+  color:#407b7c;
+  background-color:  rgb(255, 255, 255);
+  border: 1px solid rgb(186, 186, 186);
+
+}
+table thead{
+  border-bottom: 2px solid rgb(187, 187, 187);
+}
+
+table tr td{
+  padding: 0.3rem .6rem;
+}
