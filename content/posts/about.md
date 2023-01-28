@@ -24,28 +24,6 @@ weight: 1
 {{< friend name="lz差不多是条咸鱼了" url="https://lz233.ac.cn/" logo="https://avatars.githubusercontent.com/u/32504382" word="好耶！" >}}
 
 
-<!-- <div style='display: none'> -->
- # 正发生
-- [ ] 学习任何的乐器    
-- [ ] 音乐制作    
-- [ ] 游泳  
-- [ ] 看安溥的演出   
-- [ ] 看 Radiohead 的演出   
-- [ ] 去国外定居 
-- [x] 转职成功
-- [ ] 亲手完成一次露营
-- [ ] 和J小将布置小家
-- [x] 看 Yo La Tengo 演出   
-- [x] 看 天空大爆炸 演出   
-- [x] 看 Beach House 演出   
-- [x] 滑雪    
-- [x] 玩滑板
-- [ ] 去看buning man
-- [ ] Fuji Rock Festival
-- [x] 学编程 
-<!-- </div> -->
----
-
 # 音乐
 ### Genre
 Indie Pop / Experimental Rock (~~Post-Rock~~) / Bebop / Blue Folk / Contempory Jazz / Soul / 90s Mandarin-Pop / Psychedelic Pop & Folk ..
