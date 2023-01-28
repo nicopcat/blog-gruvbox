@@ -47,8 +47,8 @@ a:hover {
 }
 
 body {
-  font-family: "Go","Noto Serif SC", "Source Code Pro", "Helvetica Neue";
-  font-size: 14px;
+  font-family: "Go","Noto Serif SC","Source Code Pro",  "Helvetica Neue";
+  font-size: 16px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
@@ -261,13 +261,13 @@ article>.body code {
   font-family: "Hack", consolas, monospace;
   display: inline;
   margin: 0 1px;
-  padding: 0.2em 0.2em;
+  padding: 0.2em 0.4em;
   /* background: #ebdbb2;
   color: #458588; */
-  background-color: #f9f2f4;
-  color: #c7254e;
-  border: 1px solid #d6d6d6;
-  border-radius: 2px;
+  background-color: #d79720;
+  color: #fff;
+  /* border: 1px solid #d6d6d6; */
+  border-radius: 4px;
   font-size: 12px;
   /* word-break: break-all; */
 }
@@ -288,15 +288,31 @@ article>.body h6 {
 }
 
 /* 新增 */
-article>.body h1::before {
-  content: "# ";
-  color: #ba8622;
+article>.body h1{
+  color: #dd4f23;
 }
 
-/* 
+article>.body h1::before {
+  content: "# ";
+  color: #dd4f23;
+}
+
+article>.body h2::before {
+  content: "&& ";
+  color: #d79720;
+}
 article>.body h2 {
-  font-size: 1.3em;
-} */
+  color: #d79720;
+}
+
+article>.body h3::before {
+  content: "$$$ ";
+  color: #458588;
+}
+
+article>.body h3 {
+  color: #458588;
+}
 
 article>.body hr {
   margin: 1em 0;
@@ -476,7 +492,8 @@ article>.body img {
 }
 
 mark {
-  background-color: rgba(220, 130, 34, 0.296);
+  padding: .1em .2em;
+  background-color:#fabd2f21;
 }
 
 /* bb点啥 */

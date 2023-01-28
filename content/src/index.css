@@ -18,6 +18,7 @@
 }
 
 .container .wrapper img {
+    max-height: 500px;
     margin: auto;
     /* border: .5em solid white; */
     border-radius: 5px;
@@ -50,7 +51,7 @@
 
 /* navbar starts  */
 .wrapper .navbar {
-    border-bottom: 3px solid rgba(30, 30, 30, 0.285);
+    border-bottom: 3px solid #458588;
     padding-bottom: 2rem;
 }
 
@@ -61,36 +62,31 @@
     box-sizing: border-box;
 }
 
-.navbar>span {
-    border-bottom: 1px solid rgba(122, 122, 122, 0.258);
-}
-
 .navbar span a {
     font-family: 'futyra-pt';
     color: var(--secondary);
     font-size: 1.2em;
     font-weight: bold;
-    padding: 0 .6rem;
+    /* padding: 0 .6rem; */
     box-shadow: none;
-    border: 1px solid transparent;
 }
 
 .navbar .active-link {
     box-shadow: none;
-    background-color: rgb(148 148 148 / 18%);
+    background-color:#fabd2f8e;
     color: var(--primary);
     border-width: 1px;
     border-style: solid solid none solid;
     border-color: rgba(199, 199, 199, 0.074);
-    border-top-left-radius: .2rem;
-    border-top-right-radius: .2rem;
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
     border-bottom: 1px solid var(--primary);
 }
 
 .navbar span a:hover {
-    background-color: rgba(199, 199, 199, 0.163);
-    border-top-left-radius: .2rem;
-    border-top-right-radius: .2rem;
+    /* background-color: #fabd2f3f; */
+    /* border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem; */
 }
 
 /* navbar ends  */

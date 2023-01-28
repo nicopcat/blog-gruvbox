@@ -11,10 +11,12 @@ ShowBreadCrumbs: false
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
     <div class="navbar">
-        <span><a href="/gallery/">Main</a></span>
-        <span><a href="/dame/"  class="active-link">小猫日常</a></span>
-        <span><a href="/jane-works/">Jane的画儿</a></span>
-        <br>
+      <span><a href="/gallery/">{{title.random}}</a></span>
+      |
+      <span><a href="/dame/" class="active-link">{{title.dame}}</a></span>
+      |
+      <span><a href="/jane-works/">{{title.jane}}</a></span>
+      <br>
     </div>
     <transition name="spinner" mode="out-in">
         <div class="spinner" v-show="isLoading">

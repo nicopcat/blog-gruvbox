@@ -22,7 +22,7 @@ titlePrefix = ""
 titleSuffix = " | nekolas.cafe"
 dateFormat = "2006-01-02"
 menuItemPrefix = ""
-postTruncateLength = 90
+postTruncateLength = 280
 hideGopher = false
 disqusAutoLoad = false
 disqusAutoLoadCount = true
@@ -70,10 +70,44 @@ url = "mailto:tianfang07@outlook.com"
 weight = 100
 
 [markup]
-defaultMarkdownHandler = 'goldmark'
-[markup.goldmark]
-[markup.goldmark.renderer]
-unsafe = true
-
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2
+  [markup.highlight]
+    anchorLineNos = true
+    codeFences = true
+    guessSyntax = true
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    tabWidth = 2
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      linkifyProtocol = 'https'
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      autoHeadingID = true
+      autoHeadingIDType = 'github'
+      wrapStandAloneImageWithinParagraph = true
+      [markup.goldmark.parser.attribute]
+        block = false
+        title = true
+    [markup.goldmark.renderer]
+      hardWraps = true
+      unsafe = true
+      xhtml = true
+      
 [taxonomies]
 tag = "tags"
