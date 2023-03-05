@@ -179,7 +179,7 @@ header>nav>.social_links {
   }
 
   article>.body pre code {
-    font-size: 14px !important;
+    font-size: 16px ;
   }
 
   article {
@@ -246,7 +246,7 @@ article>footer {
 
 article>.body pre code {
   margin: 2em 0;
-  font-family: "Hack", monospace;
+  font-family: "Source Code Pro","Hack", monospace;
   display: block;
   padding: 1em 1em;
   background-color: #292828;
@@ -258,7 +258,7 @@ article>.body pre code {
 }
 
 article>.body code {
-  font-family: "Hack", consolas, monospace;
+  font-family: "Source Code Pro","Hack", consolas, monospace;
   display: inline;
   margin: 0 1px;
   padding: 0.2em 0.4em;
