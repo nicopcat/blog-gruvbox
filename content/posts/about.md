@@ -6,7 +6,7 @@ url: "/about"
 # hideMeta: true
 weight: 1
 ---
-兴趣是人类观察，目标是不judge anybody。  
+兴趣是人类观察
 
 
 
