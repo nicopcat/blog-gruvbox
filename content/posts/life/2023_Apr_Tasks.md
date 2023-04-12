@@ -1,0 +1,32 @@
+---
+title: "2023年4月小计划"
+description: "mission impossible "
+date: 2023-04-12T11:00:00+08:00
+draft: false
+tags: ["任务"]
+---
+# 任务
+<div style="position: relative">
+只给自己三个小任务：
+
+1. 学写TypeScript
+  - [ ] 学一些基础语法就很棒了  
+  - [ ] 哇这些不是类吗？？你学会类和面向对象的思维了  
+  - [ ] 嗯，写了些小demo  
+
+2. 看完一本书  
+  - [ ] 打开它已经很了不起了  
+  - [ ] 看了三分之一页很棒  
+  - [ ] 哇已经看了二分之一  
+  - [ ] 天啊你竟然看完了！！！  
+
+
+3. 月末回顾完成情况
+  - [ ] 总结和回顾很有必要 👍
+
+
+<div style="position: absolute; right: 1em ">2023-4-12</div>
+</div>
+
+
+# 回顾
