@@ -1,4 +1,4 @@
-baseURL = 'http://blog.nekolas.cafe'
+baseURL = 'http://blog.nekolas.com'
 languageCode = 'en-us'
 title = 'Nekolas'
 theme = "gruvbox"
@@ -18,8 +18,8 @@ keywords = [
   "programmer",
   "peace & love",
 ]
-titlePrefix = ""
-titleSuffix = " | nekolas.cafe"
+titlePrefix = "💚"
+titleSuffix = " "
 dateFormat = "2006-01-02"
 menuItemPrefix = ""
 postTruncateLength = 280
@@ -34,11 +34,11 @@ identifier = "写点什么"
 url = "/posts"
 weight = 9999
 
-[[menu.links]]
-name = "bb"
-identifier = "说点什么"
-url = "/bb"
-weight = 499
+# [[menu.links]]
+# name = "bb"
+# identifier = "说点什么"
+# url = "/bb"
+# weight = 499
 
 [[menu.sections]]
 name = "tags"
