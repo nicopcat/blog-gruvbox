@@ -11,7 +11,7 @@ weight: 1
 
 
 # tomotachi
-{{< friend name="JaneW" url="https://www.janew.tk/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
+{{< friend name="JaneW" url="https://janew.nekolas.com/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
 {{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/img/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
 
