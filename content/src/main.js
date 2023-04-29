@@ -1,15 +1,3 @@
-const MyComponent = {
-    props: ['post'],
-  template: `
-    <div class="blog-post">
-      <h3>123 </h3>
-      <button>
-        Enlarge text
-      </button>
-    </div>
-  `
-}
-
 const App = {
     data() {
     return {
@@ -22,6 +10,14 @@ const App = {
       maskOn: false,
       isLoading: false,
       imgSrc: [
+        {
+          id: new Date().toISOString(),
+          pname: "茶泡饭之味",
+          altText: "茶泡饭之味",
+          linkAdd:
+            "https://nic-gz-1308403500.file.myqcloud.com/gruvbox/main-2023-04-29-11-26-39.jpg",
+          descriptions: "2023-064-09",
+        },
         {
           id: new Date().toISOString(),
           pname: "The Grand Canyon",
@@ -98,6 +94,22 @@ const App = {
       DamePics: [
         {
           id: new Date().toISOString(),
+          pname: "暗中观察",
+          altText: "暗中观察",
+          linkAdd:
+            "https://nic-gz-1308403500.file.myqcloud.com/gruvbox/main-2023-04-29-11-29-57.jpg",
+          descriptions: "暗中观察",
+        },
+        {
+          id: new Date().toISOString(),
+          pname: "软妹",
+          altText: "软妹",
+          linkAdd:
+            "https://nic-gz-1308403500.cos.ap-guangzhou.myqcloud.com/gruvbox/main-2023-01-28-16-15-39.jpg",
+          descriptions: "举高高",
+        },
+        {
+          id: new Date().toISOString(),
           pname: "软妹",
           altText: "软妹",
           linkAdd:
@@ -130,6 +142,14 @@ const App = {
         },
       ],
       janeWorks: [
+        {
+          id: new Date().toISOString(),
+          pname: "福尔摩豚",
+          altText: "福尔摩豚",
+          linkAdd:
+            "https://nic-gz-1308403500.file.myqcloud.com/gruvbox/main-2023-04-29-11-34-14.jpg",
+          descriptions: "福尔摩豚",
+        },
         {
           id: new Date().toISOString(),
           pname: "小J画的",

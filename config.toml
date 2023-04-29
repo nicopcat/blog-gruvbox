@@ -9,6 +9,7 @@ disqusShortname = "nekolas-blog"
 author = { name = "Nic" }
 buildDrafts = true
 buildFuture = true
+enableGitalk = true
 description = "喜欢睡觉"
 keywords = [
   "web dev",
@@ -18,6 +19,7 @@ keywords = [
   "programmer",
   "peace & love",
 ]
+
 titlePrefix = "🥯"
 titleSuffix = " "
 dateFormat = "2006-01-02"
@@ -27,6 +29,20 @@ hideGopher = false
 disqusAutoLoad = false
 disqusAutoLoadCount = true
 hasCJKLanguage = true
+
+[params.gitalk] 
+    clientID = "3480b37ba3106401db3b" # 您刚才创建Github Application 的 Client ID
+    clientSecret = "21c4ceebbeed32c15e79f3f3a2bb59137ce2a242" # 您刚才创建Github Application 的 Client Secret
+    repo = "https://blog.nekolas.com/" # 您的博客的github地址Repository name，例如：xxxx.github.io
+    owner = "nicopcat" # 您的GitHub ID
+    admin= "nicopcat" # 您的GitHub ID
+    id= "location.pathname" # 文章页面的链接地址就是ID
+    labels= "gitalk" # Github issue labels. If you used to use Gitment, you can change it
+    perPage= 15 # Pagination size, with maximum 100.
+    pagerDirection= "last" # Comment sorting direction, available values are 'last' and 'first'.
+    createIssueManually= true # 设置为true，如果是管理员登录，会自动创建issue，如果是false，需要管理员手动添加第一个评论(issue)
+    distractionFreeMode= false # Enable hot key (cmd|ctrl + enter) submit comment.
+
 [menu]
 [[menu.links]]
 name = "posts"

@@ -54,7 +54,7 @@ ShowBreadCrumbs: false
   </div>
   </transition>
 </div>
-<script src="/src/main.js" defer></script>
+<script src="/src/main.js" ></script>
 <style>
 .spinner {
   display: flex;

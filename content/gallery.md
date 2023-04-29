@@ -7,15 +7,14 @@ Hidemeta: true
 ShowBreadCrumbs: false
 ---
 
-<script src="https://unpkg.com/vue@next"></script>
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
   <div class="navbar">
-    <span><a href="/gallery/" class="active-link">{{title.random}}</a></span>
+    <span  v-if="title"><a href="/gallery/" class="active-link">{{title.random}}</a></span>
     |
-    <span><a href="/dame/">{{title.dame}}</a></span>
+    <span  v-if="title"><a href="/dame/">{{title.dame}}</a></span>
     | 
-    <span><a href="/jane-works/">{{title.jane}}</a></span>
+    <span  v-if="title"><a href="/jane-works/">{{title.jane}}</a></span>
     <br>
   </div>
   <transition name="spinner" mode="out-in">
@@ -55,4 +54,5 @@ ShowBreadCrumbs: false
   </transition>
 </div>
 
-<script src="/src/main.js"   type="module"></script>
+<script src="/src/main.js"></script>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js" defer></script>

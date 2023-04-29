@@ -50,16 +50,17 @@ tags: ["任务"]
 
 这个月倒是在看一部HBO的“商战”剧《继承之战》，它真的黑色幽默，并不是我想象中那种精英商战。
 
-![继承之战S1](https://img1.doubanio.com/view/photo/l/public/p2522419119.webp)
+![继承之战S1](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/017_2023_Apr_Tasks-2023-04-29-11-20-46.png)
 
 （发现了，我爱看fucked up family members互相折磨对方🤣, eg, [美版Shameless](https://movie.douban.com/subject/4729738/)）
 
+---
 
 
-另外就是麻将群这个小小池塘被外来入侵生物毁了。
+另外就是 学了点Java。
 
+麻将群这个小小池塘被外来入侵生物毁了，沉迷麻将被偶然治好。
 
 任亏券没薅到羊毛反被薅。
-
 
 终于买了冲锋衣（橘色）。
