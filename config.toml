@@ -27,7 +27,7 @@ hideGopher = false
 hasCJKLanguage = true
 [params.utteranc]
   enable = true
-  repo = "nicopcat/utterances" ##换成自己得
+  repo = "nicopcat/utterances"
   issueTerm = "title"
   theme = "boxy-light"
 

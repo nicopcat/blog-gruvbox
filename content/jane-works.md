@@ -7,7 +7,6 @@ Hidemeta: true
 ShowBreadCrumbs: false
 ---
 
-<script src="https://unpkg.com/vue@next"></script>
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
   <div class="navbar">
@@ -55,6 +54,8 @@ ShowBreadCrumbs: false
   </transition>
 </div>
 <script src="/src/main.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+
 <style>
 .spinner {
   display: flex;
