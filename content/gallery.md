@@ -9,12 +9,12 @@ ShowBreadCrumbs: false
 
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
-  <div class="navbar">
-    <span  v-if="title"><a href="/gallery/" class="active-link">{{title.random}}</a></span>
+  <div class="navbar" v-cloak>
+    <span><a href="/gallery/" class="active-link">{{title.random}}</a></span>
     |
-    <span  v-if="title"><a href="/dame/">{{title.dame}}</a></span>
+    <span><a href="/dame/">{{title.dame}}</a></span>
     | 
-    <span  v-if="title"><a href="/jane-works/">{{title.jane}}</a></span>
+    <span><a href="/jane-works/">{{title.jane}}</a></span>
     <br>
   </div>
   <transition name="spinner" mode="out-in">
