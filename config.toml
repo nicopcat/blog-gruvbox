@@ -29,7 +29,7 @@ hasCJKLanguage = true
   enable = true
   repo = "nicopcat/utterances" ##换成自己得
   issueTerm = "title"
-  theme = "github-light"
+  theme = "boxy-light"
 
 [menu]
 [[menu.links]]

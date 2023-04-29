@@ -9,11 +9,9 @@
   <div class="body">
     {{ .Content }}
   </div>
-  {{ if $.Site.DisqusShortname }}
   <footer>
     {{ partial "utterances.html" . }}
   </footer>
-  {{ end }}
 </article>
 {{ partial "tags.html" . }}
 
