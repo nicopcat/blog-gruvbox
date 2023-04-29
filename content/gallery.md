@@ -6,11 +6,11 @@ showToc: false
 Hidemeta: true
 ShowBreadCrumbs: false
 ---
-<script src="https://unpkg.com/vue@next" defer></script>
 
+<script src="https://unpkg.com/vue@next"></script>
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
-  <div class="navbar" v-cloak>
+  <div class="navbar">
     <span><a href="/gallery/" class="active-link">{{title.random}}</a></span>
     |
     <span><a href="/dame/">{{title.dame}}</a></span>
@@ -55,5 +55,4 @@ ShowBreadCrumbs: false
   </transition>
 </div>
 
-<script src="/src/main.js"></script>
-
+<script src="/src/main.js"   type="module"></script>
