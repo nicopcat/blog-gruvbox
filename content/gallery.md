@@ -6,6 +6,7 @@ showToc: false
 Hidemeta: true
 ShowBreadCrumbs: false
 ---
+<script src="https://unpkg.com/vue@next" defer></script>
 
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
@@ -55,5 +56,4 @@ ShowBreadCrumbs: false
 </div>
 
 <script src="/src/main.js"></script>
-<script src="https://unpkg.com/vue@next" defer></script>
 
