@@ -33,7 +33,7 @@ hasCJKLanguage = true
 [params.gitalk] 
     clientID = "3480b37ba3106401db3b" # 您刚才创建Github Application 的 Client ID
     clientSecret = "21c4ceebbeed32c15e79f3f3a2bb59137ce2a242" # 您刚才创建Github Application 的 Client Secret
-    repo = "https://github.com/nicopcat/gittalk" # 您的博客的github地址Repository name，例如：xxxx.github.io
+    repo = "gittalk" # 您的博客的github地址Repository name，例如：xxxx.github.io
     owner = "nicopcat" # 您的GitHub ID
     admin= "nicopcat" # 您的GitHub ID
     id= "location.pathname" # 文章页面的链接地址就是ID
