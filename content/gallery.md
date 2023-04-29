@@ -55,4 +55,5 @@ ShowBreadCrumbs: false
 </div>
 
 <script src="/src/main.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2" defer></script>
+<script src="https://unpkg.com/vue@next" defer></script>
+
