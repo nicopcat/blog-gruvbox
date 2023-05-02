@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>🥯Hugo | Creat a Gallery Page with Spolight Style  </title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="喜欢睡觉">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/go-fonts.css@1.0.2/index.min.css">
+  
+  <link rel="preconnect" href="https://fonts.loli.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nekolas</a></h1>
+      <p>喜欢睡觉</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/hugo/005_hugo_gallery_by_vue/">Hugo | Creat a Gallery Page with Spolight Style </a></h1>
+    <time datetime="2022-02-06 03:00:00 &#43;0800 CST">2022-02-06</time>
+    
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">posts</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo">hugo</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo/005_hugo_gallery_by_vue">005_hugo_gallery_by_vue</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+
+    tag: 
+    
+      
+         <a href="/tags/vue/">Vue</a> 
+      
+         <a href="/tags/hugo/">Hugo</a> 
+      
+    
+
+  </header>
+
+  <div class="body">
+    
+    <h2 id="1create-a-gallery-page">1.Create a gallery page</h2>
+<p>My goal is to build a galley sub page which can contain my photo works.</p>
+<p>The problem is that I don&rsquo;t know how to use <code>.md</code> file to render these markups mixed with Vue scripts so that I had to put a raw <code>.html</code> file and then imported css stylesheet from my theme.</p>
+<p><strong>Stacks</strong>:</p>
+<ul>
+<li>HTML</li>
+<li>CSS</li>
+<li>Vue.js</li>
+</ul>
+<h3 id="12-html">1.2 HTML</h3>
+<p>They are simple markups:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrapper&#34;</span>&gt;
+    <span style="color:#75715e">&lt;!-- 图片主体 --&gt;</span>
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> /&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+    <span style="color:#75715e">&lt;!-- 文字说明 --&gt;</span>
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caps&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h3</span>&gt;Pic Name&lt;/<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">span</span>&gt;Pic Descriptions&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;./app.js&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+&lt;<span style="color:#f92672">script</span> <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://unpkg.com/vue@next&#34;</span>&gt;&lt;/<span style="color:#f92672">script</span>&gt;
+</code></pre></div><h3 id="13-css">1.3 CSS</h3>
+<p>I used <code>CSS Grid System</code> to arrange the layout and <code>@media query</code> for responsive presentation.</p>
+<p><em>with the help of <a href="https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html">CSS Grid 网格布局教程</a> and W3Schools instructions.</em></p>
+<h3 id="14-vuejs">1.4 Vue.js</h3>
+<p>Now it&rsquo;s time to add some functions and load the images.</p>
+<p>In the <code>HTML</code> file, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;container&#34;</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;wrapper&#34;</span> <span style="color:#a6e22e">v-for</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item in imgSrc&#34;</span>&gt;
+    &lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">prevent</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;currentShow(item.linkAdd)&#34;</span>
+      &gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">:src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.linkAdd&#34;</span> <span style="color:#a6e22e">:alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.altText&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.id&#34;</span>
+    /&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;caps&#34;</span>&gt;
+      &lt;<span style="color:#f92672">h3</span>&gt;{{item.pname}}&lt;/<span style="color:#f92672">h3</span>&gt;
+      &lt;<span style="color:#f92672">span</span>&gt;{{item.descriptions}}&lt;/<span style="color:#f92672">span</span>&gt;
+    &lt;/<span style="color:#f92672">div</span>&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>In <code>Vue.js</code>, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">app</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">Vue</span>.<span style="color:#a6e22e">createApp</span>({
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> {
+      <span style="color:#75715e">// 存放图片data
+</span><span style="color:#75715e"></span>      <span style="color:#a6e22e">imgSrc</span><span style="color:#f92672">:</span> [
+        {
+          <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">01</span>,
+          <span style="color:#a6e22e">pname</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Antelope Canyon&#34;</span>,
+          <span style="color:#a6e22e">altText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;antelope-canyon&#34;</span>,
+          <span style="color:#a6e22e">linkAdd</span><span style="color:#f92672">:</span>
+            <span style="color:#e6db74">&#34;https://blogpic-1308403500.file.myqcloud.com/antelope-canyon.JPG&#34;</span>,
+          <span style="color:#a6e22e">descriptions</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;羚羊谷真是太妙了。&#34;</span>,
+        },
+        {
+          <span style="color:#a6e22e">id</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">02</span>,
+          <span style="color:#a6e22e">pname</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Cruise&#34;</span>,
+          <span style="color:#a6e22e">altText</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;cruise&#34;</span>,
+          <span style="color:#a6e22e">linkAdd</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;https://blogpic-1308403500.file.myqcloud.com/cruise.JPG&#34;</span>,
+          <span style="color:#a6e22e">descriptions</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;对面就是著名的自由女神像。&#34;</span>,
+        },
+      ],
+    };
+  },
+}).<span style="color:#a6e22e">mount</span>(<span style="color:#e6db74">&#34;#app&#34;</span>);
+</code></pre></div><p>Now I&rsquo;ve finished the main part of the gallery page.</p>
+<h2 id="2-spotlight-gallery-style">2. Spotlight gallery style</h2>
+<p>There are plenty of spotlight plugins all over the internet. I could&rsquo;ve used them easily. But I wanted to practice Vue.js so I wrote it with Vue.js</p>
+<p>Spolight plugins:<br />
+<a href="https://github.com/nextapps-de/spotlight">https://github.com/nextapps-de/spotlight</a></p>
+<h3 id="21-add-some-functions">2.1 Add some functions</h3>
+<p>Add some <code>@click</code> event in <code>&lt;a&gt;</code> tag:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">a</span> <span style="color:#a6e22e">href</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#960050;background-color:#1e0010">.</span><span style="color:#a6e22e">prevent</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;currentShow(item.id)&#34;</span>
+  &gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">:src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.linkAdd&#34;</span> <span style="color:#a6e22e">:alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.altText&#34;</span> <span style="color:#a6e22e">:key</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;item.id&#34;</span>
+/&gt;&lt;/<span style="color:#f92672">a</span>&gt;
+</code></pre></div><p>Above the <code>.container</code> div, add:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-html" data-lang="html">&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mask&#34;</span> <span style="color:#a6e22e">v-show</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flag&#34;</span>&gt;
+  &lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">:src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;currentImg&#34;</span> <span style="color:#a6e22e">alt</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;&#34;</span> /&gt;
+  &lt;<span style="color:#f92672">button</span> <span style="color:#960050;background-color:#1e0010">@</span><span style="color:#a6e22e">click</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flag=false&#34;</span>&gt;×&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">div</span>&gt;
+</code></pre></div><p>In <code>Vue.js</code> file, write some functions to trigger the popup event:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-js" data-lang="js"><span style="color:#a6e22e">methods</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">currentShow</span>(<span style="color:#a6e22e">add</span>){
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">currentImg</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">add</span>;
+      <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">flag</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">true</span>;
+    }
+},
+</code></pre></div><h3 id="22-spotlight-css-reference">2.2 Spotlight css reference</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-css" data-lang="css">.<span style="color:#a6e22e">mask</span> {
+  <span style="color:#66d9ef">position</span>: <span style="color:#66d9ef">fixed</span>;
+  <span style="color:#66d9ef">top</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">left</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">right</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">bottom</span>: <span style="color:#ae81ff">0</span>;
+  <span style="color:#66d9ef">background</span>: rgba(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0.3</span>);
+}
+</code></pre></div><h2 id="3-display">3. Display</h2>
+<p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/%E5%8A%A8%E7%94%BB.gif" alt="display" /></p>
+
+  </div>
+  <footer>
+    
+<script src="https://utteranc.es/client.js"
+repo="nicopcat/utterances"
+issue-term="title"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+
+  </footer>
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.com/tags/vue/">Vue</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.com/tags/hugo/">Hugo</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/hugo/004_hugo_custom_domain/">
+      <time datetime="2022-01-09 13:55:19 &#43;0800 CST">2022-01-09 &raquo; </time>
+      Hugo | Custom Domain 自定义域名篇
+    </a>
+  
+  </div>
+  <div class="left">
+  
+    <a href="/posts/hugo/006_tips_for_playing_hugo/">
+      <time datetime="2022-03-14 00:18:00 &#43;0800 CST">&laquo; 2022-03-14</time>
+      Hugo 和 PaperMod主题的小功能
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2023 <a href="">Nekolas</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>

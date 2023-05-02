@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>🥯咩咩 </title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="喜欢睡觉">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/go-fonts.css@1.0.2/index.min.css">
+  
+  <link rel="preconnect" href="https://fonts.loli.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nekolas</a></h1>
+      <p>喜欢睡觉</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/dame/">咩咩</a></h1>
+    <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01</time>
+    
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/dame">dame</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+
+    tag: 
+    
+
+  </header>
+
+  <div class="body">
+    
+    <script src="https://unpkg.com/vue@next"></script>
+<link rel="stylesheet" href="/src/index.css">
+<div id="app">
+    <div class="navbar">
+      <span><a href="/gallery/">{{title.random}}</a></span>
+      |
+      <span><a href="/dame/" class="active-link">{{title.dame}}</a></span>
+      |
+      <span><a href="/jane-works/">{{title.jane}}</a></span>
+      <br>
+    </div>
+    <transition name="spinner" mode="out-in">
+        <div class="spinner" v-show="isLoading">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </transition>
+    <div class="container">
+        <div class="wrapper" v-for="item in DamePics">
+            <img 
+                :src="item.linkAdd" :alt="item.altText" :key="item.id"
+                @click.prevent="currentShow(item.linkAdd)"
+                @load="loaded"
+                />
+            <div class="caps" v-cloak>
+                <h3>{{item.pname}}</h3>
+                <span>{{item.descriptions}}</span>
+            </div>
+        </div>
+    </div>
+    <transition name="popup" @click="closeImg">
+        <div 
+            v-if="maskOn" 
+            :class="maskOn?'mask':''" 
+            @click="closeImg"  >
+            <img :src="currentImg" alt="">
+    </div>
+    </transition>
+</div>
+<script src="/src/main.js" defer></script>
+<style>
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.lds-roller {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-roller div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 40px 40px;
+}
+.lds-roller div:after {
+  content: ' ';
+  display: block;
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: rgb(215, 153, 35);
+  margin: -4px 0 0 -4px;
+}
+.lds-roller div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+.lds-roller div:nth-child(1):after {
+  top: 63px;
+  left: 63px;
+}
+.lds-roller div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+.lds-roller div:nth-child(2):after {
+  top: 68px;
+  left: 56px;
+}
+.lds-roller div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+.lds-roller div:nth-child(3):after {
+  top: 71px;
+  left: 48px;
+}
+.lds-roller div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+.lds-roller div:nth-child(4):after {
+  top: 72px;
+  left: 40px;
+}
+.lds-roller div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+.lds-roller div:nth-child(5):after {
+  top: 71px;
+  left: 32px;
+}
+.lds-roller div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+.lds-roller div:nth-child(6):after {
+  top: 68px;
+  left: 24px;
+}
+.lds-roller div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+.lds-roller div:nth-child(7):after {
+  top: 63px;
+  left: 17px;
+}
+.lds-roller div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+.lds-roller div:nth-child(8):after {
+  top: 56px;
+  left: 12px;
+}
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+</style>
+
+  </div>
+  <footer>
+    
+<script src="https://utteranc.es/client.js"
+repo="nicopcat/utterances"
+issue-term="title"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+
+  </footer>
+</article>
+
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/bb/">
+      <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">0001-01-01 &raquo; </time>
+      大声嚷嚷
+    </a>
+  
+  </div>
+  <div class="left">
+  
+    <a href="/jane-works/">
+      <time datetime="0001-01-01 00:00:00 &#43;0000 UTC">&laquo; 0001-01-01</time>
+      Jane&#39;s Works
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2023 <a href="">Nekolas</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>🥯Hugo Papermod主题 创建(侧边)目录 </title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="喜欢睡觉">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/go-fonts.css@1.0.2/index.min.css">
+  
+  <link rel="preconnect" href="https://fonts.loli.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nekolas</a></h1>
+      <p>喜欢睡觉</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/hugo/002_how_to_add_toc_hugo/">Hugo Papermod主题 创建(侧边)目录</a></h1>
+    <time datetime="2021-12-20 22:59:16 &#43;0800 CST">2021-12-20</time>
+    
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">posts</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo">hugo</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo/002_how_to_add_toc_hugo">002_how_to_add_toc_hugo</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+
+    tag: 
+    
+      
+         <a href="/tags/hugo/">Hugo</a> 
+      
+    
+
+  </header>
+
+  <div class="body">
+    
+    <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=true} -->
+<p>我在逛友邻的 blog 或是技术贴时发现，文章里若是有一个目录，就可以方便读者快速浏览自己看到的内容。在此之前，我尝试过 VS Code 的一些插件，但效果都不是特别理想，直到阅读了<em>谌中钱</em> 的一篇<a href="https://juejin.cn/post/7008374961135943716">VSCode 插件 - Markdown Preview Enhanced 详解</a>，才几乎完美地解决了在 md 文档中生成中文 TOC 的需求。</p>
+<h1 id="1-mpe-插件是什么">1. MPE 插件是什么</h1>
+<blockquote>
+<p>Markdown Preview Enhanced 是一款为 Atom 以及 Visual Studio Code 编辑器编写的超级强大的 Markdown 插件。 这款插件意在让你拥有<strong>飘逸</strong>的 Markdown 写作体验。</p>
+</blockquote>
+<ol>
+<li>官方文档地址：<a href="https://shd101wyy.github.io/markdown-preview-enhanced/#/zh-cn/">Markdown Preview Enhanced</a></li>
+<li>安装：<code>ctrl + shift + x</code> 搜索 Markdown Preview Enhanced</li>
+</ol>
+<h1 id="2-mpe-有什么用">2. MPE 有什么用</h1>
+<h2 id="21-实时预览功能">2.1 实时预览功能</h2>
+<p>写 markdown 文档或 码字时，可以随时查看实时生成的效果，非常方便~</p>
+<p>使用方法：</p>
+<ul>
+<li>打开任意 markdown 文件，点击右键，选择<code>MPE: 打开侧边预览</code></li>
+<li>或是使用快捷键<code>shift+k v</code></li>
+</ul>
+<p><img src="https://blogpic-1308403500.file.myqcloud.com/markdown/20211220231552.png" alt="20211220231552" /></p>
+<h2 id="22-生成-toc-树">2.2 生成 TOC 树</h2>
+<p>我是打开预览后，发现右上角有三个按钮，其中第一个可以在 MPE 内部生成一个完美的 TOC，于是在网上搜索能否把它生成的 TOC“占为己用”，没想到真的可以(感觉挖到宝)<br />
+<strong>步骤</strong>：</p>
+<ol>
+<li>可以通过 <code>cmd-shift-p</code> 然后选择 <code>Markdown Preview Enhanced: Create Toc</code> 命令来创建 TOC
+<ul>
+<li>可以创建多个 TOCs</li>
+<li>config:
+<ul>
+<li>在你的 TOC 中排除一个标题，请在你的标题 后面 添加 <code>{ignore=true}</code></li>
+<li><code>orderedList</code>: 是否使用有序列表。</li>
+<li><code>depthFrom, depthTo [1~6]</code> 包含的。</li>
+<li><code>ignoreLink</code> 如果设置为 true，那么 TOC 将不会被超链接</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>上面的指令其实就是生成下面这句代码<code>&lt;!-- @import &quot;[TOC]&quot; {cmd=&quot;toc&quot; depthFrom=1 depthTo=6 orderedList=false} --&gt;</code>，去掉注释，保存即可生成 toc</li>
+<li>注意，还需要在<code>config</code>文件中添加：</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">params</span>:
+  <span style="color:#f92672">showtoc</span>: <span style="color:#66d9ef">true</span>
+  <span style="color:#f92672">tocopen</span>: <span style="color:#66d9ef">true</span>
+</code></pre></div><h1 id="3-侧边目录-">3. 侧边目录 ✔</h1>
+<p>参考 Sulv 的<a href="https://www.sulvblog.cn/posts/blog/hugo_toc_side/">文章</a>，获得侧边目录~<br />
+现在已经不需要 MPE 生成，直接使用 markdown 语法写博客，就可以生成目录。</p>
+<p>除了在 config 文件设置 toc，还可以在 post 的 font matter 加上以下参数，覆盖 config 的设置：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">showToc</span>: <span style="color:#66d9ef">true</span>  <span style="color:#ae81ff">//默认显示toc</span>
+<span style="color:#f92672">tocOpen</span>: <span style="color:#66d9ef">true</span>  <span style="color:#ae81ff">//默认展开toc</span>
+</code></pre></div>
+  </div>
+  <footer>
+    
+<script src="https://utteranc.es/client.js"
+repo="nicopcat/utterances"
+issue-term="title"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+
+  </footer>
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.com/tags/hugo/">Hugo</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+    <a href="/posts/hugo/001_hugo_site/">
+      <time datetime="2021-11-20 17:23:01 &#43;0800 CST">2021-11-20 &raquo; </time>
+      Hugo | 使用Hugo搭建静态博客：Hugo搭建篇
+    </a>
+  
+  </div>
+  <div class="left">
+  
+    <a href="/posts/hugo/003_hugo_deploy_your_blog/">
+      <time datetime="2022-01-08 13:55:19 &#43;0800 CST">&laquo; 2022-01-08</time>
+      Hugo | 博客部署篇
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2023 <a href="">Nekolas</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>

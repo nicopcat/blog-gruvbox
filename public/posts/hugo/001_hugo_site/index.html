@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html id="top" lang="en-us">
+<head>
+  <meta charset="utf-8">
+
+  <title>🥯Hugo | 使用Hugo搭建静态博客：Hugo搭建篇 </title>
+
+  <meta name="author" content="" />
+
+  
+  <meta name="keywords" content="web dev, javascript, reader, blog, programmer, peace & love">
+  
+
+  
+  <meta name="description" content="为何选择Hugo如以及如何用Hugo创建个人博客，引入主题，写文章等等……">
+  
+
+  <meta name="generator" content="Hugo 0.89.4" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="HandheldFriendly" content="True">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/hack-font/3.3.0/web/hack-subset.min.css">
+  <script src="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/11.5.1/styles/base16/gruvbox-dark-soft.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/source-code-pro.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/go-fonts.css@1.0.2/index.min.css">
+  
+  <link rel="preconnect" href="https://fonts.loli.net">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    hljs.highlightAll('pre code');
+    hljs.configure({
+      ignoreUnescapedHTML: true
+      });
+  </script>
+
+
+  <link href="https://blogpic-1308403500.cos.ap-shanghai.myqcloud.com/avatar/small-head-king.jpg" rel="shortcut icon">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  
+</head>
+
+<body>
+  <header>
+    <div class="left logo">
+      <h1><a href="/">Nekolas</a></h1>
+      <p>喜欢睡觉</p>
+    </div>
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+  </header>
+
+  <main>
+    
+<article>
+  <header>
+    <h1><a href="/posts/hugo/001_hugo_site/">Hugo | 使用Hugo搭建静态博客：Hugo搭建篇</a></h1>
+    <time datetime="2021-11-20 17:23:01 &#43;0800 CST">2021-11-20</time>
+    
+    <div class="breadcrumb">
+    <ol>
+        <li><a href="/">Home</a></li>
+        
+        
+        
+        
+        
+        <li><a href="/posts">posts</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo">hugo</a></li>
+        
+        
+        
+        <li><a href="/posts/hugo/001_hugo_site">001_hugo_site</a></li>
+        
+        
+        
+        
+    </ol>
+</div>
+
+    tag: 
+    
+      
+         <a href="/tags/blog/">Blog</a> 
+      
+         <a href="/tags/hugo/">Hugo</a> 
+      
+    
+
+  </header>
+
+  <div class="body">
+    
+    <h1 id="why-hugo">Why Hugo?</h1>
+<p>之前使用的博客都是博客商（？）提供的框架，方便简单但定制化几乎为0。我想，既然学了些前端知识，不如从框架鼓捣一个新博客吧，记录平时因为懒惰而放弃书写的所见所闻所感，或就当作简单的备忘录也不错。</p>
+<p>于是我把目光投向了Hexo, Wordpress, Jekyll等平台，无意间发现<strong>Hugo的生成速度和自由度更高，构架的组织更完备，文档内容和相关主题也丰富。</strong></p>
+<blockquote>
+<p>Hugo是由Go语言实现的静态网站生成器。简单、易用、高效、易扩展、快速部署。</p>
+</blockquote>
+<p>官方文档：👇</p>
+<ul>
+<li>
+<p><a href="https://gohugo.io/">Hugo: The world’s fastest framework for building websites</a></p>
+</li>
+<li>
+<p><a href="https://www.gohugo.org/">Hugo中文文档</a></p>
+</li>
+</ul>
+<p>时代在朝着短视频和更快更短的内容 feed 疯狂前进。时代越快我越慢（慢慢鼓捣文字），大概算是一种 old fashion 式的对抗？</p>
+<h1 id="hugo的安装和配置">Hugo的安装和配置</h1>
+<p><a href="https://gohugo.io/getting-started/quick-start/">Hugo-Quick Start</a> 有详细的教程，这里简单整理一下：</p>
+<h2 id="install-安装">Install 安装</h2>
+<p>三种安装方法任君挑选~</p>
+<ol>
+<li><strong>第一种：下载二进制安装包</strong></li>
+</ol>
+<p>到 <a href="https://github.com/gohugoio/hugo/releases">Hugo Releases</a> 下载对应的操作系统版本的Hugo二进制安装包。</p>
+<p>注意⚠️：因为hugo.exe并不是点开就好的安装包，下载运行之后还需要把Hugo添加到环境变量中。</p>
+<p>具体步骤参考：<br />
+<a href="https://www.niqks.tk/posts/hugo/how-to-setup-blog/#%e4%b8%8b%e8%bd%bdhugo">给J小将的写博客指南</a></p>
+<ol start="2">
+<li><strong>第二种：命令行</strong></li>
+</ol>
+<p><strong>Mac</strong><br />
+使用 <a href="https://brew.sh/">Homebrew</a>安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">brew install hugo
+</code></pre></div><p><strong>Windows</strong><br />
+使用 <a href="https://chocolatey.org/">Chocolatey</a> 安装：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">choco install hugo -confirm
+</code></pre></div><p>下载完成后，在终端输入<code>hugo version</code>查看版本号。</p>
+<p>此时，目录下会有一个名为 <code>Hugo</code> 的文件夹。</p>
+<h2 id="create-a-new-site-生成站点">Create a New Site 生成站点</h2>
+<p>你可以通过指令快速生成一个站点：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">hugo new site quickstart
+</code></pre></div><p>恭喜你！此时你已成功创建了一个名为 <code>quickstart</code> 的站点，以下 <code>quickstart</code> 作为站点名。</p>
+<h2 id="23-add-a-theme-添加一个主题">2.3 Add a Theme 添加一个主题</h2>
+<p>去到 themes.gohugo.io 挑选一个自己喜欢的主题。我选择的主题是 <strong><a href="https://themes.gohugo.io/themes/hugo-papermod/">PaperMod</a></strong>。</p>
+<p>注：PaperMod 主题使用的是.yml/.yaml格式的配置文件，而hugo配置文件默认的后缀是.toml，转换指令：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">hugo new site &lt;name of site&gt; -f yml
+</code></pre></div><p>PaperMod 文档中列出了<a href="https://github.com/adityatelange/hugo-PaperMod/wiki/Installation#method-1">三种安装方式</a>。如果你对其他主题感兴趣，你可以按照文档中的步骤安装。</p>
+<ul>
+<li>使用 git clone:</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">git clone https://github.com/adityatelange/hugo-PaperMod themes/PaperMod --depth=1
+</code></pre></div><ul>
+<li>使用 <a href="https://www.atlassian.com/git/tutorials/git-submodule">git submodule</a></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">git submodule add https://github.com/adityatelange/hugo-PaperMod.git themes/PaperMod --depth=1
+git submodule update --init --recursive # needed when you reclone your repo (submodules may not get cloned automatically)
+</code></pre></div><ul>
+<li>使用直接下载ZIP包<br />
+进到 PaperMod <a href="https://themes.gohugo.io/themes/hugo-papermod/">主题页面</a> ，点击 <code>Download</code> ，再点击 <code>Code</code>，选择 <code>Download ZIP</code>，得到一个zip文件，解压后放入 <code>hugo/quickstart/themes/</code> 内，并需要将文档名由默认的 <code>/hugo-PaperMod-master</code> 改为 <code>/PaperMod</code>，否则无法正确匹配主题。</li>
+</ul>
+<p>下载好主题后，会在根目录的/themes 文件夹下看到一个papermod的文件，说明主题已经下好噜~<br />
+然后在配置文件 <code>config.yml</code> 中添加一下代码，指定选定的主题：</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">theme: &#34;PaperMod&#34;
+</code></pre></div><h2 id="add-some-content-发表内容">Add Some Content 发表内容</h2>
+<p>站点已经建好，该怎么写帖子呢？有两种方法：</p>
+<ul>
+<li><strong>手动添加</strong>（my pick)<br />
+在 <code>quickstart/content/</code> 文件夹下新建一个<code>.md</code>文件，如 <code>my-first-post.md</code>。在文章的最前面，通常需要写<code>front-matter</code>，中文可以翻译成<code>预定义变量</code>，可以用来指定文章的元属性。<br />
+下面是一个<code>front-matter</code>例子：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">---
+title: &#34;My First Post&#34;
+date: 2019-03-26T08:47:11+01:00
+draft: true
+---
+</code></pre></div><p>Hugo文档的说明：https://gohugo.io/content-management/front-matter/</p>
+<ul>
+<li><strong>利用 new 指令新建</strong><br />
+如果用 new 指令生成新帖，Hugo会自动帮你生成时间：</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">&lt;!-- 在/posts/ 文件夹下 新建一篇名为 my-first-post 的文章 --&gt;
+hugo new posts/my-first-post.md
+</code></pre></div><p>此时，打开 <code>/content/</code> 文件夹，你可以看到<code>my-first-post.md</code>文件，用编辑器打开，就可以开始写文章了。</p>
+<h2 id="预览指令">预览指令</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2"><code class="language-fallback" data-lang="fallback">hugo serve
+</code></pre></div><p>这个指令可以在local端口预览你的博客。</p>
+<h1 id="其他自定义功能">其他自定义功能</h1>
+<ul>
+<li>评论系统：可以用 Waline, Discus（墙），github等</li>
+<li>About页面</li>
+<li>搜索页面</li>
+<li><a href="https://immmmm.com/bb-by-wechat-pro/">哔哔点啥</a>页面</li>
+<li>gallery</li>
+</ul>
+<h1 id="托管与自定义域名">托管与自定义域名</h1>
+<p>前期我是使用 Github Pages 来托管我的博客的，唯一的缺点是国内IP不挂梯子的话访问速度很慢。<br />
+后来用了几天 Netlify 托管，它支持导入和一键部署，非常方便，比 Github Pages 的访问速度许多。<br />
+后来，又发现了另一个平台 Vercel，速度很长快，托管步骤也非常简单，只要连接我的Github 账号，选择相应的仓库就完成了部署，强烈推荐使用Vercel。</p>
+<p>托管上线步骤可以参考我的其他帖子：</p>
+<ul>
+<li><a href="https://www.niqks.tk/posts/hugo/hugo-githubpages/">Hugo | Github Pages托管篇</a></li>
+</ul>
+<p>自定义域名：</p>
+<ul>
+<li><a href="https://www.niqks.tk/posts/hugo/hugo-custom-domain/">Hugo | Custom Domain 自定义域名篇</a></li>
+</ul>
+<hr />
+<p>最新修改于:<br />
+<em>2022/7/6</em></p>
+
+  </div>
+  <footer>
+    
+<script src="https://utteranc.es/client.js"
+repo="nicopcat/utterances"
+issue-term="title"
+theme="boxy-light"
+crossorigin="anonymous"
+async>
+</script>
+
+  </footer>
+</article>
+
+
+<ul class="tags">
+  
+  <li>
+    <a href="http://blog.nekolas.com/tags/blog/">Blog</a>
+  </li>
+  <li>
+    <a href="http://blog.nekolas.com/tags/hugo/">Hugo</a>
+  </li></ul>
+
+
+
+<div class="pagination">
+  <div class="right">
+  
+  </div>
+  <div class="left">
+  
+    <a href="/posts/hugo/002_how_to_add_toc_hugo/">
+      <time datetime="2021-12-20 22:59:16 &#43;0800 CST">&laquo; 2021-12-20</time>
+      Hugo Papermod主题 创建(侧边)目录
+    </a>
+  
+  </div>
+</div>
+
+
+
+
+
+
+
+  </main>
+
+  
+  <footer>
+    
+      <span class="gopher" title="Proudly powered by Go!"></span>
+    
+
+    
+<nav>
+  
+  <ul>
+    
+    
+      <li><a href="/gallery">走走停停</a></li>
+    
+      <li><a href="/tags">贴些标签</a></li>
+    
+
+    
+      <li><a href="/posts">写点什么</a></li>
+    
+  </ul>
+  
+
+  
+  <ul class="social_links">
+    
+      <li><a target="hugo_ext" href="https://twitter.com/niqks07">Twitter</a></li>
+    
+      <li><a target="hugo_ext" href="https://github.com/nicopcat">GitHub</a></li>
+    
+      <li><a target="hugo_ext" href="https://instagram.com/niqks07">Instagram</a></li>
+    
+      <li><a target="hugo_ext" href="mailto:tianfang07@outlook.com">Email</a></li>
+    
+  </ul>
+  
+</nav>
+
+
+
+
+    <p>&copy; 2023 <a href="">Nekolas</a></p>
+  </footer>
+  
+  <a id="totop" href="#top" class="backtop"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-circle-up"
+    class="svg-inline--fa fa-chevron-circle-up fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 512 512">
+    <path fill="currentColor"
+        d="M8 256C8 119 119 8 256 8s248 111 248 248-111 248-248 248S8 393 8 256zm231-113.9L103.5 277.6c-9.4 9.4-9.4 24.6 0 33.9l17 17c9.4 9.4 24.6 9.4 33.9 0L256 226.9l101.6 101.6c9.4 9.4 24.6 9.4 33.9 0l17-17c9.4-9.4 9.4-24.6 0-33.9L273 142.1c-9.4-9.4-24.6-9.4-34 0z">
+    </path>
+</svg></a>
+  <script>
+  window.addEventListener('scroll', function () {
+    if(window.scrollY >= 1000){
+      document.getElementById("totop").style.display = "block"
+    }
+    else{
+      document.getElementById("totop").style.display = "none"
+    }
+  })
+
+  </script>
+  
+</body>
+
+</html>
