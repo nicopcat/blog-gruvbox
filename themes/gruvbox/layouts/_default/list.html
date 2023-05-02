@@ -4,20 +4,22 @@
     <h1>All {{ .Type }}</h1>
   </header>
     <div class="body">
-      <!-- <div class="tags">
+      {{ if eq .Type "tags" }}
+      <div class="tags">
         {{ range .Pages }}
         <span>
-          <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }} </a>
+            <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
         </span>
         {{ end }}
-      </div> -->
-      <ol style="list-style-type:disc">
-        {{ range .Pages }}
-        <li>
-          <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }} </a>
-        </li>
-        {{ end }}
-      </ol>
+      {{ else }}
+            <ol style="list-style-type:disc">
+              {{ range .Pages }}
+                <li>
+                  <a href="{{ .RelPermalink }}" title="{{ .Description }}">{{ .Title }}</a>
+                </li>
+              {{ end }}
+            </ol>
+      {{ end }}
     </div>
 </article>
 {{ end }}
