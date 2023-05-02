@@ -9,6 +9,7 @@ author = { name = "Nic" }
 buildDrafts = true
 buildFuture = true
 description = "喜欢睡觉"
+enablePWA = true
 keywords = [
   "web dev",
   "javascript",
