@@ -49,8 +49,8 @@ a:hover {
 }
 
 body {
-  font-family: "Go","Noto Serif SC","Source Code Pro",  "Helvetica Neue";
-  font-size: 16px;
+  font-family:"Source Code Pro",  "Go","Noto Serif SC", "Helvetica Neue";
+  font-size: 15px;
   background: #282828;
   color: #ebdbb2;
   max-width: 60em;
@@ -228,6 +228,7 @@ article>header::after {
 }
 
 article>header>h1 {
+  font-size: 1.6em;
   float: left;
   margin-bottom: 1em;
 }
@@ -291,19 +292,21 @@ article>.body h6 {
 
 /* 新增 */
 article>.body h1{
+  font-size: 1.2em;
   color: #dd4f23;
 }
 
-/* article>.body h1::before {
+article>.body h1::before {
   content: "# ";
   color: #dd4f23;
-} */
+}
 
 /* article>.body h2::before {
   content: "&& ";
   color: #d79720;
 } */
 article>.body h2 {
+  font-size: 1.1em;
   color: #d79720;
 }
 
@@ -313,6 +316,8 @@ article>.body h2 {
 } */
 
 article>.body h3 {
+  font-size: 1em;
+
   color: #458588;
 }
 

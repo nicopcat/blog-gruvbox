@@ -13,14 +13,11 @@
   </div>
   <footer>
     <a href="{{ .RelPermalink }}">Read More&hellip; &raquo;</a>
-    {{ partial "disqus/count.html" . }}
   </footer>
 </article>
 {{ end }}
 
 {{ partial "pagination.html" . }}
-
-{{ partial "disqus/count_script.html" . }}
 
 {{ partial "googleAnalytics/script.html" . }}
 
