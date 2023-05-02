@@ -36,12 +36,14 @@ a:hover {
 
   0%,
   100% {
-    content: "ˏʕ⚆ϖ⚆ʔˎ";
+    content: "(╯‵□′)╯︵┻━┻";
+    /* content: "ˏʕ⚆ϖ⚆ʔˎ"; */
     color: #689d6a;
   }
 
   50% {
-    content: "`ʕ◔ϖ◔ʔ´";
+    content: "┳━┳ ノ( ゜-゜ノ)";
+    /* content: "`ʕ◔ϖ◔ʔ´"; */
     color: #8ec07c;
   }
 }
@@ -292,23 +294,23 @@ article>.body h1{
   color: #dd4f23;
 }
 
-article>.body h1::before {
+/* article>.body h1::before {
   content: "# ";
   color: #dd4f23;
-}
+} */
 
-article>.body h2::before {
+/* article>.body h2::before {
   content: "&& ";
   color: #d79720;
-}
+} */
 article>.body h2 {
   color: #d79720;
 }
 
-article>.body h3::before {
+/* article>.body h3::before {
   content: "$$$ ";
   color: #458588;
-}
+} */
 
 article>.body h3 {
   color: #458588;
