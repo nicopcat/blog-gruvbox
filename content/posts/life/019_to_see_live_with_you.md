@@ -8,7 +8,7 @@ U•ェ•*U
 
 Hey, one of my wishes is to travel with you,
 
-bring you TS/girl in red a live show tickets,
+bring you TS/girl in red live show tickets,
 
 then we beathe in the music and laughs
 
