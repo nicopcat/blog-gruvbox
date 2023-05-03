@@ -563,20 +563,17 @@ mark {
 
 /*菜单 tags styles statr here*/
 .body .tags {
-  /* display: grid;
-  grid-column-gap: 10px;
-  grid-template-columns: 1fr;
-  margin-bottom: 1em; */
-  /* place-items:stretch stretch; */
-  text-align: center;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 .body .tags span,
 main .tags li a {
-  margin: 0.25em;
+  margin: 0.5em 0.8em;
   list-style: none;
   border: 1px solid rgba(206, 135, 59, 0.727);
-  padding: .2em .3em;
+  border-radius: 4px;
+  padding: .2em .5em;
   display: inline-block;
   transition: transform 0.6s ease;
 }
@@ -620,7 +617,7 @@ main .tags li {
 }
 
 .breadcrumb li:last-child a {
-  text-decoration: underline wavy sandybrown;
+  /* text-decoration: underline wavy sandybrown; */
 }
 
 /* top */
