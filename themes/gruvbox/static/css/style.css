@@ -257,7 +257,7 @@ article>.body pre code {
   overflow-x: auto;
   line-height: 1.6em;
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 article>.body code {
@@ -271,7 +271,7 @@ article>.body code {
   color: #fff;
   /* border: 1px solid #d6d6d6; */
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 14px;
   /* word-break: break-all; */
 }
 
@@ -461,6 +461,33 @@ article>.body img {
 }
 
 @media screen and (max-width: 500px) {
+  article>.body pre code {
+    margin: 2em 0;
+    font-family: "Source Code Pro","Hack", monospace;
+    display: block;
+    padding: 1em 1em;
+    background-color: #292828;
+    color: #ebdbb2;
+    overflow-x: auto;
+    line-height: 1.6em;
+    border-radius: 3px;
+    font-size: 13px;
+  }
+  
+  article>.body code {
+    font-family: "Source Code Pro","Hack", consolas, monospace;
+    display: inline;
+    margin: 0 1px;
+    padding: 0.2em 0.4em;
+    /* background: #ebdbb2;
+    color: #458588; */
+    background-color: #d79720;
+    color: #fff;
+    /* border: 1px solid #d6d6d6; */
+    border-radius: 4px;
+    font-size: 13px;
+    /* word-break: break-all; */
+  }
   /* .frienddiv {
     width: 42%;
   } */
