@@ -91,7 +91,8 @@ body>footer>* {
 }
 
 .logo {
-  background: no-repeat top left/64px 64px url("https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg");
+  /* background: no-repeat top left/64px 64px url("https://blogpic-1308403500.file.myqcloud.com/avatar/small-head-king.jpg"); */
+  background: no-repeat top left/64px 64px url("https://nicopcat.github.io/static/android-chrome-192x192.png");
   min-height: 64px;
   padding: 0 0 0 calc(64px + 1em);
   margin-top: -1em;
