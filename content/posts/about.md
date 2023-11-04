@@ -13,7 +13,7 @@ weight: 1
 # tomotachi
 {{< friend name="JaneW" url="https://janew.nekolas.com/" logo="https://s3.bmp.ovh/imgs/2022/03/22e44f454794480d.jpg" word="喜欢画画的Jane" >}}
 
-{{< friend name="蒸汽蔬菜" url="https://www.steamed.dev/" logo="https://www.steamed.dev/img/avatar_hub0dc5de02b67b4945e49bf20f42f29b6_27749_300x0_resize_q75_box.jpg" word="" >}}
+{{< friend name="蒸汽蔬菜" url="https://blog.steamed.dev/img/avatar_hub0dc5de02b67b4945e49bf20f42f29b6_27749_300x0_resize_q75_box.jpg" word="" >}}
 
 {{< friend name="Bore's Notes" url="https://bore.vip" logo="https://bore.vip/img/avatar.jpg" word="博观而约取，厚积而薄发。" >}}
 
