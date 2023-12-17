@@ -47,13 +47,13 @@ weight = 9999
 
 [[menu.sections]]
 name = "tags"
-identifier = "贴些标签"
+identifier = "标签"
 url = "/tags"
 weight = 5000
 
 [[menu.sections]]
 name = "gallery"
-identifier = "走走停停"
+identifier = "相册"
 url = "/gallery"
 weight = 999
 

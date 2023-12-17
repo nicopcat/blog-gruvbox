@@ -7,10 +7,10 @@ Hidemeta: true
 ShowBreadCrumbs: false
 ---
 
-<script src="https://unpkg.com/vue@next"></script>
+<script src="/src/vue.global.prod.js"></script>
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
-  <div class="navbar">
+  <div class="navbar" v-cloak>
       <span><a href="/gallery/">{{title.random}}</a></span>
       |
       <span><a href="/dame/">{{title.dame}}</a></span>

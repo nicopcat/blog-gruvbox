@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="top" lang="{{ .Site.LanguageCode | default "en" }}">
+<html id="top" lang="{{ .Site.LanguageCode | default "en" }}" style="scroll-behavior: smooth;">
 <head>
   <meta charset="utf-8">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -64,7 +64,7 @@
   {{ end }}
 </head>
 
-<body>
+<body >
   <header>
     <div class="left logo">
       <h1><a href="/">{{ .Site.Title }}</a></h1>
@@ -96,15 +96,15 @@
   {{ end }}
   <a id="totop" href="#top" class="backtop">{{ partial "arrow.html" . }}</a>
   <script>
-  window.addEventListener('scroll', function () {
-    if(window.scrollY >= 1000){
-      document.getElementById("totop").style.display = "block"
-    }
-    else{
-      document.getElementById("totop").style.display = "none"
-    }
-  })
 
+window.addEventListener('scroll', function() {
+  if (window.scrollY >= 1000) {
+    document.getElementById("totop").style.display = "block";
+  } else {
+    document.getElementById("totop").style.display = "none";
+  }
+});
+ 
   </script>
   
 </body>

@@ -58,38 +58,38 @@ const App = {
             "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-04.JPG",
           descriptions: "2019-07-28",
         },
-        {
-          id: new Date().toISOString(),
-          pname: "放小狗风筝",
-          altText: "放小狗风筝",
-          linkAdd:
-            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-05-2022-05-24.JPG",
-          descriptions: "2019-07-28",
-        },
-        {
-          id: new Date().toISOString(),
-          pname: "A lady crossing the stree",
-          altText: "A lady crossing the stree",
-          linkAdd:
-            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-06-2022-05-24.JPG",
-          descriptions: "2019-07-28",
-        },
-        {
-          id: new Date().toISOString(),
-          pname: "Lincoln Center",
-          altText: "Lincoln Center",
-          linkAdd:
-            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-07-2022-05-24.JPG",
-          descriptions: "2019-07-28",
-        },
-        {
-          id: new Date().toISOString(),
-          pname: "Black Pumas Free Show",
-          altText: "Black Pumas Free Show",
-          linkAdd:
-            "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-08-2022-05-24.JPG",
-          descriptions: "2019-07-28",
-        },
+        // {
+        //   id: new Date().toISOString(),
+        //   pname: "放小狗风筝",
+        //   altText: "放小狗风筝",
+        //   linkAdd:
+        //     "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-05-2022-05-24.JPG",
+        //   descriptions: "2019-07-28",
+        // },
+        // {
+        //   id: new Date().toISOString(),
+        //   pname: "A lady crossing the stree",
+        //   altText: "A lady crossing the stree",
+        //   linkAdd:
+        //     "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-06-2022-05-24.JPG",
+        //   descriptions: "2019-07-28",
+        // },
+        // {
+        //   id: new Date().toISOString(),
+        //   pname: "Lincoln Center",
+        //   altText: "Lincoln Center",
+        //   linkAdd:
+        //     "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-07-2022-05-24.JPG",
+        //   descriptions: "2019-07-28",
+        // },
+        // {
+        //   id: new Date().toISOString(),
+        //   pname: "Black Pumas Free Show",
+        //   altText: "Black Pumas Free Show",
+        //   linkAdd:
+        //     "https://blogpic-1308403500.file.myqcloud.com/gallery/main/pic-08-2022-05-24.JPG",
+        //   descriptions: "2019-07-28",
+        // },
       ],
       DamePics: [
         {
@@ -99,14 +99,6 @@ const App = {
           linkAdd:
             "https://nic-gz-1308403500.file.myqcloud.com/gruvbox/main-2023-04-29-11-29-57.jpg",
           descriptions: "暗中观察",
-        },
-        {
-          id: new Date().toISOString(),
-          pname: "软妹",
-          altText: "软妹",
-          linkAdd:
-            "https://nic-gz-1308403500.cos.ap-guangzhou.myqcloud.com/gruvbox/main-2023-01-28-16-15-39.jpg",
-          descriptions: "举高高",
         },
         {
           id: new Date().toISOString(),
@@ -209,9 +201,9 @@ const App = {
       ],
     };
   },
-  created() {
+  mounted() {
     // this.DamePics = dame_pics;
-    console.log(this.DamePics);
+    this.isLoading = true;
   },
   methods: {
     currentShow(add) {
@@ -225,12 +217,10 @@ const App = {
       this.isLoading = false;
     },
   },
-  created() {
-    this.isLoading = true;
-  },
+
 }
 const app = Vue.createApp(App);
-// app.component("my-component", MyComponent);
+
 
 
 app.mount("#app");

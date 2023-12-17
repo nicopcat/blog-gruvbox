@@ -6,11 +6,11 @@ showToc: false
 Hidemeta: true
 ShowBreadCrumbs: false
 ---
-
-<script src="https://unpkg.com/vue@next"></script>
+<script src="/src/vue.global.prod.js"></script>
+<!-- <script src="https://unpkg.com/vue@next"></script> -->
 <link rel="stylesheet" href="/src/index.css">
 <div id="app">
-    <div class="navbar">
+    <div class="navbar" v-cloak>
       <span><a href="/gallery/">{{title.random}}</a></span>
       |
       <span><a href="/dame/" class="active-link">{{title.dame}}</a></span>
@@ -55,7 +55,7 @@ ShowBreadCrumbs: false
     </transition>
 
 </div>
-<script src="/src/main.js" defer></script>
+<script src="/src/main.js" type="module" defer></script>
 <style>
 .spinner {
   display: flex;
