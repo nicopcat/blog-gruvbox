@@ -19,7 +19,13 @@ tags: ["Travel"]
 真正去check in 的时候，觉得好像还行，没有想象中那么危险。这次订的是超级经济的airbnb小房间，非常小，但好在相对干净，床垫和枕头也还OK。
 
 放好东西之后就出门，打算按计划坐汪宝期待已久的AIA摩天轮。  
-我们步行到港口那边，然后坐天星小轮过海。到达后发现非常多人在排队坐摩天轮，我们就打算第二天早点过去。然后决定走到不远的 Blue Bottle 喝一杯。
+
+我们步行到港口那边，然后坐天星小轮过海。
+
+![轮船](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-13-01.jpg)
+
+
+到达后发现非常多人在排队坐摩天轮，我们就打算第二天早点过去。然后决定走到不远的 Blue Bottle 喝一杯。
 
 就这样跟着Google map漫步，人行天桥的设计非常现代，也很干净。我们乱走走到了路面，又决定回到天桥，因为路面的红绿灯实在是太多了 lol
 
@@ -56,22 +62,37 @@ To go or drink here? Ahhh, to go please
 我们两在出发前就决定，不论点什么都只点一份，尽量覆盖多种食物种类。对面和我们拼桌的是一对男女，我在吃饭的时候会从他们的角度想象对面只点了一份食物的我们。嘛。决定就只点一份。
 
 
+!(street)[https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-14-33.jpg]
+
 吃饱喝足，回到油尖旺那边继续逛。决定去一家叫zoo record的唱片店，找了许久才找到的。我发现香港这边很多商场都很隐秘，需要乘坐住宅楼电梯才能抵达，不是所有商场都有大厅，果然寸土寸金。
 
 这家zoo record也很神奇地隐匿在……呃，president plaza 商场2楼的一家叫“潮性”的情趣用品店的左边，转了一圈才发现它。唱片店已休息，面积非常非常非常小，基本上，站在原地转一圈就能把所有唱片都看一遍。门口就发现了霉霉的1989黑胶专辑。霉霉，非常流行。
 
 离开zoo record，去到cotton on ，原来是一家服装店。 离开cotton on，左逛又右逛然后回住处休息了。
 
+![荔枝角](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-12-05.jpg)
+
 ---
 
 
 第二天一早，就去红茶冰室吃菠萝油和西多士。可惜的是，这一家红茶冰室并没有菠萝油和西多士，就点了一份早餐套餐（沙爹牛肉面 + 丹麦酥 + 滑蛋 + 咖啡），很好吃。
 
+![菠萝油](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-11-32.jpg)
+
+
 这一份大早餐吃下来，我们两个人分着吃就已经很饱，但似乎其他人都是一人点一份早餐套餐。他们不会觉得分量很大吗lol 。所以作为体验的游客的我们，还是两人分一份的分量比较合适。
 
 今天如愿以偿排到了摩天轮，一开始上升的时候，我紧张到手冒汗，恐高症发作hhhh
 
+![wheels](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-15-03.jpg)
+
 从高处俯瞰香港的skyline以及下方的carnival，真是让人惊叹。
+
+![JJ](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-14-05.jpg)
+
+
+![dock](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-13-42.jpg)
+
 
 今天逛了不少地方呢，摩天轮之后乘船回到对岸，巧遇海港城外面在摆hello kitty 50周年展，就打算进商场逛逛，看有没有打折的鞋。
 
@@ -159,3 +180,14 @@ To go or drink here? Ahhh, to go please
 
 
 以后也要经常旅行，看看别的地方。
+
+
+---
+
+![我爱你](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-05-53.jpg)
+
+
+![s](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-06-28.jpg)
+
+
+![goodbye darling](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-08-17.jpg)
