@@ -23,6 +23,7 @@ tags: ["Travel"]
 我们步行到港口那边，然后坐天星小轮过海。
 
 ![轮船](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-13-01.jpg)
+天星小轮
 
 
 到达后发现非常多人在排队坐摩天轮，我们就打算第二天早点过去。然后决定走到不远的 Blue Bottle 喝一杯。
@@ -62,7 +63,8 @@ To go or drink here? Ahhh, to go please
 我们两在出发前就决定，不论点什么都只点一份，尽量覆盖多种食物种类。对面和我们拼桌的是一对男女，我在吃饭的时候会从他们的角度想象对面只点了一份食物的我们。嘛。决定就只点一份。
 
 
-!(street)[https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-14-33.jpg]
+![street](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-14-33.jpg)
+夜晚，街边的招牌
 
 吃饱喝足，回到油尖旺那边继续逛。决定去一家叫zoo record的唱片店，找了许久才找到的。我发现香港这边很多商场都很隐秘，需要乘坐住宅楼电梯才能抵达，不是所有商场都有大厅，果然寸土寸金。
 
@@ -71,27 +73,31 @@ To go or drink here? Ahhh, to go please
 离开zoo record，去到cotton on ，原来是一家服装店。 离开cotton on，左逛又右逛然后回住处休息了。
 
 ![荔枝角](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-12-05.jpg)
-
+荔枝角snapshot
 ---
 
 
 第二天一早，就去红茶冰室吃菠萝油和西多士。可惜的是，这一家红茶冰室并没有菠萝油和西多士，就点了一份早餐套餐（沙爹牛肉面 + 丹麦酥 + 滑蛋 + 咖啡），很好吃。
 
 ![菠萝油](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-11-32.jpg)
-
+丰盛
 
 这一份大早餐吃下来，我们两个人分着吃就已经很饱，但似乎其他人都是一人点一份早餐套餐。他们不会觉得分量很大吗lol 。所以作为体验的游客的我们，还是两人分一份的分量比较合适。
 
 今天如愿以偿排到了摩天轮，一开始上升的时候，我紧张到手冒汗，恐高症发作hhhh
 
 ![wheels](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-15-03.jpg)
+摩天轮下方
+
 
 从高处俯瞰香港的skyline以及下方的carnival，真是让人惊叹。
 
 ![JJ](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-14-05.jpg)
-
+JJ
 
 ![dock](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-13-42.jpg)
+岸边，JJ在拍点什么
+
 
 
 今天逛了不少地方呢，摩天轮之后乘船回到对岸，巧遇海港城外面在摆hello kitty 50周年展，就打算进商场逛逛，看有没有打折的鞋。
@@ -120,15 +126,16 @@ To go or drink here? Ahhh, to go please
 《疯狂的阳光》改得很好，很可惜没有录下来  
 《喜欢》是个人久远的青春期回忆，是会在QQ空间播放歌曲的那个年代！  
 《城市》是最张悬的张悬的歌，永远喜欢  
-《玫瑰色的你》是……所谓的禁曲（摊手），相信很多来香港听的朋友是想听这手  
-《两者》也是我的爱，喜欢后摇风格的编曲  
-《艳火》是神游的热单，一开始觉得一般，但是它作为热单就真的有热单的道理（好听，感染力强烈）；《如何》是我很想弹的一首  
-《我想你要走了》很忧伤  
-《这个世界》是炼云里翻唱蔡蓝钦的一首歌，很好听，炼云里一开始喜欢的  
-《危险的，是》特别针砭时弊特别好  
-《关于我爱你》唱到这里，女朋友又哭哭了，我爱你  
+《玫瑰色的你》是……所谓的禁曲（摊手），相信很多来香港听的朋友是想听这首   
+《两者》也是我的爱，喜欢后摇风格的编曲   
+《艳火》是神游的热单，一开始觉得一般，但是它作为热单就真的有热单的道理（好听，感染力强烈）  
+《如何》是我很想弹的一首   
+《我想你要走了》很忧伤   
+《这个世界》是炼云里翻唱蔡蓝钦的一首歌，很好听，炼云里一开始喜欢的   
+《危险的，是》特别针砭时弊特别好   
+《关于我爱你》唱到这里，女朋友又哭哭了QAQ
 《嫁祸进行式》太喜欢了，是没想到会encore的歌，她说让我们站起来，说，你们想做什么都可以。太酷了。
-《李小龙》哼哼哈hi李小龙！  
+《李小龙》哼哼哈hi李小龙！   
 
  
 啊，每一首都是那么的真诚，珍贵，自如，深深感谢这一场演出。希望日后还能常相见：）
@@ -184,10 +191,14 @@ To go or drink here? Ahhh, to go please
 
 ---
 
-![我爱你](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-05-53.jpg)
+![goodbye darling](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-05-53.jpg)
+告别的拥抱
 
 
 ![s](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-06-28.jpg)
+路边穿衣服的猫猫
 
 
-![goodbye darling](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-08-17.jpg)
+
+![我爱你](https://nic-gz-1308403500.file.myqcloud.com/gruvbox/027_2024_HongKong_Trip-2024-02-05-01-08-17.jpg)
+安溥，玫瑰色的你
